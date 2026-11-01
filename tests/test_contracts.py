@@ -100,22 +100,21 @@ class DataContractTests(unittest.TestCase):
             for path in item['data']:self.assertTrue((ROOT/path).is_file())
 
     def test_readme_local_links_resolve_when_present(self):
-        path=ROOT/'README.md'
-        if not path.exists():self.skipTest('First build generates README after rendering')
-        for link in re.findall(r'\]\(([^)]+)\)',path.read_text()):
-            if not link.startswith(('http:','https:','#')):self.assertTrue((ROOT/link).exists(),link)
+        for name in ['README.md','SUPPLEMENT.md']:
+            path=ROOT/name
+            if not path.exists():self.skipTest('First build generates documentation after rendering')
+            for link in re.findall(r'\]\(([^)]+)\)',path.read_text()):
+                if not link.startswith(('http:','https:','#')):self.assertTrue((ROOT/link).exists(),link)
 
     def test_readme_gallery_coverage_when_present(self):
         path=ROOT/'README.md'
         if not path.exists():self.skipTest('First build generates README after rendering')
         content=path.read_text()
         items=json.loads((ROOT/'gallery.json').read_text())
+        selected={i['id']for i in json.loads((ROOT/'catalog.json').read_text())['selected']}
         for item in items:
-            self.assertEqual(content.count(']('+item['image']+')'),1,item['id']+' image must appear exactly once')
-            self.assertEqual(content.count(']('+item['script']+')'),1,item['id']+' source link must appear exactly once')
-        for category in dict.fromkeys(i['category']for i in items):
-            section=content.split('## '+category+'\n',1)[1].split('\n## ',1)[0]
-            actual=set(re.findall(r'!\[[^\]]*\]\((assets/[^)]+\.png)\)',section))
-            self.assertEqual(actual,{i['image']for i in items if i['category']==category})
+            expected=int(item['id']in selected)
+            self.assertEqual(content.count(']('+item['image']+')'),expected,item['id']+' image selection mismatch')
+            self.assertEqual(content.count(']('+item['script']+')'),expected,item['id']+' source link selection mismatch')
 
 if __name__=='__main__':unittest.main()

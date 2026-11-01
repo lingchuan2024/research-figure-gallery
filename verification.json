@@ -1,7 +1,7 @@
 {
   "status": "passed",
   "examples": 10,
-  "unit_tests": 24,
+  "unit_tests": 27,
   "image_formats": [
     "png",
     "svg"
@@ -19,12 +19,13 @@
     "PNG dimensions and nonconstant pixels"
   ],
   "sha256": {
-    ".github/workflows/build.yml": "87e06f7670339c62bfd440f9668d341adcd7ed9f87b5e5f9a05f540c974530f2",
+    ".github/workflows/build.yml": "24a1e17edc612c922728a5b7c93ea76735743cbd626f77c6c9de1eba52bff8d6",
     ".gitignore": "fa7f217a73f6f05a5fff53be6c62eb128249069eaaa876641b4b9a449ec57fb4",
     "CURATION.md": "4197e685acacf1c49b30574baf6ea667ea0e606c11cd511787257a37b8d2bdab",
     "LICENSE": "7d659579d5932a65748f29f9c09cce24ebf3c7179a6c9fb77363e64f25ada6dc",
-    "README.md": "6dcb82df0921f996157ca747894ca5d460de187fecd139b4f9d9022cce89aac7",
+    "README.md": "5b7d732b7e2ec7dca5dc1df5bb17bcb4b9d755f51f1b23795570a6a3218f338e",
     "REFERENCES.md": "91b0d9b31d351cc55e04f27662fa023d93174ed2c620dc1c43fb8dd5cc9acb68",
+    "SUPPLEMENT.md": "b3ceb4c6915125c13c233676599f047ab84749a964191c93f8483751cff77610",
     "assets/02_token_raincloud.png": "2a6e9ca7e19a204d76ba95870b4bcbe3afeac19c89ca237d3fb58042a92680dd",
     "assets/02_token_raincloud.svg": "e249ef21131ab324339f3bf419cecb28f5dab4c1c0d8e0a8e35ddb9439afc60d",
     "assets/04_call_vs_output_share.png": "15e237f9636008c60f52e81c02223638e6057318d1d806577f35cab58dee41b1",
@@ -46,6 +47,8 @@
     "assets/19_results_table.png": "2133f247f73c34516e05371f3a74b40a11029ce26a01cb0a346283f46e48677f",
     "assets/19_results_table.svg": "1f7cdfbf4188187842b853cb5fdbc61f54003aab89eb9df944ceeaeeabb9338b",
     "assets/overview.png": "c5c142ebfea65a1905eb33ec1c06514e8f869ff0e3d8e017bfac7be55987f5cd",
+    "catalog.json": "96dbfefb632309f342c68dc10c8193af14d0dca74673e42eeb9ffadc980ff057",
+    "curation/2026-11-02/image_baseline.json": "d00b66888dd9079ca765476341498155b4d6acf69097fea9e782dc6afa6d92c4",
     "data/README.md": "806210a7422ecf05bb3e5cdf5d529b4f4631ebb5301f64bb89c420e46e09fd95",
     "data/demo/ablations.csv": "e76076c53a2afb26fdbbe3ef256b38f806b883c585a240b53315e0bdd3ad7250",
     "data/demo/actions.csv": "893dbba9c84594ff70a658987b2b300fa4c638f4150b1b8acbefcd94ecc7b222",
@@ -56,6 +59,7 @@
     "data/demo/ranks.csv": "48f513bddae02ece555cecc79162d2247eac851b135e1eec5b4d72315a95a251",
     "data/demo/timeline.csv": "3781f3eccc2dbe9e078a1ef2c4fd584af81ca93aa7c47de57fcc59e85f78a8b4",
     "data/demo/tool_calls.csv": "c9d337169550c9e4d0f6f08df77503e725dd9d9503168ad301322790e198f3f9",
+    "docs/gallery_overview.png": "dfc30a6f3eaae125ffe72536e69349f7095f3fcd1ae69a94b14b777a91704298",
     "examples/02_token_raincloud/plot.py": "c6af6f3395c517566746d0d9ea03f8f9c94b61c8b4d63c5c7b8d0c8ee3c1b70f",
     "examples/04_call_vs_output_share/plot.py": "27644b8e10ca0e8420818dfccdbf63c3d4c6e6f07f9c14ebd97f6b7fd5e1dfd6",
     "examples/07_rank_transition/plot.py": "18e07e2ed4534233f91193bd41f3d7e273d0c77112afb316e876f179112b061d",
@@ -71,7 +75,6 @@
     "paper_expansion/2026-11-01/AESTHETIC_REVIEW.md": "4d607fd02d271fbf9d8eb56848a3deac6fa2ce0f2442df78c6cdc748e8924e4c",
     "paper_expansion/2026-11-01/RESEARCH_NOTES.md": "9fa6a60fcc52261aea1e80ec922d70023c8243874da517427f5dbfdd4eb2b9dd",
     "paper_expansion/2026-11-01/build.py": "d5f60b22c6166dff0faa782a6b8ad386151b19ec837a189a04880a04d0ac1492",
-    "paper_expansion/2026-11-01/catalog.py": "e381d995ddae57586f6ca735e9678187a16931da19dcdcbbfa2609c755f2698e",
     "paper_expansion/2026-11-01/code/N01_retrieved_context.py": "04db473a6c62efc56d02812e9e342066e306c06c5f49e290643aafc71e6855db",
     "paper_expansion/2026-11-01/code/N02_failure_hierarchy.py": "382986cb674091dd468ed573702ccab1dae0b08762f33258589f441d31700d00",
     "paper_expansion/2026-11-01/code/N03_oracle_evidence.py": "426671110c3818e2d6c3b4cdc624d7b3f12109000eddc3d68934d933f4f0fe30",
@@ -115,14 +118,20 @@
     "paper_expansion/2026-11-01/preservation-baseline.json": "8ec88e19d37f12923e3958a2daf1232625a737f6abf00435245475b8e816d010",
     "requirements-lock.txt": "5b95e15fbc3ee6e3ad9cbb47b9bc93d9dfc03959e9460fe5dd7fed39d59db715",
     "requirements.txt": "333467adfe8f0d269d1ef539dbe0f22f159ca835d462a4008594e4bd7f434b37",
-    "scripts/build_gallery.py": "cc4220f3d6e0252b5ec5eb0d7d0267b56d6422e667148aab975a5dedb105ef56",
+    "scripts/build_curated_overview.py": "d66473da112fb710860d83c9ff4fc1cecb2ccfa392f15a770b09e82fbfabb84c",
+    "scripts/build_gallery.py": "e43cc4402cc03c4c3967640415c32c7482d6c489983b13adc84831bd5389a604",
+    "scripts/catalog_support.py": "d15817136a9ef07a9f57e18454c4e7122e720cebc751b9442ed520d212796ceb",
     "scripts/contact_sheet.py": "0c75e3fc4c4c39017805a21608355478c5a4f7fb055c2ed33a5a027f7b15f572",
     "scripts/generate_demo_data.py": "36edc724516254e1b4e84134c070cf841a6e2d5551a4cf292084ee2f036bdeea",
     "scripts/package_release.py": "4406931822570887e7c9f8a14018c9be0b5e418236a75345b0f5e2aac2d033d3",
-    "tests/test_contracts.py": "eb3241497df5a48ee56ab3791e27cf63ab4cfd6295f2ad3f52f38dec5459ea9e",
-    "tests/test_paper_expansion.py": "bc697baacd04873079b06bd5bbe5af9d6dc754b2318d0808143e0e00f9a7a6cd"
+    "scripts/render_readme.py": "917aba485ce8f449b978e5243aabfc0e1fef854ac8e5ee4fb2bd206daae004ba",
+    "tests/test_contracts.py": "d3a6e2f59f223191dc284320fded6a975bc8d4038611cb75cbbb69f0d62af557",
+    "tests/test_paper_expansion.py": "047c4864e4048f17a9d7f0cad5b501b4adf14f148e30380a8dd87b31860131d2",
+    "tests/test_unified_catalog.py": "f79b5e084bb0a448b1ff632043a5e2d4c7b3095740b88647eb85e1587e01a684"
   },
   "paper_redraws": 8,
   "total_figures": 18,
+  "selected_figures": 12,
+  "supplement_figures": 6,
   "validation_scope": "Rendering, source records, data contracts, README uniqueness and existing-image integrity; not empirical validation of our method"
 }

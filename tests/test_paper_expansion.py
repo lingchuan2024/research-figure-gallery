@@ -64,8 +64,10 @@ class PaperExpansionTests(unittest.TestCase):
 
     def test_new_readme_images_and_code_links_appear_once(self):
         content=(ROOT/'README.md').read_text();prefix=str(HERE.relative_to(ROOT))+'/'
+        selected={i['id']for i in json.loads((ROOT/'catalog.json').read_text())['selected']}
         for f in self.figures:
-            self.assertEqual(content.count(']('+prefix+f['image']+')'),1,f['id']);self.assertEqual(content.count(']('+prefix+f['script']+')'),1,f['id'])
-        self.assertEqual(len(re.findall(r'!\[[^\]]*\]\('+re.escape(prefix)+r'figures/',content)),len(self.figures))
+            expected=int(f['id']in selected)
+            self.assertEqual(content.count(']('+prefix+f['image']+')'),expected,f['id']);self.assertEqual(content.count(']('+prefix+f['script']+')'),expected,f['id'])
+        self.assertEqual(len(re.findall(r'!\[[^\]]*\]\('+re.escape(prefix)+r'figures/',content)),sum(f['id']in selected for f in self.figures))
 
 if __name__=='__main__':unittest.main()

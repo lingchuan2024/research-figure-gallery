@@ -1,0 +1,123 @@
+{
+  "version": 1,
+  "date": "2026-11-02",
+  "selection_policy": "Prioritize experiment fit, readable visual encoding and complementary information; preserve all existing image bytes.",
+  "selected": [
+    {
+      "id": "19_results_table",
+      "title": "主结果表",
+      "section": "一、主结果与消融",
+      "purpose": "在相同问题集、模型与返回字符预算下汇总准确率、主模型用量和耗时。",
+      "preview_label": "Main results table"
+    },
+    {
+      "id": "17_ablation_forest",
+      "title": "组件消融森林图",
+      "section": "一、主结果与消融",
+      "purpose": "展示 query、snippet、候选范围与调用时机的贡献；每项对照只改变一个变量。",
+      "preview_label": "Component ablations"
+    },
+    {
+      "id": "08_query_paired_comparison",
+      "title": "Query 配对比较",
+      "section": "二、重排与 Query 诊断",
+      "purpose": "同题两种 query 在相同候选池、reranker 与片段设置下配对比较，直接观察逐题差值。",
+      "preview_label": "Paired query comparison"
+    },
+    {
+      "id": "07_rank_transition",
+      "title": "证据排名迁移",
+      "section": "二、重排与 Query 诊断",
+      "purpose": "保留完整候选集中的前后排名；候选集外证据另计，避免只展示被提升的证据。",
+      "preview_label": "Evidence rank transitions"
+    },
+    {
+      "id": "N03_oracle_evidence",
+      "title": "证据充分对照",
+      "section": "二、重排与 Query 诊断",
+      "purpose": "诊断证据获取与后续推理的差距；Oracle 改变证据访问条件，不作为相同返回预算下的基线。",
+      "preview_label": "Oracle evidence diagnostic"
+    },
+    {
+      "id": "04_call_vs_output_share",
+      "title": "工具调用与返回文本占比",
+      "section": "三、工具行为与证据效率",
+      "purpose": "调用次数与返回字符采用各自分母；自动重排的后台计算需单独统计。",
+      "preview_label": "Tool calls and returned text"
+    },
+    {
+      "id": "N01_retrieved_context",
+      "title": "检索暴露文本量",
+      "section": "三、工具行为与证据效率",
+      "purpose": "将检索工具暴露的语料 token 与主模型累计输入分开；参考论文并非统一返回 100 字符的设置。",
+      "preview_label": "Retrieved context volume"
+    },
+    {
+      "id": "N07_source_growth",
+      "title": "调用投入与独立来源增长",
+      "section": "三、工具行为与证据效率",
+      "purpose": "检查更多调用是否增加独立来源；右图是均值差之比，不能解释为逐题新颖度。",
+      "preview_label": "Calls and distinct sources"
+    },
+    {
+      "id": "02_token_raincloud",
+      "title": "逐题 Token 用量分布",
+      "section": "四、资源开销",
+      "purpose": "观察典型问题用量、离散程度和长尾；这里仅统计主模型输入，输出与 reranker 开销另计。",
+      "preview_label": "Per-question token distribution"
+    },
+    {
+      "id": "N06_latency_components",
+      "title": "模块耗时分解",
+      "section": "四、资源开销",
+      "purpose": "按模块定位瓶颈；参考数据中的 I/O 单列毫秒轴，我们的 reranker 需单独计时。",
+      "preview_label": "Latency components"
+    },
+    {
+      "id": "N02_failure_hierarchy",
+      "title": "分层失败归因",
+      "section": "五、失败归因与适用范围",
+      "purpose": "区分推理链、查询策略、语料缺失和 judge 问题；主类与子类使用不同分母，不能相加。",
+      "preview_label": "Hierarchical failure analysis"
+    },
+    {
+      "id": "N05_task_complexity",
+      "title": "任务难度分层",
+      "section": "五、失败归因与适用范围",
+      "purpose": "为问题预先标注跳数和证据需求后分层比较；参考图为报告遵循率，不能当作 QA 准确率。",
+      "preview_label": "Task complexity strata"
+    }
+  ],
+  "supplement": [
+    {
+      "id": "09_token_outcome_pairs",
+      "title": "逐题结果与 Token 联动",
+      "reason": "上下两层对齐后的阅读负担较大，缩小后细柱难辨；逐题资源联动适合作为附录分析。"
+    },
+    {
+      "id": "12_accuracy_cost_frontier",
+      "title": "准确率—成本 Pareto 图",
+      "reason": "与主结果和资源图部分重复；示例成本单位人为构造，接入统一实际成本前不列为主图。"
+    },
+    {
+      "id": "14_budget_accuracy",
+      "title": "预算—效果曲线",
+      "reason": "需要额外独立预算评测；当前主线优先验证固定返回预算下的 rerank 与 query。"
+    },
+    {
+      "id": "16_trajectory_timeline",
+      "title": "工具轨迹时间线",
+      "reason": "虚构案例且留白较多；真实代表性轨迹整理完成后再重新设计。"
+    },
+    {
+      "id": "N04_citation_support",
+      "title": "引用支持率与有效证据量",
+      "reason": "偏长报告声明–URL核验，当前短答案任务未定义引用要求，需先建立答案–证据标注。"
+    },
+    {
+      "id": "N08_evaluator_budget",
+      "title": "评估费用与人类一致性",
+      "reason": "关注评估器配置及费用，离 reranker 效果主线较远，适合评估方法附录。"
+    }
+  ]
+}
