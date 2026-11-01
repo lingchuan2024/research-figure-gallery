@@ -1,0 +1,14 @@
+case_id,method,turn,tool,evidence
+DEMO-CASE,Baseline,1,search,0
+DEMO-CASE,Baseline,2,bash,0
+DEMO-CASE,Baseline,4,bash,0
+DEMO-CASE,Baseline,6,search,0
+DEMO-CASE,Baseline,8,bash,0
+DEMO-CASE,Baseline,10,read,0
+DEMO-CASE,Baseline,13,bash,0
+DEMO-CASE,Baseline,16,read,1
+DEMO-CASE,Baseline,19,answer,0
+DEMO-CASE,Agent rerank,1,search,0
+DEMO-CASE,Agent rerank,2,rerank,1
+DEMO-CASE,Agent rerank,3,read,1
+DEMO-CASE,Agent rerank,5,answer,0

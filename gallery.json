@@ -1,0 +1,287 @@
+[
+  {
+    "id": "01_token_breakdown",
+    "category": "A · Token 与资源消耗",
+    "title": "Token 构成分解",
+    "usage": "分别展示主模型缓存输入、非缓存输入、输出，以及 reranker 输入量。",
+    "script": "examples/01_token_breakdown/plot.py",
+    "image": "assets/01_token_breakdown.png",
+    "vector": "assets/01_token_breakdown.svg",
+    "data": [
+      "data/demo/questions.csv"
+    ],
+    "note": "不同模型的 token 分开展示；不能直接相加推断算力或费用。",
+    "reference": "https://github.com/garrettj403/SciencePlots",
+    "implementation": "original implementation; synthetic demo or conceptual illustration"
+  },
+  {
+    "id": "02_token_raincloud",
+    "category": "A · Token 与资源消耗",
+    "title": "逐题 Token 雨云图",
+    "usage": "展示典型用量、偏态、长尾和单题离群值。",
+    "script": "examples/02_token_raincloud/plot.py",
+    "image": "assets/02_token_raincloud.png",
+    "vector": "assets/02_token_raincloud.svg",
+    "data": [
+      "data/demo/questions.csv"
+    ],
+    "note": "在 log10 空间估计密度；非正值会单列数量。",
+    "reference": "https://github.com/RainCloudPlots/RainCloudPlots",
+    "implementation": "original implementation; synthetic demo or conceptual illustration"
+  },
+  {
+    "id": "03_tool_counts_and_shares",
+    "category": "B · 工具使用与行为",
+    "title": "工具绝对次数与调用占比",
+    "usage": "同时回答调用了多少次，以及各工具占多少。",
+    "script": "examples/03_tool_counts_and_shares/plot.py",
+    "image": "assets/03_tool_counts_and_shares.png",
+    "vector": "assets/03_tool_counts_and_shares.svg",
+    "data": [
+      "data/demo/questions.csv",
+      "data/demo/tool_calls.csv"
+    ],
+    "note": "自动重排的隐式计算记录在 reranker 用量中，不冒充模型显式调用。",
+    "reference": "https://github.com/holtzy/The-Python-Graph-Gallery",
+    "implementation": "original implementation; synthetic demo or conceptual illustration"
+  },
+  {
+    "id": "04_call_vs_output_share",
+    "category": "B · 工具使用与行为",
+    "title": "调用占比与返回字符占比",
+    "usage": "对比频繁调用的工具和大量占用返回文本的工具。",
+    "script": "examples/04_call_vs_output_share/plot.py",
+    "image": "assets/04_call_vs_output_share.png",
+    "vector": "assets/04_call_vs_output_share.svg",
+    "data": [
+      "data/demo/tool_calls.csv"
+    ],
+    "note": "这里统计返回字符，不把字符数写成 token 或计算成本。",
+    "reference": "https://github.com/holtzy/The-Python-Graph-Gallery",
+    "implementation": "original implementation; synthetic demo or conceptual illustration"
+  },
+  {
+    "id": "05_action_transitions",
+    "category": "B · 工具使用与行为",
+    "title": "工具动作转移热图",
+    "usage": "展示 search→read、search→rerank 等相邻行为模式。",
+    "script": "examples/05_action_transitions/plot.py",
+    "image": "assets/05_action_transitions.png",
+    "vector": "assets/05_action_transitions.svg",
+    "data": [
+      "data/demo/actions.csv"
+    ],
+    "note": "按题内相邻动作统计并逐行归一化；未观察到的源状态留空。",
+    "reference": "https://github.com/DingWB/PyComplexHeatmap",
+    "implementation": "original implementation; synthetic demo or conceptual illustration"
+  },
+  {
+    "id": "06_evidence_coverage",
+    "category": "C · 检索质量与证据利用",
+    "title": "证据覆盖的三个阶段",
+    "usage": "区分证据进入候选集、被展示、被成功定位三个环节。",
+    "script": "examples/06_evidence_coverage/plot.py",
+    "image": "assets/06_evidence_coverage.png",
+    "vector": "assets/06_evidence_coverage.svg",
+    "data": [
+      "data/demo/questions.csv"
+    ],
+    "note": "三个阶段需满足嵌套关系；最终答对率不硬塞进漏斗。",
+    "reference": "https://arxiv.org/abs/2407.02485",
+    "implementation": "original implementation; synthetic demo or conceptual illustration"
+  },
+  {
+    "id": "07_rank_transition",
+    "category": "C · 检索质量与证据利用",
+    "title": "重排前后排名迁移",
+    "usage": "检查相关证据是被提升，还是被重排压到 Top-K 之外。",
+    "script": "examples/07_rank_transition/plot.py",
+    "image": "assets/07_rank_transition.png",
+    "vector": "assets/07_rank_transition.svg",
+    "data": [
+      "data/demo/ranks.csv"
+    ],
+    "note": "使用完整候选集排名；候选集外证据另计，不能只保留改善的样本。",
+    "reference": "https://github.com/DingWB/PyComplexHeatmap",
+    "implementation": "original implementation; synthetic demo or conceptual illustration"
+  },
+  {
+    "id": "08_query_paired_comparison",
+    "category": "C · 检索质量与证据利用",
+    "title": "两种 Query 的配对哑铃图",
+    "usage": "离线比较同题 search query 与自主 rerank query 的检索指标。",
+    "script": "examples/08_query_paired_comparison/plot.py",
+    "image": "assets/08_query_paired_comparison.png",
+    "vector": "assets/08_query_paired_comparison.svg",
+    "data": [
+      "data/demo/query_pairs.csv"
+    ],
+    "note": "一条线对应同一道题；右侧显示差值，标题附配对 bootstrap 区间。",
+    "reference": "https://github.com/holtzy/The-Python-Graph-Gallery",
+    "implementation": "original implementation; synthetic demo or conceptual illustration"
+  },
+  {
+    "id": "09_token_outcome_pairs",
+    "category": "D · 效果、预算与稳定性",
+    "title": "逐题效果变化与 Token 变化",
+    "usage": "把同题由错变对、由对变错与资源变化对齐。",
+    "script": "examples/09_token_outcome_pairs/plot.py",
+    "image": "assets/09_token_outcome_pairs.png",
+    "vector": "assets/09_token_outcome_pairs.svg",
+    "data": [
+      "data/demo/questions.csv"
+    ],
+    "note": "所有配对问题均保留；排序依据是 token 差，不选择性删除反例。",
+    "reference": "https://arxiv.org/abs/2608.02751",
+    "implementation": "original implementation; synthetic demo or conceptual illustration"
+  },
+  {
+    "id": "10_outcomes_and_stops",
+    "category": "E · 失败分析与案例",
+    "title": "答案质量与停止原因",
+    "usage": "分别展示答对、答错、弃答和无最终答案，以及停止原因。",
+    "script": "examples/10_outcomes_and_stops/plot.py",
+    "image": "assets/10_outcomes_and_stops.png",
+    "vector": "assets/10_outcomes_and_stops.svg",
+    "data": [
+      "data/demo/questions.csv"
+    ],
+    "note": "正常结束不等于答对，答案结果与停止机制使用两套分类。",
+    "reference": "https://github.com/holtzy/The-Python-Graph-Gallery",
+    "implementation": "original implementation; synthetic demo or conceptual illustration"
+  },
+  {
+    "id": "11_context_growth",
+    "category": "A · Token 与资源消耗",
+    "title": "上下文随轮次增长",
+    "usage": "展示当前轮输入长度的中位数/IQR，同时显示仍在运行的问题数。",
+    "script": "examples/11_context_growth/plot.py",
+    "image": "assets/11_context_growth.png",
+    "vector": "assets/11_context_growth.svg",
+    "data": [
+      "data/demo/context.csv"
+    ],
+    "note": "晚期轮次的样本组成会改变，不能忽视存活轨迹偏差。",
+    "reference": "https://arxiv.org/abs/2307.03172",
+    "implementation": "original implementation; synthetic demo or conceptual illustration"
+  },
+  {
+    "id": "12_accuracy_cost_frontier",
+    "category": "D · 效果、预算与稳定性",
+    "title": "准确率—成本 Pareto 图",
+    "usage": "比较多方法、多预算设置下的效果和资源权衡。",
+    "script": "examples/12_accuracy_cost_frontier/plot.py",
+    "image": "assets/12_accuracy_cost_frontier.png",
+    "vector": "assets/12_accuracy_cost_frontier.svg",
+    "data": [
+      "data/demo/budget_runs.csv"
+    ],
+    "note": "成本是合成单位；前沿仅覆盖已观测配置，误差棒为 Wilson 区间。",
+    "reference": "https://github.com/garrettj403/SciencePlots",
+    "implementation": "original implementation; synthetic demo or conceptual illustration"
+  },
+  {
+    "id": "13_runtime_quantiles",
+    "category": "A · Token 与资源消耗",
+    "title": "耗时分位数与长尾",
+    "usage": "展示 P25/P50/P75/P95，并报告触及运行上限的比例。",
+    "script": "examples/13_runtime_quantiles/plot.py",
+    "image": "assets/13_runtime_quantiles.png",
+    "vector": "assets/13_runtime_quantiles.svg",
+    "data": [
+      "data/demo/questions.csv"
+    ],
+    "note": "保留触顶运行；被截断的耗时不能当作真实完成时间。",
+    "reference": "https://github.com/garrettj403/SciencePlots",
+    "implementation": "original implementation; synthetic demo or conceptual illustration"
+  },
+  {
+    "id": "14_budget_accuracy",
+    "category": "D · 效果、预算与稳定性",
+    "title": "预算—效果曲线",
+    "usage": "观察增加最大轮数后收益何时减弱。",
+    "script": "examples/14_budget_accuracy/plot.py",
+    "image": "assets/14_budget_accuracy.png",
+    "vector": "assets/14_budget_accuracy.svg",
+    "data": [
+      "data/demo/budget_runs.csv"
+    ],
+    "note": "阴影为逐点 Wilson 区间；预算实验与事后截断轨迹要分清。",
+    "reference": "https://github.com/garrettj403/SciencePlots",
+    "implementation": "original implementation; synthetic demo or conceptual illustration"
+  },
+  {
+    "id": "15_question_method_matrix",
+    "category": "E · 失败分析与案例",
+    "title": "问题 × 方法联合热图",
+    "usage": "把每题答对情况与每题 token 放在相同的行顺序中。",
+    "script": "examples/15_question_method_matrix/plot.py",
+    "image": "assets/15_question_method_matrix.png",
+    "vector": "assets/15_question_method_matrix.svg",
+    "data": [
+      "data/demo/questions.csv"
+    ],
+    "note": "示例仅展示前 24 题并明确标注，真实论文需交代选题规则。",
+    "reference": "https://github.com/DingWB/PyComplexHeatmap",
+    "implementation": "original implementation; synthetic demo or conceptual illustration"
+  },
+  {
+    "id": "16_trajectory_timeline",
+    "category": "E · 失败分析与案例",
+    "title": "工具轨迹与证据时间线",
+    "usage": "用单个案例解释何时搜索、重排、阅读和找到证据。",
+    "script": "examples/16_trajectory_timeline/plot.py",
+    "image": "assets/16_trajectory_timeline.png",
+    "vector": "assets/16_trajectory_timeline.svg",
+    "data": [
+      "data/demo/timeline.csv"
+    ],
+    "note": "这是虚构案例；实际案例应给题号及选择依据。",
+    "reference": "https://github.com/holtzy/The-Python-Graph-Gallery",
+    "implementation": "original implementation; synthetic demo or conceptual illustration"
+  },
+  {
+    "id": "17_ablation_forest",
+    "category": "F · 消融与方法说明",
+    "title": "消融效果森林图",
+    "usage": "比较 query、snippet、排序、候选范围和调用时机的贡献。",
+    "script": "examples/17_ablation_forest/plot.py",
+    "image": "assets/17_ablation_forest.png",
+    "vector": "assets/17_ablation_forest.svg",
+    "data": [
+      "data/demo/ablations.csv"
+    ],
+    "note": "以同题差值 bootstrap；区间未经多重比较校正，不预设真实结论。",
+    "reference": "https://github.com/garrettj403/SciencePlots",
+    "implementation": "original implementation; synthetic demo or conceptual illustration"
+  },
+  {
+    "id": "18_method_overview",
+    "category": "F · 消融与方法说明",
+    "title": "方法流程示意图",
+    "usage": "说明自动重排与自主调用的控制点，以及统一返回字符预算的公平设置。",
+    "script": "examples/18_method_overview/plot.py",
+    "image": "assets/18_method_overview.png",
+    "vector": "assets/18_method_overview.svg",
+    "data": [],
+    "note": "方法概念图，不是实验结果；100 字符对应 search/rerank 返回长度。",
+    "reference": "https://arxiv.org/abs/2407.02485",
+    "implementation": "original implementation; synthetic demo or conceptual illustration"
+  },
+  {
+    "id": "19_results_table",
+    "category": "D · 效果、预算与稳定性",
+    "title": "论文主结果表",
+    "usage": "把准确率、输入量、调用次数和耗时汇总为适合主文的表格。",
+    "script": "examples/19_results_table/plot.py",
+    "image": "assets/19_results_table.png",
+    "vector": "assets/19_results_table.svg",
+    "data": [
+      "data/demo/questions.csv",
+      "data/demo/tool_calls.csv"
+    ],
+    "note": "所有数值为合成数据；最佳值只做描述性强调，不表示显著性。",
+    "reference": "https://github.com/garrettj403/SciencePlots",
+    "implementation": "original implementation; synthetic demo or conceptual illustration"
+  }
+]

@@ -1,0 +1,2001 @@
+question_id,method,budget,correct,cost_units
+Q001,Baseline,10,0,10.0
+Q002,Baseline,10,1,10.0
+Q003,Baseline,10,0,10.0
+Q004,Baseline,10,1,10.0
+Q005,Baseline,10,0,10.0
+Q006,Baseline,10,0,10.0
+Q007,Baseline,10,1,10.0
+Q008,Baseline,10,0,10.0
+Q009,Baseline,10,0,10.0
+Q010,Baseline,10,0,10.0
+Q011,Baseline,10,0,10.0
+Q012,Baseline,10,1,10.0
+Q013,Baseline,10,0,10.0
+Q014,Baseline,10,0,10.0
+Q015,Baseline,10,0,10.0
+Q016,Baseline,10,1,10.0
+Q017,Baseline,10,0,10.0
+Q018,Baseline,10,1,10.0
+Q019,Baseline,10,1,10.0
+Q020,Baseline,10,0,10.0
+Q021,Baseline,10,1,10.0
+Q022,Baseline,10,0,10.0
+Q023,Baseline,10,0,10.0
+Q024,Baseline,10,1,10.0
+Q025,Baseline,10,0,10.0
+Q026,Baseline,10,0,10.0
+Q027,Baseline,10,1,10.0
+Q028,Baseline,10,0,10.0
+Q029,Baseline,10,0,10.0
+Q030,Baseline,10,1,10.0
+Q031,Baseline,10,0,10.0
+Q032,Baseline,10,1,10.0
+Q033,Baseline,10,0,10.0
+Q034,Baseline,10,0,10.0
+Q035,Baseline,10,1,10.0
+Q036,Baseline,10,0,10.0
+Q037,Baseline,10,0,10.0
+Q038,Baseline,10,1,10.0
+Q039,Baseline,10,0,10.0
+Q040,Baseline,10,0,10.0
+Q041,Baseline,10,0,10.0
+Q042,Baseline,10,1,10.0
+Q043,Baseline,10,0,10.0
+Q044,Baseline,10,0,10.0
+Q045,Baseline,10,0,10.0
+Q046,Baseline,10,0,10.0
+Q047,Baseline,10,1,10.0
+Q048,Baseline,10,0,10.0
+Q049,Baseline,10,0,10.0
+Q050,Baseline,10,1,10.0
+Q051,Baseline,10,0,10.0
+Q052,Baseline,10,0,10.0
+Q053,Baseline,10,1,10.0
+Q054,Baseline,10,0,10.0
+Q055,Baseline,10,0,10.0
+Q056,Baseline,10,1,10.0
+Q057,Baseline,10,1,10.0
+Q058,Baseline,10,0,10.0
+Q059,Baseline,10,1,10.0
+Q060,Baseline,10,1,10.0
+Q061,Baseline,10,0,10.0
+Q062,Baseline,10,1,10.0
+Q063,Baseline,10,0,10.0
+Q064,Baseline,10,0,10.0
+Q065,Baseline,10,1,10.0
+Q066,Baseline,10,1,10.0
+Q067,Baseline,10,0,10.0
+Q068,Baseline,10,0,10.0
+Q069,Baseline,10,0,10.0
+Q070,Baseline,10,0,10.0
+Q071,Baseline,10,1,10.0
+Q072,Baseline,10,0,10.0
+Q073,Baseline,10,0,10.0
+Q074,Baseline,10,0,10.0
+Q075,Baseline,10,0,10.0
+Q076,Baseline,10,0,10.0
+Q077,Baseline,10,1,10.0
+Q078,Baseline,10,0,10.0
+Q079,Baseline,10,0,10.0
+Q080,Baseline,10,0,10.0
+Q081,Baseline,10,0,10.0
+Q082,Baseline,10,1,10.0
+Q083,Baseline,10,0,10.0
+Q084,Baseline,10,0,10.0
+Q085,Baseline,10,0,10.0
+Q086,Baseline,10,1,10.0
+Q087,Baseline,10,0,10.0
+Q088,Baseline,10,0,10.0
+Q089,Baseline,10,0,10.0
+Q090,Baseline,10,0,10.0
+Q091,Baseline,10,1,10.0
+Q092,Baseline,10,0,10.0
+Q093,Baseline,10,1,10.0
+Q094,Baseline,10,0,10.0
+Q095,Baseline,10,0,10.0
+Q096,Baseline,10,1,10.0
+Q097,Baseline,10,0,10.0
+Q098,Baseline,10,0,10.0
+Q099,Baseline,10,0,10.0
+Q100,Baseline,10,1,10.0
+Q001,Baseline,20,0,20.0
+Q002,Baseline,20,1,20.0
+Q003,Baseline,20,0,20.0
+Q004,Baseline,20,1,20.0
+Q005,Baseline,20,0,20.0
+Q006,Baseline,20,1,20.0
+Q007,Baseline,20,1,20.0
+Q008,Baseline,20,0,20.0
+Q009,Baseline,20,0,20.0
+Q010,Baseline,20,0,20.0
+Q011,Baseline,20,0,20.0
+Q012,Baseline,20,1,20.0
+Q013,Baseline,20,0,20.0
+Q014,Baseline,20,0,20.0
+Q015,Baseline,20,0,20.0
+Q016,Baseline,20,1,20.0
+Q017,Baseline,20,0,20.0
+Q018,Baseline,20,1,20.0
+Q019,Baseline,20,1,20.0
+Q020,Baseline,20,1,20.0
+Q021,Baseline,20,1,20.0
+Q022,Baseline,20,0,20.0
+Q023,Baseline,20,0,20.0
+Q024,Baseline,20,1,20.0
+Q025,Baseline,20,0,20.0
+Q026,Baseline,20,0,20.0
+Q027,Baseline,20,1,20.0
+Q028,Baseline,20,0,20.0
+Q029,Baseline,20,0,20.0
+Q030,Baseline,20,1,20.0
+Q031,Baseline,20,0,20.0
+Q032,Baseline,20,1,20.0
+Q033,Baseline,20,0,20.0
+Q034,Baseline,20,0,20.0
+Q035,Baseline,20,1,20.0
+Q036,Baseline,20,0,20.0
+Q037,Baseline,20,0,20.0
+Q038,Baseline,20,1,20.0
+Q039,Baseline,20,0,20.0
+Q040,Baseline,20,0,20.0
+Q041,Baseline,20,0,20.0
+Q042,Baseline,20,1,20.0
+Q043,Baseline,20,1,20.0
+Q044,Baseline,20,1,20.0
+Q045,Baseline,20,0,20.0
+Q046,Baseline,20,0,20.0
+Q047,Baseline,20,1,20.0
+Q048,Baseline,20,0,20.0
+Q049,Baseline,20,1,20.0
+Q050,Baseline,20,1,20.0
+Q051,Baseline,20,0,20.0
+Q052,Baseline,20,0,20.0
+Q053,Baseline,20,1,20.0
+Q054,Baseline,20,0,20.0
+Q055,Baseline,20,0,20.0
+Q056,Baseline,20,1,20.0
+Q057,Baseline,20,1,20.0
+Q058,Baseline,20,0,20.0
+Q059,Baseline,20,1,20.0
+Q060,Baseline,20,1,20.0
+Q061,Baseline,20,0,20.0
+Q062,Baseline,20,1,20.0
+Q063,Baseline,20,0,20.0
+Q064,Baseline,20,0,20.0
+Q065,Baseline,20,1,20.0
+Q066,Baseline,20,1,20.0
+Q067,Baseline,20,0,20.0
+Q068,Baseline,20,0,20.0
+Q069,Baseline,20,0,20.0
+Q070,Baseline,20,0,20.0
+Q071,Baseline,20,1,20.0
+Q072,Baseline,20,0,20.0
+Q073,Baseline,20,0,20.0
+Q074,Baseline,20,0,20.0
+Q075,Baseline,20,0,20.0
+Q076,Baseline,20,1,20.0
+Q077,Baseline,20,1,20.0
+Q078,Baseline,20,0,20.0
+Q079,Baseline,20,0,20.0
+Q080,Baseline,20,0,20.0
+Q081,Baseline,20,0,20.0
+Q082,Baseline,20,1,20.0
+Q083,Baseline,20,0,20.0
+Q084,Baseline,20,1,20.0
+Q085,Baseline,20,0,20.0
+Q086,Baseline,20,1,20.0
+Q087,Baseline,20,0,20.0
+Q088,Baseline,20,0,20.0
+Q089,Baseline,20,0,20.0
+Q090,Baseline,20,1,20.0
+Q091,Baseline,20,1,20.0
+Q092,Baseline,20,0,20.0
+Q093,Baseline,20,1,20.0
+Q094,Baseline,20,0,20.0
+Q095,Baseline,20,0,20.0
+Q096,Baseline,20,1,20.0
+Q097,Baseline,20,0,20.0
+Q098,Baseline,20,0,20.0
+Q099,Baseline,20,1,20.0
+Q100,Baseline,20,1,20.0
+Q001,Baseline,40,0,40.0
+Q002,Baseline,40,1,40.0
+Q003,Baseline,40,0,40.0
+Q004,Baseline,40,1,40.0
+Q005,Baseline,40,0,40.0
+Q006,Baseline,40,1,40.0
+Q007,Baseline,40,1,40.0
+Q008,Baseline,40,0,40.0
+Q009,Baseline,40,0,40.0
+Q010,Baseline,40,0,40.0
+Q011,Baseline,40,1,40.0
+Q012,Baseline,40,1,40.0
+Q013,Baseline,40,0,40.0
+Q014,Baseline,40,0,40.0
+Q015,Baseline,40,0,40.0
+Q016,Baseline,40,1,40.0
+Q017,Baseline,40,1,40.0
+Q018,Baseline,40,1,40.0
+Q019,Baseline,40,1,40.0
+Q020,Baseline,40,1,40.0
+Q021,Baseline,40,1,40.0
+Q022,Baseline,40,1,40.0
+Q023,Baseline,40,0,40.0
+Q024,Baseline,40,1,40.0
+Q025,Baseline,40,0,40.0
+Q026,Baseline,40,0,40.0
+Q027,Baseline,40,1,40.0
+Q028,Baseline,40,0,40.0
+Q029,Baseline,40,1,40.0
+Q030,Baseline,40,1,40.0
+Q031,Baseline,40,1,40.0
+Q032,Baseline,40,1,40.0
+Q033,Baseline,40,0,40.0
+Q034,Baseline,40,1,40.0
+Q035,Baseline,40,1,40.0
+Q036,Baseline,40,0,40.0
+Q037,Baseline,40,0,40.0
+Q038,Baseline,40,1,40.0
+Q039,Baseline,40,0,40.0
+Q040,Baseline,40,1,40.0
+Q041,Baseline,40,0,40.0
+Q042,Baseline,40,1,40.0
+Q043,Baseline,40,1,40.0
+Q044,Baseline,40,1,40.0
+Q045,Baseline,40,0,40.0
+Q046,Baseline,40,1,40.0
+Q047,Baseline,40,1,40.0
+Q048,Baseline,40,0,40.0
+Q049,Baseline,40,1,40.0
+Q050,Baseline,40,1,40.0
+Q051,Baseline,40,0,40.0
+Q052,Baseline,40,0,40.0
+Q053,Baseline,40,1,40.0
+Q054,Baseline,40,0,40.0
+Q055,Baseline,40,1,40.0
+Q056,Baseline,40,1,40.0
+Q057,Baseline,40,1,40.0
+Q058,Baseline,40,0,40.0
+Q059,Baseline,40,1,40.0
+Q060,Baseline,40,1,40.0
+Q061,Baseline,40,0,40.0
+Q062,Baseline,40,1,40.0
+Q063,Baseline,40,0,40.0
+Q064,Baseline,40,0,40.0
+Q065,Baseline,40,1,40.0
+Q066,Baseline,40,1,40.0
+Q067,Baseline,40,1,40.0
+Q068,Baseline,40,0,40.0
+Q069,Baseline,40,0,40.0
+Q070,Baseline,40,0,40.0
+Q071,Baseline,40,1,40.0
+Q072,Baseline,40,0,40.0
+Q073,Baseline,40,0,40.0
+Q074,Baseline,40,0,40.0
+Q075,Baseline,40,0,40.0
+Q076,Baseline,40,1,40.0
+Q077,Baseline,40,1,40.0
+Q078,Baseline,40,0,40.0
+Q079,Baseline,40,0,40.0
+Q080,Baseline,40,0,40.0
+Q081,Baseline,40,1,40.0
+Q082,Baseline,40,1,40.0
+Q083,Baseline,40,0,40.0
+Q084,Baseline,40,1,40.0
+Q085,Baseline,40,0,40.0
+Q086,Baseline,40,1,40.0
+Q087,Baseline,40,0,40.0
+Q088,Baseline,40,0,40.0
+Q089,Baseline,40,0,40.0
+Q090,Baseline,40,1,40.0
+Q091,Baseline,40,1,40.0
+Q092,Baseline,40,0,40.0
+Q093,Baseline,40,1,40.0
+Q094,Baseline,40,0,40.0
+Q095,Baseline,40,1,40.0
+Q096,Baseline,40,1,40.0
+Q097,Baseline,40,1,40.0
+Q098,Baseline,40,0,40.0
+Q099,Baseline,40,1,40.0
+Q100,Baseline,40,1,40.0
+Q001,Baseline,60,1,60.0
+Q002,Baseline,60,1,60.0
+Q003,Baseline,60,0,60.0
+Q004,Baseline,60,1,60.0
+Q005,Baseline,60,0,60.0
+Q006,Baseline,60,1,60.0
+Q007,Baseline,60,1,60.0
+Q008,Baseline,60,0,60.0
+Q009,Baseline,60,0,60.0
+Q010,Baseline,60,0,60.0
+Q011,Baseline,60,1,60.0
+Q012,Baseline,60,1,60.0
+Q013,Baseline,60,0,60.0
+Q014,Baseline,60,0,60.0
+Q015,Baseline,60,0,60.0
+Q016,Baseline,60,1,60.0
+Q017,Baseline,60,1,60.0
+Q018,Baseline,60,1,60.0
+Q019,Baseline,60,1,60.0
+Q020,Baseline,60,1,60.0
+Q021,Baseline,60,1,60.0
+Q022,Baseline,60,1,60.0
+Q023,Baseline,60,0,60.0
+Q024,Baseline,60,1,60.0
+Q025,Baseline,60,0,60.0
+Q026,Baseline,60,0,60.0
+Q027,Baseline,60,1,60.0
+Q028,Baseline,60,0,60.0
+Q029,Baseline,60,1,60.0
+Q030,Baseline,60,1,60.0
+Q031,Baseline,60,1,60.0
+Q032,Baseline,60,1,60.0
+Q033,Baseline,60,0,60.0
+Q034,Baseline,60,1,60.0
+Q035,Baseline,60,1,60.0
+Q036,Baseline,60,0,60.0
+Q037,Baseline,60,0,60.0
+Q038,Baseline,60,1,60.0
+Q039,Baseline,60,0,60.0
+Q040,Baseline,60,1,60.0
+Q041,Baseline,60,0,60.0
+Q042,Baseline,60,1,60.0
+Q043,Baseline,60,1,60.0
+Q044,Baseline,60,1,60.0
+Q045,Baseline,60,0,60.0
+Q046,Baseline,60,1,60.0
+Q047,Baseline,60,1,60.0
+Q048,Baseline,60,0,60.0
+Q049,Baseline,60,1,60.0
+Q050,Baseline,60,1,60.0
+Q051,Baseline,60,0,60.0
+Q052,Baseline,60,0,60.0
+Q053,Baseline,60,1,60.0
+Q054,Baseline,60,0,60.0
+Q055,Baseline,60,1,60.0
+Q056,Baseline,60,1,60.0
+Q057,Baseline,60,1,60.0
+Q058,Baseline,60,0,60.0
+Q059,Baseline,60,1,60.0
+Q060,Baseline,60,1,60.0
+Q061,Baseline,60,0,60.0
+Q062,Baseline,60,1,60.0
+Q063,Baseline,60,0,60.0
+Q064,Baseline,60,0,60.0
+Q065,Baseline,60,1,60.0
+Q066,Baseline,60,1,60.0
+Q067,Baseline,60,1,60.0
+Q068,Baseline,60,0,60.0
+Q069,Baseline,60,0,60.0
+Q070,Baseline,60,0,60.0
+Q071,Baseline,60,1,60.0
+Q072,Baseline,60,0,60.0
+Q073,Baseline,60,0,60.0
+Q074,Baseline,60,0,60.0
+Q075,Baseline,60,0,60.0
+Q076,Baseline,60,1,60.0
+Q077,Baseline,60,1,60.0
+Q078,Baseline,60,0,60.0
+Q079,Baseline,60,0,60.0
+Q080,Baseline,60,0,60.0
+Q081,Baseline,60,1,60.0
+Q082,Baseline,60,1,60.0
+Q083,Baseline,60,0,60.0
+Q084,Baseline,60,1,60.0
+Q085,Baseline,60,0,60.0
+Q086,Baseline,60,1,60.0
+Q087,Baseline,60,0,60.0
+Q088,Baseline,60,0,60.0
+Q089,Baseline,60,0,60.0
+Q090,Baseline,60,1,60.0
+Q091,Baseline,60,1,60.0
+Q092,Baseline,60,0,60.0
+Q093,Baseline,60,1,60.0
+Q094,Baseline,60,0,60.0
+Q095,Baseline,60,1,60.0
+Q096,Baseline,60,1,60.0
+Q097,Baseline,60,1,60.0
+Q098,Baseline,60,1,60.0
+Q099,Baseline,60,1,60.0
+Q100,Baseline,60,1,60.0
+Q001,Baseline,100,1,100.0
+Q002,Baseline,100,1,100.0
+Q003,Baseline,100,0,100.0
+Q004,Baseline,100,1,100.0
+Q005,Baseline,100,0,100.0
+Q006,Baseline,100,1,100.0
+Q007,Baseline,100,1,100.0
+Q008,Baseline,100,0,100.0
+Q009,Baseline,100,0,100.0
+Q010,Baseline,100,0,100.0
+Q011,Baseline,100,1,100.0
+Q012,Baseline,100,1,100.0
+Q013,Baseline,100,0,100.0
+Q014,Baseline,100,0,100.0
+Q015,Baseline,100,0,100.0
+Q016,Baseline,100,1,100.0
+Q017,Baseline,100,1,100.0
+Q018,Baseline,100,1,100.0
+Q019,Baseline,100,1,100.0
+Q020,Baseline,100,1,100.0
+Q021,Baseline,100,1,100.0
+Q022,Baseline,100,1,100.0
+Q023,Baseline,100,0,100.0
+Q024,Baseline,100,1,100.0
+Q025,Baseline,100,0,100.0
+Q026,Baseline,100,0,100.0
+Q027,Baseline,100,1,100.0
+Q028,Baseline,100,0,100.0
+Q029,Baseline,100,1,100.0
+Q030,Baseline,100,1,100.0
+Q031,Baseline,100,1,100.0
+Q032,Baseline,100,1,100.0
+Q033,Baseline,100,0,100.0
+Q034,Baseline,100,1,100.0
+Q035,Baseline,100,1,100.0
+Q036,Baseline,100,0,100.0
+Q037,Baseline,100,1,100.0
+Q038,Baseline,100,1,100.0
+Q039,Baseline,100,0,100.0
+Q040,Baseline,100,1,100.0
+Q041,Baseline,100,1,100.0
+Q042,Baseline,100,1,100.0
+Q043,Baseline,100,1,100.0
+Q044,Baseline,100,1,100.0
+Q045,Baseline,100,0,100.0
+Q046,Baseline,100,1,100.0
+Q047,Baseline,100,1,100.0
+Q048,Baseline,100,0,100.0
+Q049,Baseline,100,1,100.0
+Q050,Baseline,100,1,100.0
+Q051,Baseline,100,0,100.0
+Q052,Baseline,100,0,100.0
+Q053,Baseline,100,1,100.0
+Q054,Baseline,100,0,100.0
+Q055,Baseline,100,1,100.0
+Q056,Baseline,100,1,100.0
+Q057,Baseline,100,1,100.0
+Q058,Baseline,100,0,100.0
+Q059,Baseline,100,1,100.0
+Q060,Baseline,100,1,100.0
+Q061,Baseline,100,0,100.0
+Q062,Baseline,100,1,100.0
+Q063,Baseline,100,0,100.0
+Q064,Baseline,100,0,100.0
+Q065,Baseline,100,1,100.0
+Q066,Baseline,100,1,100.0
+Q067,Baseline,100,1,100.0
+Q068,Baseline,100,0,100.0
+Q069,Baseline,100,0,100.0
+Q070,Baseline,100,0,100.0
+Q071,Baseline,100,1,100.0
+Q072,Baseline,100,0,100.0
+Q073,Baseline,100,0,100.0
+Q074,Baseline,100,0,100.0
+Q075,Baseline,100,0,100.0
+Q076,Baseline,100,1,100.0
+Q077,Baseline,100,1,100.0
+Q078,Baseline,100,0,100.0
+Q079,Baseline,100,0,100.0
+Q080,Baseline,100,0,100.0
+Q081,Baseline,100,1,100.0
+Q082,Baseline,100,1,100.0
+Q083,Baseline,100,0,100.0
+Q084,Baseline,100,1,100.0
+Q085,Baseline,100,0,100.0
+Q086,Baseline,100,1,100.0
+Q087,Baseline,100,0,100.0
+Q088,Baseline,100,0,100.0
+Q089,Baseline,100,0,100.0
+Q090,Baseline,100,1,100.0
+Q091,Baseline,100,1,100.0
+Q092,Baseline,100,0,100.0
+Q093,Baseline,100,1,100.0
+Q094,Baseline,100,0,100.0
+Q095,Baseline,100,1,100.0
+Q096,Baseline,100,1,100.0
+Q097,Baseline,100,1,100.0
+Q098,Baseline,100,1,100.0
+Q099,Baseline,100,1,100.0
+Q100,Baseline,100,1,100.0
+Q001,Paging,10,0,10.0
+Q002,Paging,10,1,10.0
+Q003,Paging,10,0,10.0
+Q004,Paging,10,1,10.0
+Q005,Paging,10,0,10.0
+Q006,Paging,10,0,10.0
+Q007,Paging,10,1,10.0
+Q008,Paging,10,0,10.0
+Q009,Paging,10,0,10.0
+Q010,Paging,10,0,10.0
+Q011,Paging,10,0,10.0
+Q012,Paging,10,1,10.0
+Q013,Paging,10,0,10.0
+Q014,Paging,10,0,10.0
+Q015,Paging,10,0,10.0
+Q016,Paging,10,1,10.0
+Q017,Paging,10,0,10.0
+Q018,Paging,10,1,10.0
+Q019,Paging,10,1,10.0
+Q020,Paging,10,0,10.0
+Q021,Paging,10,1,10.0
+Q022,Paging,10,0,10.0
+Q023,Paging,10,0,10.0
+Q024,Paging,10,1,10.0
+Q025,Paging,10,0,10.0
+Q026,Paging,10,0,10.0
+Q027,Paging,10,1,10.0
+Q028,Paging,10,0,10.0
+Q029,Paging,10,0,10.0
+Q030,Paging,10,1,10.0
+Q031,Paging,10,0,10.0
+Q032,Paging,10,1,10.0
+Q033,Paging,10,0,10.0
+Q034,Paging,10,0,10.0
+Q035,Paging,10,1,10.0
+Q036,Paging,10,0,10.0
+Q037,Paging,10,0,10.0
+Q038,Paging,10,1,10.0
+Q039,Paging,10,0,10.0
+Q040,Paging,10,0,10.0
+Q041,Paging,10,0,10.0
+Q042,Paging,10,1,10.0
+Q043,Paging,10,0,10.0
+Q044,Paging,10,0,10.0
+Q045,Paging,10,0,10.0
+Q046,Paging,10,0,10.0
+Q047,Paging,10,1,10.0
+Q048,Paging,10,0,10.0
+Q049,Paging,10,0,10.0
+Q050,Paging,10,1,10.0
+Q051,Paging,10,0,10.0
+Q052,Paging,10,0,10.0
+Q053,Paging,10,1,10.0
+Q054,Paging,10,0,10.0
+Q055,Paging,10,0,10.0
+Q056,Paging,10,1,10.0
+Q057,Paging,10,1,10.0
+Q058,Paging,10,0,10.0
+Q059,Paging,10,1,10.0
+Q060,Paging,10,1,10.0
+Q061,Paging,10,0,10.0
+Q062,Paging,10,1,10.0
+Q063,Paging,10,0,10.0
+Q064,Paging,10,0,10.0
+Q065,Paging,10,1,10.0
+Q066,Paging,10,1,10.0
+Q067,Paging,10,0,10.0
+Q068,Paging,10,0,10.0
+Q069,Paging,10,0,10.0
+Q070,Paging,10,0,10.0
+Q071,Paging,10,1,10.0
+Q072,Paging,10,0,10.0
+Q073,Paging,10,0,10.0
+Q074,Paging,10,0,10.0
+Q075,Paging,10,0,10.0
+Q076,Paging,10,0,10.0
+Q077,Paging,10,1,10.0
+Q078,Paging,10,0,10.0
+Q079,Paging,10,0,10.0
+Q080,Paging,10,0,10.0
+Q081,Paging,10,0,10.0
+Q082,Paging,10,1,10.0
+Q083,Paging,10,0,10.0
+Q084,Paging,10,0,10.0
+Q085,Paging,10,0,10.0
+Q086,Paging,10,1,10.0
+Q087,Paging,10,0,10.0
+Q088,Paging,10,0,10.0
+Q089,Paging,10,0,10.0
+Q090,Paging,10,0,10.0
+Q091,Paging,10,1,10.0
+Q092,Paging,10,0,10.0
+Q093,Paging,10,1,10.0
+Q094,Paging,10,0,10.0
+Q095,Paging,10,0,10.0
+Q096,Paging,10,1,10.0
+Q097,Paging,10,0,10.0
+Q098,Paging,10,0,10.0
+Q099,Paging,10,0,10.0
+Q100,Paging,10,1,10.0
+Q001,Paging,20,0,20.0
+Q002,Paging,20,1,20.0
+Q003,Paging,20,0,20.0
+Q004,Paging,20,1,20.0
+Q005,Paging,20,0,20.0
+Q006,Paging,20,1,20.0
+Q007,Paging,20,1,20.0
+Q008,Paging,20,0,20.0
+Q009,Paging,20,0,20.0
+Q010,Paging,20,0,20.0
+Q011,Paging,20,0,20.0
+Q012,Paging,20,1,20.0
+Q013,Paging,20,0,20.0
+Q014,Paging,20,0,20.0
+Q015,Paging,20,0,20.0
+Q016,Paging,20,1,20.0
+Q017,Paging,20,0,20.0
+Q018,Paging,20,1,20.0
+Q019,Paging,20,1,20.0
+Q020,Paging,20,1,20.0
+Q021,Paging,20,1,20.0
+Q022,Paging,20,0,20.0
+Q023,Paging,20,0,20.0
+Q024,Paging,20,1,20.0
+Q025,Paging,20,0,20.0
+Q026,Paging,20,0,20.0
+Q027,Paging,20,1,20.0
+Q028,Paging,20,0,20.0
+Q029,Paging,20,0,20.0
+Q030,Paging,20,1,20.0
+Q031,Paging,20,0,20.0
+Q032,Paging,20,1,20.0
+Q033,Paging,20,0,20.0
+Q034,Paging,20,0,20.0
+Q035,Paging,20,1,20.0
+Q036,Paging,20,0,20.0
+Q037,Paging,20,0,20.0
+Q038,Paging,20,1,20.0
+Q039,Paging,20,0,20.0
+Q040,Paging,20,1,20.0
+Q041,Paging,20,0,20.0
+Q042,Paging,20,1,20.0
+Q043,Paging,20,1,20.0
+Q044,Paging,20,1,20.0
+Q045,Paging,20,0,20.0
+Q046,Paging,20,0,20.0
+Q047,Paging,20,1,20.0
+Q048,Paging,20,0,20.0
+Q049,Paging,20,1,20.0
+Q050,Paging,20,1,20.0
+Q051,Paging,20,0,20.0
+Q052,Paging,20,0,20.0
+Q053,Paging,20,1,20.0
+Q054,Paging,20,0,20.0
+Q055,Paging,20,1,20.0
+Q056,Paging,20,1,20.0
+Q057,Paging,20,1,20.0
+Q058,Paging,20,0,20.0
+Q059,Paging,20,1,20.0
+Q060,Paging,20,1,20.0
+Q061,Paging,20,0,20.0
+Q062,Paging,20,1,20.0
+Q063,Paging,20,0,20.0
+Q064,Paging,20,0,20.0
+Q065,Paging,20,1,20.0
+Q066,Paging,20,1,20.0
+Q067,Paging,20,1,20.0
+Q068,Paging,20,0,20.0
+Q069,Paging,20,0,20.0
+Q070,Paging,20,0,20.0
+Q071,Paging,20,1,20.0
+Q072,Paging,20,0,20.0
+Q073,Paging,20,0,20.0
+Q074,Paging,20,0,20.0
+Q075,Paging,20,0,20.0
+Q076,Paging,20,1,20.0
+Q077,Paging,20,1,20.0
+Q078,Paging,20,0,20.0
+Q079,Paging,20,0,20.0
+Q080,Paging,20,0,20.0
+Q081,Paging,20,0,20.0
+Q082,Paging,20,1,20.0
+Q083,Paging,20,0,20.0
+Q084,Paging,20,1,20.0
+Q085,Paging,20,0,20.0
+Q086,Paging,20,1,20.0
+Q087,Paging,20,0,20.0
+Q088,Paging,20,0,20.0
+Q089,Paging,20,0,20.0
+Q090,Paging,20,1,20.0
+Q091,Paging,20,1,20.0
+Q092,Paging,20,0,20.0
+Q093,Paging,20,1,20.0
+Q094,Paging,20,0,20.0
+Q095,Paging,20,0,20.0
+Q096,Paging,20,1,20.0
+Q097,Paging,20,1,20.0
+Q098,Paging,20,0,20.0
+Q099,Paging,20,1,20.0
+Q100,Paging,20,1,20.0
+Q001,Paging,40,1,40.0
+Q002,Paging,40,1,40.0
+Q003,Paging,40,0,40.0
+Q004,Paging,40,1,40.0
+Q005,Paging,40,0,40.0
+Q006,Paging,40,1,40.0
+Q007,Paging,40,1,40.0
+Q008,Paging,40,0,40.0
+Q009,Paging,40,0,40.0
+Q010,Paging,40,0,40.0
+Q011,Paging,40,1,40.0
+Q012,Paging,40,1,40.0
+Q013,Paging,40,0,40.0
+Q014,Paging,40,0,40.0
+Q015,Paging,40,0,40.0
+Q016,Paging,40,1,40.0
+Q017,Paging,40,1,40.0
+Q018,Paging,40,1,40.0
+Q019,Paging,40,1,40.0
+Q020,Paging,40,1,40.0
+Q021,Paging,40,1,40.0
+Q022,Paging,40,1,40.0
+Q023,Paging,40,0,40.0
+Q024,Paging,40,1,40.0
+Q025,Paging,40,0,40.0
+Q026,Paging,40,0,40.0
+Q027,Paging,40,1,40.0
+Q028,Paging,40,0,40.0
+Q029,Paging,40,1,40.0
+Q030,Paging,40,1,40.0
+Q031,Paging,40,1,40.0
+Q032,Paging,40,1,40.0
+Q033,Paging,40,0,40.0
+Q034,Paging,40,1,40.0
+Q035,Paging,40,1,40.0
+Q036,Paging,40,0,40.0
+Q037,Paging,40,0,40.0
+Q038,Paging,40,1,40.0
+Q039,Paging,40,0,40.0
+Q040,Paging,40,1,40.0
+Q041,Paging,40,0,40.0
+Q042,Paging,40,1,40.0
+Q043,Paging,40,1,40.0
+Q044,Paging,40,1,40.0
+Q045,Paging,40,0,40.0
+Q046,Paging,40,1,40.0
+Q047,Paging,40,1,40.0
+Q048,Paging,40,0,40.0
+Q049,Paging,40,1,40.0
+Q050,Paging,40,1,40.0
+Q051,Paging,40,0,40.0
+Q052,Paging,40,0,40.0
+Q053,Paging,40,1,40.0
+Q054,Paging,40,0,40.0
+Q055,Paging,40,1,40.0
+Q056,Paging,40,1,40.0
+Q057,Paging,40,1,40.0
+Q058,Paging,40,0,40.0
+Q059,Paging,40,1,40.0
+Q060,Paging,40,1,40.0
+Q061,Paging,40,0,40.0
+Q062,Paging,40,1,40.0
+Q063,Paging,40,0,40.0
+Q064,Paging,40,0,40.0
+Q065,Paging,40,1,40.0
+Q066,Paging,40,1,40.0
+Q067,Paging,40,1,40.0
+Q068,Paging,40,0,40.0
+Q069,Paging,40,0,40.0
+Q070,Paging,40,0,40.0
+Q071,Paging,40,1,40.0
+Q072,Paging,40,0,40.0
+Q073,Paging,40,0,40.0
+Q074,Paging,40,0,40.0
+Q075,Paging,40,0,40.0
+Q076,Paging,40,1,40.0
+Q077,Paging,40,1,40.0
+Q078,Paging,40,0,40.0
+Q079,Paging,40,0,40.0
+Q080,Paging,40,0,40.0
+Q081,Paging,40,1,40.0
+Q082,Paging,40,1,40.0
+Q083,Paging,40,0,40.0
+Q084,Paging,40,1,40.0
+Q085,Paging,40,0,40.0
+Q086,Paging,40,1,40.0
+Q087,Paging,40,0,40.0
+Q088,Paging,40,0,40.0
+Q089,Paging,40,0,40.0
+Q090,Paging,40,1,40.0
+Q091,Paging,40,1,40.0
+Q092,Paging,40,0,40.0
+Q093,Paging,40,1,40.0
+Q094,Paging,40,0,40.0
+Q095,Paging,40,1,40.0
+Q096,Paging,40,1,40.0
+Q097,Paging,40,1,40.0
+Q098,Paging,40,1,40.0
+Q099,Paging,40,1,40.0
+Q100,Paging,40,1,40.0
+Q001,Paging,60,1,60.0
+Q002,Paging,60,1,60.0
+Q003,Paging,60,0,60.0
+Q004,Paging,60,1,60.0
+Q005,Paging,60,0,60.0
+Q006,Paging,60,1,60.0
+Q007,Paging,60,1,60.0
+Q008,Paging,60,0,60.0
+Q009,Paging,60,0,60.0
+Q010,Paging,60,0,60.0
+Q011,Paging,60,1,60.0
+Q012,Paging,60,1,60.0
+Q013,Paging,60,0,60.0
+Q014,Paging,60,0,60.0
+Q015,Paging,60,0,60.0
+Q016,Paging,60,1,60.0
+Q017,Paging,60,1,60.0
+Q018,Paging,60,1,60.0
+Q019,Paging,60,1,60.0
+Q020,Paging,60,1,60.0
+Q021,Paging,60,1,60.0
+Q022,Paging,60,1,60.0
+Q023,Paging,60,0,60.0
+Q024,Paging,60,1,60.0
+Q025,Paging,60,0,60.0
+Q026,Paging,60,0,60.0
+Q027,Paging,60,1,60.0
+Q028,Paging,60,0,60.0
+Q029,Paging,60,1,60.0
+Q030,Paging,60,1,60.0
+Q031,Paging,60,1,60.0
+Q032,Paging,60,1,60.0
+Q033,Paging,60,0,60.0
+Q034,Paging,60,1,60.0
+Q035,Paging,60,1,60.0
+Q036,Paging,60,0,60.0
+Q037,Paging,60,1,60.0
+Q038,Paging,60,1,60.0
+Q039,Paging,60,0,60.0
+Q040,Paging,60,1,60.0
+Q041,Paging,60,1,60.0
+Q042,Paging,60,1,60.0
+Q043,Paging,60,1,60.0
+Q044,Paging,60,1,60.0
+Q045,Paging,60,0,60.0
+Q046,Paging,60,1,60.0
+Q047,Paging,60,1,60.0
+Q048,Paging,60,0,60.0
+Q049,Paging,60,1,60.0
+Q050,Paging,60,1,60.0
+Q051,Paging,60,0,60.0
+Q052,Paging,60,0,60.0
+Q053,Paging,60,1,60.0
+Q054,Paging,60,0,60.0
+Q055,Paging,60,1,60.0
+Q056,Paging,60,1,60.0
+Q057,Paging,60,1,60.0
+Q058,Paging,60,0,60.0
+Q059,Paging,60,1,60.0
+Q060,Paging,60,1,60.0
+Q061,Paging,60,0,60.0
+Q062,Paging,60,1,60.0
+Q063,Paging,60,0,60.0
+Q064,Paging,60,0,60.0
+Q065,Paging,60,1,60.0
+Q066,Paging,60,1,60.0
+Q067,Paging,60,1,60.0
+Q068,Paging,60,0,60.0
+Q069,Paging,60,0,60.0
+Q070,Paging,60,0,60.0
+Q071,Paging,60,1,60.0
+Q072,Paging,60,0,60.0
+Q073,Paging,60,0,60.0
+Q074,Paging,60,0,60.0
+Q075,Paging,60,0,60.0
+Q076,Paging,60,1,60.0
+Q077,Paging,60,1,60.0
+Q078,Paging,60,0,60.0
+Q079,Paging,60,0,60.0
+Q080,Paging,60,0,60.0
+Q081,Paging,60,1,60.0
+Q082,Paging,60,1,60.0
+Q083,Paging,60,0,60.0
+Q084,Paging,60,1,60.0
+Q085,Paging,60,0,60.0
+Q086,Paging,60,1,60.0
+Q087,Paging,60,0,60.0
+Q088,Paging,60,0,60.0
+Q089,Paging,60,0,60.0
+Q090,Paging,60,1,60.0
+Q091,Paging,60,1,60.0
+Q092,Paging,60,0,60.0
+Q093,Paging,60,1,60.0
+Q094,Paging,60,0,60.0
+Q095,Paging,60,1,60.0
+Q096,Paging,60,1,60.0
+Q097,Paging,60,1,60.0
+Q098,Paging,60,1,60.0
+Q099,Paging,60,1,60.0
+Q100,Paging,60,1,60.0
+Q001,Paging,100,1,100.0
+Q002,Paging,100,1,100.0
+Q003,Paging,100,0,100.0
+Q004,Paging,100,1,100.0
+Q005,Paging,100,0,100.0
+Q006,Paging,100,1,100.0
+Q007,Paging,100,1,100.0
+Q008,Paging,100,0,100.0
+Q009,Paging,100,0,100.0
+Q010,Paging,100,0,100.0
+Q011,Paging,100,1,100.0
+Q012,Paging,100,1,100.0
+Q013,Paging,100,0,100.0
+Q014,Paging,100,0,100.0
+Q015,Paging,100,0,100.0
+Q016,Paging,100,1,100.0
+Q017,Paging,100,1,100.0
+Q018,Paging,100,1,100.0
+Q019,Paging,100,1,100.0
+Q020,Paging,100,1,100.0
+Q021,Paging,100,1,100.0
+Q022,Paging,100,1,100.0
+Q023,Paging,100,0,100.0
+Q024,Paging,100,1,100.0
+Q025,Paging,100,0,100.0
+Q026,Paging,100,0,100.0
+Q027,Paging,100,1,100.0
+Q028,Paging,100,0,100.0
+Q029,Paging,100,1,100.0
+Q030,Paging,100,1,100.0
+Q031,Paging,100,1,100.0
+Q032,Paging,100,1,100.0
+Q033,Paging,100,0,100.0
+Q034,Paging,100,1,100.0
+Q035,Paging,100,1,100.0
+Q036,Paging,100,0,100.0
+Q037,Paging,100,1,100.0
+Q038,Paging,100,1,100.0
+Q039,Paging,100,1,100.0
+Q040,Paging,100,1,100.0
+Q041,Paging,100,1,100.0
+Q042,Paging,100,1,100.0
+Q043,Paging,100,1,100.0
+Q044,Paging,100,1,100.0
+Q045,Paging,100,0,100.0
+Q046,Paging,100,1,100.0
+Q047,Paging,100,1,100.0
+Q048,Paging,100,0,100.0
+Q049,Paging,100,1,100.0
+Q050,Paging,100,1,100.0
+Q051,Paging,100,1,100.0
+Q052,Paging,100,0,100.0
+Q053,Paging,100,1,100.0
+Q054,Paging,100,0,100.0
+Q055,Paging,100,1,100.0
+Q056,Paging,100,1,100.0
+Q057,Paging,100,1,100.0
+Q058,Paging,100,0,100.0
+Q059,Paging,100,1,100.0
+Q060,Paging,100,1,100.0
+Q061,Paging,100,0,100.0
+Q062,Paging,100,1,100.0
+Q063,Paging,100,0,100.0
+Q064,Paging,100,0,100.0
+Q065,Paging,100,1,100.0
+Q066,Paging,100,1,100.0
+Q067,Paging,100,1,100.0
+Q068,Paging,100,0,100.0
+Q069,Paging,100,0,100.0
+Q070,Paging,100,1,100.0
+Q071,Paging,100,1,100.0
+Q072,Paging,100,0,100.0
+Q073,Paging,100,0,100.0
+Q074,Paging,100,0,100.0
+Q075,Paging,100,0,100.0
+Q076,Paging,100,1,100.0
+Q077,Paging,100,1,100.0
+Q078,Paging,100,0,100.0
+Q079,Paging,100,0,100.0
+Q080,Paging,100,0,100.0
+Q081,Paging,100,1,100.0
+Q082,Paging,100,1,100.0
+Q083,Paging,100,0,100.0
+Q084,Paging,100,1,100.0
+Q085,Paging,100,0,100.0
+Q086,Paging,100,1,100.0
+Q087,Paging,100,0,100.0
+Q088,Paging,100,0,100.0
+Q089,Paging,100,0,100.0
+Q090,Paging,100,1,100.0
+Q091,Paging,100,1,100.0
+Q092,Paging,100,0,100.0
+Q093,Paging,100,1,100.0
+Q094,Paging,100,0,100.0
+Q095,Paging,100,1,100.0
+Q096,Paging,100,1,100.0
+Q097,Paging,100,1,100.0
+Q098,Paging,100,1,100.0
+Q099,Paging,100,1,100.0
+Q100,Paging,100,1,100.0
+Q001,Auto rerank,10,0,12.5
+Q002,Auto rerank,10,1,12.5
+Q003,Auto rerank,10,0,12.5
+Q004,Auto rerank,10,1,12.5
+Q005,Auto rerank,10,0,12.5
+Q006,Auto rerank,10,0,12.5
+Q007,Auto rerank,10,1,12.5
+Q008,Auto rerank,10,0,12.5
+Q009,Auto rerank,10,0,12.5
+Q010,Auto rerank,10,0,12.5
+Q011,Auto rerank,10,0,12.5
+Q012,Auto rerank,10,1,12.5
+Q013,Auto rerank,10,0,12.5
+Q014,Auto rerank,10,0,12.5
+Q015,Auto rerank,10,0,12.5
+Q016,Auto rerank,10,1,12.5
+Q017,Auto rerank,10,0,12.5
+Q018,Auto rerank,10,1,12.5
+Q019,Auto rerank,10,1,12.5
+Q020,Auto rerank,10,1,12.5
+Q021,Auto rerank,10,1,12.5
+Q022,Auto rerank,10,0,12.5
+Q023,Auto rerank,10,0,12.5
+Q024,Auto rerank,10,1,12.5
+Q025,Auto rerank,10,0,12.5
+Q026,Auto rerank,10,0,12.5
+Q027,Auto rerank,10,1,12.5
+Q028,Auto rerank,10,0,12.5
+Q029,Auto rerank,10,0,12.5
+Q030,Auto rerank,10,1,12.5
+Q031,Auto rerank,10,0,12.5
+Q032,Auto rerank,10,1,12.5
+Q033,Auto rerank,10,0,12.5
+Q034,Auto rerank,10,0,12.5
+Q035,Auto rerank,10,1,12.5
+Q036,Auto rerank,10,0,12.5
+Q037,Auto rerank,10,0,12.5
+Q038,Auto rerank,10,1,12.5
+Q039,Auto rerank,10,0,12.5
+Q040,Auto rerank,10,0,12.5
+Q041,Auto rerank,10,0,12.5
+Q042,Auto rerank,10,1,12.5
+Q043,Auto rerank,10,1,12.5
+Q044,Auto rerank,10,1,12.5
+Q045,Auto rerank,10,0,12.5
+Q046,Auto rerank,10,0,12.5
+Q047,Auto rerank,10,1,12.5
+Q048,Auto rerank,10,0,12.5
+Q049,Auto rerank,10,0,12.5
+Q050,Auto rerank,10,1,12.5
+Q051,Auto rerank,10,0,12.5
+Q052,Auto rerank,10,0,12.5
+Q053,Auto rerank,10,1,12.5
+Q054,Auto rerank,10,0,12.5
+Q055,Auto rerank,10,0,12.5
+Q056,Auto rerank,10,1,12.5
+Q057,Auto rerank,10,1,12.5
+Q058,Auto rerank,10,0,12.5
+Q059,Auto rerank,10,1,12.5
+Q060,Auto rerank,10,1,12.5
+Q061,Auto rerank,10,0,12.5
+Q062,Auto rerank,10,1,12.5
+Q063,Auto rerank,10,0,12.5
+Q064,Auto rerank,10,0,12.5
+Q065,Auto rerank,10,1,12.5
+Q066,Auto rerank,10,1,12.5
+Q067,Auto rerank,10,0,12.5
+Q068,Auto rerank,10,0,12.5
+Q069,Auto rerank,10,0,12.5
+Q070,Auto rerank,10,0,12.5
+Q071,Auto rerank,10,1,12.5
+Q072,Auto rerank,10,0,12.5
+Q073,Auto rerank,10,0,12.5
+Q074,Auto rerank,10,0,12.5
+Q075,Auto rerank,10,0,12.5
+Q076,Auto rerank,10,0,12.5
+Q077,Auto rerank,10,1,12.5
+Q078,Auto rerank,10,0,12.5
+Q079,Auto rerank,10,0,12.5
+Q080,Auto rerank,10,0,12.5
+Q081,Auto rerank,10,0,12.5
+Q082,Auto rerank,10,1,12.5
+Q083,Auto rerank,10,0,12.5
+Q084,Auto rerank,10,0,12.5
+Q085,Auto rerank,10,0,12.5
+Q086,Auto rerank,10,1,12.5
+Q087,Auto rerank,10,0,12.5
+Q088,Auto rerank,10,0,12.5
+Q089,Auto rerank,10,0,12.5
+Q090,Auto rerank,10,1,12.5
+Q091,Auto rerank,10,1,12.5
+Q092,Auto rerank,10,0,12.5
+Q093,Auto rerank,10,1,12.5
+Q094,Auto rerank,10,0,12.5
+Q095,Auto rerank,10,0,12.5
+Q096,Auto rerank,10,1,12.5
+Q097,Auto rerank,10,0,12.5
+Q098,Auto rerank,10,0,12.5
+Q099,Auto rerank,10,0,12.5
+Q100,Auto rerank,10,1,12.5
+Q001,Auto rerank,20,0,25.0
+Q002,Auto rerank,20,1,25.0
+Q003,Auto rerank,20,0,25.0
+Q004,Auto rerank,20,1,25.0
+Q005,Auto rerank,20,0,25.0
+Q006,Auto rerank,20,1,25.0
+Q007,Auto rerank,20,1,25.0
+Q008,Auto rerank,20,0,25.0
+Q009,Auto rerank,20,0,25.0
+Q010,Auto rerank,20,0,25.0
+Q011,Auto rerank,20,1,25.0
+Q012,Auto rerank,20,1,25.0
+Q013,Auto rerank,20,0,25.0
+Q014,Auto rerank,20,0,25.0
+Q015,Auto rerank,20,0,25.0
+Q016,Auto rerank,20,1,25.0
+Q017,Auto rerank,20,0,25.0
+Q018,Auto rerank,20,1,25.0
+Q019,Auto rerank,20,1,25.0
+Q020,Auto rerank,20,1,25.0
+Q021,Auto rerank,20,1,25.0
+Q022,Auto rerank,20,0,25.0
+Q023,Auto rerank,20,0,25.0
+Q024,Auto rerank,20,1,25.0
+Q025,Auto rerank,20,0,25.0
+Q026,Auto rerank,20,0,25.0
+Q027,Auto rerank,20,1,25.0
+Q028,Auto rerank,20,0,25.0
+Q029,Auto rerank,20,0,25.0
+Q030,Auto rerank,20,1,25.0
+Q031,Auto rerank,20,0,25.0
+Q032,Auto rerank,20,1,25.0
+Q033,Auto rerank,20,0,25.0
+Q034,Auto rerank,20,1,25.0
+Q035,Auto rerank,20,1,25.0
+Q036,Auto rerank,20,0,25.0
+Q037,Auto rerank,20,0,25.0
+Q038,Auto rerank,20,1,25.0
+Q039,Auto rerank,20,0,25.0
+Q040,Auto rerank,20,1,25.0
+Q041,Auto rerank,20,0,25.0
+Q042,Auto rerank,20,1,25.0
+Q043,Auto rerank,20,1,25.0
+Q044,Auto rerank,20,1,25.0
+Q045,Auto rerank,20,0,25.0
+Q046,Auto rerank,20,0,25.0
+Q047,Auto rerank,20,1,25.0
+Q048,Auto rerank,20,0,25.0
+Q049,Auto rerank,20,1,25.0
+Q050,Auto rerank,20,1,25.0
+Q051,Auto rerank,20,0,25.0
+Q052,Auto rerank,20,0,25.0
+Q053,Auto rerank,20,1,25.0
+Q054,Auto rerank,20,0,25.0
+Q055,Auto rerank,20,1,25.0
+Q056,Auto rerank,20,1,25.0
+Q057,Auto rerank,20,1,25.0
+Q058,Auto rerank,20,0,25.0
+Q059,Auto rerank,20,1,25.0
+Q060,Auto rerank,20,1,25.0
+Q061,Auto rerank,20,0,25.0
+Q062,Auto rerank,20,1,25.0
+Q063,Auto rerank,20,0,25.0
+Q064,Auto rerank,20,0,25.0
+Q065,Auto rerank,20,1,25.0
+Q066,Auto rerank,20,1,25.0
+Q067,Auto rerank,20,1,25.0
+Q068,Auto rerank,20,0,25.0
+Q069,Auto rerank,20,0,25.0
+Q070,Auto rerank,20,0,25.0
+Q071,Auto rerank,20,1,25.0
+Q072,Auto rerank,20,0,25.0
+Q073,Auto rerank,20,0,25.0
+Q074,Auto rerank,20,0,25.0
+Q075,Auto rerank,20,0,25.0
+Q076,Auto rerank,20,1,25.0
+Q077,Auto rerank,20,1,25.0
+Q078,Auto rerank,20,0,25.0
+Q079,Auto rerank,20,0,25.0
+Q080,Auto rerank,20,0,25.0
+Q081,Auto rerank,20,1,25.0
+Q082,Auto rerank,20,1,25.0
+Q083,Auto rerank,20,0,25.0
+Q084,Auto rerank,20,1,25.0
+Q085,Auto rerank,20,0,25.0
+Q086,Auto rerank,20,1,25.0
+Q087,Auto rerank,20,0,25.0
+Q088,Auto rerank,20,0,25.0
+Q089,Auto rerank,20,0,25.0
+Q090,Auto rerank,20,1,25.0
+Q091,Auto rerank,20,1,25.0
+Q092,Auto rerank,20,0,25.0
+Q093,Auto rerank,20,1,25.0
+Q094,Auto rerank,20,0,25.0
+Q095,Auto rerank,20,0,25.0
+Q096,Auto rerank,20,1,25.0
+Q097,Auto rerank,20,1,25.0
+Q098,Auto rerank,20,0,25.0
+Q099,Auto rerank,20,1,25.0
+Q100,Auto rerank,20,1,25.0
+Q001,Auto rerank,40,1,50.0
+Q002,Auto rerank,40,1,50.0
+Q003,Auto rerank,40,0,50.0
+Q004,Auto rerank,40,1,50.0
+Q005,Auto rerank,40,0,50.0
+Q006,Auto rerank,40,1,50.0
+Q007,Auto rerank,40,1,50.0
+Q008,Auto rerank,40,0,50.0
+Q009,Auto rerank,40,0,50.0
+Q010,Auto rerank,40,0,50.0
+Q011,Auto rerank,40,1,50.0
+Q012,Auto rerank,40,1,50.0
+Q013,Auto rerank,40,0,50.0
+Q014,Auto rerank,40,0,50.0
+Q015,Auto rerank,40,0,50.0
+Q016,Auto rerank,40,1,50.0
+Q017,Auto rerank,40,1,50.0
+Q018,Auto rerank,40,1,50.0
+Q019,Auto rerank,40,1,50.0
+Q020,Auto rerank,40,1,50.0
+Q021,Auto rerank,40,1,50.0
+Q022,Auto rerank,40,1,50.0
+Q023,Auto rerank,40,0,50.0
+Q024,Auto rerank,40,1,50.0
+Q025,Auto rerank,40,0,50.0
+Q026,Auto rerank,40,0,50.0
+Q027,Auto rerank,40,1,50.0
+Q028,Auto rerank,40,0,50.0
+Q029,Auto rerank,40,1,50.0
+Q030,Auto rerank,40,1,50.0
+Q031,Auto rerank,40,1,50.0
+Q032,Auto rerank,40,1,50.0
+Q033,Auto rerank,40,0,50.0
+Q034,Auto rerank,40,1,50.0
+Q035,Auto rerank,40,1,50.0
+Q036,Auto rerank,40,0,50.0
+Q037,Auto rerank,40,0,50.0
+Q038,Auto rerank,40,1,50.0
+Q039,Auto rerank,40,0,50.0
+Q040,Auto rerank,40,1,50.0
+Q041,Auto rerank,40,1,50.0
+Q042,Auto rerank,40,1,50.0
+Q043,Auto rerank,40,1,50.0
+Q044,Auto rerank,40,1,50.0
+Q045,Auto rerank,40,0,50.0
+Q046,Auto rerank,40,1,50.0
+Q047,Auto rerank,40,1,50.0
+Q048,Auto rerank,40,0,50.0
+Q049,Auto rerank,40,1,50.0
+Q050,Auto rerank,40,1,50.0
+Q051,Auto rerank,40,0,50.0
+Q052,Auto rerank,40,0,50.0
+Q053,Auto rerank,40,1,50.0
+Q054,Auto rerank,40,0,50.0
+Q055,Auto rerank,40,1,50.0
+Q056,Auto rerank,40,1,50.0
+Q057,Auto rerank,40,1,50.0
+Q058,Auto rerank,40,0,50.0
+Q059,Auto rerank,40,1,50.0
+Q060,Auto rerank,40,1,50.0
+Q061,Auto rerank,40,0,50.0
+Q062,Auto rerank,40,1,50.0
+Q063,Auto rerank,40,0,50.0
+Q064,Auto rerank,40,0,50.0
+Q065,Auto rerank,40,1,50.0
+Q066,Auto rerank,40,1,50.0
+Q067,Auto rerank,40,1,50.0
+Q068,Auto rerank,40,0,50.0
+Q069,Auto rerank,40,0,50.0
+Q070,Auto rerank,40,0,50.0
+Q071,Auto rerank,40,1,50.0
+Q072,Auto rerank,40,0,50.0
+Q073,Auto rerank,40,0,50.0
+Q074,Auto rerank,40,0,50.0
+Q075,Auto rerank,40,0,50.0
+Q076,Auto rerank,40,1,50.0
+Q077,Auto rerank,40,1,50.0
+Q078,Auto rerank,40,0,50.0
+Q079,Auto rerank,40,0,50.0
+Q080,Auto rerank,40,0,50.0
+Q081,Auto rerank,40,1,50.0
+Q082,Auto rerank,40,1,50.0
+Q083,Auto rerank,40,0,50.0
+Q084,Auto rerank,40,1,50.0
+Q085,Auto rerank,40,0,50.0
+Q086,Auto rerank,40,1,50.0
+Q087,Auto rerank,40,0,50.0
+Q088,Auto rerank,40,0,50.0
+Q089,Auto rerank,40,0,50.0
+Q090,Auto rerank,40,1,50.0
+Q091,Auto rerank,40,1,50.0
+Q092,Auto rerank,40,0,50.0
+Q093,Auto rerank,40,1,50.0
+Q094,Auto rerank,40,0,50.0
+Q095,Auto rerank,40,1,50.0
+Q096,Auto rerank,40,1,50.0
+Q097,Auto rerank,40,1,50.0
+Q098,Auto rerank,40,1,50.0
+Q099,Auto rerank,40,1,50.0
+Q100,Auto rerank,40,1,50.0
+Q001,Auto rerank,60,1,75.0
+Q002,Auto rerank,60,1,75.0
+Q003,Auto rerank,60,0,75.0
+Q004,Auto rerank,60,1,75.0
+Q005,Auto rerank,60,0,75.0
+Q006,Auto rerank,60,1,75.0
+Q007,Auto rerank,60,1,75.0
+Q008,Auto rerank,60,0,75.0
+Q009,Auto rerank,60,0,75.0
+Q010,Auto rerank,60,0,75.0
+Q011,Auto rerank,60,1,75.0
+Q012,Auto rerank,60,1,75.0
+Q013,Auto rerank,60,0,75.0
+Q014,Auto rerank,60,0,75.0
+Q015,Auto rerank,60,0,75.0
+Q016,Auto rerank,60,1,75.0
+Q017,Auto rerank,60,1,75.0
+Q018,Auto rerank,60,1,75.0
+Q019,Auto rerank,60,1,75.0
+Q020,Auto rerank,60,1,75.0
+Q021,Auto rerank,60,1,75.0
+Q022,Auto rerank,60,1,75.0
+Q023,Auto rerank,60,0,75.0
+Q024,Auto rerank,60,1,75.0
+Q025,Auto rerank,60,0,75.0
+Q026,Auto rerank,60,0,75.0
+Q027,Auto rerank,60,1,75.0
+Q028,Auto rerank,60,0,75.0
+Q029,Auto rerank,60,1,75.0
+Q030,Auto rerank,60,1,75.0
+Q031,Auto rerank,60,1,75.0
+Q032,Auto rerank,60,1,75.0
+Q033,Auto rerank,60,0,75.0
+Q034,Auto rerank,60,1,75.0
+Q035,Auto rerank,60,1,75.0
+Q036,Auto rerank,60,0,75.0
+Q037,Auto rerank,60,1,75.0
+Q038,Auto rerank,60,1,75.0
+Q039,Auto rerank,60,1,75.0
+Q040,Auto rerank,60,1,75.0
+Q041,Auto rerank,60,1,75.0
+Q042,Auto rerank,60,1,75.0
+Q043,Auto rerank,60,1,75.0
+Q044,Auto rerank,60,1,75.0
+Q045,Auto rerank,60,0,75.0
+Q046,Auto rerank,60,1,75.0
+Q047,Auto rerank,60,1,75.0
+Q048,Auto rerank,60,0,75.0
+Q049,Auto rerank,60,1,75.0
+Q050,Auto rerank,60,1,75.0
+Q051,Auto rerank,60,1,75.0
+Q052,Auto rerank,60,0,75.0
+Q053,Auto rerank,60,1,75.0
+Q054,Auto rerank,60,0,75.0
+Q055,Auto rerank,60,1,75.0
+Q056,Auto rerank,60,1,75.0
+Q057,Auto rerank,60,1,75.0
+Q058,Auto rerank,60,0,75.0
+Q059,Auto rerank,60,1,75.0
+Q060,Auto rerank,60,1,75.0
+Q061,Auto rerank,60,0,75.0
+Q062,Auto rerank,60,1,75.0
+Q063,Auto rerank,60,0,75.0
+Q064,Auto rerank,60,0,75.0
+Q065,Auto rerank,60,1,75.0
+Q066,Auto rerank,60,1,75.0
+Q067,Auto rerank,60,1,75.0
+Q068,Auto rerank,60,0,75.0
+Q069,Auto rerank,60,0,75.0
+Q070,Auto rerank,60,1,75.0
+Q071,Auto rerank,60,1,75.0
+Q072,Auto rerank,60,0,75.0
+Q073,Auto rerank,60,0,75.0
+Q074,Auto rerank,60,0,75.0
+Q075,Auto rerank,60,0,75.0
+Q076,Auto rerank,60,1,75.0
+Q077,Auto rerank,60,1,75.0
+Q078,Auto rerank,60,0,75.0
+Q079,Auto rerank,60,0,75.0
+Q080,Auto rerank,60,0,75.0
+Q081,Auto rerank,60,1,75.0
+Q082,Auto rerank,60,1,75.0
+Q083,Auto rerank,60,0,75.0
+Q084,Auto rerank,60,1,75.0
+Q085,Auto rerank,60,0,75.0
+Q086,Auto rerank,60,1,75.0
+Q087,Auto rerank,60,0,75.0
+Q088,Auto rerank,60,0,75.0
+Q089,Auto rerank,60,0,75.0
+Q090,Auto rerank,60,1,75.0
+Q091,Auto rerank,60,1,75.0
+Q092,Auto rerank,60,0,75.0
+Q093,Auto rerank,60,1,75.0
+Q094,Auto rerank,60,0,75.0
+Q095,Auto rerank,60,1,75.0
+Q096,Auto rerank,60,1,75.0
+Q097,Auto rerank,60,1,75.0
+Q098,Auto rerank,60,1,75.0
+Q099,Auto rerank,60,1,75.0
+Q100,Auto rerank,60,1,75.0
+Q001,Auto rerank,100,1,125.0
+Q002,Auto rerank,100,1,125.0
+Q003,Auto rerank,100,0,125.0
+Q004,Auto rerank,100,1,125.0
+Q005,Auto rerank,100,0,125.0
+Q006,Auto rerank,100,1,125.0
+Q007,Auto rerank,100,1,125.0
+Q008,Auto rerank,100,0,125.0
+Q009,Auto rerank,100,1,125.0
+Q010,Auto rerank,100,0,125.0
+Q011,Auto rerank,100,1,125.0
+Q012,Auto rerank,100,1,125.0
+Q013,Auto rerank,100,0,125.0
+Q014,Auto rerank,100,0,125.0
+Q015,Auto rerank,100,0,125.0
+Q016,Auto rerank,100,1,125.0
+Q017,Auto rerank,100,1,125.0
+Q018,Auto rerank,100,1,125.0
+Q019,Auto rerank,100,1,125.0
+Q020,Auto rerank,100,1,125.0
+Q021,Auto rerank,100,1,125.0
+Q022,Auto rerank,100,1,125.0
+Q023,Auto rerank,100,0,125.0
+Q024,Auto rerank,100,1,125.0
+Q025,Auto rerank,100,0,125.0
+Q026,Auto rerank,100,0,125.0
+Q027,Auto rerank,100,1,125.0
+Q028,Auto rerank,100,0,125.0
+Q029,Auto rerank,100,1,125.0
+Q030,Auto rerank,100,1,125.0
+Q031,Auto rerank,100,1,125.0
+Q032,Auto rerank,100,1,125.0
+Q033,Auto rerank,100,0,125.0
+Q034,Auto rerank,100,1,125.0
+Q035,Auto rerank,100,1,125.0
+Q036,Auto rerank,100,0,125.0
+Q037,Auto rerank,100,1,125.0
+Q038,Auto rerank,100,1,125.0
+Q039,Auto rerank,100,1,125.0
+Q040,Auto rerank,100,1,125.0
+Q041,Auto rerank,100,1,125.0
+Q042,Auto rerank,100,1,125.0
+Q043,Auto rerank,100,1,125.0
+Q044,Auto rerank,100,1,125.0
+Q045,Auto rerank,100,0,125.0
+Q046,Auto rerank,100,1,125.0
+Q047,Auto rerank,100,1,125.0
+Q048,Auto rerank,100,0,125.0
+Q049,Auto rerank,100,1,125.0
+Q050,Auto rerank,100,1,125.0
+Q051,Auto rerank,100,1,125.0
+Q052,Auto rerank,100,0,125.0
+Q053,Auto rerank,100,1,125.0
+Q054,Auto rerank,100,0,125.0
+Q055,Auto rerank,100,1,125.0
+Q056,Auto rerank,100,1,125.0
+Q057,Auto rerank,100,1,125.0
+Q058,Auto rerank,100,0,125.0
+Q059,Auto rerank,100,1,125.0
+Q060,Auto rerank,100,1,125.0
+Q061,Auto rerank,100,0,125.0
+Q062,Auto rerank,100,1,125.0
+Q063,Auto rerank,100,1,125.0
+Q064,Auto rerank,100,0,125.0
+Q065,Auto rerank,100,1,125.0
+Q066,Auto rerank,100,1,125.0
+Q067,Auto rerank,100,1,125.0
+Q068,Auto rerank,100,0,125.0
+Q069,Auto rerank,100,0,125.0
+Q070,Auto rerank,100,1,125.0
+Q071,Auto rerank,100,1,125.0
+Q072,Auto rerank,100,0,125.0
+Q073,Auto rerank,100,0,125.0
+Q074,Auto rerank,100,0,125.0
+Q075,Auto rerank,100,0,125.0
+Q076,Auto rerank,100,1,125.0
+Q077,Auto rerank,100,1,125.0
+Q078,Auto rerank,100,1,125.0
+Q079,Auto rerank,100,0,125.0
+Q080,Auto rerank,100,0,125.0
+Q081,Auto rerank,100,1,125.0
+Q082,Auto rerank,100,1,125.0
+Q083,Auto rerank,100,0,125.0
+Q084,Auto rerank,100,1,125.0
+Q085,Auto rerank,100,0,125.0
+Q086,Auto rerank,100,1,125.0
+Q087,Auto rerank,100,0,125.0
+Q088,Auto rerank,100,0,125.0
+Q089,Auto rerank,100,0,125.0
+Q090,Auto rerank,100,1,125.0
+Q091,Auto rerank,100,1,125.0
+Q092,Auto rerank,100,0,125.0
+Q093,Auto rerank,100,1,125.0
+Q094,Auto rerank,100,0,125.0
+Q095,Auto rerank,100,1,125.0
+Q096,Auto rerank,100,1,125.0
+Q097,Auto rerank,100,1,125.0
+Q098,Auto rerank,100,1,125.0
+Q099,Auto rerank,100,1,125.0
+Q100,Auto rerank,100,1,125.0
+Q001,Agent rerank,10,0,10.0
+Q002,Agent rerank,10,1,10.0
+Q003,Agent rerank,10,0,10.0
+Q004,Agent rerank,10,1,10.0
+Q005,Agent rerank,10,0,10.0
+Q006,Agent rerank,10,0,10.0
+Q007,Agent rerank,10,1,10.0
+Q008,Agent rerank,10,0,10.0
+Q009,Agent rerank,10,0,10.0
+Q010,Agent rerank,10,0,10.0
+Q011,Agent rerank,10,0,10.0
+Q012,Agent rerank,10,1,10.0
+Q013,Agent rerank,10,0,10.0
+Q014,Agent rerank,10,0,10.0
+Q015,Agent rerank,10,0,10.0
+Q016,Agent rerank,10,1,10.0
+Q017,Agent rerank,10,0,10.0
+Q018,Agent rerank,10,1,10.0
+Q019,Agent rerank,10,1,10.0
+Q020,Agent rerank,10,1,10.0
+Q021,Agent rerank,10,1,10.0
+Q022,Agent rerank,10,0,10.0
+Q023,Agent rerank,10,0,10.0
+Q024,Agent rerank,10,1,10.0
+Q025,Agent rerank,10,0,10.0
+Q026,Agent rerank,10,0,10.0
+Q027,Agent rerank,10,1,10.0
+Q028,Agent rerank,10,0,10.0
+Q029,Agent rerank,10,0,10.0
+Q030,Agent rerank,10,1,10.0
+Q031,Agent rerank,10,0,10.0
+Q032,Agent rerank,10,1,10.0
+Q033,Agent rerank,10,0,10.0
+Q034,Agent rerank,10,0,10.0
+Q035,Agent rerank,10,1,10.0
+Q036,Agent rerank,10,0,10.0
+Q037,Agent rerank,10,0,10.0
+Q038,Agent rerank,10,1,10.0
+Q039,Agent rerank,10,0,10.0
+Q040,Agent rerank,10,0,10.0
+Q041,Agent rerank,10,0,10.0
+Q042,Agent rerank,10,1,10.0
+Q043,Agent rerank,10,1,10.0
+Q044,Agent rerank,10,1,10.0
+Q045,Agent rerank,10,0,10.0
+Q046,Agent rerank,10,0,10.0
+Q047,Agent rerank,10,1,10.0
+Q048,Agent rerank,10,0,10.0
+Q049,Agent rerank,10,1,10.0
+Q050,Agent rerank,10,1,10.0
+Q051,Agent rerank,10,0,10.0
+Q052,Agent rerank,10,0,10.0
+Q053,Agent rerank,10,1,10.0
+Q054,Agent rerank,10,0,10.0
+Q055,Agent rerank,10,0,10.0
+Q056,Agent rerank,10,1,10.0
+Q057,Agent rerank,10,1,10.0
+Q058,Agent rerank,10,0,10.0
+Q059,Agent rerank,10,1,10.0
+Q060,Agent rerank,10,1,10.0
+Q061,Agent rerank,10,0,10.0
+Q062,Agent rerank,10,1,10.0
+Q063,Agent rerank,10,0,10.0
+Q064,Agent rerank,10,0,10.0
+Q065,Agent rerank,10,1,10.0
+Q066,Agent rerank,10,1,10.0
+Q067,Agent rerank,10,0,10.0
+Q068,Agent rerank,10,0,10.0
+Q069,Agent rerank,10,0,10.0
+Q070,Agent rerank,10,0,10.0
+Q071,Agent rerank,10,1,10.0
+Q072,Agent rerank,10,0,10.0
+Q073,Agent rerank,10,0,10.0
+Q074,Agent rerank,10,0,10.0
+Q075,Agent rerank,10,0,10.0
+Q076,Agent rerank,10,1,10.0
+Q077,Agent rerank,10,1,10.0
+Q078,Agent rerank,10,0,10.0
+Q079,Agent rerank,10,0,10.0
+Q080,Agent rerank,10,0,10.0
+Q081,Agent rerank,10,0,10.0
+Q082,Agent rerank,10,1,10.0
+Q083,Agent rerank,10,0,10.0
+Q084,Agent rerank,10,1,10.0
+Q085,Agent rerank,10,0,10.0
+Q086,Agent rerank,10,1,10.0
+Q087,Agent rerank,10,0,10.0
+Q088,Agent rerank,10,0,10.0
+Q089,Agent rerank,10,0,10.0
+Q090,Agent rerank,10,1,10.0
+Q091,Agent rerank,10,1,10.0
+Q092,Agent rerank,10,0,10.0
+Q093,Agent rerank,10,1,10.0
+Q094,Agent rerank,10,0,10.0
+Q095,Agent rerank,10,0,10.0
+Q096,Agent rerank,10,1,10.0
+Q097,Agent rerank,10,0,10.0
+Q098,Agent rerank,10,0,10.0
+Q099,Agent rerank,10,1,10.0
+Q100,Agent rerank,10,1,10.0
+Q001,Agent rerank,20,0,20.0
+Q002,Agent rerank,20,1,20.0
+Q003,Agent rerank,20,0,20.0
+Q004,Agent rerank,20,1,20.0
+Q005,Agent rerank,20,0,20.0
+Q006,Agent rerank,20,1,20.0
+Q007,Agent rerank,20,1,20.0
+Q008,Agent rerank,20,0,20.0
+Q009,Agent rerank,20,0,20.0
+Q010,Agent rerank,20,0,20.0
+Q011,Agent rerank,20,1,20.0
+Q012,Agent rerank,20,1,20.0
+Q013,Agent rerank,20,0,20.0
+Q014,Agent rerank,20,0,20.0
+Q015,Agent rerank,20,0,20.0
+Q016,Agent rerank,20,1,20.0
+Q017,Agent rerank,20,1,20.0
+Q018,Agent rerank,20,1,20.0
+Q019,Agent rerank,20,1,20.0
+Q020,Agent rerank,20,1,20.0
+Q021,Agent rerank,20,1,20.0
+Q022,Agent rerank,20,1,20.0
+Q023,Agent rerank,20,0,20.0
+Q024,Agent rerank,20,1,20.0
+Q025,Agent rerank,20,0,20.0
+Q026,Agent rerank,20,0,20.0
+Q027,Agent rerank,20,1,20.0
+Q028,Agent rerank,20,0,20.0
+Q029,Agent rerank,20,1,20.0
+Q030,Agent rerank,20,1,20.0
+Q031,Agent rerank,20,1,20.0
+Q032,Agent rerank,20,1,20.0
+Q033,Agent rerank,20,0,20.0
+Q034,Agent rerank,20,1,20.0
+Q035,Agent rerank,20,1,20.0
+Q036,Agent rerank,20,0,20.0
+Q037,Agent rerank,20,0,20.0
+Q038,Agent rerank,20,1,20.0
+Q039,Agent rerank,20,0,20.0
+Q040,Agent rerank,20,1,20.0
+Q041,Agent rerank,20,0,20.0
+Q042,Agent rerank,20,1,20.0
+Q043,Agent rerank,20,1,20.0
+Q044,Agent rerank,20,1,20.0
+Q045,Agent rerank,20,0,20.0
+Q046,Agent rerank,20,1,20.0
+Q047,Agent rerank,20,1,20.0
+Q048,Agent rerank,20,0,20.0
+Q049,Agent rerank,20,1,20.0
+Q050,Agent rerank,20,1,20.0
+Q051,Agent rerank,20,0,20.0
+Q052,Agent rerank,20,0,20.0
+Q053,Agent rerank,20,1,20.0
+Q054,Agent rerank,20,0,20.0
+Q055,Agent rerank,20,1,20.0
+Q056,Agent rerank,20,1,20.0
+Q057,Agent rerank,20,1,20.0
+Q058,Agent rerank,20,0,20.0
+Q059,Agent rerank,20,1,20.0
+Q060,Agent rerank,20,1,20.0
+Q061,Agent rerank,20,0,20.0
+Q062,Agent rerank,20,1,20.0
+Q063,Agent rerank,20,0,20.0
+Q064,Agent rerank,20,0,20.0
+Q065,Agent rerank,20,1,20.0
+Q066,Agent rerank,20,1,20.0
+Q067,Agent rerank,20,1,20.0
+Q068,Agent rerank,20,0,20.0
+Q069,Agent rerank,20,0,20.0
+Q070,Agent rerank,20,0,20.0
+Q071,Agent rerank,20,1,20.0
+Q072,Agent rerank,20,0,20.0
+Q073,Agent rerank,20,0,20.0
+Q074,Agent rerank,20,0,20.0
+Q075,Agent rerank,20,0,20.0
+Q076,Agent rerank,20,1,20.0
+Q077,Agent rerank,20,1,20.0
+Q078,Agent rerank,20,0,20.0
+Q079,Agent rerank,20,0,20.0
+Q080,Agent rerank,20,0,20.0
+Q081,Agent rerank,20,1,20.0
+Q082,Agent rerank,20,1,20.0
+Q083,Agent rerank,20,0,20.0
+Q084,Agent rerank,20,1,20.0
+Q085,Agent rerank,20,0,20.0
+Q086,Agent rerank,20,1,20.0
+Q087,Agent rerank,20,0,20.0
+Q088,Agent rerank,20,0,20.0
+Q089,Agent rerank,20,0,20.0
+Q090,Agent rerank,20,1,20.0
+Q091,Agent rerank,20,1,20.0
+Q092,Agent rerank,20,0,20.0
+Q093,Agent rerank,20,1,20.0
+Q094,Agent rerank,20,0,20.0
+Q095,Agent rerank,20,1,20.0
+Q096,Agent rerank,20,1,20.0
+Q097,Agent rerank,20,1,20.0
+Q098,Agent rerank,20,0,20.0
+Q099,Agent rerank,20,1,20.0
+Q100,Agent rerank,20,1,20.0
+Q001,Agent rerank,40,1,40.0
+Q002,Agent rerank,40,1,40.0
+Q003,Agent rerank,40,0,40.0
+Q004,Agent rerank,40,1,40.0
+Q005,Agent rerank,40,0,40.0
+Q006,Agent rerank,40,1,40.0
+Q007,Agent rerank,40,1,40.0
+Q008,Agent rerank,40,0,40.0
+Q009,Agent rerank,40,0,40.0
+Q010,Agent rerank,40,0,40.0
+Q011,Agent rerank,40,1,40.0
+Q012,Agent rerank,40,1,40.0
+Q013,Agent rerank,40,0,40.0
+Q014,Agent rerank,40,0,40.0
+Q015,Agent rerank,40,0,40.0
+Q016,Agent rerank,40,1,40.0
+Q017,Agent rerank,40,1,40.0
+Q018,Agent rerank,40,1,40.0
+Q019,Agent rerank,40,1,40.0
+Q020,Agent rerank,40,1,40.0
+Q021,Agent rerank,40,1,40.0
+Q022,Agent rerank,40,1,40.0
+Q023,Agent rerank,40,0,40.0
+Q024,Agent rerank,40,1,40.0
+Q025,Agent rerank,40,0,40.0
+Q026,Agent rerank,40,0,40.0
+Q027,Agent rerank,40,1,40.0
+Q028,Agent rerank,40,0,40.0
+Q029,Agent rerank,40,1,40.0
+Q030,Agent rerank,40,1,40.0
+Q031,Agent rerank,40,1,40.0
+Q032,Agent rerank,40,1,40.0
+Q033,Agent rerank,40,0,40.0
+Q034,Agent rerank,40,1,40.0
+Q035,Agent rerank,40,1,40.0
+Q036,Agent rerank,40,0,40.0
+Q037,Agent rerank,40,1,40.0
+Q038,Agent rerank,40,1,40.0
+Q039,Agent rerank,40,1,40.0
+Q040,Agent rerank,40,1,40.0
+Q041,Agent rerank,40,1,40.0
+Q042,Agent rerank,40,1,40.0
+Q043,Agent rerank,40,1,40.0
+Q044,Agent rerank,40,1,40.0
+Q045,Agent rerank,40,0,40.0
+Q046,Agent rerank,40,1,40.0
+Q047,Agent rerank,40,1,40.0
+Q048,Agent rerank,40,0,40.0
+Q049,Agent rerank,40,1,40.0
+Q050,Agent rerank,40,1,40.0
+Q051,Agent rerank,40,0,40.0
+Q052,Agent rerank,40,0,40.0
+Q053,Agent rerank,40,1,40.0
+Q054,Agent rerank,40,0,40.0
+Q055,Agent rerank,40,1,40.0
+Q056,Agent rerank,40,1,40.0
+Q057,Agent rerank,40,1,40.0
+Q058,Agent rerank,40,0,40.0
+Q059,Agent rerank,40,1,40.0
+Q060,Agent rerank,40,1,40.0
+Q061,Agent rerank,40,0,40.0
+Q062,Agent rerank,40,1,40.0
+Q063,Agent rerank,40,0,40.0
+Q064,Agent rerank,40,0,40.0
+Q065,Agent rerank,40,1,40.0
+Q066,Agent rerank,40,1,40.0
+Q067,Agent rerank,40,1,40.0
+Q068,Agent rerank,40,0,40.0
+Q069,Agent rerank,40,0,40.0
+Q070,Agent rerank,40,1,40.0
+Q071,Agent rerank,40,1,40.0
+Q072,Agent rerank,40,0,40.0
+Q073,Agent rerank,40,0,40.0
+Q074,Agent rerank,40,0,40.0
+Q075,Agent rerank,40,0,40.0
+Q076,Agent rerank,40,1,40.0
+Q077,Agent rerank,40,1,40.0
+Q078,Agent rerank,40,0,40.0
+Q079,Agent rerank,40,0,40.0
+Q080,Agent rerank,40,0,40.0
+Q081,Agent rerank,40,1,40.0
+Q082,Agent rerank,40,1,40.0
+Q083,Agent rerank,40,0,40.0
+Q084,Agent rerank,40,1,40.0
+Q085,Agent rerank,40,0,40.0
+Q086,Agent rerank,40,1,40.0
+Q087,Agent rerank,40,0,40.0
+Q088,Agent rerank,40,0,40.0
+Q089,Agent rerank,40,0,40.0
+Q090,Agent rerank,40,1,40.0
+Q091,Agent rerank,40,1,40.0
+Q092,Agent rerank,40,0,40.0
+Q093,Agent rerank,40,1,40.0
+Q094,Agent rerank,40,0,40.0
+Q095,Agent rerank,40,1,40.0
+Q096,Agent rerank,40,1,40.0
+Q097,Agent rerank,40,1,40.0
+Q098,Agent rerank,40,1,40.0
+Q099,Agent rerank,40,1,40.0
+Q100,Agent rerank,40,1,40.0
+Q001,Agent rerank,60,1,60.0
+Q002,Agent rerank,60,1,60.0
+Q003,Agent rerank,60,0,60.0
+Q004,Agent rerank,60,1,60.0
+Q005,Agent rerank,60,0,60.0
+Q006,Agent rerank,60,1,60.0
+Q007,Agent rerank,60,1,60.0
+Q008,Agent rerank,60,0,60.0
+Q009,Agent rerank,60,1,60.0
+Q010,Agent rerank,60,0,60.0
+Q011,Agent rerank,60,1,60.0
+Q012,Agent rerank,60,1,60.0
+Q013,Agent rerank,60,0,60.0
+Q014,Agent rerank,60,0,60.0
+Q015,Agent rerank,60,0,60.0
+Q016,Agent rerank,60,1,60.0
+Q017,Agent rerank,60,1,60.0
+Q018,Agent rerank,60,1,60.0
+Q019,Agent rerank,60,1,60.0
+Q020,Agent rerank,60,1,60.0
+Q021,Agent rerank,60,1,60.0
+Q022,Agent rerank,60,1,60.0
+Q023,Agent rerank,60,0,60.0
+Q024,Agent rerank,60,1,60.0
+Q025,Agent rerank,60,0,60.0
+Q026,Agent rerank,60,0,60.0
+Q027,Agent rerank,60,1,60.0
+Q028,Agent rerank,60,0,60.0
+Q029,Agent rerank,60,1,60.0
+Q030,Agent rerank,60,1,60.0
+Q031,Agent rerank,60,1,60.0
+Q032,Agent rerank,60,1,60.0
+Q033,Agent rerank,60,0,60.0
+Q034,Agent rerank,60,1,60.0
+Q035,Agent rerank,60,1,60.0
+Q036,Agent rerank,60,0,60.0
+Q037,Agent rerank,60,1,60.0
+Q038,Agent rerank,60,1,60.0
+Q039,Agent rerank,60,1,60.0
+Q040,Agent rerank,60,1,60.0
+Q041,Agent rerank,60,1,60.0
+Q042,Agent rerank,60,1,60.0
+Q043,Agent rerank,60,1,60.0
+Q044,Agent rerank,60,1,60.0
+Q045,Agent rerank,60,0,60.0
+Q046,Agent rerank,60,1,60.0
+Q047,Agent rerank,60,1,60.0
+Q048,Agent rerank,60,0,60.0
+Q049,Agent rerank,60,1,60.0
+Q050,Agent rerank,60,1,60.0
+Q051,Agent rerank,60,1,60.0
+Q052,Agent rerank,60,0,60.0
+Q053,Agent rerank,60,1,60.0
+Q054,Agent rerank,60,0,60.0
+Q055,Agent rerank,60,1,60.0
+Q056,Agent rerank,60,1,60.0
+Q057,Agent rerank,60,1,60.0
+Q058,Agent rerank,60,0,60.0
+Q059,Agent rerank,60,1,60.0
+Q060,Agent rerank,60,1,60.0
+Q061,Agent rerank,60,0,60.0
+Q062,Agent rerank,60,1,60.0
+Q063,Agent rerank,60,1,60.0
+Q064,Agent rerank,60,0,60.0
+Q065,Agent rerank,60,1,60.0
+Q066,Agent rerank,60,1,60.0
+Q067,Agent rerank,60,1,60.0
+Q068,Agent rerank,60,0,60.0
+Q069,Agent rerank,60,0,60.0
+Q070,Agent rerank,60,1,60.0
+Q071,Agent rerank,60,1,60.0
+Q072,Agent rerank,60,0,60.0
+Q073,Agent rerank,60,0,60.0
+Q074,Agent rerank,60,0,60.0
+Q075,Agent rerank,60,0,60.0
+Q076,Agent rerank,60,1,60.0
+Q077,Agent rerank,60,1,60.0
+Q078,Agent rerank,60,1,60.0
+Q079,Agent rerank,60,0,60.0
+Q080,Agent rerank,60,0,60.0
+Q081,Agent rerank,60,1,60.0
+Q082,Agent rerank,60,1,60.0
+Q083,Agent rerank,60,0,60.0
+Q084,Agent rerank,60,1,60.0
+Q085,Agent rerank,60,0,60.0
+Q086,Agent rerank,60,1,60.0
+Q087,Agent rerank,60,0,60.0
+Q088,Agent rerank,60,0,60.0
+Q089,Agent rerank,60,0,60.0
+Q090,Agent rerank,60,1,60.0
+Q091,Agent rerank,60,1,60.0
+Q092,Agent rerank,60,0,60.0
+Q093,Agent rerank,60,1,60.0
+Q094,Agent rerank,60,0,60.0
+Q095,Agent rerank,60,1,60.0
+Q096,Agent rerank,60,1,60.0
+Q097,Agent rerank,60,1,60.0
+Q098,Agent rerank,60,1,60.0
+Q099,Agent rerank,60,1,60.0
+Q100,Agent rerank,60,1,60.0
+Q001,Agent rerank,100,1,100.0
+Q002,Agent rerank,100,1,100.0
+Q003,Agent rerank,100,0,100.0
+Q004,Agent rerank,100,1,100.0
+Q005,Agent rerank,100,0,100.0
+Q006,Agent rerank,100,1,100.0
+Q007,Agent rerank,100,1,100.0
+Q008,Agent rerank,100,0,100.0
+Q009,Agent rerank,100,1,100.0
+Q010,Agent rerank,100,1,100.0
+Q011,Agent rerank,100,1,100.0
+Q012,Agent rerank,100,1,100.0
+Q013,Agent rerank,100,0,100.0
+Q014,Agent rerank,100,0,100.0
+Q015,Agent rerank,100,0,100.0
+Q016,Agent rerank,100,1,100.0
+Q017,Agent rerank,100,1,100.0
+Q018,Agent rerank,100,1,100.0
+Q019,Agent rerank,100,1,100.0
+Q020,Agent rerank,100,1,100.0
+Q021,Agent rerank,100,1,100.0
+Q022,Agent rerank,100,1,100.0
+Q023,Agent rerank,100,1,100.0
+Q024,Agent rerank,100,1,100.0
+Q025,Agent rerank,100,0,100.0
+Q026,Agent rerank,100,0,100.0
+Q027,Agent rerank,100,1,100.0
+Q028,Agent rerank,100,0,100.0
+Q029,Agent rerank,100,1,100.0
+Q030,Agent rerank,100,1,100.0
+Q031,Agent rerank,100,1,100.0
+Q032,Agent rerank,100,1,100.0
+Q033,Agent rerank,100,0,100.0
+Q034,Agent rerank,100,1,100.0
+Q035,Agent rerank,100,1,100.0
+Q036,Agent rerank,100,0,100.0
+Q037,Agent rerank,100,1,100.0
+Q038,Agent rerank,100,1,100.0
+Q039,Agent rerank,100,1,100.0
+Q040,Agent rerank,100,1,100.0
+Q041,Agent rerank,100,1,100.0
+Q042,Agent rerank,100,1,100.0
+Q043,Agent rerank,100,1,100.0
+Q044,Agent rerank,100,1,100.0
+Q045,Agent rerank,100,0,100.0
+Q046,Agent rerank,100,1,100.0
+Q047,Agent rerank,100,1,100.0
+Q048,Agent rerank,100,1,100.0
+Q049,Agent rerank,100,1,100.0
+Q050,Agent rerank,100,1,100.0
+Q051,Agent rerank,100,1,100.0
+Q052,Agent rerank,100,0,100.0
+Q053,Agent rerank,100,1,100.0
+Q054,Agent rerank,100,0,100.0
+Q055,Agent rerank,100,1,100.0
+Q056,Agent rerank,100,1,100.0
+Q057,Agent rerank,100,1,100.0
+Q058,Agent rerank,100,1,100.0
+Q059,Agent rerank,100,1,100.0
+Q060,Agent rerank,100,1,100.0
+Q061,Agent rerank,100,0,100.0
+Q062,Agent rerank,100,1,100.0
+Q063,Agent rerank,100,1,100.0
+Q064,Agent rerank,100,0,100.0
+Q065,Agent rerank,100,1,100.0
+Q066,Agent rerank,100,1,100.0
+Q067,Agent rerank,100,1,100.0
+Q068,Agent rerank,100,0,100.0
+Q069,Agent rerank,100,0,100.0
+Q070,Agent rerank,100,1,100.0
+Q071,Agent rerank,100,1,100.0
+Q072,Agent rerank,100,0,100.0
+Q073,Agent rerank,100,0,100.0
+Q074,Agent rerank,100,0,100.0
+Q075,Agent rerank,100,0,100.0
+Q076,Agent rerank,100,1,100.0
+Q077,Agent rerank,100,1,100.0
+Q078,Agent rerank,100,1,100.0
+Q079,Agent rerank,100,0,100.0
+Q080,Agent rerank,100,0,100.0
+Q081,Agent rerank,100,1,100.0
+Q082,Agent rerank,100,1,100.0
+Q083,Agent rerank,100,0,100.0
+Q084,Agent rerank,100,1,100.0
+Q085,Agent rerank,100,0,100.0
+Q086,Agent rerank,100,1,100.0
+Q087,Agent rerank,100,0,100.0
+Q088,Agent rerank,100,0,100.0
+Q089,Agent rerank,100,1,100.0
+Q090,Agent rerank,100,1,100.0
+Q091,Agent rerank,100,1,100.0
+Q092,Agent rerank,100,1,100.0
+Q093,Agent rerank,100,1,100.0
+Q094,Agent rerank,100,1,100.0
+Q095,Agent rerank,100,1,100.0
+Q096,Agent rerank,100,1,100.0
+Q097,Agent rerank,100,1,100.0
+Q098,Agent rerank,100,1,100.0
+Q099,Agent rerank,100,1,100.0
+Q100,Agent rerank,100,1,100.0

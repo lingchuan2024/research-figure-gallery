@@ -1,0 +1,1601 @@
+question_id,method,tool,calls,returned_chars
+Q001,Baseline,search,6,600
+Q001,Baseline,bash,22,26942
+Q001,Baseline,read,2,805
+Q001,Baseline,rerank,0,0
+Q002,Baseline,search,3,300
+Q002,Baseline,bash,7,3297
+Q002,Baseline,read,3,4981
+Q002,Baseline,rerank,0,0
+Q003,Baseline,search,8,800
+Q003,Baseline,bash,15,7141
+Q003,Baseline,read,7,4270
+Q003,Baseline,rerank,0,0
+Q004,Baseline,search,10,1000
+Q004,Baseline,bash,38,72028
+Q004,Baseline,read,11,21323
+Q004,Baseline,rerank,0,0
+Q005,Baseline,search,12,1200
+Q005,Baseline,bash,47,74187
+Q005,Baseline,read,11,11167
+Q005,Baseline,rerank,0,0
+Q006,Baseline,search,11,1100
+Q006,Baseline,bash,37,65538
+Q006,Baseline,read,4,2129
+Q006,Baseline,rerank,0,0
+Q007,Baseline,search,5,500
+Q007,Baseline,bash,39,57251
+Q007,Baseline,read,3,2487
+Q007,Baseline,rerank,0,0
+Q008,Baseline,search,8,800
+Q008,Baseline,bash,30,53397
+Q008,Baseline,read,12,11647
+Q008,Baseline,rerank,0,0
+Q009,Baseline,search,5,500
+Q009,Baseline,bash,14,28959
+Q009,Baseline,read,3,4642
+Q009,Baseline,rerank,0,0
+Q010,Baseline,search,19,1900
+Q010,Baseline,bash,60,76878
+Q010,Baseline,read,21,35980
+Q010,Baseline,rerank,0,0
+Q011,Baseline,search,12,1200
+Q011,Baseline,bash,26,33233
+Q011,Baseline,read,6,7202
+Q011,Baseline,rerank,0,0
+Q012,Baseline,search,6,600
+Q012,Baseline,bash,22,42483
+Q012,Baseline,read,2,1330
+Q012,Baseline,rerank,0,0
+Q013,Baseline,search,9,900
+Q013,Baseline,bash,32,47068
+Q013,Baseline,read,3,2948
+Q013,Baseline,rerank,0,0
+Q014,Baseline,search,9,900
+Q014,Baseline,bash,36,41815
+Q014,Baseline,read,13,19505
+Q014,Baseline,rerank,0,0
+Q015,Baseline,search,4,400
+Q015,Baseline,bash,16,13973
+Q015,Baseline,read,5,9611
+Q015,Baseline,rerank,0,0
+Q016,Baseline,search,6,600
+Q016,Baseline,bash,18,28404
+Q016,Baseline,read,4,7412
+Q016,Baseline,rerank,0,0
+Q017,Baseline,search,14,1400
+Q017,Baseline,bash,63,66894
+Q017,Baseline,read,15,11250
+Q017,Baseline,rerank,0,0
+Q018,Baseline,search,12,1200
+Q018,Baseline,bash,46,96054
+Q018,Baseline,read,14,15408
+Q018,Baseline,rerank,0,0
+Q019,Baseline,search,6,600
+Q019,Baseline,bash,34,30107
+Q019,Baseline,read,4,8267
+Q019,Baseline,rerank,0,0
+Q020,Baseline,search,5,500
+Q020,Baseline,bash,41,27644
+Q020,Baseline,read,11,17661
+Q020,Baseline,rerank,0,0
+Q021,Baseline,search,7,700
+Q021,Baseline,bash,31,51018
+Q021,Baseline,read,4,7054
+Q021,Baseline,rerank,0,0
+Q022,Baseline,search,10,1000
+Q022,Baseline,bash,25,16854
+Q022,Baseline,read,4,7312
+Q022,Baseline,rerank,0,0
+Q023,Baseline,search,7,700
+Q023,Baseline,bash,27,18869
+Q023,Baseline,read,5,10494
+Q023,Baseline,rerank,0,0
+Q024,Baseline,search,11,1100
+Q024,Baseline,bash,55,52160
+Q024,Baseline,read,15,15280
+Q024,Baseline,rerank,0,0
+Q025,Baseline,search,11,1100
+Q025,Baseline,bash,54,36659
+Q025,Baseline,read,14,28502
+Q025,Baseline,rerank,0,0
+Q026,Baseline,search,18,1800
+Q026,Baseline,bash,43,20744
+Q026,Baseline,read,14,11840
+Q026,Baseline,rerank,0,0
+Q027,Baseline,search,23,2300
+Q027,Baseline,bash,57,117208
+Q027,Baseline,read,16,33584
+Q027,Baseline,rerank,0,0
+Q028,Baseline,search,6,600
+Q028,Baseline,bash,24,28080
+Q028,Baseline,read,3,5128
+Q028,Baseline,rerank,0,0
+Q029,Baseline,search,3,300
+Q029,Baseline,bash,14,6462
+Q029,Baseline,read,1,915
+Q029,Baseline,rerank,0,0
+Q030,Baseline,search,10,1000
+Q030,Baseline,bash,44,39089
+Q030,Baseline,read,3,4681
+Q030,Baseline,rerank,0,0
+Q031,Baseline,search,18,1800
+Q031,Baseline,bash,70,95105
+Q031,Baseline,read,12,17160
+Q031,Baseline,rerank,0,0
+Q032,Baseline,search,18,1800
+Q032,Baseline,bash,62,109063
+Q032,Baseline,read,20,20195
+Q032,Baseline,rerank,0,0
+Q033,Baseline,search,7,700
+Q033,Baseline,bash,33,21992
+Q033,Baseline,read,3,4658
+Q033,Baseline,rerank,0,0
+Q034,Baseline,search,4,400
+Q034,Baseline,bash,15,20192
+Q034,Baseline,read,11,5895
+Q034,Baseline,rerank,0,0
+Q035,Baseline,search,20,2000
+Q035,Baseline,bash,55,19568
+Q035,Baseline,read,7,4465
+Q035,Baseline,rerank,0,0
+Q036,Baseline,search,6,600
+Q036,Baseline,bash,15,13431
+Q036,Baseline,read,3,5959
+Q036,Baseline,rerank,0,0
+Q037,Baseline,search,3,300
+Q037,Baseline,bash,16,16830
+Q037,Baseline,read,4,8041
+Q037,Baseline,rerank,0,0
+Q038,Baseline,search,4,400
+Q038,Baseline,bash,35,21265
+Q038,Baseline,read,10,20070
+Q038,Baseline,rerank,0,0
+Q039,Baseline,search,7,700
+Q039,Baseline,bash,43,50558
+Q039,Baseline,read,9,3625
+Q039,Baseline,rerank,0,0
+Q040,Baseline,search,10,1000
+Q040,Baseline,bash,31,64610
+Q040,Baseline,read,9,5519
+Q040,Baseline,rerank,0,0
+Q041,Baseline,search,7,700
+Q041,Baseline,bash,30,54744
+Q041,Baseline,read,5,5096
+Q041,Baseline,rerank,0,0
+Q042,Baseline,search,14,1400
+Q042,Baseline,bash,49,59433
+Q042,Baseline,read,16,22587
+Q042,Baseline,rerank,0,0
+Q043,Baseline,search,4,400
+Q043,Baseline,bash,22,35511
+Q043,Baseline,read,5,10128
+Q043,Baseline,rerank,0,0
+Q044,Baseline,search,9,900
+Q044,Baseline,bash,31,19971
+Q044,Baseline,read,9,3505
+Q044,Baseline,rerank,0,0
+Q045,Baseline,search,9,900
+Q045,Baseline,bash,24,25831
+Q045,Baseline,read,9,7909
+Q045,Baseline,rerank,0,0
+Q046,Baseline,search,8,800
+Q046,Baseline,bash,24,40015
+Q046,Baseline,read,7,11840
+Q046,Baseline,rerank,0,0
+Q047,Baseline,search,4,400
+Q047,Baseline,bash,32,28179
+Q047,Baseline,read,9,10099
+Q047,Baseline,rerank,0,0
+Q048,Baseline,search,15,1500
+Q048,Baseline,bash,59,39050
+Q048,Baseline,read,15,18589
+Q048,Baseline,rerank,0,0
+Q049,Baseline,search,3,300
+Q049,Baseline,bash,10,10628
+Q049,Baseline,read,1,800
+Q049,Baseline,rerank,0,0
+Q050,Baseline,search,6,600
+Q050,Baseline,bash,30,22086
+Q050,Baseline,read,3,2810
+Q050,Baseline,rerank,0,0
+Q051,Baseline,search,7,700
+Q051,Baseline,bash,13,12110
+Q051,Baseline,read,5,1994
+Q051,Baseline,rerank,0,0
+Q052,Baseline,search,6,600
+Q052,Baseline,bash,15,25779
+Q052,Baseline,read,4,2974
+Q052,Baseline,rerank,0,0
+Q053,Baseline,search,7,700
+Q053,Baseline,bash,14,28616
+Q053,Baseline,read,4,7946
+Q053,Baseline,rerank,0,0
+Q054,Baseline,search,5,500
+Q054,Baseline,bash,24,48923
+Q054,Baseline,read,6,6145
+Q054,Baseline,rerank,0,0
+Q055,Baseline,search,15,1500
+Q055,Baseline,bash,69,128913
+Q055,Baseline,read,16,23343
+Q055,Baseline,rerank,0,0
+Q056,Baseline,search,2,200
+Q056,Baseline,bash,18,35211
+Q056,Baseline,read,6,11279
+Q056,Baseline,rerank,0,0
+Q057,Baseline,search,8,800
+Q057,Baseline,bash,33,25063
+Q057,Baseline,read,7,13696
+Q057,Baseline,rerank,0,0
+Q058,Baseline,search,11,1100
+Q058,Baseline,bash,51,24040
+Q058,Baseline,read,10,7289
+Q058,Baseline,rerank,0,0
+Q059,Baseline,search,6,600
+Q059,Baseline,bash,18,10951
+Q059,Baseline,read,7,11076
+Q059,Baseline,rerank,0,0
+Q060,Baseline,search,3,300
+Q060,Baseline,bash,5,3002
+Q060,Baseline,read,1,851
+Q060,Baseline,rerank,0,0
+Q061,Baseline,search,12,1200
+Q061,Baseline,bash,34,24611
+Q061,Baseline,read,9,17999
+Q061,Baseline,rerank,0,0
+Q062,Baseline,search,10,1000
+Q062,Baseline,bash,53,50888
+Q062,Baseline,read,10,12598
+Q062,Baseline,rerank,0,0
+Q063,Baseline,search,2,200
+Q063,Baseline,bash,10,15413
+Q063,Baseline,read,2,1926
+Q063,Baseline,rerank,0,0
+Q064,Baseline,search,2,200
+Q064,Baseline,bash,5,10149
+Q064,Baseline,read,1,999
+Q064,Baseline,rerank,0,0
+Q065,Baseline,search,14,1400
+Q065,Baseline,bash,28,26249
+Q065,Baseline,read,5,8943
+Q065,Baseline,rerank,0,0
+Q066,Baseline,search,6,600
+Q066,Baseline,bash,39,61699
+Q066,Baseline,read,14,19150
+Q066,Baseline,rerank,0,0
+Q067,Baseline,search,12,1200
+Q067,Baseline,bash,32,52022
+Q067,Baseline,read,6,10720
+Q067,Baseline,rerank,0,0
+Q068,Baseline,search,18,1800
+Q068,Baseline,bash,61,45636
+Q068,Baseline,read,16,8346
+Q068,Baseline,rerank,0,0
+Q069,Baseline,search,8,800
+Q069,Baseline,bash,32,14403
+Q069,Baseline,read,1,1221
+Q069,Baseline,rerank,0,0
+Q070,Baseline,search,11,1100
+Q070,Baseline,bash,40,62851
+Q070,Baseline,read,5,10489
+Q070,Baseline,rerank,0,0
+Q071,Baseline,search,6,600
+Q071,Baseline,bash,24,25152
+Q071,Baseline,read,2,3958
+Q071,Baseline,rerank,0,0
+Q072,Baseline,search,5,500
+Q072,Baseline,bash,39,30579
+Q072,Baseline,read,9,16912
+Q072,Baseline,rerank,0,0
+Q073,Baseline,search,15,1500
+Q073,Baseline,bash,31,21153
+Q073,Baseline,read,5,7141
+Q073,Baseline,rerank,0,0
+Q074,Baseline,search,9,900
+Q074,Baseline,bash,39,66177
+Q074,Baseline,read,6,8277
+Q074,Baseline,rerank,0,0
+Q075,Baseline,search,4,400
+Q075,Baseline,bash,27,54122
+Q075,Baseline,read,5,10018
+Q075,Baseline,rerank,0,0
+Q076,Baseline,search,5,500
+Q076,Baseline,bash,31,56755
+Q076,Baseline,read,10,7745
+Q076,Baseline,rerank,0,0
+Q077,Baseline,search,8,800
+Q077,Baseline,bash,38,45307
+Q077,Baseline,read,8,4708
+Q077,Baseline,rerank,0,0
+Q078,Baseline,search,8,800
+Q078,Baseline,bash,26,45866
+Q078,Baseline,read,10,19099
+Q078,Baseline,rerank,0,0
+Q079,Baseline,search,5,500
+Q079,Baseline,bash,13,13091
+Q079,Baseline,read,9,14196
+Q079,Baseline,rerank,0,0
+Q080,Baseline,search,9,900
+Q080,Baseline,bash,18,11763
+Q080,Baseline,read,5,7700
+Q080,Baseline,rerank,0,0
+Q081,Baseline,search,2,200
+Q081,Baseline,bash,7,4298
+Q081,Baseline,read,2,2531
+Q081,Baseline,rerank,0,0
+Q082,Baseline,search,7,700
+Q082,Baseline,bash,28,15477
+Q082,Baseline,read,8,16154
+Q082,Baseline,rerank,0,0
+Q083,Baseline,search,7,700
+Q083,Baseline,bash,35,24299
+Q083,Baseline,read,11,6744
+Q083,Baseline,rerank,0,0
+Q084,Baseline,search,13,1300
+Q084,Baseline,bash,56,116858
+Q084,Baseline,read,4,4503
+Q084,Baseline,rerank,0,0
+Q085,Baseline,search,10,1000
+Q085,Baseline,bash,40,67705
+Q085,Baseline,read,15,25763
+Q085,Baseline,rerank,0,0
+Q086,Baseline,search,3,300
+Q086,Baseline,bash,14,18862
+Q086,Baseline,read,5,2736
+Q086,Baseline,rerank,0,0
+Q087,Baseline,search,7,700
+Q087,Baseline,bash,43,15661
+Q087,Baseline,read,9,9424
+Q087,Baseline,rerank,0,0
+Q088,Baseline,search,17,1700
+Q088,Baseline,bash,38,52399
+Q088,Baseline,read,12,16551
+Q088,Baseline,rerank,0,0
+Q089,Baseline,search,11,1100
+Q089,Baseline,bash,50,42114
+Q089,Baseline,read,10,13910
+Q089,Baseline,rerank,0,0
+Q090,Baseline,search,13,1300
+Q090,Baseline,bash,56,86642
+Q090,Baseline,read,19,38208
+Q090,Baseline,rerank,0,0
+Q091,Baseline,search,5,500
+Q091,Baseline,bash,20,38426
+Q091,Baseline,read,3,1567
+Q091,Baseline,rerank,0,0
+Q092,Baseline,search,5,500
+Q092,Baseline,bash,18,32943
+Q092,Baseline,read,1,855
+Q092,Baseline,rerank,0,0
+Q093,Baseline,search,8,800
+Q093,Baseline,bash,30,21503
+Q093,Baseline,read,10,7939
+Q093,Baseline,rerank,0,0
+Q094,Baseline,search,9,900
+Q094,Baseline,bash,21,13842
+Q094,Baseline,read,5,5459
+Q094,Baseline,rerank,0,0
+Q095,Baseline,search,8,800
+Q095,Baseline,bash,37,15712
+Q095,Baseline,read,8,9653
+Q095,Baseline,rerank,0,0
+Q096,Baseline,search,15,1500
+Q096,Baseline,bash,40,66466
+Q096,Baseline,read,11,21470
+Q096,Baseline,rerank,0,0
+Q097,Baseline,search,18,1800
+Q097,Baseline,bash,62,23881
+Q097,Baseline,read,20,38677
+Q097,Baseline,rerank,0,0
+Q098,Baseline,search,6,600
+Q098,Baseline,bash,24,17752
+Q098,Baseline,read,6,5510
+Q098,Baseline,rerank,0,0
+Q099,Baseline,search,8,800
+Q099,Baseline,bash,21,36224
+Q099,Baseline,read,9,11170
+Q099,Baseline,rerank,0,0
+Q100,Baseline,search,4,400
+Q100,Baseline,bash,24,46203
+Q100,Baseline,read,4,1928
+Q100,Baseline,rerank,0,0
+Q001,Paging,search,3,300
+Q001,Paging,bash,12,19255
+Q001,Paging,read,3,2385
+Q001,Paging,rerank,0,0
+Q002,Paging,search,4,400
+Q002,Paging,bash,10,11523
+Q002,Paging,read,2,1779
+Q002,Paging,rerank,0,0
+Q003,Paging,search,11,1100
+Q003,Paging,bash,36,18930
+Q003,Paging,read,4,5226
+Q003,Paging,rerank,0,0
+Q004,Paging,search,7,700
+Q004,Paging,bash,29,23627
+Q004,Paging,read,21,22034
+Q004,Paging,rerank,0,0
+Q005,Paging,search,10,1000
+Q005,Paging,bash,13,22601
+Q005,Paging,read,15,31274
+Q005,Paging,rerank,0,0
+Q006,Paging,search,9,900
+Q006,Paging,bash,18,32531
+Q006,Paging,read,9,5216
+Q006,Paging,rerank,0,0
+Q007,Paging,search,8,800
+Q007,Paging,bash,19,9876
+Q007,Paging,read,8,7007
+Q007,Paging,rerank,0,0
+Q008,Paging,search,4,400
+Q008,Paging,bash,11,20069
+Q008,Paging,read,2,4135
+Q008,Paging,rerank,0,0
+Q009,Paging,search,5,500
+Q009,Paging,bash,24,24026
+Q009,Paging,read,4,8297
+Q009,Paging,rerank,0,0
+Q010,Paging,search,6,600
+Q010,Paging,bash,23,38867
+Q010,Paging,read,8,6824
+Q010,Paging,rerank,0,0
+Q011,Paging,search,10,1000
+Q011,Paging,bash,34,55509
+Q011,Paging,read,12,24882
+Q011,Paging,rerank,0,0
+Q012,Paging,search,5,500
+Q012,Paging,bash,13,22699
+Q012,Paging,read,3,5507
+Q012,Paging,rerank,0,0
+Q013,Paging,search,5,500
+Q013,Paging,bash,30,51797
+Q013,Paging,read,10,6877
+Q013,Paging,rerank,0,0
+Q014,Paging,search,7,700
+Q014,Paging,bash,13,16211
+Q014,Paging,read,2,1612
+Q014,Paging,rerank,0,0
+Q015,Paging,search,6,600
+Q015,Paging,bash,13,15646
+Q015,Paging,read,2,3759
+Q015,Paging,rerank,0,0
+Q016,Paging,search,3,300
+Q016,Paging,bash,7,4618
+Q016,Paging,read,5,8006
+Q016,Paging,rerank,0,0
+Q017,Paging,search,6,600
+Q017,Paging,bash,10,17887
+Q017,Paging,read,6,10788
+Q017,Paging,rerank,0,0
+Q018,Paging,search,11,1100
+Q018,Paging,bash,28,24044
+Q018,Paging,read,26,25231
+Q018,Paging,rerank,0,0
+Q019,Paging,search,5,500
+Q019,Paging,bash,32,30717
+Q019,Paging,read,14,14093
+Q019,Paging,rerank,0,0
+Q020,Paging,search,11,1100
+Q020,Paging,bash,27,55719
+Q020,Paging,read,7,5765
+Q020,Paging,rerank,0,0
+Q021,Paging,search,5,500
+Q021,Paging,bash,20,30767
+Q021,Paging,read,6,5835
+Q021,Paging,rerank,0,0
+Q022,Paging,search,4,400
+Q022,Paging,bash,10,18055
+Q022,Paging,read,11,12506
+Q022,Paging,rerank,0,0
+Q023,Paging,search,4,400
+Q023,Paging,bash,6,10398
+Q023,Paging,read,0,0
+Q023,Paging,rerank,0,0
+Q024,Paging,search,9,900
+Q024,Paging,bash,27,23700
+Q024,Paging,read,8,8015
+Q024,Paging,rerank,0,0
+Q025,Paging,search,12,1200
+Q025,Paging,bash,49,68119
+Q025,Paging,read,29,32993
+Q025,Paging,rerank,0,0
+Q026,Paging,search,7,700
+Q026,Paging,bash,12,8631
+Q026,Paging,read,7,8109
+Q026,Paging,rerank,0,0
+Q027,Paging,search,10,1000
+Q027,Paging,bash,41,28074
+Q027,Paging,read,18,10503
+Q027,Paging,rerank,0,0
+Q028,Paging,search,5,500
+Q028,Paging,bash,9,13388
+Q028,Paging,read,1,368
+Q028,Paging,rerank,0,0
+Q029,Paging,search,3,300
+Q029,Paging,bash,12,15633
+Q029,Paging,read,8,10855
+Q029,Paging,rerank,0,0
+Q030,Paging,search,5,500
+Q030,Paging,bash,21,20732
+Q030,Paging,read,3,1476
+Q030,Paging,rerank,0,0
+Q031,Paging,search,11,1100
+Q031,Paging,bash,35,30552
+Q031,Paging,read,14,22258
+Q031,Paging,rerank,0,0
+Q032,Paging,search,13,1300
+Q032,Paging,bash,20,16199
+Q032,Paging,read,10,8722
+Q032,Paging,rerank,0,0
+Q033,Paging,search,6,600
+Q033,Paging,bash,11,6305
+Q033,Paging,read,9,8301
+Q033,Paging,rerank,0,0
+Q034,Paging,search,3,300
+Q034,Paging,bash,9,17150
+Q034,Paging,read,4,4277
+Q034,Paging,rerank,0,0
+Q035,Paging,search,8,800
+Q035,Paging,bash,17,24190
+Q035,Paging,read,7,7434
+Q035,Paging,rerank,0,0
+Q036,Paging,search,3,300
+Q036,Paging,bash,16,32469
+Q036,Paging,read,9,11054
+Q036,Paging,rerank,0,0
+Q037,Paging,search,5,500
+Q037,Paging,bash,7,12549
+Q037,Paging,read,6,5776
+Q037,Paging,rerank,0,0
+Q038,Paging,search,14,1400
+Q038,Paging,bash,27,31382
+Q038,Paging,read,11,9551
+Q038,Paging,rerank,0,0
+Q039,Paging,search,9,900
+Q039,Paging,bash,23,17767
+Q039,Paging,read,11,22505
+Q039,Paging,rerank,0,0
+Q040,Paging,search,8,800
+Q040,Paging,bash,24,36428
+Q040,Paging,read,10,16197
+Q040,Paging,rerank,0,0
+Q041,Paging,search,8,800
+Q041,Paging,bash,26,35974
+Q041,Paging,read,15,18793
+Q041,Paging,rerank,0,0
+Q042,Paging,search,6,600
+Q042,Paging,bash,23,22715
+Q042,Paging,read,9,11606
+Q042,Paging,rerank,0,0
+Q043,Paging,search,8,800
+Q043,Paging,bash,17,8805
+Q043,Paging,read,5,3454
+Q043,Paging,rerank,0,0
+Q044,Paging,search,4,400
+Q044,Paging,bash,16,7032
+Q044,Paging,read,7,8786
+Q044,Paging,rerank,0,0
+Q045,Paging,search,13,1300
+Q045,Paging,bash,43,74650
+Q045,Paging,read,19,32019
+Q045,Paging,rerank,0,0
+Q046,Paging,search,14,1400
+Q046,Paging,bash,36,29557
+Q046,Paging,read,22,24142
+Q046,Paging,rerank,0,0
+Q047,Paging,search,16,1600
+Q047,Paging,bash,34,67889
+Q047,Paging,read,17,18044
+Q047,Paging,rerank,0,0
+Q048,Paging,search,9,900
+Q048,Paging,bash,44,66543
+Q048,Paging,read,16,30676
+Q048,Paging,rerank,0,0
+Q049,Paging,search,10,1000
+Q049,Paging,bash,10,10273
+Q049,Paging,read,8,8259
+Q049,Paging,rerank,0,0
+Q050,Paging,search,10,1000
+Q050,Paging,bash,25,39293
+Q050,Paging,read,12,17873
+Q050,Paging,rerank,0,0
+Q051,Paging,search,7,700
+Q051,Paging,bash,15,14940
+Q051,Paging,read,6,4930
+Q051,Paging,rerank,0,0
+Q052,Paging,search,4,400
+Q052,Paging,bash,10,11319
+Q052,Paging,read,4,2374
+Q052,Paging,rerank,0,0
+Q053,Paging,search,4,400
+Q053,Paging,bash,12,5240
+Q053,Paging,read,3,4338
+Q053,Paging,rerank,0,0
+Q054,Paging,search,9,900
+Q054,Paging,bash,40,25541
+Q054,Paging,read,16,10921
+Q054,Paging,rerank,0,0
+Q055,Paging,search,10,1000
+Q055,Paging,bash,35,68709
+Q055,Paging,read,16,31571
+Q055,Paging,rerank,0,0
+Q056,Paging,search,6,600
+Q056,Paging,bash,17,23611
+Q056,Paging,read,13,26918
+Q056,Paging,rerank,0,0
+Q057,Paging,search,12,1200
+Q057,Paging,bash,42,23451
+Q057,Paging,read,11,18804
+Q057,Paging,rerank,0,0
+Q058,Paging,search,9,900
+Q058,Paging,bash,19,22222
+Q058,Paging,read,7,11046
+Q058,Paging,rerank,0,0
+Q059,Paging,search,5,500
+Q059,Paging,bash,8,11035
+Q059,Paging,read,3,2508
+Q059,Paging,rerank,0,0
+Q060,Paging,search,3,300
+Q060,Paging,bash,2,3511
+Q060,Paging,read,5,9356
+Q060,Paging,rerank,0,0
+Q061,Paging,search,10,1000
+Q061,Paging,bash,43,85292
+Q061,Paging,read,20,29601
+Q061,Paging,rerank,0,0
+Q062,Paging,search,11,1100
+Q062,Paging,bash,39,65665
+Q062,Paging,read,20,16204
+Q062,Paging,rerank,0,0
+Q063,Paging,search,2,200
+Q063,Paging,bash,6,12062
+Q063,Paging,read,2,2255
+Q063,Paging,rerank,0,0
+Q064,Paging,search,2,200
+Q064,Paging,bash,6,9127
+Q064,Paging,read,3,3479
+Q064,Paging,rerank,0,0
+Q065,Paging,search,4,400
+Q065,Paging,bash,14,13250
+Q065,Paging,read,8,12290
+Q065,Paging,rerank,0,0
+Q066,Paging,search,9,900
+Q066,Paging,bash,21,8653
+Q066,Paging,read,3,5346
+Q066,Paging,rerank,0,0
+Q067,Paging,search,12,1200
+Q067,Paging,bash,14,21197
+Q067,Paging,read,6,4446
+Q067,Paging,rerank,0,0
+Q068,Paging,search,11,1100
+Q068,Paging,bash,36,42635
+Q068,Paging,read,18,26934
+Q068,Paging,rerank,0,0
+Q069,Paging,search,4,400
+Q069,Paging,bash,9,8724
+Q069,Paging,read,6,2870
+Q069,Paging,rerank,0,0
+Q070,Paging,search,8,800
+Q070,Paging,bash,26,22197
+Q070,Paging,read,11,13000
+Q070,Paging,rerank,0,0
+Q071,Paging,search,9,900
+Q071,Paging,bash,15,9555
+Q071,Paging,read,5,6871
+Q071,Paging,rerank,0,0
+Q072,Paging,search,9,900
+Q072,Paging,bash,24,15022
+Q072,Paging,read,12,16242
+Q072,Paging,rerank,0,0
+Q073,Paging,search,3,300
+Q073,Paging,bash,9,4451
+Q073,Paging,read,4,6859
+Q073,Paging,rerank,0,0
+Q074,Paging,search,12,1200
+Q074,Paging,bash,41,33975
+Q074,Paging,read,17,29833
+Q074,Paging,rerank,0,0
+Q075,Paging,search,6,600
+Q075,Paging,bash,22,33726
+Q075,Paging,read,6,10530
+Q075,Paging,rerank,0,0
+Q076,Paging,search,10,1000
+Q076,Paging,bash,32,42568
+Q076,Paging,read,11,21722
+Q076,Paging,rerank,0,0
+Q077,Paging,search,5,500
+Q077,Paging,bash,9,5970
+Q077,Paging,read,3,1878
+Q077,Paging,rerank,0,0
+Q078,Paging,search,10,1000
+Q078,Paging,bash,17,21960
+Q078,Paging,read,9,7510
+Q078,Paging,rerank,0,0
+Q079,Paging,search,5,500
+Q079,Paging,bash,14,15041
+Q079,Paging,read,2,3194
+Q079,Paging,rerank,0,0
+Q080,Paging,search,3,300
+Q080,Paging,bash,8,12399
+Q080,Paging,read,4,6780
+Q080,Paging,rerank,0,0
+Q081,Paging,search,7,700
+Q081,Paging,bash,10,18571
+Q081,Paging,read,4,5658
+Q081,Paging,rerank,0,0
+Q082,Paging,search,4,400
+Q082,Paging,bash,27,17352
+Q082,Paging,read,10,4558
+Q082,Paging,rerank,0,0
+Q083,Paging,search,8,800
+Q083,Paging,bash,31,16911
+Q083,Paging,read,11,12695
+Q083,Paging,rerank,0,0
+Q084,Paging,search,5,500
+Q084,Paging,bash,17,34271
+Q084,Paging,read,12,22463
+Q084,Paging,rerank,0,0
+Q085,Paging,search,6,600
+Q085,Paging,bash,14,21767
+Q085,Paging,read,4,4804
+Q085,Paging,rerank,0,0
+Q086,Paging,search,4,400
+Q086,Paging,bash,21,34482
+Q086,Paging,read,4,4913
+Q086,Paging,rerank,0,0
+Q087,Paging,search,15,1500
+Q087,Paging,bash,28,46546
+Q087,Paging,read,11,10678
+Q087,Paging,rerank,0,0
+Q088,Paging,search,18,1800
+Q088,Paging,bash,49,51588
+Q088,Paging,read,33,51877
+Q088,Paging,rerank,0,0
+Q089,Paging,search,16,1600
+Q089,Paging,bash,47,41190
+Q089,Paging,read,17,30636
+Q089,Paging,rerank,0,0
+Q090,Paging,search,7,700
+Q090,Paging,bash,23,47256
+Q090,Paging,read,6,6391
+Q090,Paging,rerank,0,0
+Q091,Paging,search,6,600
+Q091,Paging,bash,7,8650
+Q091,Paging,read,5,4244
+Q091,Paging,rerank,0,0
+Q092,Paging,search,8,800
+Q092,Paging,bash,30,57017
+Q092,Paging,read,14,11492
+Q092,Paging,rerank,0,0
+Q093,Paging,search,6,600
+Q093,Paging,bash,11,14780
+Q093,Paging,read,8,15900
+Q093,Paging,rerank,0,0
+Q094,Paging,search,12,1200
+Q094,Paging,bash,21,10215
+Q094,Paging,read,9,11944
+Q094,Paging,rerank,0,0
+Q095,Paging,search,13,1300
+Q095,Paging,bash,24,44281
+Q095,Paging,read,12,18231
+Q095,Paging,rerank,0,0
+Q096,Paging,search,10,1000
+Q096,Paging,bash,15,11722
+Q096,Paging,read,10,7702
+Q096,Paging,rerank,0,0
+Q097,Paging,search,10,1000
+Q097,Paging,bash,18,8903
+Q097,Paging,read,5,3642
+Q097,Paging,rerank,0,0
+Q098,Paging,search,4,400
+Q098,Paging,bash,8,14622
+Q098,Paging,read,4,2137
+Q098,Paging,rerank,0,0
+Q099,Paging,search,11,1100
+Q099,Paging,bash,39,72284
+Q099,Paging,read,13,24989
+Q099,Paging,rerank,0,0
+Q100,Paging,search,8,800
+Q100,Paging,bash,16,27527
+Q100,Paging,read,5,4495
+Q100,Paging,rerank,0,0
+Q001,Auto rerank,search,2,200
+Q001,Auto rerank,bash,5,4522
+Q001,Auto rerank,read,4,4804
+Q001,Auto rerank,rerank,0,0
+Q002,Auto rerank,search,4,400
+Q002,Auto rerank,bash,8,10264
+Q002,Auto rerank,read,4,7257
+Q002,Auto rerank,rerank,0,0
+Q003,Auto rerank,search,11,1100
+Q003,Auto rerank,bash,16,21285
+Q003,Auto rerank,read,7,6177
+Q003,Auto rerank,rerank,0,0
+Q004,Auto rerank,search,4,400
+Q004,Auto rerank,bash,17,20429
+Q004,Auto rerank,read,12,6730
+Q004,Auto rerank,rerank,0,0
+Q005,Auto rerank,search,5,500
+Q005,Auto rerank,bash,15,21856
+Q005,Auto rerank,read,11,17576
+Q005,Auto rerank,rerank,0,0
+Q006,Auto rerank,search,3,300
+Q006,Auto rerank,bash,17,7483
+Q006,Auto rerank,read,11,12794
+Q006,Auto rerank,rerank,0,0
+Q007,Auto rerank,search,10,1000
+Q007,Auto rerank,bash,18,19044
+Q007,Auto rerank,read,6,9463
+Q007,Auto rerank,rerank,0,0
+Q008,Auto rerank,search,4,400
+Q008,Auto rerank,bash,11,13108
+Q008,Auto rerank,read,8,12984
+Q008,Auto rerank,rerank,0,0
+Q009,Auto rerank,search,3,300
+Q009,Auto rerank,bash,7,6431
+Q009,Auto rerank,read,8,11916
+Q009,Auto rerank,rerank,0,0
+Q010,Auto rerank,search,6,600
+Q010,Auto rerank,bash,16,31176
+Q010,Auto rerank,read,10,19276
+Q010,Auto rerank,rerank,0,0
+Q011,Auto rerank,search,4,400
+Q011,Auto rerank,bash,22,36787
+Q011,Auto rerank,read,11,9777
+Q011,Auto rerank,rerank,0,0
+Q012,Auto rerank,search,9,900
+Q012,Auto rerank,bash,16,26111
+Q012,Auto rerank,read,7,9035
+Q012,Auto rerank,rerank,0,0
+Q013,Auto rerank,search,4,400
+Q013,Auto rerank,bash,13,23658
+Q013,Auto rerank,read,11,15005
+Q013,Auto rerank,rerank,0,0
+Q014,Auto rerank,search,17,1700
+Q014,Auto rerank,bash,36,44341
+Q014,Auto rerank,read,36,34033
+Q014,Auto rerank,rerank,0,0
+Q015,Auto rerank,search,6,600
+Q015,Auto rerank,bash,13,11828
+Q015,Auto rerank,read,11,14976
+Q015,Auto rerank,rerank,0,0
+Q016,Auto rerank,search,1,100
+Q016,Auto rerank,bash,6,10969
+Q016,Auto rerank,read,2,2006
+Q016,Auto rerank,rerank,0,0
+Q017,Auto rerank,search,7,700
+Q017,Auto rerank,bash,12,24774
+Q017,Auto rerank,read,18,7581
+Q017,Auto rerank,rerank,0,0
+Q018,Auto rerank,search,4,400
+Q018,Auto rerank,bash,10,4005
+Q018,Auto rerank,read,8,7251
+Q018,Auto rerank,rerank,0,0
+Q019,Auto rerank,search,6,600
+Q019,Auto rerank,bash,14,7451
+Q019,Auto rerank,read,8,6935
+Q019,Auto rerank,rerank,0,0
+Q020,Auto rerank,search,4,400
+Q020,Auto rerank,bash,15,11959
+Q020,Auto rerank,read,3,5162
+Q020,Auto rerank,rerank,0,0
+Q021,Auto rerank,search,4,400
+Q021,Auto rerank,bash,9,8334
+Q021,Auto rerank,read,5,1938
+Q021,Auto rerank,rerank,0,0
+Q022,Auto rerank,search,8,800
+Q022,Auto rerank,bash,14,25882
+Q022,Auto rerank,read,6,7320
+Q022,Auto rerank,rerank,0,0
+Q023,Auto rerank,search,4,400
+Q023,Auto rerank,bash,8,4138
+Q023,Auto rerank,read,2,3903
+Q023,Auto rerank,rerank,0,0
+Q024,Auto rerank,search,6,600
+Q024,Auto rerank,bash,13,25681
+Q024,Auto rerank,read,11,16229
+Q024,Auto rerank,rerank,0,0
+Q025,Auto rerank,search,8,800
+Q025,Auto rerank,bash,7,5576
+Q025,Auto rerank,read,7,2965
+Q025,Auto rerank,rerank,0,0
+Q026,Auto rerank,search,8,800
+Q026,Auto rerank,bash,20,37432
+Q026,Auto rerank,read,13,22737
+Q026,Auto rerank,rerank,0,0
+Q027,Auto rerank,search,3,300
+Q027,Auto rerank,bash,38,29593
+Q027,Auto rerank,read,9,16778
+Q027,Auto rerank,rerank,0,0
+Q028,Auto rerank,search,7,700
+Q028,Auto rerank,bash,16,22741
+Q028,Auto rerank,read,3,5166
+Q028,Auto rerank,rerank,0,0
+Q029,Auto rerank,search,3,300
+Q029,Auto rerank,bash,8,16149
+Q029,Auto rerank,read,5,9353
+Q029,Auto rerank,rerank,0,0
+Q030,Auto rerank,search,6,600
+Q030,Auto rerank,bash,13,5240
+Q030,Auto rerank,read,14,19158
+Q030,Auto rerank,rerank,0,0
+Q031,Auto rerank,search,6,600
+Q031,Auto rerank,bash,12,5982
+Q031,Auto rerank,read,6,2760
+Q031,Auto rerank,rerank,0,0
+Q032,Auto rerank,search,9,900
+Q032,Auto rerank,bash,22,8509
+Q032,Auto rerank,read,17,21375
+Q032,Auto rerank,rerank,0,0
+Q033,Auto rerank,search,6,600
+Q033,Auto rerank,bash,9,13351
+Q033,Auto rerank,read,1,1441
+Q033,Auto rerank,rerank,0,0
+Q034,Auto rerank,search,3,300
+Q034,Auto rerank,bash,11,22576
+Q034,Auto rerank,read,6,12138
+Q034,Auto rerank,rerank,0,0
+Q035,Auto rerank,search,9,900
+Q035,Auto rerank,bash,27,50526
+Q035,Auto rerank,read,15,10263
+Q035,Auto rerank,rerank,0,0
+Q036,Auto rerank,search,5,500
+Q036,Auto rerank,bash,9,8163
+Q036,Auto rerank,read,2,2572
+Q036,Auto rerank,rerank,0,0
+Q037,Auto rerank,search,5,500
+Q037,Auto rerank,bash,7,10771
+Q037,Auto rerank,read,6,8782
+Q037,Auto rerank,rerank,0,0
+Q038,Auto rerank,search,6,600
+Q038,Auto rerank,bash,21,37721
+Q038,Auto rerank,read,4,6359
+Q038,Auto rerank,rerank,0,0
+Q039,Auto rerank,search,3,300
+Q039,Auto rerank,bash,16,26933
+Q039,Auto rerank,read,7,2747
+Q039,Auto rerank,rerank,0,0
+Q040,Auto rerank,search,5,500
+Q040,Auto rerank,bash,21,11101
+Q040,Auto rerank,read,13,26530
+Q040,Auto rerank,rerank,0,0
+Q041,Auto rerank,search,7,700
+Q041,Auto rerank,bash,16,29914
+Q041,Auto rerank,read,17,32310
+Q041,Auto rerank,rerank,0,0
+Q042,Auto rerank,search,3,300
+Q042,Auto rerank,bash,15,10840
+Q042,Auto rerank,read,12,18929
+Q042,Auto rerank,rerank,0,0
+Q043,Auto rerank,search,2,200
+Q043,Auto rerank,bash,18,25678
+Q043,Auto rerank,read,10,17141
+Q043,Auto rerank,rerank,0,0
+Q044,Auto rerank,search,5,500
+Q044,Auto rerank,bash,12,16948
+Q044,Auto rerank,read,4,5585
+Q044,Auto rerank,rerank,0,0
+Q045,Auto rerank,search,5,500
+Q045,Auto rerank,bash,11,12660
+Q045,Auto rerank,read,10,3708
+Q045,Auto rerank,rerank,0,0
+Q046,Auto rerank,search,4,400
+Q046,Auto rerank,bash,22,42966
+Q046,Auto rerank,read,12,7514
+Q046,Auto rerank,rerank,0,0
+Q047,Auto rerank,search,8,800
+Q047,Auto rerank,bash,13,9473
+Q047,Auto rerank,read,8,5384
+Q047,Auto rerank,rerank,0,0
+Q048,Auto rerank,search,14,1400
+Q048,Auto rerank,bash,42,75928
+Q048,Auto rerank,read,17,7395
+Q048,Auto rerank,rerank,0,0
+Q049,Auto rerank,search,6,600
+Q049,Auto rerank,bash,12,20264
+Q049,Auto rerank,read,5,9428
+Q049,Auto rerank,rerank,0,0
+Q050,Auto rerank,search,12,1200
+Q050,Auto rerank,bash,19,16326
+Q050,Auto rerank,read,9,5340
+Q050,Auto rerank,rerank,0,0
+Q051,Auto rerank,search,3,300
+Q051,Auto rerank,bash,8,8920
+Q051,Auto rerank,read,3,3096
+Q051,Auto rerank,rerank,0,0
+Q052,Auto rerank,search,1,100
+Q052,Auto rerank,bash,4,1475
+Q052,Auto rerank,read,0,0
+Q052,Auto rerank,rerank,0,0
+Q053,Auto rerank,search,2,200
+Q053,Auto rerank,bash,6,3577
+Q053,Auto rerank,read,3,4193
+Q053,Auto rerank,rerank,0,0
+Q054,Auto rerank,search,8,800
+Q054,Auto rerank,bash,24,50108
+Q054,Auto rerank,read,15,30544
+Q054,Auto rerank,rerank,0,0
+Q055,Auto rerank,search,9,900
+Q055,Auto rerank,bash,23,22956
+Q055,Auto rerank,read,13,21379
+Q055,Auto rerank,rerank,0,0
+Q056,Auto rerank,search,7,700
+Q056,Auto rerank,bash,5,4227
+Q056,Auto rerank,read,5,7309
+Q056,Auto rerank,rerank,0,0
+Q057,Auto rerank,search,9,900
+Q057,Auto rerank,bash,33,15097
+Q057,Auto rerank,read,14,5012
+Q057,Auto rerank,rerank,0,0
+Q058,Auto rerank,search,13,1300
+Q058,Auto rerank,bash,19,31426
+Q058,Auto rerank,read,13,26313
+Q058,Auto rerank,rerank,0,0
+Q059,Auto rerank,search,9,900
+Q059,Auto rerank,bash,9,3342
+Q059,Auto rerank,read,5,3719
+Q059,Auto rerank,rerank,0,0
+Q060,Auto rerank,search,3,300
+Q060,Auto rerank,bash,3,5046
+Q060,Auto rerank,read,2,3327
+Q060,Auto rerank,rerank,0,0
+Q061,Auto rerank,search,8,800
+Q061,Auto rerank,bash,27,42102
+Q061,Auto rerank,read,11,6520
+Q061,Auto rerank,rerank,0,0
+Q062,Auto rerank,search,15,1500
+Q062,Auto rerank,bash,22,31458
+Q062,Auto rerank,read,10,3643
+Q062,Auto rerank,rerank,0,0
+Q063,Auto rerank,search,3,300
+Q063,Auto rerank,bash,2,1178
+Q063,Auto rerank,read,2,1423
+Q063,Auto rerank,rerank,0,0
+Q064,Auto rerank,search,1,100
+Q064,Auto rerank,bash,5,7872
+Q064,Auto rerank,read,3,5330
+Q064,Auto rerank,rerank,0,0
+Q065,Auto rerank,search,15,1500
+Q065,Auto rerank,bash,21,33105
+Q065,Auto rerank,read,17,25662
+Q065,Auto rerank,rerank,0,0
+Q066,Auto rerank,search,13,1300
+Q066,Auto rerank,bash,27,38470
+Q066,Auto rerank,read,15,17002
+Q066,Auto rerank,rerank,0,0
+Q067,Auto rerank,search,1,100
+Q067,Auto rerank,bash,4,6404
+Q067,Auto rerank,read,5,9746
+Q067,Auto rerank,rerank,0,0
+Q068,Auto rerank,search,9,900
+Q068,Auto rerank,bash,27,19416
+Q068,Auto rerank,read,22,8071
+Q068,Auto rerank,rerank,0,0
+Q069,Auto rerank,search,4,400
+Q069,Auto rerank,bash,7,12540
+Q069,Auto rerank,read,5,3638
+Q069,Auto rerank,rerank,0,0
+Q070,Auto rerank,search,14,1400
+Q070,Auto rerank,bash,23,44848
+Q070,Auto rerank,read,8,15425
+Q070,Auto rerank,rerank,0,0
+Q071,Auto rerank,search,3,300
+Q071,Auto rerank,bash,14,18788
+Q071,Auto rerank,read,10,5305
+Q071,Auto rerank,rerank,0,0
+Q072,Auto rerank,search,12,1200
+Q072,Auto rerank,bash,15,11429
+Q072,Auto rerank,read,12,14443
+Q072,Auto rerank,rerank,0,0
+Q073,Auto rerank,search,3,300
+Q073,Auto rerank,bash,8,9550
+Q073,Auto rerank,read,10,14956
+Q073,Auto rerank,rerank,0,0
+Q074,Auto rerank,search,7,700
+Q074,Auto rerank,bash,25,49551
+Q074,Auto rerank,read,18,27207
+Q074,Auto rerank,rerank,0,0
+Q075,Auto rerank,search,3,300
+Q075,Auto rerank,bash,7,2559
+Q075,Auto rerank,read,0,0
+Q075,Auto rerank,rerank,0,0
+Q076,Auto rerank,search,7,700
+Q076,Auto rerank,bash,14,14400
+Q076,Auto rerank,read,13,11471
+Q076,Auto rerank,rerank,0,0
+Q077,Auto rerank,search,3,300
+Q077,Auto rerank,bash,6,9088
+Q077,Auto rerank,read,6,9834
+Q077,Auto rerank,rerank,0,0
+Q078,Auto rerank,search,15,1500
+Q078,Auto rerank,bash,19,19554
+Q078,Auto rerank,read,18,15433
+Q078,Auto rerank,rerank,0,0
+Q079,Auto rerank,search,4,400
+Q079,Auto rerank,bash,13,21013
+Q079,Auto rerank,read,4,4076
+Q079,Auto rerank,rerank,0,0
+Q080,Auto rerank,search,8,800
+Q080,Auto rerank,bash,12,11644
+Q080,Auto rerank,read,12,15771
+Q080,Auto rerank,rerank,0,0
+Q081,Auto rerank,search,3,300
+Q081,Auto rerank,bash,9,14465
+Q081,Auto rerank,read,5,3263
+Q081,Auto rerank,rerank,0,0
+Q082,Auto rerank,search,10,1000
+Q082,Auto rerank,bash,24,32719
+Q082,Auto rerank,read,21,26692
+Q082,Auto rerank,rerank,0,0
+Q083,Auto rerank,search,4,400
+Q083,Auto rerank,bash,13,12005
+Q083,Auto rerank,read,10,10395
+Q083,Auto rerank,rerank,0,0
+Q084,Auto rerank,search,13,1300
+Q084,Auto rerank,bash,15,14372
+Q084,Auto rerank,read,14,23709
+Q084,Auto rerank,rerank,0,0
+Q085,Auto rerank,search,6,600
+Q085,Auto rerank,bash,13,15118
+Q085,Auto rerank,read,8,15636
+Q085,Auto rerank,rerank,0,0
+Q086,Auto rerank,search,4,400
+Q086,Auto rerank,bash,13,25138
+Q086,Auto rerank,read,6,6520
+Q086,Auto rerank,rerank,0,0
+Q087,Auto rerank,search,8,800
+Q087,Auto rerank,bash,26,43011
+Q087,Auto rerank,read,21,21730
+Q087,Auto rerank,rerank,0,0
+Q088,Auto rerank,search,10,1000
+Q088,Auto rerank,bash,25,41104
+Q088,Auto rerank,read,20,17830
+Q088,Auto rerank,rerank,0,0
+Q089,Auto rerank,search,18,1800
+Q089,Auto rerank,bash,51,46403
+Q089,Auto rerank,read,31,39278
+Q089,Auto rerank,rerank,0,0
+Q090,Auto rerank,search,11,1100
+Q090,Auto rerank,bash,18,31767
+Q090,Auto rerank,read,14,5520
+Q090,Auto rerank,rerank,0,0
+Q091,Auto rerank,search,6,600
+Q091,Auto rerank,bash,16,9475
+Q091,Auto rerank,read,11,4037
+Q091,Auto rerank,rerank,0,0
+Q092,Auto rerank,search,8,800
+Q092,Auto rerank,bash,12,21707
+Q092,Auto rerank,read,6,5784
+Q092,Auto rerank,rerank,0,0
+Q093,Auto rerank,search,4,400
+Q093,Auto rerank,bash,16,29351
+Q093,Auto rerank,read,4,7650
+Q093,Auto rerank,rerank,0,0
+Q094,Auto rerank,search,2,200
+Q094,Auto rerank,bash,9,8398
+Q094,Auto rerank,read,9,10352
+Q094,Auto rerank,rerank,0,0
+Q095,Auto rerank,search,6,600
+Q095,Auto rerank,bash,9,18014
+Q095,Auto rerank,read,7,13156
+Q095,Auto rerank,rerank,0,0
+Q096,Auto rerank,search,6,600
+Q096,Auto rerank,bash,15,6055
+Q096,Auto rerank,read,13,9719
+Q096,Auto rerank,rerank,0,0
+Q097,Auto rerank,search,7,700
+Q097,Auto rerank,bash,12,7992
+Q097,Auto rerank,read,11,21910
+Q097,Auto rerank,rerank,0,0
+Q098,Auto rerank,search,4,400
+Q098,Auto rerank,bash,27,44497
+Q098,Auto rerank,read,9,18574
+Q098,Auto rerank,rerank,0,0
+Q099,Auto rerank,search,5,500
+Q099,Auto rerank,bash,9,8715
+Q099,Auto rerank,read,9,5456
+Q099,Auto rerank,rerank,0,0
+Q100,Auto rerank,search,8,800
+Q100,Auto rerank,bash,11,18713
+Q100,Auto rerank,read,4,3975
+Q100,Auto rerank,rerank,0,0
+Q001,Agent rerank,search,1,100
+Q001,Agent rerank,bash,4,1939
+Q001,Agent rerank,read,5,4668
+Q001,Agent rerank,rerank,3,300
+Q002,Agent rerank,search,2,200
+Q002,Agent rerank,bash,1,1404
+Q002,Agent rerank,read,0,0
+Q002,Agent rerank,rerank,3,300
+Q003,Agent rerank,search,9,900
+Q003,Agent rerank,bash,20,25102
+Q003,Agent rerank,read,14,10820
+Q003,Agent rerank,rerank,8,800
+Q004,Agent rerank,search,7,700
+Q004,Agent rerank,bash,9,17423
+Q004,Agent rerank,read,8,6567
+Q004,Agent rerank,rerank,8,800
+Q005,Agent rerank,search,2,200
+Q005,Agent rerank,bash,8,12659
+Q005,Agent rerank,read,10,4232
+Q005,Agent rerank,rerank,3,300
+Q006,Agent rerank,search,2,200
+Q006,Agent rerank,bash,9,18792
+Q006,Agent rerank,read,11,4002
+Q006,Agent rerank,rerank,5,500
+Q007,Agent rerank,search,7,700
+Q007,Agent rerank,bash,14,20662
+Q007,Agent rerank,read,9,7725
+Q007,Agent rerank,rerank,9,900
+Q008,Agent rerank,search,2,200
+Q008,Agent rerank,bash,9,8655
+Q008,Agent rerank,read,5,5651
+Q008,Agent rerank,rerank,5,500
+Q009,Agent rerank,search,5,500
+Q009,Agent rerank,bash,6,9804
+Q009,Agent rerank,read,8,4363
+Q009,Agent rerank,rerank,3,300
+Q010,Agent rerank,search,7,700
+Q010,Agent rerank,bash,16,30369
+Q010,Agent rerank,read,7,4233
+Q010,Agent rerank,rerank,9,900
+Q011,Agent rerank,search,6,600
+Q011,Agent rerank,bash,12,4225
+Q011,Agent rerank,read,12,21319
+Q011,Agent rerank,rerank,6,600
+Q012,Agent rerank,search,5,500
+Q012,Agent rerank,bash,5,1890
+Q012,Agent rerank,read,1,1731
+Q012,Agent rerank,rerank,2,200
+Q013,Agent rerank,search,5,500
+Q013,Agent rerank,bash,7,4098
+Q013,Agent rerank,read,6,3278
+Q013,Agent rerank,rerank,7,700
+Q014,Agent rerank,search,7,700
+Q014,Agent rerank,bash,15,26391
+Q014,Agent rerank,read,10,16884
+Q014,Agent rerank,rerank,9,900
+Q015,Agent rerank,search,4,400
+Q015,Agent rerank,bash,7,3894
+Q015,Agent rerank,read,4,6895
+Q015,Agent rerank,rerank,2,200
+Q016,Agent rerank,search,1,100
+Q016,Agent rerank,bash,8,10335
+Q016,Agent rerank,read,0,0
+Q016,Agent rerank,rerank,2,200
+Q017,Agent rerank,search,7,700
+Q017,Agent rerank,bash,13,5170
+Q017,Agent rerank,read,5,2985
+Q017,Agent rerank,rerank,6,600
+Q018,Agent rerank,search,6,600
+Q018,Agent rerank,bash,13,13793
+Q018,Agent rerank,read,7,12812
+Q018,Agent rerank,rerank,6,600
+Q019,Agent rerank,search,6,600
+Q019,Agent rerank,bash,13,19797
+Q019,Agent rerank,read,3,3764
+Q019,Agent rerank,rerank,8,800
+Q020,Agent rerank,search,9,900
+Q020,Agent rerank,bash,12,15573
+Q020,Agent rerank,read,7,3919
+Q020,Agent rerank,rerank,13,1300
+Q021,Agent rerank,search,7,700
+Q021,Agent rerank,bash,4,6817
+Q021,Agent rerank,read,2,1436
+Q021,Agent rerank,rerank,4,400
+Q022,Agent rerank,search,8,800
+Q022,Agent rerank,bash,6,6639
+Q022,Agent rerank,read,4,4281
+Q022,Agent rerank,rerank,1,100
+Q023,Agent rerank,search,1,100
+Q023,Agent rerank,bash,1,1462
+Q023,Agent rerank,read,3,5079
+Q023,Agent rerank,rerank,1,100
+Q024,Agent rerank,search,3,300
+Q024,Agent rerank,bash,5,9641
+Q024,Agent rerank,read,4,6672
+Q024,Agent rerank,rerank,0,0
+Q025,Agent rerank,search,10,1000
+Q025,Agent rerank,bash,14,10737
+Q025,Agent rerank,read,8,13016
+Q025,Agent rerank,rerank,6,600
+Q026,Agent rerank,search,3,300
+Q026,Agent rerank,bash,8,11819
+Q026,Agent rerank,read,7,7727
+Q026,Agent rerank,rerank,2,200
+Q027,Agent rerank,search,9,900
+Q027,Agent rerank,bash,32,28176
+Q027,Agent rerank,read,15,15898
+Q027,Agent rerank,rerank,9,900
+Q028,Agent rerank,search,3,300
+Q028,Agent rerank,bash,6,10239
+Q028,Agent rerank,read,4,5627
+Q028,Agent rerank,rerank,0,0
+Q029,Agent rerank,search,3,300
+Q029,Agent rerank,bash,2,3409
+Q029,Agent rerank,read,3,5977
+Q029,Agent rerank,rerank,5,500
+Q030,Agent rerank,search,10,1000
+Q030,Agent rerank,bash,17,11397
+Q030,Agent rerank,read,6,3302
+Q030,Agent rerank,rerank,9,900
+Q031,Agent rerank,search,9,900
+Q031,Agent rerank,bash,15,10410
+Q031,Agent rerank,read,11,7856
+Q031,Agent rerank,rerank,5,500
+Q032,Agent rerank,search,11,1100
+Q032,Agent rerank,bash,19,30663
+Q032,Agent rerank,read,16,20512
+Q032,Agent rerank,rerank,10,1000
+Q033,Agent rerank,search,2,200
+Q033,Agent rerank,bash,4,8087
+Q033,Agent rerank,read,4,3625
+Q033,Agent rerank,rerank,4,400
+Q034,Agent rerank,search,4,400
+Q034,Agent rerank,bash,4,1556
+Q034,Agent rerank,read,3,3608
+Q034,Agent rerank,rerank,3,300
+Q035,Agent rerank,search,4,400
+Q035,Agent rerank,bash,6,12459
+Q035,Agent rerank,read,3,4066
+Q035,Agent rerank,rerank,7,700
+Q036,Agent rerank,search,1,100
+Q036,Agent rerank,bash,6,10966
+Q036,Agent rerank,read,1,352
+Q036,Agent rerank,rerank,8,800
+Q037,Agent rerank,search,3,300
+Q037,Agent rerank,bash,1,1933
+Q037,Agent rerank,read,2,3343
+Q037,Agent rerank,rerank,2,200
+Q038,Agent rerank,search,10,1000
+Q038,Agent rerank,bash,17,13834
+Q038,Agent rerank,read,11,16619
+Q038,Agent rerank,rerank,12,1200
+Q039,Agent rerank,search,3,300
+Q039,Agent rerank,bash,11,22898
+Q039,Agent rerank,read,11,8843
+Q039,Agent rerank,rerank,7,700
+Q040,Agent rerank,search,6,600
+Q040,Agent rerank,bash,13,17456
+Q040,Agent rerank,read,7,11309
+Q040,Agent rerank,rerank,10,1000
+Q041,Agent rerank,search,9,900
+Q041,Agent rerank,bash,20,20749
+Q041,Agent rerank,read,11,10587
+Q041,Agent rerank,rerank,11,1100
+Q042,Agent rerank,search,6,600
+Q042,Agent rerank,bash,7,3368
+Q042,Agent rerank,read,7,14092
+Q042,Agent rerank,rerank,3,300
+Q043,Agent rerank,search,7,700
+Q043,Agent rerank,bash,4,4725
+Q043,Agent rerank,read,6,3160
+Q043,Agent rerank,rerank,8,800
+Q044,Agent rerank,search,3,300
+Q044,Agent rerank,bash,9,18755
+Q044,Agent rerank,read,6,7355
+Q044,Agent rerank,rerank,4,400
+Q045,Agent rerank,search,6,600
+Q045,Agent rerank,bash,12,22579
+Q045,Agent rerank,read,7,13144
+Q045,Agent rerank,rerank,7,700
+Q046,Agent rerank,search,2,200
+Q046,Agent rerank,bash,7,6032
+Q046,Agent rerank,read,5,10091
+Q046,Agent rerank,rerank,2,200
+Q047,Agent rerank,search,10,1000
+Q047,Agent rerank,bash,26,20661
+Q047,Agent rerank,read,9,18657
+Q047,Agent rerank,rerank,7,700
+Q048,Agent rerank,search,9,900
+Q048,Agent rerank,bash,26,16044
+Q048,Agent rerank,read,17,35682
+Q048,Agent rerank,rerank,14,1400
+Q049,Agent rerank,search,3,300
+Q049,Agent rerank,bash,3,2354
+Q049,Agent rerank,read,3,2253
+Q049,Agent rerank,rerank,3,300
+Q050,Agent rerank,search,2,200
+Q050,Agent rerank,bash,7,6021
+Q050,Agent rerank,read,7,10416
+Q050,Agent rerank,rerank,6,600
+Q051,Agent rerank,search,4,400
+Q051,Agent rerank,bash,8,3403
+Q051,Agent rerank,read,7,13253
+Q051,Agent rerank,rerank,2,200
+Q052,Agent rerank,search,3,300
+Q052,Agent rerank,bash,7,14643
+Q052,Agent rerank,read,1,785
+Q052,Agent rerank,rerank,3,300
+Q053,Agent rerank,search,3,300
+Q053,Agent rerank,bash,4,4306
+Q053,Agent rerank,read,4,2321
+Q053,Agent rerank,rerank,0,0
+Q054,Agent rerank,search,2,200
+Q054,Agent rerank,bash,11,6513
+Q054,Agent rerank,read,7,13729
+Q054,Agent rerank,rerank,8,800
+Q055,Agent rerank,search,12,1200
+Q055,Agent rerank,bash,16,26264
+Q055,Agent rerank,read,8,15841
+Q055,Agent rerank,rerank,8,800
+Q056,Agent rerank,search,3,300
+Q056,Agent rerank,bash,8,3595
+Q056,Agent rerank,read,3,2178
+Q056,Agent rerank,rerank,2,200
+Q057,Agent rerank,search,13,1300
+Q057,Agent rerank,bash,16,29806
+Q057,Agent rerank,read,15,28320
+Q057,Agent rerank,rerank,7,700
+Q058,Agent rerank,search,7,700
+Q058,Agent rerank,bash,9,10433
+Q058,Agent rerank,read,8,9753
+Q058,Agent rerank,rerank,9,900
+Q059,Agent rerank,search,4,400
+Q059,Agent rerank,bash,8,14709
+Q059,Agent rerank,read,2,2282
+Q059,Agent rerank,rerank,1,100
+Q060,Agent rerank,search,1,100
+Q060,Agent rerank,bash,2,3046
+Q060,Agent rerank,read,1,1555
+Q060,Agent rerank,rerank,1,100
+Q061,Agent rerank,search,10,1000
+Q061,Agent rerank,bash,15,14544
+Q061,Agent rerank,read,8,15879
+Q061,Agent rerank,rerank,7,700
+Q062,Agent rerank,search,13,1300
+Q062,Agent rerank,bash,16,29670
+Q062,Agent rerank,read,11,16734
+Q062,Agent rerank,rerank,9,900
+Q063,Agent rerank,search,1,100
+Q063,Agent rerank,bash,6,10828
+Q063,Agent rerank,read,3,1495
+Q063,Agent rerank,rerank,1,100
+Q064,Agent rerank,search,5,500
+Q064,Agent rerank,bash,5,3002
+Q064,Agent rerank,read,5,6972
+Q064,Agent rerank,rerank,4,400
+Q065,Agent rerank,search,3,300
+Q065,Agent rerank,bash,8,4959
+Q065,Agent rerank,read,3,6250
+Q065,Agent rerank,rerank,3,300
+Q066,Agent rerank,search,10,1000
+Q066,Agent rerank,bash,11,22259
+Q066,Agent rerank,read,11,13910
+Q066,Agent rerank,rerank,6,600
+Q067,Agent rerank,search,3,300
+Q067,Agent rerank,bash,5,6939
+Q067,Agent rerank,read,1,751
+Q067,Agent rerank,rerank,5,500
+Q068,Agent rerank,search,11,1100
+Q068,Agent rerank,bash,23,35443
+Q068,Agent rerank,read,12,6421
+Q068,Agent rerank,rerank,18,1800
+Q069,Agent rerank,search,3,300
+Q069,Agent rerank,bash,14,15511
+Q069,Agent rerank,read,8,4497
+Q069,Agent rerank,rerank,9,900
+Q070,Agent rerank,search,2,200
+Q070,Agent rerank,bash,11,20118
+Q070,Agent rerank,read,7,9852
+Q070,Agent rerank,rerank,3,300
+Q071,Agent rerank,search,3,300
+Q071,Agent rerank,bash,3,1360
+Q071,Agent rerank,read,2,3238
+Q071,Agent rerank,rerank,2,200
+Q072,Agent rerank,search,4,400
+Q072,Agent rerank,bash,4,7860
+Q072,Agent rerank,read,5,2054
+Q072,Agent rerank,rerank,1,100
+Q073,Agent rerank,search,4,400
+Q073,Agent rerank,bash,8,6958
+Q073,Agent rerank,read,5,3619
+Q073,Agent rerank,rerank,1,100
+Q074,Agent rerank,search,3,300
+Q074,Agent rerank,bash,8,14099
+Q074,Agent rerank,read,3,2392
+Q074,Agent rerank,rerank,3,300
+Q075,Agent rerank,search,2,200
+Q075,Agent rerank,bash,6,3507
+Q075,Agent rerank,read,1,799
+Q075,Agent rerank,rerank,0,0
+Q076,Agent rerank,search,2,200
+Q076,Agent rerank,bash,5,1790
+Q076,Agent rerank,read,8,3471
+Q076,Agent rerank,rerank,3,300
+Q077,Agent rerank,search,3,300
+Q077,Agent rerank,bash,7,13180
+Q077,Agent rerank,read,6,6331
+Q077,Agent rerank,rerank,4,400
+Q078,Agent rerank,search,10,1000
+Q078,Agent rerank,bash,22,44740
+Q078,Agent rerank,read,16,13616
+Q078,Agent rerank,rerank,16,1600
+Q079,Agent rerank,search,7,700
+Q079,Agent rerank,bash,14,19533
+Q079,Agent rerank,read,8,5976
+Q079,Agent rerank,rerank,6,600
+Q080,Agent rerank,search,4,400
+Q080,Agent rerank,bash,9,6332
+Q080,Agent rerank,read,3,1919
+Q080,Agent rerank,rerank,4,400
+Q081,Agent rerank,search,2,200
+Q081,Agent rerank,bash,4,7689
+Q081,Agent rerank,read,1,1898
+Q081,Agent rerank,rerank,2,200
+Q082,Agent rerank,search,10,1000
+Q082,Agent rerank,bash,8,9989
+Q082,Agent rerank,read,10,4204
+Q082,Agent rerank,rerank,8,800
+Q083,Agent rerank,search,6,600
+Q083,Agent rerank,bash,13,12686
+Q083,Agent rerank,read,8,14429
+Q083,Agent rerank,rerank,6,600
+Q084,Agent rerank,search,5,500
+Q084,Agent rerank,bash,9,5161
+Q084,Agent rerank,read,11,20792
+Q084,Agent rerank,rerank,8,800
+Q085,Agent rerank,search,4,400
+Q085,Agent rerank,bash,6,4752
+Q085,Agent rerank,read,5,9803
+Q085,Agent rerank,rerank,5,500
+Q086,Agent rerank,search,3,300
+Q086,Agent rerank,bash,6,3229
+Q086,Agent rerank,read,6,2564
+Q086,Agent rerank,rerank,6,600
+Q087,Agent rerank,search,9,900
+Q087,Agent rerank,bash,20,10442
+Q087,Agent rerank,read,6,6810
+Q087,Agent rerank,rerank,11,1100
+Q088,Agent rerank,search,10,1000
+Q088,Agent rerank,bash,19,23572
+Q088,Agent rerank,read,10,17055
+Q088,Agent rerank,rerank,14,1400
+Q089,Agent rerank,search,18,1800
+Q089,Agent rerank,bash,16,5708
+Q089,Agent rerank,read,15,14212
+Q089,Agent rerank,rerank,13,1300
+Q090,Agent rerank,search,7,700
+Q090,Agent rerank,bash,17,8788
+Q090,Agent rerank,read,12,19961
+Q090,Agent rerank,rerank,6,600
+Q091,Agent rerank,search,3,300
+Q091,Agent rerank,bash,4,2952
+Q091,Agent rerank,read,4,3137
+Q091,Agent rerank,rerank,0,0
+Q092,Agent rerank,search,2,200
+Q092,Agent rerank,bash,13,10038
+Q092,Agent rerank,read,9,3281
+Q092,Agent rerank,rerank,9,900
+Q093,Agent rerank,search,1,100
+Q093,Agent rerank,bash,9,14440
+Q093,Agent rerank,read,9,15588
+Q093,Agent rerank,rerank,4,400
+Q094,Agent rerank,search,3,300
+Q094,Agent rerank,bash,5,8795
+Q094,Agent rerank,read,4,5851
+Q094,Agent rerank,rerank,2,200
+Q095,Agent rerank,search,7,700
+Q095,Agent rerank,bash,8,12722
+Q095,Agent rerank,read,11,22500
+Q095,Agent rerank,rerank,2,200
+Q096,Agent rerank,search,4,400
+Q096,Agent rerank,bash,7,13763
+Q096,Agent rerank,read,2,2723
+Q096,Agent rerank,rerank,5,500
+Q097,Agent rerank,search,14,1400
+Q097,Agent rerank,bash,42,50693
+Q097,Agent rerank,read,15,26618
+Q097,Agent rerank,rerank,8,800
+Q098,Agent rerank,search,7,700
+Q098,Agent rerank,bash,12,6786
+Q098,Agent rerank,read,5,9443
+Q098,Agent rerank,rerank,5,500
+Q099,Agent rerank,search,2,200
+Q099,Agent rerank,bash,6,9350
+Q099,Agent rerank,read,3,5422
+Q099,Agent rerank,rerank,2,200
+Q100,Agent rerank,search,6,600
+Q100,Agent rerank,bash,2,1304
+Q100,Agent rerank,read,3,2758
+Q100,Agent rerank,rerank,4,400
