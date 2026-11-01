@@ -117,7 +117,7 @@ Python 3.10+；默认读取已提交的 `data/demo/`，输出到 `assets/`。
 python -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements-lock.txt
-python scripts/build_gallery.py
+python scripts/build_gallery.py --keep-existing-images
 ```
 
 只运行某张图，或使用自己的 CSV：

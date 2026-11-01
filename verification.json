@@ -19,11 +19,11 @@
     "PNG dimensions and nonconstant pixels"
   ],
   "sha256": {
-    ".github/workflows/build.yml": "544b7c02ac7a3da53138c263b9a920e04c75d893b253539da298cefadc954fbb",
+    ".github/workflows/build.yml": "87e06f7670339c62bfd440f9668d341adcd7ed9f87b5e5f9a05f540c974530f2",
     ".gitignore": "fa7f217a73f6f05a5fff53be6c62eb128249069eaaa876641b4b9a449ec57fb4",
     "CURATION.md": "4197e685acacf1c49b30574baf6ea667ea0e606c11cd511787257a37b8d2bdab",
     "LICENSE": "7d659579d5932a65748f29f9c09cce24ebf3c7179a6c9fb77363e64f25ada6dc",
-    "README.md": "b28cf2c005d3480a0cbae5dc3f33904ce33037b6ce7b3ac11f963b13c2afd8ee",
+    "README.md": "6dcb82df0921f996157ca747894ca5d460de187fecd139b4f9d9022cce89aac7",
     "REFERENCES.md": "91b0d9b31d351cc55e04f27662fa023d93174ed2c620dc1c43fb8dd5cc9acb68",
     "assets/02_token_raincloud.png": "2a6e9ca7e19a204d76ba95870b4bcbe3afeac19c89ca237d3fb58042a92680dd",
     "assets/02_token_raincloud.svg": "e249ef21131ab324339f3bf419cecb28f5dab4c1c0d8e0a8e35ddb9439afc60d",
@@ -115,7 +115,7 @@
     "paper_expansion/2026-11-01/preservation-baseline.json": "8ec88e19d37f12923e3958a2daf1232625a737f6abf00435245475b8e816d010",
     "requirements-lock.txt": "5b95e15fbc3ee6e3ad9cbb47b9bc93d9dfc03959e9460fe5dd7fed39d59db715",
     "requirements.txt": "333467adfe8f0d269d1ef539dbe0f22f159ca835d462a4008594e4bd7f434b37",
-    "scripts/build_gallery.py": "2f784c61794a970e6a9756d4603108a085e70d4e0a1b7459b0538d7027e39094",
+    "scripts/build_gallery.py": "cc4220f3d6e0252b5ec5eb0d7d0267b56d6422e667148aab975a5dedb105ef56",
     "scripts/contact_sheet.py": "0c75e3fc4c4c39017805a21608355478c5a4f7fb055c2ed33a5a027f7b15f572",
     "scripts/generate_demo_data.py": "36edc724516254e1b4e84134c070cf841a6e2d5551a4cf292084ee2f036bdeea",
     "scripts/package_release.py": "4406931822570887e7c9f8a14018c9be0b5e418236a75345b0f5e2aac2d033d3",
