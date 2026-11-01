@@ -1,0 +1,7 @@
+model,setting,accuracy_percent
+GPT-4.1,BM25,14.58
+GPT-4.1,Dense retrieval,35.42
+GPT-4.1,Oracle evidence,93.49
+Qwen3-32B,BM25,3.49
+Qwen3-32B,Dense retrieval,10.36
+Qwen3-32B,Oracle evidence,83.25

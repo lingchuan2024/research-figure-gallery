@@ -1,0 +1,5 @@
+agent,citation_accuracy_percent,effective_citations_per_task
+Grok Deeper Search,83.59,8.15
+Perplexity Deep Research,90.24,31.26
+Gemini 2.5 Pro Deep Research,81.44,111.21
+OpenAI Deep Research,77.96,40.79

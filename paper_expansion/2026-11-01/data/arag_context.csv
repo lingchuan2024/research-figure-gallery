@@ -1,0 +1,16 @@
+dataset,method,retrieved_tokens
+MuSiQue,Naive RAG,5387
+HotpotQA,Naive RAG,5358
+2Wiki,Naive RAG,5506
+Medical,Naive RAG,5418
+Novel,Naive RAG,4997
+MuSiQue,A-RAG Naive,56360
+HotpotQA,A-RAG Naive,27455
+2Wiki,A-RAG Naive,45406
+Medical,A-RAG Naive,23657
+Novel,A-RAG Naive,22391
+MuSiQue,A-RAG Full,5663
+HotpotQA,A-RAG Full,2737
+2Wiki,A-RAG Full,2930
+Medical,A-RAG Full,7678
+Novel,A-RAG Full,6087

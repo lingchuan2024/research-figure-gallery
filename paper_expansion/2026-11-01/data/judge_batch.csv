@@ -1,0 +1,6 @@
+batch_size,evaluation_cost_usd_per_task,human_agreement_accuracy_percent,human_agreement_f1_percent
+full,0.2025,90.8,87.06
+80,0.2087,91.47,88.36
+50,0.2513,91.75,89.57
+10,0.4832,92.29,89.37
+5,0.8298,90.39,85.66

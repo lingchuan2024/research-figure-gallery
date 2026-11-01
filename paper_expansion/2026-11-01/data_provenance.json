@@ -1,0 +1,132 @@
+[
+  {
+    "figure_id": "N01_retrieved_context",
+    "csv": "data/arag_context.csv",
+    "csv_sha256": "cb5758bff9017e357a619ee24080fcd2362cdb6fa0ee3e757a853ae8f64b0256",
+    "paper": "A-RAG: Scaling Agentic Retrieval-Augmented Generation via Hierarchical Retrieval Interfaces",
+    "version": "2602.03442v1",
+    "pdf_url": "https://arxiv.org/pdf/2602.03442v1",
+    "inspected_pdf_sha256": "b167650db7b6ba73f8f4462ce4147f7b826dfb700cca00ef8bfa226f8d02de60",
+    "pdf_pages": [
+      8
+    ],
+    "locator": "Table 3",
+    "transcription": "published table/section numbers",
+    "review": "numeric cells checked against the pinned paper; aggregate data only",
+    "derivations": "100 * (1 - full / naive); Naive RAG comparator is not part of that ratio"
+  },
+  {
+    "figure_id": "N02_failure_hierarchy",
+    "csv": "data/arag_failures.csv",
+    "csv_sha256": "bf9a83e20e039774d48164b55a58939673542889e85d4531e2a66a38f3fd3452",
+    "paper": "A-RAG: Scaling Agentic Retrieval-Augmented Generation via Hierarchical Retrieval Interfaces",
+    "version": "2602.03442v1",
+    "pdf_url": "https://arxiv.org/pdf/2602.03442v1",
+    "inspected_pdf_sha256": "b167650db7b6ba73f8f4462ce4147f7b826dfb700cca00ef8bfa226f8d02de60",
+    "pdf_pages": [
+      8,
+      15
+    ],
+    "locator": "Tables 7–8; Figure 5",
+    "transcription": "published table/section numbers",
+    "review": "numeric cells checked against the pinned paper; aggregate data only",
+    "derivations": "none"
+  },
+  {
+    "figure_id": "N03_oracle_evidence",
+    "csv": "data/browse_oracle.csv",
+    "csv_sha256": "883e2318f7c850e11237a1d012feb92c415339a055bfe1d77547004b8059555d",
+    "paper": "BrowseComp-Plus: A More Fair and Transparent Evaluation Benchmark of Deep-Research Agent",
+    "version": "2508.06600v1",
+    "pdf_url": "https://arxiv.org/pdf/2508.06600v1",
+    "inspected_pdf_sha256": "0aa19d874913ae5f95fc9913aaa9c0cb68f4a8cbba8d2e436ea9b41738e69d3c",
+    "pdf_pages": [
+      8,
+      10
+    ],
+    "locator": "Table 1 and §4.8.1",
+    "transcription": "published table/section numbers",
+    "review": "numeric cells checked against the pinned paper; aggregate data only",
+    "derivations": "none"
+  },
+  {
+    "figure_id": "N04_citation_support",
+    "csv": "data/deepbench_fact.csv",
+    "csv_sha256": "1c96bdca8f4a0249e4679c5e2611fb6afcb4534ef13408b34d6387bcbe9da66c",
+    "paper": "DeepResearch Bench: A Comprehensive Benchmark for Deep Research Agents",
+    "version": "2506.11763v1",
+    "pdf_url": "https://arxiv.org/pdf/2506.11763v1",
+    "inspected_pdf_sha256": "8fbf30398f5e62f8839f0c9c8609bbb9e3cd0b57ae27d4bf33cb5db2007d1118",
+    "pdf_pages": [
+      6
+    ],
+    "locator": "Table 1; Figure 1 (right)",
+    "transcription": "published table/section numbers",
+    "review": "numeric cells checked against the pinned paper; aggregate data only",
+    "derivations": "none"
+  },
+  {
+    "figure_id": "N05_task_complexity",
+    "csv": "data/rubric_complexity.csv",
+    "csv_sha256": "cd30f82c3691ef6c3159c5b7d7563b2defe6997c71eb33f8503524a8c0379dd3",
+    "paper": "ResearchRubrics: A Benchmark of Prompts and Rubrics For Evaluating Deep Research Agents",
+    "version": "2511.07685v1",
+    "pdf_url": "https://arxiv.org/pdf/2511.07685v1",
+    "inspected_pdf_sha256": "8c2da4367453de7b13d4ef9c30ac3446b40abee8e5124699a0f5e8700380f223",
+    "pdf_pages": [
+      9
+    ],
+    "locator": "Figure 6 printed numeric labels",
+    "transcription": "printed Figure 6 labels",
+    "review": "numeric cells checked against the pinned paper; aggregate data only",
+    "derivations": "none"
+  },
+  {
+    "figure_id": "N06_latency_components",
+    "csv": "data/fs_latency.csv",
+    "csv_sha256": "a6c7f44f90e9f4ae5fb0369022d9d03ecddbf4788346dde1185f66597f56ee77",
+    "paper": "FS-Researcher: Test-Time Scaling for Long-Horizon Research Tasks with File-System-Based Agents",
+    "version": "2602.01566v2",
+    "pdf_url": "https://arxiv.org/pdf/2602.01566v2",
+    "inspected_pdf_sha256": "d6ba43ae729a00a93cecaa72ac34a414b441c6bd81a5ef65b80f5fe23c27a1f8",
+    "pdf_pages": [
+      22
+    ],
+    "locator": "Table 15",
+    "transcription": "published table/section numbers",
+    "review": "numeric cells checked against the pinned paper; aggregate data only",
+    "derivations": "I/O seconds multiplied by 1000 only"
+  },
+  {
+    "figure_id": "N07_source_growth",
+    "csv": "data/fs_scaling.csv",
+    "csv_sha256": "f6d44b9cd5b9e8d5717a2a7aef562e7af609a7d6c505b84d96e4ed3c71d1b432",
+    "paper": "FS-Researcher: Test-Time Scaling for Long-Horizon Research Tasks with File-System-Based Agents",
+    "version": "2602.01566v2",
+    "pdf_url": "https://arxiv.org/pdf/2602.01566v2",
+    "inspected_pdf_sha256": "d6ba43ae729a00a93cecaa72ac34a414b441c6bd81a5ef65b80f5fe23c27a1f8",
+    "pdf_pages": [
+      17
+    ],
+    "locator": "Tables 8 and 10",
+    "transcription": "published table/section numbers",
+    "review": "numeric cells checked against the pinned paper; aggregate data only",
+    "derivations": "differences of unique-URL means divided by differences of search-call means"
+  },
+  {
+    "figure_id": "N08_evaluator_budget",
+    "csv": "data/judge_batch.csv",
+    "csv_sha256": "ec379abe77887470276c2e5fbf71f3dc381933c8f5aab4e07386dd465b54ea57",
+    "paper": "DeepResearch Bench II: Diagnosing Deep Research Agents via Rubrics from Expert Reports",
+    "version": "2601.08536v3",
+    "pdf_url": "https://arxiv.org/pdf/2601.08536v3",
+    "inspected_pdf_sha256": "6377061d91b212bba03b2ea30fdce11dc8c0ac425b1dbc898086f885e433aa32",
+    "pdf_pages": [
+      8
+    ],
+    "locator": "Table 4",
+    "transcription": "published table/section numbers",
+    "review": "numeric cells checked against the pinned paper; aggregate data only",
+    "derivations": "none"
+  }
+]

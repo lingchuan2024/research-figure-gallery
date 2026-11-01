@@ -1,0 +1,23 @@
+{
+  "assets/02_token_raincloud.png": "2a6e9ca7e19a204d76ba95870b4bcbe3afeac19c89ca237d3fb58042a92680dd",
+  "assets/02_token_raincloud.svg": "e249ef21131ab324339f3bf419cecb28f5dab4c1c0d8e0a8e35ddb9439afc60d",
+  "assets/04_call_vs_output_share.png": "15e237f9636008c60f52e81c02223638e6057318d1d806577f35cab58dee41b1",
+  "assets/04_call_vs_output_share.svg": "cd50dbd4031443aa70454042993698228549d46894c3dd800e56771147c5ca77",
+  "assets/07_rank_transition.png": "6460a249c395d8655c614be830f4202da09a1c4644c5a0c55e80fba5fdb16764",
+  "assets/07_rank_transition.svg": "a2e1aef3fcc8cf3298159a98521316bbcdf27975b5b41439cbf64d70e023b55b",
+  "assets/08_query_paired_comparison.png": "33265b4a7af3c6528f061880afa92a944573a75bec5669cb50dcbb533c916395",
+  "assets/08_query_paired_comparison.svg": "5088477a712ce5f2ead531a4aae23dacc65889954c08ff5827d9b815bdad9918",
+  "assets/09_token_outcome_pairs.png": "c056babad69cc866d8afe43e6ad30765ba86068e575854036c86003105aeae45",
+  "assets/09_token_outcome_pairs.svg": "a2ddaa385cd34b382f9fd2a033374187b233ce6ff159d985f9488d7e93cde9c4",
+  "assets/12_accuracy_cost_frontier.png": "294b21ec1e97b924adcff6ffb6fc0a1197c8872e577e2ac7f8a019cf5a472705",
+  "assets/12_accuracy_cost_frontier.svg": "cf5b4de2cf5f35abb34090c0a70c0b96e64b913c03d840cc763375852bf2bd86",
+  "assets/14_budget_accuracy.png": "8a2ec110fa305bfc600bcd2ebd1b23710624267d0970f5e96e4387b3dc869f45",
+  "assets/14_budget_accuracy.svg": "c60ca0ee1e8266d5404d32abee5519a022890f11bec3ec67b0c3e284a1181215",
+  "assets/16_trajectory_timeline.png": "dff2489ea7ae618a8d8a369de6155ba92f9ab4479ca845bf6f03bc52ebc9adc1",
+  "assets/16_trajectory_timeline.svg": "0119270550d388392befe59a545ea33d9460d35fdf4b6f02e2ba9d058d0e382e",
+  "assets/17_ablation_forest.png": "3e9b6438a07a8dc04438705cd68da70fd647e4e2edd23390bd13e9f80ed12381",
+  "assets/17_ablation_forest.svg": "9e20364390173ea39f70660b2a79ba4c11ad76a64c9fe163942db369445b412e",
+  "assets/19_results_table.png": "2133f247f73c34516e05371f3a74b40a11029ce26a01cb0a346283f46e48677f",
+  "assets/19_results_table.svg": "1f7cdfbf4188187842b853cb5fdbc61f54003aab89eb9df944ceeaeeabb9338b",
+  "assets/overview.png": "c5c142ebfea65a1905eb33ec1c06514e8f869ff0e3d8e017bfac7be55987f5cd"
+}

@@ -1,0 +1,7 @@
+stage,component,seconds
+Context building,LLM,236.72
+Context building,Web tools,219.96
+Context building,File I/O,0.055
+Report writing,LLM,376.65
+Report writing,Web tools,0
+Report writing,File I/O,0.186

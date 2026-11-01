@@ -1,0 +1,9 @@
+population,category,percent
+all_errors,Reasoning chain,82
+all_errors,Gave up,3
+all_errors,Judge error,9
+all_errors,Corpus missing,6
+reasoning_chain_errors,Entity confusion,40
+reasoning_chain_errors,Wrong strategy,28
+reasoning_chain_errors,Question misunderstanding,22
+reasoning_chain_errors,Budget exhausted,10

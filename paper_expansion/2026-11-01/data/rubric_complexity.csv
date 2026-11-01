@@ -1,0 +1,28 @@
+dimension,level,model,compliance_percent
+Conceptual breadth,Simple,Gemini DR,70.1
+Conceptual breadth,Moderate,Gemini DR,66.9
+Conceptual breadth,High,Gemini DR,63.7
+Conceptual breadth,Simple,OpenAI DR,66.8
+Conceptual breadth,Moderate,OpenAI DR,67.7
+Conceptual breadth,High,OpenAI DR,60.3
+Conceptual breadth,Simple,Perplexity DR,58.1
+Conceptual breadth,Moderate,Perplexity DR,55.2
+Conceptual breadth,High,Perplexity DR,57.8
+Logical nesting,Shallow,Gemini DR,71.9
+Logical nesting,Intermediate,Gemini DR,67.1
+Logical nesting,Deep,Gemini DR,66.1
+Logical nesting,Shallow,OpenAI DR,69.1
+Logical nesting,Intermediate,OpenAI DR,66.5
+Logical nesting,Deep,OpenAI DR,64.9
+Logical nesting,Shallow,Perplexity DR,59.3
+Logical nesting,Intermediate,Perplexity DR,56
+Logical nesting,Deep,Perplexity DR,55.9
+Exploration,Low,Gemini DR,71.2
+Exploration,Medium,Gemini DR,67.2
+Exploration,High,Gemini DR,63
+Exploration,Low,OpenAI DR,69.8
+Exploration,Medium,OpenAI DR,65.1
+Exploration,High,OpenAI DR,64.9
+Exploration,Low,Perplexity DR,55.5
+Exploration,Medium,Perplexity DR,57.1
+Exploration,High,Perplexity DR,56.7

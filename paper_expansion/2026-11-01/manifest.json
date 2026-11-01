@@ -1,0 +1,164 @@
+[
+  {
+    "id": "N01_retrieved_context",
+    "category": "H · 检索暴露量与来源增长",
+    "title": "检索接口暴露了多少文本",
+    "paper": "arag",
+    "data": "data/arag_context.csv",
+    "script": "code/N01_retrieved_context.py",
+    "image": "figures/N01_retrieved_context.png",
+    "vector": "figures/N01_retrieved_context.svg",
+    "source_locator": "Table 3",
+    "source_pdf_page": 8,
+    "fit": "把工具返回文本量与主模型累计输入分开统计。",
+    "condition": "需要每次工具返回的实际token/字符及去重文档ID；原论文并未控制为100字符。",
+    "origin": "published_numeric_redraw",
+    "author_plot_code": "not located in inspected repository tree; local script is our redrawing implementation",
+    "aesthetic_status": "passed",
+    "source_pdf_pages": [
+      8
+    ]
+  },
+  {
+    "id": "N02_failure_hierarchy",
+    "category": "G · 失败归因与证据利用",
+    "title": "失败原因及其内部构成",
+    "paper": "arag",
+    "data": "data/arag_failures.csv",
+    "script": "code/N02_failure_hierarchy.py",
+    "image": "figures/N02_failure_hierarchy.png",
+    "vector": "figures/N02_failure_hierarchy.svg",
+    "source_locator": "Tables 7–8; Figure 5",
+    "source_pdf_page": 15,
+    "fit": "区分取证失败、推理误用、查询策略问题和judge误判。",
+    "condition": "先固定失败样本与标注规则；右图分母只含推理链错误，不能与左图直接相加。",
+    "origin": "published_numeric_redraw",
+    "author_plot_code": "not located in inspected repository tree; local script is our redrawing implementation",
+    "aesthetic_status": "passed",
+    "source_pdf_pages": [
+      8,
+      15
+    ]
+  },
+  {
+    "id": "N03_oracle_evidence",
+    "category": "G · 失败归因与证据利用",
+    "title": "证据充分时还有多大差距",
+    "paper": "browsecomp_plus",
+    "data": "data/browse_oracle.csv",
+    "script": "code/N03_oracle_evidence.py",
+    "image": "figures/N03_oracle_evidence.png",
+    "vector": "figures/N03_oracle_evidence.svg",
+    "source_locator": "Table 1 and §4.8.1",
+    "source_pdf_page": 10,
+    "fit": "用证据充分诊断检查reranker能力与模型使用证据能力。",
+    "condition": "只作诊断条件，不能冒充同返回预算下的公平baseline；Qwen包含上下文溢出失败。",
+    "origin": "published_numeric_redraw",
+    "author_plot_code": "not located in inspected repository tree; local script is our redrawing implementation",
+    "aesthetic_status": "passed",
+    "source_pdf_pages": [
+      8,
+      10
+    ]
+  },
+  {
+    "id": "N04_citation_support",
+    "category": "I · 引用与任务难度",
+    "title": "有效证据量与引用支持率",
+    "paper": "deepresearch_bench",
+    "data": "data/deepbench_fact.csv",
+    "script": "code/N04_citation_support.py",
+    "image": "figures/N04_citation_support.png",
+    "vector": "figures/N04_citation_support.svg",
+    "source_locator": "Table 1; Figure 1 (right)",
+    "source_pdf_page": 6,
+    "fit": "相关snippet是否变成了能支持答案的证据。",
+    "condition": "先要求可追溯的答案–证据ID对应，再做支持性核验；FACT不等于检索相关性。",
+    "origin": "published_numeric_redraw",
+    "author_plot_code": "not located in inspected repository tree; local script is our redrawing implementation",
+    "aesthetic_status": "passed",
+    "source_pdf_pages": [
+      6
+    ]
+  },
+  {
+    "id": "N05_task_complexity",
+    "category": "I · 引用与任务难度",
+    "title": "按不同困难类型分层",
+    "paper": "researchrubrics",
+    "data": "data/rubric_complexity.csv",
+    "script": "code/N05_task_complexity.py",
+    "image": "figures/N05_task_complexity.png",
+    "vector": "figures/N05_task_complexity.svg",
+    "source_locator": "Figure 6 printed numeric labels",
+    "source_pdf_page": 9,
+    "fit": "总体分数之外，看多跳、证据需求和探索程度是否改变方案收益。",
+    "condition": "原图是长报告rubric指标；迁移到QA需重新定义分层标签，不能照搬分数或声称因果。",
+    "origin": "published_numeric_redraw",
+    "author_plot_code": "not located in inspected repository tree; local script is our redrawing implementation",
+    "aesthetic_status": "passed",
+    "source_pdf_pages": [
+      9
+    ]
+  },
+  {
+    "id": "N06_latency_components",
+    "category": "J · 阶段耗时与评估可靠性",
+    "title": "耗时究竟花在哪一环",
+    "paper": "fs_researcher",
+    "data": "data/fs_latency.csv",
+    "script": "code/N06_latency_components.py",
+    "image": "figures/N06_latency_components.png",
+    "vector": "figures/N06_latency_components.svg",
+    "source_locator": "Table 15",
+    "source_pdf_page": 22,
+    "fit": "给主模型、检索、重排、读文件分别计时，找到真正瓶颈。",
+    "condition": "目前参考数据只有LLM、网页工具、I/O；我们的reranker耗时需要单独埋点。",
+    "origin": "published_numeric_redraw",
+    "author_plot_code": "not located in inspected repository tree; local script is our redrawing implementation",
+    "aesthetic_status": "passed",
+    "source_pdf_pages": [
+      22
+    ]
+  },
+  {
+    "id": "N07_source_growth",
+    "category": "H · 检索暴露量与来源增长",
+    "title": "搜索投入与独立来源增长",
+    "paper": "fs_researcher",
+    "data": "data/fs_scaling.csv",
+    "script": "code/N07_source_growth.py",
+    "image": "figures/N07_source_growth.png",
+    "vector": "figures/N07_source_growth.svg",
+    "source_locator": "Tables 8 and 10",
+    "source_pdf_page": 17,
+    "fit": "统计多次调用是否只重复暴露旧文档，区分调用多与新证据多。",
+    "condition": "图右是均值之差的比值，不是逐题新颖度；静态语料中可将URL换为文档ID。",
+    "origin": "published_numeric_redraw",
+    "author_plot_code": "not located in inspected repository tree; local script is our redrawing implementation",
+    "aesthetic_status": "passed",
+    "source_pdf_pages": [
+      17
+    ]
+  },
+  {
+    "id": "N08_evaluator_budget",
+    "category": "J · 阶段耗时与评估可靠性",
+    "title": "评估费用与人类一致性",
+    "paper": "deepresearch_bench_ii",
+    "data": "data/judge_batch.csv",
+    "script": "code/N08_evaluator_budget.py",
+    "image": "figures/N08_evaluator_budget.png",
+    "vector": "figures/N08_evaluator_budget.svg",
+    "source_locator": "Table 4",
+    "source_pdf_page": 8,
+    "fit": "确认自动判分稳定，避免把judge误差误认为重排收益或退化。",
+    "condition": "费用是评估器费用，F1是与人工标注一致性；不属于agent推理成本。",
+    "origin": "published_numeric_redraw",
+    "author_plot_code": "not located in inspected repository tree; local script is our redrawing implementation",
+    "aesthetic_status": "passed",
+    "source_pdf_pages": [
+      8
+    ]
+  }
+]

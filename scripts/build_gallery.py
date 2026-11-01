@@ -7,6 +7,7 @@ import hashlib
 import json
 import platform
 import re
+import runpy
 import subprocess
 from gallerylib import ROOT
 import matplotlib
@@ -34,11 +35,11 @@ def readme(items):
         '17_ablation_forest':'先核验工具实现，再一次只改变 query、snippet、范围或时机中的一项，其他条件固定并按题配对。',
         '19_results_table':'统一问题集、模型、返回字符预算和停止条件，接入真实评测结果；不能将演示排序当作当前实验结论。',
     }
-    text=f'''# Research Figure Gallery · 科研图表画法示例
+    text=f'''# Research Figure Gallery · 科研图表参考与代码
 
-按用途收录 {len(items)} 张图，每张只展示一次，附仓库内绘图代码。
+原有 {len(items)} 张画法模板按用途展示，附仓库内代码；本轮新增的 Deep Research 真实文献数据图位于文末，另附出处和 CSV。
 
-**当前仅为合成数据的画法演示，尚未接入并核验你们的真实实验。** 合成脚本预设了部分方法差异和趋势；出图成功与统计检查通过不能证明实验结论。下文列出的是使用条件，尚不是论文选图建议。
+**下面的原有模板使用合成数据，尚未接入并核验你们的真实实验。** 合成脚本预设了部分方法差异和趋势；出图成功与统计检查通过不能证明实验结论。文末新增图使用各来源论文的数据，同样不属于我们的实验结果。
 
 [图型来源](REFERENCES.md) · [数据与字段](data/README.md) · [视觉筛选记录](CURATION.md) · [缩略图速览](assets/overview.png)（[速览代码](scripts/contact_sheet.py)）
 
@@ -86,25 +87,32 @@ python scripts/package_release.py
 
 [verification.json](verification.json) 记录代码与数据检查、图片校验及 SHA-256，不验证实验是否成立。代码采用 [MIT 许可](LICENSE)；外部参考项目保留各自许可。
 '''
+    for catalog in sorted((ROOT/'paper_expansion').glob('*/catalog.py')):
+        text+=runpy.run_path(str(catalog))['root_section']()
     (ROOT/'README.md').write_text(text,encoding='utf-8')
 
 def main():
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--only',nargs='+');args=p.parse_args()
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--only',nargs='+');p.add_argument('--keep-existing-images',action='store_true',help='Validate existing images and update docs without rendering or changing them');args=p.parse_args()
     items=json.loads((ROOT/'gallery.json').read_text());known={i['id']for i in items}
     if args.only and not set(args.only)<=known:p.error('Unknown example IDs: '+str(set(args.only)-known))
-    for i in items:
-        if args.only and i['id']not in args.only:continue
-        command([i['script']]);print('Rendered '+i['id'],flush=True)
+    if not args.keep_existing_images:
+        for i in items:
+            if args.only and i['id']not in args.only:continue
+            command([i['script']]);print('Rendered '+i['id'],flush=True)
     for i in items:
         for key in ['image','vector']:
             if not (ROOT/i[key]).is_file():raise FileNotFoundError(i[key])
         with Image.open(ROOT/i['image'])as im:
             rgb=im.convert('RGB');extrema=rgb.getextrema()
             if min(im.size)<300 or all(lo==hi for lo,hi in extrema):raise ValueError('Empty or undersized image: '+i['image'])
-    command(['scripts/contact_sheet.py']);readme(items)
+    if not args.keep_existing_images:command(['scripts/contact_sheet.py'])
+    readme(items)
     test=command(['-m','unittest','discover','-s','tests','-v']);match=re.search(r'Ran (\d+) tests?',test.stderr);test_count=int(match.group(1))if match else None
     paths=[p for p in ROOT.rglob('*')if p.is_file() and not any(s in {'.git','.cache','__pycache__','dist','.venv'}for s in p.relative_to(ROOT).parts)and p.name!='verification.json']
     verification={'status':'passed','examples':len(items),'unit_tests':test_count,'image_formats':['png','svg'],'python':platform.python_version(),'dependencies':{'matplotlib':matplotlib.__version__,'numpy':numpy.__version__,'Pillow':PIL.__version__},'checks':['unit tests','all manifest code/data links exist','all example PNG/SVG exist','PNG dimensions and nonconstant pixels'],'sha256':{str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest()for p in sorted(paths)}}
-    (ROOT/'verification.json').write_text(json.dumps(verification,ensure_ascii=False,indent=2)+'\n');print(f"Verified {len(items)} examples and {test_count} tests; README updated.")
+    additions=[f for path in (ROOT/'paper_expansion').glob('*/manifest.json')for f in json.loads(path.read_text())]
+    verification['paper_redraws']=len(additions);verification['total_figures']=len(items)+len(additions)
+    verification['validation_scope']='Rendering, source records, data contracts, README uniqueness and existing-image integrity; not empirical validation of our method'
+    (ROOT/'verification.json').write_text(json.dumps(verification,ensure_ascii=False,indent=2)+'\n');print(f"Verified {len(items)} original examples, {len(additions)} paper redraws and {test_count} tests; README updated.")
 
 if __name__=='__main__':main()
