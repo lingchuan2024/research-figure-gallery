@@ -91,7 +91,10 @@ class DataContractTests(unittest.TestCase):
 
     def test_manifest_code_and_data_exist(self):
         items=json.loads((ROOT/'gallery.json').read_text());ids=[i['id']for i in items]
-        self.assertEqual(len(ids),len(set(ids)));self.assertEqual(len(ids),19)
+        self.assertEqual(len(ids),len(set(ids)));self.assertGreater(len(ids),0)
+        self.assertEqual({i['script']for i in items},{str(p.relative_to(ROOT))for p in (ROOT/'examples').glob('*/plot.py')})
+        for fmt,key in [('png','image'),('svg','vector')]:
+            self.assertEqual({i[key]for i in items},{str(p.relative_to(ROOT))for p in (ROOT/'assets').glob('*.'+fmt)if p.stem!='overview'})
         for item in items:
             self.assertTrue((ROOT/item['script']).is_file());self.assertIn(item['id'],(ROOT/item['script']).read_text())
             for path in item['data']:self.assertTrue((ROOT/path).is_file())

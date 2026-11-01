@@ -21,11 +21,18 @@ def command(argv):
     return result
 
 def readme(items):
-    text='''# Research Figure Gallery · 论文图表模板库
+    categories=list(dict.fromkeys(i['category']for i in items))
+    usage_index='| 用途 | 示例 | 内容 |\n| --- | --- | --- |\n'
+    for category in categories:
+        group=[i for i in items if i['category']==category]
+        usage_index+='| '+category.split(' · ',1)[-1]+' | '+'、'.join(i['id'].split('_')[0]for i in group)+' | '+'；'.join(i['title']for i in group)+' |\n'
+    text=f'''# Research Figure Gallery · 论文图表模板库
 
-按**论文中要说明什么**查找图，再打开图旁边的本地 Python 源码。19 张示例均由本仓库代码生成，附有数据和运行命令。
+按**论文中要说明什么**查找图，再打开图旁边的本地 Python 源码。当前保留 {len(items)} 张精选示例，均由本仓库代码生成，附有数据和运行命令。
 
-**所有定量数值都是合成演示数据，不是当前实验结果；方法图是概念示意。** 本库是自主实现的绘图模板，不声称复现参考论文的原始数值或原图代码。图形布局与图型的参考链接见各例及 [REFERENCES.md](REFERENCES.md)。代码采用 MIT 许可；参考项目与论文各自保留原许可。
+本轮按视觉质量从 19 张中删去 9 张，优先保留层级清楚、配色克制、缩小后仍容易比较的例子。具体保留与删除理由见 [视觉筛选记录](CURATION.md)。沿用原编号，方便与此前版本对照。
+
+**所有定量数值都是合成演示数据，不是当前实验结果。** 本库是自主实现的绘图模板，不声称复现参考论文的原始数值或原图代码。图形布局与图型的参考链接见各例及 [REFERENCES.md](REFERENCES.md)。代码采用 MIT 许可；参考项目与论文各自保留原许可。
 
 ![全部示例速览](assets/overview.png)
 
@@ -61,38 +68,31 @@ python scripts/package_release.py
 
 ## 用途索引
 
-| 用途 | 示例 | 主要回答的问题 |
-| --- | --- | --- |
-| Token 与资源消耗 | 01、02、11、13 | 用量构成、长尾、上下文增长、耗时 |
-| 工具使用与行为 | 03、04、05 | 调多少、返回多少、如何切换工具 |
-| 检索质量与证据利用 | 06、07、08 | 证据在哪一阶段丢失，query 是否更好 |
-| 效果、预算与稳定性 | 09、12、14、19 | 效果与成本权衡、预算敏感性、主结果 |
-| 失败分析与案例 | 10、15、16 | 为什么失败、哪些题改善、轨迹如何变化 |
-| 消融与方法说明 | 17、18 | 哪些设计有效、方法控制点在哪里 |
+{usage_index}
 
-针对当前 search / rerank 实验，主文可优先选择 **19 主结果表、12 效果—成本、03 工具行为、08 query 配对、17 消融**，按篇幅再补 07 证据排名和 16 案例图。不要为了使用某种图而补造指标。
+视觉上优先选用 **02 雨云图、04 横向占比图、08 哑铃图、17 消融森林图、19 主结果表**。针对当前 search / rerank 实验，主文还可选 12 效果—成本，按篇幅补 07 证据排名和 16 案例图。不要为了使用某种图而补造指标。
 
 控制变量说明：这里将“100 字符”理解为 **search 与 rerank 返回给模型的内容长度统一**，并非 reranker 的输入长度。具体分词、截断与字符计数规则仍需在真实实验中记录。
 
 '''
-    categories=list(dict.fromkeys(i['category']for i in items))
     for category in categories:
         text+=f"## {category}\n\n"
         for item in items:
             code=item['script'];identifier=item['id'];number=identifier.split('_')[0]
-            text+=f"### {number} · {item['title']}\n\n{item['usage']}\n\n![{item['title']}——合成数据或概念示意]({item['image']})\n\n"
+            text+=f"### {number} · {item['title']}\n\n{item['usage']}\n\n![{item['title']}——合成演示数据]({item['image']})\n\n"
             text+=f"**代码：[`{code}`]({code})** · [SVG 矢量图]({item['vector']})\n\n"
             text+='数据：'+('、'.join(f"[{Path(p).name}]({p})"for p in item['data'])if item['data']else'不读取数据，由代码定义流程节点。')+'\n\n'
             text+=f"```bash\npython {code}\n```\n\n{item['note']} [图型／布局参考]({item['reference']})。\n\n"
     text+='''## 文件结构与复现检查
 
 ```text
-examples/01_.../plot.py ... 19_.../plot.py  # 每图一份实际绘图脚本
+examples/*/plot.py                       # 每张保留示例对应一份实际绘图脚本
 gallerylib/__init__.py                    # 共享样式、配对与统计函数
 data/demo/*.csv                          # 9 张合成演示表
 data/README.md                           # 字段、单位、统计口径
-assets/*.png, *.svg                       # 代码生成的 19 组图片及速览
+assets/*.png, *.svg                       # 精选图片及速览
 gallery.json                             # 图片—源码—输入数据映射
+CURATION.md                              # 本轮视觉筛选及删除理由
 scripts/build_gallery.py                 # 运行测试、出图、生成 README 和校验记录
 scripts/contact_sheet.py                 # 生成缩略图速览
 scripts/package_release.py               # 打包交付
@@ -110,7 +110,6 @@ def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--only',nargs='+');args=p.parse_args()
     items=json.loads((ROOT/'gallery.json').read_text());known={i['id']for i in items}
     if args.only and not set(args.only)<=known:p.error('Unknown example IDs: '+str(set(args.only)-known))
-    test=command(['-m','unittest','discover','-s','tests','-v']);match=re.search(r'Ran (\d+) tests?',test.stderr);test_count=int(match.group(1))if match else None
     for i in items:
         if args.only and i['id']not in args.only:continue
         command([i['script']]);print('Rendered '+i['id'],flush=True)
@@ -121,6 +120,7 @@ def main():
             rgb=im.convert('RGB');extrema=rgb.getextrema()
             if min(im.size)<300 or all(lo==hi for lo,hi in extrema):raise ValueError('Empty or undersized image: '+i['image'])
     command(['scripts/contact_sheet.py']);readme(items)
+    test=command(['-m','unittest','discover','-s','tests','-v']);match=re.search(r'Ran (\d+) tests?',test.stderr);test_count=int(match.group(1))if match else None
     paths=[p for p in ROOT.rglob('*')if p.is_file() and not any(s in {'.git','.cache','__pycache__','dist','.venv'}for s in p.relative_to(ROOT).parts)and p.name!='verification.json']
     verification={'status':'passed','examples':len(items),'unit_tests':test_count,'image_formats':['png','svg'],'python':platform.python_version(),'dependencies':{'matplotlib':matplotlib.__version__,'numpy':numpy.__version__,'Pillow':PIL.__version__},'checks':['unit tests','all manifest code/data links exist','all example PNG/SVG exist','PNG dimensions and nonconstant pixels'],'sha256':{str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest()for p in sorted(paths)}}
     (ROOT/'verification.json').write_text(json.dumps(verification,ensure_ascii=False,indent=2)+'\n');print(f"Verified {len(items)} examples and {test_count} tests; README updated.")
