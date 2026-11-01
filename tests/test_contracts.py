@@ -109,7 +109,13 @@ class DataContractTests(unittest.TestCase):
         path=ROOT/'README.md'
         if not path.exists():self.skipTest('First build generates README after rendering')
         content=path.read_text()
-        for item in json.loads((ROOT/'gallery.json').read_text()):
-            self.assertIn(']('+item['image']+')',content);self.assertIn(']('+item['script']+')',content)
+        items=json.loads((ROOT/'gallery.json').read_text())
+        for item in items:
+            self.assertEqual(content.count(']('+item['image']+')'),1,item['id']+' image must appear exactly once')
+            self.assertEqual(content.count(']('+item['script']+')'),1,item['id']+' source link must appear exactly once')
+        for category in dict.fromkeys(i['category']for i in items):
+            section=content.split('## '+category+'\n',1)[1].split('\n## ',1)[0]
+            actual=set(re.findall(r'!\[[^\]]*\]\((assets/[^)]+\.png)\)',section))
+            self.assertEqual(actual,{i['image']for i in items if i['category']==category})
 
 if __name__=='__main__':unittest.main()

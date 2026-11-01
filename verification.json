@@ -21,9 +21,9 @@
   "sha256": {
     ".github/workflows/build.yml": "544b7c02ac7a3da53138c263b9a920e04c75d893b253539da298cefadc954fbb",
     ".gitignore": "fa7f217a73f6f05a5fff53be6c62eb128249069eaaa876641b4b9a449ec57fb4",
-    "CURATION.md": "c77af599d8c4efc96b0298806bf93ffb1273fe8db67b588541e33346f7c356eb",
+    "CURATION.md": "4197e685acacf1c49b30574baf6ea667ea0e606c11cd511787257a37b8d2bdab",
     "LICENSE": "7d659579d5932a65748f29f9c09cce24ebf3c7179a6c9fb77363e64f25ada6dc",
-    "README.md": "36881153124a1b7c834fd9a68a26d36d396e01b5717ace9e8afe9b933a489a48",
+    "README.md": "405c6a55d2e094cae4c6c0d382d235ba838aa612bae9f74919daec74b98829cc",
     "REFERENCES.md": "91b0d9b31d351cc55e04f27662fa023d93174ed2c620dc1c43fb8dd5cc9acb68",
     "assets/02_token_raincloud.png": "2a6e9ca7e19a204d76ba95870b4bcbe3afeac19c89ca237d3fb58042a92680dd",
     "assets/02_token_raincloud.svg": "e249ef21131ab324339f3bf419cecb28f5dab4c1c0d8e0a8e35ddb9439afc60d",
@@ -46,7 +46,7 @@
     "assets/19_results_table.png": "2133f247f73c34516e05371f3a74b40a11029ce26a01cb0a346283f46e48677f",
     "assets/19_results_table.svg": "1f7cdfbf4188187842b853cb5fdbc61f54003aab89eb9df944ceeaeeabb9338b",
     "assets/overview.png": "c5c142ebfea65a1905eb33ec1c06514e8f869ff0e3d8e017bfac7be55987f5cd",
-    "data/README.md": "558932b17d8f9a9a890dea6f2e144059e60d6c678cac36668467059c0b8a31a3",
+    "data/README.md": "806210a7422ecf05bb3e5cdf5d529b4f4631ebb5301f64bb89c420e46e09fd95",
     "data/demo/ablations.csv": "e76076c53a2afb26fdbbe3ef256b38f806b883c585a240b53315e0bdd3ad7250",
     "data/demo/actions.csv": "893dbba9c84594ff70a658987b2b300fa4c638f4150b1b8acbefcd94ecc7b222",
     "data/demo/budget_runs.csv": "dfaaad8127ebc57aec1876f5961f27aa3293e88dcc162af7aa420e2e77e79b27",
@@ -70,10 +70,10 @@
     "gallerylib/__init__.py": "8a38512530f0e1bb088810c6aa0f26b0f1e1b592ab5e740fcc255df632449226",
     "requirements-lock.txt": "5b95e15fbc3ee6e3ad9cbb47b9bc93d9dfc03959e9460fe5dd7fed39d59db715",
     "requirements.txt": "333467adfe8f0d269d1ef539dbe0f22f159ca835d462a4008594e4bd7f434b37",
-    "scripts/build_gallery.py": "aaa8d6a3fc6ccf9078162c6a7527c76cc10d8a990892ca1dc92818ba6b5c473f",
+    "scripts/build_gallery.py": "ff3082c9a869f4630d2e74ffa5b1a6c9a9956c99ffc8847583794c5b92033494",
     "scripts/contact_sheet.py": "0c75e3fc4c4c39017805a21608355478c5a4f7fb055c2ed33a5a027f7b15f572",
     "scripts/generate_demo_data.py": "36edc724516254e1b4e84134c070cf841a6e2d5551a4cf292084ee2f036bdeea",
     "scripts/package_release.py": "4406931822570887e7c9f8a14018c9be0b5e418236a75345b0f5e2aac2d033d3",
-    "tests/test_contracts.py": "8f0fdcb0f9de5a22a1ad67e300db281dafd3675a94e9e258efa2daba5eb44007"
+    "tests/test_contracts.py": "eb3241497df5a48ee56ab3791e27cf63ab4cfd6295f2ad3f52f38dec5459ea9e"
   }
 }
