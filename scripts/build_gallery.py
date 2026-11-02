@@ -9,7 +9,7 @@ import platform
 import re
 import subprocess
 from gallerylib import ROOT
-from scripts.catalog_support import load_catalog
+from scripts.catalog_support import load_catalog,source_inventory
 from scripts.render_readme import write_documents
 import matplotlib
 import numpy
@@ -47,7 +47,8 @@ def main():
     paths=[p for p in ROOT.rglob('*')if p.is_file() and not any(s in {'.git','.cache','__pycache__','dist','.venv'}for s in p.relative_to(ROOT).parts)and p.name!='verification.json']
     verification={'status':'passed','examples':len(items),'unit_tests':test_count,'image_formats':['png','svg'],'python':platform.python_version(),'dependencies':{'matplotlib':matplotlib.__version__,'numpy':numpy.__version__,'Pillow':PIL.__version__},'checks':['unit tests','all manifest code/data links exist','all example PNG/SVG exist','PNG dimensions and nonconstant pixels'],'sha256':{str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest()for p in sorted(paths)}}
     additions=[f for path in (ROOT/'paper_expansion').glob('*/manifest.json')for f in json.loads(path.read_text())]
-    verification['paper_redraws']=len(additions);verification['total_figures']=len(items)+len(additions)
+    verification['paper_redraws']=len(additions);verification['total_figures']=len(source_inventory())
+    verification['framework_figures']=sum(i['origin']in {'paper_framework','design_framework'}for i in source_inventory().values())
     catalog=load_catalog();verification['selected_figures']=len(catalog['selected']);verification['supplement_figures']=len(catalog['supplement'])
     verification['validation_scope']='Rendering, source records, data contracts, README uniqueness and existing-image integrity; not empirical validation of our method'
     (ROOT/'verification.json').write_text(json.dumps(verification,ensure_ascii=False,indent=2)+'\n');print(f"Verified {len(catalog['selected'])} selected figures, {len(catalog['supplement'])} supplements and {test_count} tests; README updated.")

@@ -1,0 +1,309 @@
+{
+  "id": "F01_arag_hierarchical",
+  "width": 1280,
+  "height": 780,
+  "title": "A-RAG | A hierarchy the agent can choose",
+  "subtitle": "Structural redraw · three retrieval interfaces, one tool per reasoning step",
+  "footer": "A-RAG, arXiv:2602.03442v1 · Fig. 3 / §§3.1–3.3 · Simplified module relationships; not the authors' artwork.",
+  "scope": "Three retrieval interfaces and the agent loop. No invented reranker. Runtime keyword matching is not a prebuilt inverted index.",
+  "semantics": {
+    "tools": [
+      "keyword_search",
+      "semantic_search",
+      "chunk_read"
+    ],
+    "parallel_tool_calls": false,
+    "tracker": "Skip duplicate full-text reads; notification still has a cost."
+  },
+  "nodes": [
+    {
+      "id": "interfaces",
+      "x": 550,
+      "y": 135,
+      "w": 325,
+      "h": 475,
+      "title": "Retrieval interfaces",
+      "kind": "panel",
+      "fill": "#F1F6FA"
+    },
+    {
+      "id": "corpus",
+      "x": 930,
+      "y": 135,
+      "w": 300,
+      "h": 475,
+      "title": "Corpus views",
+      "kind": "panel",
+      "fill": "#F4F7F5"
+    },
+    {
+      "id": "question",
+      "x": 35,
+      "y": 230,
+      "w": 150,
+      "h": 80,
+      "title": "Question",
+      "font": 14
+    },
+    {
+      "id": "agent",
+      "x": 240,
+      "y": 205,
+      "w": 235,
+      "h": 150,
+      "title": "Reasoning agent",
+      "body": "Think → choose one tool\nObserve → think again",
+      "fill": "#E9F1FA",
+      "stroke": "#4C78A8",
+      "font": 15,
+      "body_font": 12
+    },
+    {
+      "id": "answer",
+      "x": 240,
+      "y": 525,
+      "w": 235,
+      "h": 90,
+      "title": "Final answer",
+      "body": "When ready / at step cap",
+      "fill": "#EDF5EF",
+      "stroke": "#3C927D",
+      "font": 14,
+      "body_font": 11
+    },
+    {
+      "id": "keyword_search",
+      "x": 575,
+      "y": 195,
+      "w": 275,
+      "h": 105,
+      "title": "Keyword search",
+      "body": "Chunk IDs + sentences\ncontaining exact keywords",
+      "font": 14
+    },
+    {
+      "id": "semantic_search",
+      "x": 575,
+      "y": 340,
+      "w": 275,
+      "h": 105,
+      "title": "Semantic search",
+      "body": "Rank sentences, then group\nhits by parent chunk",
+      "font": 14
+    },
+    {
+      "id": "chunk_read",
+      "x": 575,
+      "y": 485,
+      "w": 275,
+      "h": 105,
+      "title": "Chunk read",
+      "body": "Read full chunks;\nexpand to adjacent chunks",
+      "font": 14
+    },
+    {
+      "id": "runtime_text",
+      "x": 955,
+      "y": 195,
+      "w": 250,
+      "h": 105,
+      "title": "Runtime text match",
+      "body": "Exact substring scan\nof the corpus",
+      "font": 14,
+      "fill": "#F8FBF9"
+    },
+    {
+      "id": "sentence_vectors",
+      "x": 955,
+      "y": 340,
+      "w": 250,
+      "h": 105,
+      "title": "Sentence vectors",
+      "body": "Sentence embeddings\nlinked to parent chunks",
+      "font": 14,
+      "fill": "#F8FBF9"
+    },
+    {
+      "id": "full_chunks",
+      "x": 955,
+      "y": 485,
+      "w": 250,
+      "h": 105,
+      "title": "Full chunks",
+      "body": "Sentence-aligned chunks\n≈ 1,000 tokens each",
+      "font": 14,
+      "fill": "#F8FBF9"
+    },
+    {
+      "id": "read_tracker",
+      "x": 550,
+      "y": 655,
+      "w": 325,
+      "h": 80,
+      "title": "Read-ID tracker",
+      "body": "Skip repeated full-text returns",
+      "font": 14,
+      "body_font": 11,
+      "fill": "#FFF7EA",
+      "stroke": "#C78B43"
+    },
+    {
+      "id": "choose",
+      "x": 475,
+      "y": 205,
+      "w": 75,
+      "h": 30,
+      "title": "choose",
+      "kind": "label",
+      "font": 10,
+      "color": "#C78B43"
+    },
+    {
+      "id": "observe",
+      "x": 466,
+      "y": 391,
+      "w": 85,
+      "h": 25,
+      "title": "observe",
+      "kind": "label",
+      "font": 10,
+      "color": "#4C78A8",
+      "background": "#FFFFFF"
+    },
+    {
+      "id": "stop",
+      "x": 250,
+      "y": 424,
+      "w": 215,
+      "h": 30,
+      "title": "stop / synthesize",
+      "kind": "label",
+      "font": 11,
+      "color": "#C78B43",
+      "background": "#FFFFFF"
+    },
+    {
+      "id": "tracker_note",
+      "x": 900,
+      "y": 645,
+      "w": 325,
+      "h": 70,
+      "title": "Solid: data / observations\nDashed: decisions / read state",
+      "kind": "label",
+      "font": 11,
+      "align": "left"
+    }
+  ],
+  "edges": [
+    {
+      "points": [
+        [
+          185,
+          270
+        ],
+        [
+          240,
+          270
+        ]
+      ]
+    },
+    {
+      "points": [
+        [
+          475,
+          250
+        ],
+        [
+          550,
+          250
+        ]
+      ],
+      "color": "#C78B43",
+      "dashed": true
+    },
+    {
+      "points": [
+        [
+          550,
+          410
+        ],
+        [
+          515,
+          410
+        ],
+        [
+          515,
+          330
+        ],
+        [
+          475,
+          330
+        ]
+      ]
+    },
+    {
+      "points": [
+        [
+          357,
+          355
+        ],
+        [
+          357,
+          525
+        ]
+      ],
+      "color": "#C78B43",
+      "dashed": true
+    },
+    {
+      "points": [
+        [
+          850,
+          247
+        ],
+        [
+          955,
+          247
+        ]
+      ]
+    },
+    {
+      "points": [
+        [
+          850,
+          392
+        ],
+        [
+          955,
+          392
+        ]
+      ]
+    },
+    {
+      "points": [
+        [
+          850,
+          537
+        ],
+        [
+          955,
+          537
+        ]
+      ]
+    },
+    {
+      "points": [
+        [
+          712,
+          655
+        ],
+        [
+          712,
+          590
+        ]
+      ],
+      "color": "#C78B43",
+      "dashed": true
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "arag",
+    "title": "A-RAG: Scaling Agentic Retrieval-Augmented Generation via Hierarchical Retrieval Interfaces",
+    "version": "2602.03442v1",
+    "pdf": "https://arxiv.org/pdf/2602.03442v1",
+    "figure": "Figure 3",
+    "pdf_page": 4,
+    "methods": "§§3.1–3.3",
+    "repo": "https://github.com/Ayanami0730/arag",
+    "inspected_commit": "a44de6b2216bf6791979c4b6ac4ae106212fa1a6",
+    "pdf_sha256": "b167650db7b6ba73f8f4462ce4147f7b826dfb700cca00ef8bfa226f8d02de60"
+  },
+  {
+    "id": "fs_researcher",
+    "title": "FS-Researcher: Test-Time Scaling for Long-Horizon Research Tasks with File-System-Based Agents",
+    "version": "2602.01566v2",
+    "pdf": "https://arxiv.org/pdf/2602.01566v2",
+    "figure": "Figure 2",
+    "pdf_page": 3,
+    "methods": "§§2.1–2.3",
+    "repo": "https://github.com/Ignoramus0817/FS-Researcher",
+    "inspected_commit": "a9f04834708d96ff3cec9cbbe076f0c77ce6d11e",
+    "pdf_sha256": "d6ba43ae729a00a93cecaa72ac34a414b441c6bd81a5ef65b80f5fe23c27a1f8"
+  },
+  {
+    "id": "webthinker",
+    "title": "WebThinker: Empowering Large Reasoning Models with Deep Research Capability",
+    "version": "2504.21776v2",
+    "pdf": "https://arxiv.org/pdf/2504.21776v2",
+    "figure": "Figure 3",
+    "pdf_page": 4,
+    "methods": "§§3.2–3.4",
+    "repo": "https://github.com/RUC-NLPIR/WebThinker",
+    "inspected_commit": "db387eb3261de9b5e2db7d2d7fb20af2aceb7882",
+    "pdf_sha256": "fc359acc58ae4074834ab2973def7ab799476e252f58d8be642637442cfcaf03"
+  }
+]
