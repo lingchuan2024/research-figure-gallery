@@ -17,8 +17,6 @@ jobs:
           path: |
             assets/
             docs/gallery_overview.png
-            docs/gallery_with_frameworks.png
-            frameworks/2026-11-02/
             paper_expansion/2026-11-01/figures/
             paper_expansion/2026-11-01/new_figures_overview.png
             verification.json

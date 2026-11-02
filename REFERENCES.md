@@ -13,7 +13,7 @@
 | [patchworklib](https://github.com/ponnhide/patchworklib) | 多面板布局思路 | [API 与布局例子](https://github.com/ponnhide/patchworklib/blob/main/API.md)；本库使用 subplots/GridSpec |
 | [Scientific Visualization Book](https://github.com/rougier/scientific-visualization-book) | 科研排版与信息层次 | [复杂布局示例](https://github.com/rougier/scientific-visualization-book/blob/master/code/layout/complex-layout.py) |
 | [cmcrameri](https://github.com/callumrollo/cmcrameri) | 科学配色的进一步选择 | [项目说明](https://github.com/callumrollo/cmcrameri/blob/main/README.md)；本库不依赖此包 |
-| [draw.io diagrams](https://github.com/jgraph/drawio-diagrams) | 方法流程图的可编辑图型拓展参考 | [时序图 XML](https://github.com/jgraph/drawio-diagrams/blob/dev/diagrams/sequence.xml)；本库框架图由本地渲染器导出 XML，未复制该示例 |
+| [draw.io diagrams](https://github.com/jgraph/drawio-diagrams) | 方法流程图的可编辑图型拓展参考 | [时序图 XML](https://github.com/jgraph/drawio-diagrams/blob/dev/diagrams/sequence.xml)；当前精选库未保留方法流程图 |
 | [Matplotlib for Papers](https://github.com/jbmouret/matplotlib_for_papers) | 论文级最简排版参考 | [箱线图代码](https://github.com/jbmouret/matplotlib_for_papers/blob/master/src/boxplot5.py) |
 | [Awesome Scientific Figures](https://github.com/Figwise/awesome-scientific-figures) | 拓展检索导航 | [资源索引](https://github.com/Figwise/awesome-scientific-figures/blob/main/README.md)；索引不等于每张图都有绘图代码 |
 
@@ -26,6 +26,4 @@
 | [SIEVE](https://arxiv.org/abs/2608.02751) / [SkimSearchAgent](https://github.com/ielab/skim-search-agent) | 将逐题 token 差异与结果变化对齐 | 此前定位的 [appendix_token_columns.py](https://github.com/ielab/skim-search-agent/blob/main/analysis/appendix_token_columns.py) 是统计入口，不能当作配对图的已确认出图脚本；09 为本库自行实现 |
 | [DeepHone](https://github.com/sahel-sh/DeepHone) | 搜索过程与工具行为分析的拓展阅读 | 此前定位了 [plot_etc_deepsearch.py](https://github.com/sahel-sh/DeepHone/blob/main/scripts_rerank/plot_etc_deepsearch.py)；本库未复制或运行该脚本，不将其中原图收入可复现示例 |
 
-框架图另核对了 [A-RAG v1](https://arxiv.org/abs/2602.03442v1)、[FS-Researcher v2](https://arxiv.org/abs/2602.01566v2) 和 [WebThinker v2](https://arxiv.org/abs/2504.21776v2) 的原论文图与方法章节。这里只借鉴模块关系，重新编写布局和绘图代码，不将本地图称为作者原图或原始出图脚本。来源版本、原图页码、所检查仓库提交及各图取舍见 [框架说明](frameworks/2026-11-02/NOTES.md) 和 [来源清单](frameworks/2026-11-02/sources.json)。
-
-图型参考清单沿用 2026-11-01 的检索记录，框架来源核对于 2026-11-02；上游分支与路径可能变化。每张 README 示例的实际代码由 `gallery.json`、`paper_expansion/*/manifest.json`、`frameworks/*/manifest.json` 映射，统一展示顺序见 [catalog.json](catalog.json)。外部链接用于说明参考关系，不参与出图。
+参考清单沿用 2026-11-01 的检索记录；上游分支与路径可能变化。每张 README 示例对应的**实际可运行本地代码**始终是 `gallery.json` 中的 `script` 路径，外部链接用于说明参考关系，不参与出图。

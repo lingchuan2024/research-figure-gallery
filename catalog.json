@@ -86,34 +86,6 @@
       "section": "五、失败归因与适用范围",
       "purpose": "为问题预先标注跳数和证据需求后分层比较；参考图为报告遵循率，不能当作 QA 准确率。",
       "preview_label": "Task complexity strata"
-    },
-    {
-      "id": "F01_arag_hierarchical",
-      "title": "分层检索工具与自主选择",
-      "section": "六、方法框架与工具交互",
-      "purpose": "借鉴“Agent—工具接口—语料视图”的三层布局，清楚表达模型选择不同检索粒度。它没有 reranker，不能直接当作我们的实现图。",
-      "preview_label": "Hierarchical tool interfaces"
-    },
-    {
-      "id": "F02_fs_shared_workspace",
-      "title": "证据构建与写作的工作区交接",
-      "section": "六、方法框架与工具交互",
-      "purpose": "适合扩展到长报告时，展示资料采集、持久证据文件与写作的关系；当前短答案实验可借鉴状态与证据存储的画法。",
-      "preview_label": "Shared evidence workspace"
-    },
-    {
-      "id": "F03_webthinker_nested",
-      "title": "主推理与深度探索的嵌套闭环",
-      "section": "六、方法框架与工具交互",
-      "purpose": "借鉴主模型把信息缺口交给探索模块、收到结果后继续推理的层级结构；适合解释复杂工具内部仍有决策闭环。",
-      "preview_label": "Nested exploration loop"
-    },
-    {
-      "id": "F04_rerank_control",
-      "title": "自动重排与自主调用的控制点",
-      "section": "六、方法框架与工具交互",
-      "purpose": "用于讨论我们的工具接口与实验变量：谁触发重排、query 从哪里来、模型何时看到返回内容。此图是待实现核对的设计草图。",
-      "preview_label": "Rerank control points"
     }
   ],
   "supplement": [
@@ -147,6 +119,5 @@
       "title": "评估费用与人类一致性",
       "reason": "关注评估器配置及费用，离 reranker 效果主线较远，适合评估方法附录。"
     }
-  ],
-  "overview_image": "docs/gallery_with_frameworks.png"
+  ]
 }
