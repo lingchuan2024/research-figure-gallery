@@ -1,5 +1,8 @@
 """Show one representative per visual family without rewriting source images."""
 from pathlib import Path
+import argparse
+import hashlib
+import json
 import os
 import sys
 ROOT=Path(__file__).resolve().parents[1]
@@ -26,7 +29,32 @@ PREVIEW_LABELS={
     'F11':'Set intersections',
 }
 
+def validate_existing():
+    """Check the approved sheet and its inputs without platform-dependent redraw."""
+    receipt=json.loads((ROOT/'curation/2026-11-16-families/changes.json').read_text())
+    entries={entry['code']:entry for entry in index_entries()}
+    expected=[]
+    for family in load_families(set(entries)):
+        entry=entries[family['representative']]
+        expected.append({'family_id':family['id'],'title':family['title'],
+                         'code':family['representative'],'image':entry['image'],
+                         'sha256':hashlib.sha256((ROOT/entry['image']).read_bytes()).hexdigest(),
+                         'members':family['members']})
+    if receipt['representatives']!=expected:
+        raise ValueError('Overview inputs changed; rebuild and review the overview before recording a new receipt.')
+    record=receipt['rebuilt_contact_sheets'][0]
+    if hashlib.sha256((ROOT/record['path']).read_bytes()).hexdigest()!=record['sha256_after']:
+        raise ValueError('Checked-in overview differs from its approved preservation receipt.')
+
+
 def main():
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--check-existing',action='store_true')
+    args=parser.parse_args()
+    if args.check_existing:
+        validate_existing()
+        print('Verified approved overview and representative inputs without redrawing.')
+        return
     entries=index_entries();by_code={item['code']:item for item in entries}
     families=load_families(set(by_code))
     cols=3;cell_w=720;cell_h=430;rows=(len(families)+cols-1)//cols

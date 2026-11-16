@@ -42,7 +42,13 @@ def main():
             rgb=im.convert('RGB');extrema=rgb.getextrema()
             if min(im.size)<300 or all(lo==hi for lo,hi in extrema):raise ValueError('Empty or undersized image: '+i['image'])
     if not args.keep_existing_images:command(['scripts/contact_sheet.py'])
-    command(['scripts/build_curated_overview.py'])
+    # The checked-in overview is an approved artifact with a preservation hash.
+    # Font rasterization/PNG encoders can vary by platform, so preservation mode
+    # validates that artifact instead of overwriting it with a fresh rendering.
+    if not args.keep_existing_images:
+        command(['scripts/build_curated_overview.py'])
+    else:
+        command(['scripts/build_curated_overview.py','--check-existing'])
     github_builder=ROOT/'github_references/2026-11-15/verify_sources.py'
     if github_builder.is_file():command([github_builder])
     template_folder=ROOT/'rerank_templates/2026-11-16'
