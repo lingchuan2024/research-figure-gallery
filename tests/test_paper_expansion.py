@@ -12,6 +12,8 @@ import sys
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT))
 from scripts.curation_audit import assert_preserved_images,deleted_paths
+from scripts.family_support import load_families
+from scripts.render_readme import index_entries
 HERE=ROOT/'paper_expansion/2026-11-01'
 
 def read(name):
@@ -65,12 +67,21 @@ class PaperExpansionTests(unittest.TestCase):
         timing=read('fs_latency.csv');self.assertTrue(all(float(r['seconds'])>=0 for r in timing));self.assertEqual(len(timing),6)
         self.assertLess(sum(float(r['seconds'])for r in timing if r['component']=='File I/O'),1)
 
-    def test_detailed_gallery_images_and_code_links_appear_once(self):
-        content=(ROOT/'docs/GALLERY.md').read_text();prefix='../'+str(HERE.relative_to(ROOT))+'/'
-        selected={i['id']for i in json.loads((ROOT/'catalog.json').read_text())['selected']}
+    def test_paper_variants_keep_source_access_with_only_family_representatives_shown(self):
+        readme=(ROOT/'README.md').read_text()
+        index=(ROOT/'docs/FIGURE_INDEX.md').read_text()
+        entries=index_entries();by_script={entry['script']:entry for entry in entries}
+        representatives={family['representative']for family in load_families({e['code']for e in entries})}
+        images=re.findall(r'!\[[^\]]*\]\(([^)]+)\)',readme)
+        prefix=str(HERE.relative_to(ROOT))+'/'
         for f in self.figures:
-            expected=int(f['id']in selected)
-            self.assertEqual(content.count(']('+prefix+f['image']+')'),expected,f['id']);self.assertEqual(content.count(']('+prefix+f['script']+')'),expected,f['id'])
-        self.assertEqual(len(re.findall(r'!\[[^\]]*\]\('+re.escape(prefix)+r'figures/',content)),sum(f['id']in selected for f in self.figures))
+            entry=by_script[prefix+f['script']]
+            self.assertEqual(images.count(prefix+f['image']),int(entry['code']in representatives),f['id'])
+            anchor=f'<a id="variant-{entry["code"].lower()}"></a>'
+            self.assertEqual(index.count(anchor),1,f['id'])
+            body=index.split(anchor,1)[1].split('\n<a id=',1)[0]
+            self.assertIn('](../'+prefix+f['script']+')',body,f['id'])
+            self.assertIn('](../'+prefix+f['data']+')',body,f['id'])
+        self.assertEqual(re.findall(r'!\[[^\]]*\]\(([^)]+)\)',index),[])
 
 if __name__=='__main__':unittest.main()

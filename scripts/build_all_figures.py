@@ -13,17 +13,12 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from scripts.catalog_support import load_catalog, source_inventory
 from scripts.figure_code_support import attach_code_sections
+from scripts.readme_notes import FIGURE_NOTES
 
 OUTPUT = ROOT / 'dist/图表汇总_2026-11-16.html'
 GITHUB = ROOT / 'github_references/2026-11-15'
 TEMPLATES = ROOT / 'rerank_templates/2026-11-16'
 H = html.escape
-CATEGORIES = {
-    'templates': ('01', '可运行的 Rerank 模板', '最新三张模板：共享逐题 CSV 与 JSON 配置，可导出 PNG、SVG、PDF 和实际绘图数值。'),
-    'selected': ('02', '精选图库', '按当前研究问题筛选的 15 张图，保留原有说明和来源。'),
-    'supplement': ('03', '补充图库', '8 张专项与附录参考，保留各自的适用范围和暂未进入主图库的理由。'),
-    'github': ('04', 'GitHub 原图参考', '8 个仓库中的原始示例，均有固定版本来源与对应代码。'),
-}
 
 
 def sha(path):
@@ -89,6 +84,66 @@ def link(url, label):
     return f'<a href="{H(url)}" target="_blank" rel="noopener noreferrer">{H(label)} ↗</a>'
 
 
+def family_figures(sources):
+    """Create presentation-only copies; source IDs/categories keep their contracts."""
+    from scripts.family_support import load_families
+
+    by_code = {source['code']: source for source in sources}
+    families = load_families(set(by_code))
+    display = []
+    for family in families:
+        representative = by_code[family['representative']]
+        item = dict(representative)
+        item.update(
+            code=family['id'], title=family['title'], category='figures',
+            source_code=representative['code'], source_title=representative['title'],
+            source_category=representative['category'], family=family,
+            reading=FIGURE_NOTES[representative['code']]['reading'],
+            variants=[by_code[code] for code in family['members'] if code != family['representative']],
+        )
+        display.append(item)
+    return display
+
+
+def uses_table(item):
+    rows = []
+    labels = {code: f"{item['code']}.{number}" for number, code in enumerate(item['family']['members'], 1)}
+    for use in item['family']['uses']:
+        codes = ' · '.join(f'<a href="#code-{H(code)}">{H(labels[code])}</a>' for code in use['source_codes'])
+        rows.append(f'<tr><td>{H(use["purpose"])}</td><td>{H(use["placement"])}</td>'
+                    f'<td>{H(use["data"])}</td><td>{codes}</td></tr>')
+    return ('<section class="uses"><h4>同一图型可以回答什么问题</h4><div class="table-scroll">'
+            '<table><thead><tr><th>用途</th><th>建议论文位置</th><th>所需数据</th><th>对应代码</th></tr></thead>'
+            '<tbody>' + ''.join(rows) + '</tbody></table></div></section>')
+
+
+def variant_sections(item):
+    """Show source variants as text and archive links, never as extra previews."""
+    if not item['variants']:
+        return ''
+    rows = []
+    for variant in item['variants']:
+        code = variant['code_section']
+        label = f"{item['code']}.{item['family']['members'].index(variant['code']) + 1}"
+        source = link(variant['source_url'], variant['source_label'])
+        if variant.get('source_code_url'):
+            source += ' · ' + link(variant['source_code_url'], '上游对应代码')
+        license_text = (H(variant['license']) + ' · ' + link(variant['license_url'], '许可声明')) if variant.get('license') else '本库代码：MIT；论文数据保留原出处。'
+        if variant.get('license_note'):
+            license_text += '。' + H(variant['license_note'])
+        if variant['code'] == 'G08':
+            license_text += ' · ' + link('https://creativecommons.org/licenses/by-nc-sa/4.0/', '原图 CC BY-NC-SA 4.0')
+        attribution = f'<br>作者 / 项目：{H(variant["author"])}' if variant.get('author') else ''
+        note = FIGURE_NOTES[variant['code']]['caution']
+        rows.append(f'''<div class="variant" id="code-{H(variant['code'])}" data-source-id="{H(variant['id'])}">
+<p><b>{H(label)} · {H(variant['title'])}</b> <span class="code-status {code['kind']}">{H(code['status'])}</span></p>
+<p>示例类型：{H(variant['badge'])}<br>代码：<code>{H(code['main_path'])}</code><br>来源：{source}{attribution}<br>许可：{license_text}</p>
+<p>{H(note)}</p><button type="button" class="download-variant-bundle" data-bundle-id="{H(variant['id'])}">下载此用途的代码与数据包</button>
+</div>''')
+    return (f'<details class="variants"><summary>相关用途的代码与来源 · {len(rows)} 份变体</summary>'
+            + ''.join(rows) + '</details>')
+
+
 def code_section(item):
     code = item['code_section']
     helpers = []
@@ -99,7 +154,8 @@ def code_section(item):
         fields = ' · '.join(H(name) if name else '（原始行号列）' for name in data['columns'])
         inputs.append(f'<div class="input-preview"><p><b>{H(Path(data["path"]).name)}</b> · {data["row_count"]} 行</p><p class="fields">字段：{fields}</p><pre><code>{H(data["preview"])}</code></pre></div>')
     label = '下载独立运行包' if code['kind'] == 'local' else '下载上游源码参考包'
-    return f'''<section class="code-section" aria-label="{H(item['title'])}的代码">
+    source_code = item.get('source_code', item['code'])
+    return f'''<section class="code-section" id="code-{H(source_code)}" aria-label="{H(item['title'])}的代码">
 <div class="code-heading"><h4>代码部分</h4><span class="code-status {code['kind']}">{H(code['status'])}</span></div>
 <p class="code-file">{H(code['filename'])} · {H(code['language'])} · {len(code['text'].splitlines())} 行</p>
 <div class="code-actions"><button type="button" class="copy-code">复制代码</button><button type="button" class="download-code">下载代码文件</button><button type="button" class="download-code-bundle">{label}</button><span class="copy-status" aria-live="polite"></span></div>
@@ -124,18 +180,21 @@ def card(item):
     if item.get('license'):
         detail.append(f'<p>作者 / 项目：{H(item["author"])}<br>许可：{H(item["license"])}。{H(item["license_note"])}</p>')
         detail.append('<p>' + link(item['license_url'], '上游许可声明') + '</p>')
-        if item['code'] == 'G08':
+        if item.get('source_code', item['code']) == 'G08':
             detail.append('<p>' + link('https://creativecommons.org/licenses/by-nc-sa/4.0/', 'CC BY-NC-SA 4.0') + '。Nicolas P. Rougier 原 PDF 的栅格预览，内容未改动。</p>')
         detail.append(f'<details class="license"><summary>许可全文</summary><pre>{H(item["license_text"])}</pre></details>')
-    detail.append(f'<p>原始标识：<code>{H(item.get("original_id", item["code"]))}</code><br>图片 SHA256：<code>{item["sha256"]}</code></p>')
-    limits = f'<p class="limits"><b>使用边界</b>　{H(item["limits"])}</p>' if item['limits'] else ''
-    requirements = f'<p><b>需要数据</b>　{H(item["data_requirement"])}</p>' if item.get('data_requirement') else ''
-    extra = f'<p class="extra">{H(item["extra"])}</p>' if item.get('extra') else ''
-    search = ' '.join([item['code'], item['title'], item['purpose'], item['source_label'], item.get('original_id', '')])
+    detail.append(f'<p>代表来源：<code>{H(item["source_code"])}</code> · {H(item["source_title"])}<br>原始标识：<code>{H(item.get("original_id", item["source_code"]))}</code><br>图片 SHA256：<code>{item["sha256"]}</code></p>')
+    limits = f'<p class="limits"><b>使用边界</b>　{H(item["family"]["caution"])}</p>'
+    search_parts = [item['code'], item['title'], item['reading'], item['source_label'], item['source_code']]
+    for use in item['family']['uses']:
+        search_parts.extend([use['purpose'], use['placement'], use['data'], *use['source_codes']])
+    for variant in item['variants']:
+        search_parts.extend([variant['code'], variant['title'], variant['source_label']])
+    search = ' '.join(search_parts)
     return f'''<article class="figure-card" id="{item['id']}" data-category="{item['category']}" data-search="{H(search)}">
 <header class="card-header"><span class="number">{item['code']}</span><div><span class="badge {item['origin']}">{H(item['badge'])}</span><h3>{H(item['title'])}</h3></div></header>
 <figure><button class="zoom-image" type="button" aria-label="放大 {H(item['title'])}"><img loading="lazy" src="data:image/png;base64,{image_data}" width="{item['width']}" height="{item['height']}" alt="{H(item['title'])} · {H(item['badge'])}"></button><figcaption>{H(item.get('transformation', '保留当前成图，未重新计算或改动画面。'))} <span>{item['width']} × {item['height']} px</span></figcaption></figure>
-<div class="card-body"><p class="purpose">{H(item['purpose'])}</p>{requirements}{limits}{extra}<p class="sources">来源：{sources}</p><div class="actions"><button type="button" class="view-full">放大查看</button><button type="button" class="download-image">下载此图 PNG</button><a href="#top">返回顶部 ↑</a></div>{code_section(item)}<details class="provenance"><summary>来源定位与文件信息</summary>{''.join(detail)}</details></div></article>'''
+<div class="card-body"><p class="example-source">示例：{H(item['source_title'])}</p><p class="purpose"><b>这张示例怎么看</b>　{H(item['reading'])}</p>{uses_table(item)}{limits}<p class="sources">代表图来源：{sources}</p><div class="actions"><button type="button" class="view-full">放大查看</button><button type="button" class="download-image">下载代表图 PNG</button><a href="#top">返回顶部 ↑</a></div>{code_section(item)}{variant_sections(item)}<details class="provenance"><summary>代表图来源定位与文件信息</summary>{''.join(detail)}</details></div></article>'''
 
 
 CSS = '''
@@ -150,22 +209,22 @@ CSS += '''
 @media print{.code-actions{display:none}.source-code{max-height:none;white-space:pre-wrap;overflow:visible;background:#f4f7f5;color:#18353b}.source-code code{font-size:8px}.code-section{break-before:auto}.code-notes,.code-file{font-size:9px}}
 '''
 
+CSS += '''
+.uses h4{font-size:17px;margin:20px 0 10px}.table-scroll{overflow-x:auto}.uses table{width:100%;border-collapse:collapse;font-size:13px}.uses th,.uses td{padding:10px 12px;border:1px solid var(--line);text-align:left;vertical-align:top}.uses th{background:#f1f5f2;white-space:nowrap}.uses td:last-child{min-width:84px}.example-source{font-size:12px;color:var(--muted)}.variants{border-top:1px solid var(--line);margin:18px 0;padding-top:14px}.variants>summary{font-weight:650}.variant{padding:12px 0;border-bottom:1px solid #e6ede8;font-size:13px;scroll-margin-top:160px}.variant p{margin:7px 0;overflow-wrap:anywhere}.variant .code-status{display:inline-block;margin-top:4px}.download-variant-bundle{border:1px solid #c3d5cc;background:white;color:var(--teal);padding:6px 11px;border-radius:4px;font-size:13px}.code-section{scroll-margin-top:160px}
+'''
+
 JS = '''
 const cards=[...document.querySelectorAll('.figure-card')];
 const search=document.getElementById('search');
-const filterButtons=[...document.querySelectorAll('[data-filter]')];
-let category='all';
 function applyFilter(){
  const query=search.value.trim().toLocaleLowerCase();let visible=0;
- for(const card of cards){card.hidden=!((category==='all'||card.dataset.category===category)&&card.dataset.search.toLocaleLowerCase().includes(query));if(!card.hidden)visible++;document.querySelector(`[data-target="${card.id}"]`).hidden=card.hidden;}
+ for(const card of cards){card.hidden=!card.dataset.search.toLocaleLowerCase().includes(query);if(!card.hidden)visible++;document.querySelector(`[data-target="${card.id}"]`).hidden=card.hidden;}
  for(const section of document.querySelectorAll('.figure-section'))section.hidden=![...section.querySelectorAll('.figure-card')].some(card=>!card.hidden);
- for(const button of filterButtons)button.setAttribute('aria-pressed',String(button.dataset.filter===category));
- document.getElementById('visible-count').textContent=`显示 ${visible} / ${cards.length} 张图`;
+ document.getElementById('visible-count').textContent=`显示 ${visible} / ${cards.length} 种图型`;
  document.getElementById('empty').hidden=visible!==0;
 }
 search.addEventListener('input',applyFilter);
-for(const button of filterButtons)button.addEventListener('click',()=>{category=button.dataset.filter;applyFilter()});
-document.getElementById('reset').addEventListener('click',()=>{category='all';search.value='';applyFilter()});
+document.getElementById('reset').addEventListener('click',()=>{search.value='';applyFilter()});
 const dialog=document.getElementById('zoom-dialog'),zoomed=document.getElementById('zoomed-image');
 const bundles=JSON.parse(document.getElementById('code-bundles').textContent);
 for(const card of cards){
@@ -178,20 +237,24 @@ for(const card of cards){
  card.querySelector('.download-code-bundle').addEventListener('click',()=>downloadArchive(bundles[card.id]));
  card.querySelector('.copy-code').addEventListener('click',async()=>{let copied=false;try{await navigator.clipboard.writeText(source.textContent);copied=true}catch(e){const input=document.createElement('textarea');input.value=source.textContent;input.style.position='fixed';input.style.opacity='0';document.body.appendChild(input);input.select();copied=document.execCommand('copy');input.remove()}card.querySelector('.copy-status').textContent=copied?'已复制完整代码':'请在代码框中选择并复制';});
 }
+for(const button of document.querySelectorAll('.download-variant-bundle'))button.addEventListener('click',()=>downloadArchive(bundles[button.dataset.bundleId]));
+for(const anchor of document.querySelectorAll('.uses a[href^="#code-"]'))anchor.addEventListener('click',()=>{const target=document.querySelector(anchor.getAttribute('href'));if(target){const details=target.closest('details');if(details)details.open=true;}});
 document.getElementById('close-zoom').addEventListener('click',()=>dialog.close());
 dialog.addEventListener('click',event=>{if(event.target===dialog)dialog.close()});
 function download(url,name){const a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove()}
 function downloadBlob(blob,name){const url=URL.createObjectURL(blob);download(url,name);setTimeout(()=>URL.revokeObjectURL(url),30000)}
 function downloadArchive(payload){const bytes=Uint8Array.from(atob(payload.data),c=>c.charCodeAt(0));downloadBlob(new Blob([bytes],{type:'application/zip'}),payload.filename)}
-document.getElementById('download-templates').addEventListener('click',()=>downloadArchive(JSON.parse(document.getElementById('template-bundle').textContent)));
 document.getElementById('download-all-code').addEventListener('click',()=>downloadArchive(bundles.all));
 applyFilter();
 '''
 
 
 def build():
-    figures = collect()
-    code_manifest, combined_code = attach_code_sections(figures)
+    sources = collect()
+    # Packaging and verification still cover every source. Families only choose
+    # which original preview and main script appear on the presentation surface.
+    code_manifest, combined_code = attach_code_sections(sources)
+    figures = family_figures(sources)
     archive = TEMPLATES / 'dist/rerank-plot-templates.zip'
     # Always refresh the attachment after verification; incremental builds must
     # never retain stale code, data-format documentation or provenance.
@@ -204,40 +267,44 @@ def build():
             if hashlib.sha256(bundle.read('rerank-plot-templates/' + name)).hexdigest() != expected:
                 raise ValueError(f'Stale template attachment: {name}; run template package.py.')
     toc = ''.join(f'<a data-target="{f["id"]}" href="#{f["id"]}"><b>{f["code"]}</b>{H(f["title"])}</a>' for f in figures)
-    sections = []
-    for category, (number, title, description) in CATEGORIES.items():
-        members = [f for f in figures if f['category'] == category]
-        sections.append(f'<section class="figure-section" data-section="{category}"><div class="section-header"><span class="section-number">SECTION {number}</span><h2>{H(title)} <small>· {len(members)}</small></h2><p>{H(description)}</p></div>{"".join(card(f) for f in members)}</section>')
-    buttons = [('all', '全部', 34), ('templates', '可运行模板', 3), ('selected', '精选图库', 15), ('supplement', '补充图库', 8), ('github', 'GitHub 原图', 8)]
-    filters = ''.join(f'<button type="button" data-filter="{key}" aria-pressed="{str(key == "all").lower()}">{label} {count}</button>' for key, label, count in buttons)
-    payload = json.dumps({'filename': 'rerank-plot-templates.zip', 'data': base64.b64encode(archive.read_bytes()).decode()})
-    code_payloads = {item['id']: {'filename': item['code_section']['bundle_filename'], 'data': base64.b64encode(item['code_section']['bundle_bytes']).decode()} for item in figures}
+    sections = ['<section class="figure-section" data-section="figures">'
+                + ''.join(card(item) for item in figures) + '</section>']
+    code_payloads = {item['id']: {'filename': item['code_section']['bundle_filename'], 'data': base64.b64encode(item['code_section']['bundle_bytes']).decode()} for item in sources}
     code_payloads['all'] = {'filename': 'all-figure-code.zip', 'data': base64.b64encode(combined_code).decode()}
     code_payload = json.dumps(code_payloads)
-    result = f'''<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Rerank 科研图表汇总 · 34 张</title><style>{CSS}</style></head><body><main id="top">
-<header><span class="eyebrow">RERANK RESEARCH · FIGURES + CODE · 2026.11.16</span><h1>Rerank 科研图表汇总</h1><p class="lead">34 张图，每张都有可阅读、复制和下载的代码。最新可运行模板在最前，随后是精选图库、补充图库与 GitHub 原图参考。</p><div class="counts"><span><b>34</b> 张图与代码</span><span><b>26</b> 个本地运行包</span><span><b>8</b> 个上游源码参考包</span></div></header>
-<div class="notice">所有图片已内嵌，可单独保存、离线浏览、放大和下载。各图明确区分论文公开数据、合成演示和上游示例；当前汇总不含我们的实测实验结果。此前删除的冗余模板和重复总览拼图没有重新收录。</div>
-<div class="bundle"><button id="download-all-code" type="button">下载全部 34 张图的代码与数据包</button><button id="download-templates" class="secondary" type="button">下载最新 3 个 Rerank 模板</button><small>全部代码包 {len(combined_code) / 1024 / 1024:.2f} MiB · 每图代码部分附运行说明、依赖和输入格式。8 个上游示例标明未在本项目执行。</small></div>
-<noscript><p class="noscript">浏览器禁用了 JavaScript，全部图片仍可阅读；启用后可筛选、放大和下载内嵌文件。</p></noscript>
-<div class="toolbar"><div class="searchline"><input id="search" type="search" aria-label="搜索图表" placeholder="搜索图名、用途或来源，例如：雨云、召回、RankRAG"><button id="reset" type="button">重置</button></div><div class="filter-buttons">{filters}</div><p class="count-line" id="visible-count" aria-live="polite">显示 34 / 34 张图</p></div>
-<details class="toc"><summary>展开全部图表目录</summary><div class="toc-links">{toc}</div></details><p class="empty" id="empty" hidden>没有匹配的图表。可清空关键词或切换分类。</p>
+    result = f'''<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Rerank 科研绘图参考 · {len(figures)} 种图型</title><style>{CSS}</style></head><body><main id="top">
+<header><span class="eyebrow">RERANK RESEARCH · FIGURE TYPES + CODE</span><h1>按图型选择科研图表</h1><p class="lead">每种图型只展示一个代表图，再说明它能回答哪些研究问题、适合放在论文哪里，以及需要什么数据。同类实现保留为代码变体，便于复用。</p><div class="counts"><span><b>{len(figures)}</b> 种图型</span><span>一图多用途</span><span>代码可下载</span></div></header>
+<div class="notice">代表图已内嵌，可离线浏览、放大和下载。每张示例保留真实的数据类型、出处与执行状态；论文数值、合成演示和上游示例都不是我们的实测结果。用途与论文位置是建议，须以实际实验设计为准。</div>
+<div class="bundle"><button id="download-all-code" type="button">下载全部图型的代码与数据</button><small>完整代码包 {len(combined_code) / 1024 / 1024:.2f} MiB · 含各用途变体、公共函数、输入说明与许可；上游代码参考会单独注明未完整执行。</small></div>
+<noscript><p class="noscript">浏览器禁用了 JavaScript，代表图与说明仍可阅读；启用后可搜索、放大和下载内嵌文件。</p></noscript>
+<div class="toolbar"><div class="searchline"><input id="search" type="search" aria-label="搜索图型或用途" placeholder="搜索图型、用途或代码，例如：雨云、召回、RankRAG"><button id="reset" type="button">重置</button></div><p class="count-line" id="visible-count" aria-live="polite">显示 {len(figures)} / {len(figures)} 种图型</p></div>
+<details class="toc"><summary>展开全部图型目录</summary><div class="toc-links">{toc}</div></details><p class="empty" id="empty" hidden>没有匹配的图型或用途，请尝试其他关键词。</p>
 {''.join(sections)}
-<footer><p>汇总日期：2026-11-16。原有图库 23 张（15 精选、8 补充）＋GitHub 原图 8 张＋新模板预览 3 张＝34 张。所有原图保持不变。每图均有完整主脚本或从固定上游版本提取的对应示例，另附数据格式、依赖及说明。</p><p>26 个本地运行包保留主脚本、公共函数和输入 CSV；8 个上游参考包保留摘取代码、原始源码快照和许可，未在本项目执行。上游 API、库版本或随机状态可能影响重跑结果，不能将现有 GitHub 原图当成本地重跑输出。</p><p>此文件内嵌全部图片、代码及 ZIP，无外部图片、字体或脚本依赖；上游来源链接需要联网。复制单个主脚本时应同时保留相应公共函数和数据，直接运行请下载对应完整包。浏览器打印会包含当前筛选图表的代码。</p></footer>
+<footer><p>每类只展示一个代表图，其余相关实现以代码与来源保留，原始图片、数据和源码没有因展示去重而删除。各用途的下载包保留必要公共函数、输入数据、运行说明和许可证。</p><p>执行状态逐项标明：本地独立运行验证不等于科学结论验证；上游参考未在本项目完整执行，API、依赖版本和随机状态可能影响重跑结果。原图与源码许可可能不同，应遵循各项保留的许可说明。</p><p>代表图片、主代码和所有用途代码包已内嵌，无外部图片、字体或脚本依赖；来源链接需要联网。复制主脚本时请一并保留公共函数和数据，直接运行建议下载完整包。浏览器打印会包含当前搜索结果中的代表图与主代码。</p></footer>
 </main><dialog id="zoom-dialog" aria-labelledby="zoom-title"><div class="dialog-head"><p id="zoom-title"></p><button id="close-zoom" type="button">关闭 ✕</button></div><img id="zoomed-image" alt=""></dialog>
-<script id="template-bundle" type="application/json">{payload}</script><script id="code-bundles" type="application/json">{code_payload}</script><script>{JS}</script></body></html>'''
+<script id="code-bundles" type="application/json">{code_payload}</script><script>{JS}</script></body></html>'''
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT.write_text(result, encoding='utf-8')
     manifest = {'date': '2026-11-16', 'html': OUTPUT.name, 'figures': len(figures),
-        'categories': {key: sum(f['category'] == key for f in figures) for key in CATEGORIES},
-        'image_integrity': 'Original PNG bytes embedded unchanged; no overview mosaics or removed figures.',
+        'source_figures': len(sources), 'code_sections': len(figures),
+        'code_packages': len(code_manifest['entries']),
+        'organization': 'One representative preview per figure family; source variants have text and code downloads only.',
+        'image_integrity': 'Representative PNG bytes embedded unchanged; all source images retained and traceable.',
         'template_attachment_sha256': sha(archive),
-        'code_sections': len(code_manifest['entries']), 'all_code_attachment_sha256': code_manifest['all_bundle_sha256'],
-        'entries': [{'id': f['id'], 'title': f['title'], 'category': f['category'], 'origin': f['origin'],
+        'all_code_attachment_sha256': code_manifest['all_bundle_sha256'],
+        'entries': [{'id': f['id'], 'code': f['code'], 'title': f['title'],
+                     'representative': f['source_code'], 'members': f['family']['members'],
+                     'category': f['category'], 'source_category': f['source_category'], 'origin': f['origin'],
                      'image': str(f['image'].relative_to(ROOT)), 'sha256': f['sha256'],
                      'code_sha256': f['code_section']['code_sha256'],
-                     'code_bundle_sha256': f['code_section']['bundle_sha256']} for f in figures]}
+                     'code_bundle_sha256': f['code_section']['bundle_sha256']} for f in figures],
+        'source_entries': [{'id': f['id'], 'code': f['code'], 'title': f['title'],
+                            'category': f['category'], 'origin': f['origin'],
+                            'image': str(f['image'].relative_to(ROOT)), 'sha256': f['sha256'],
+                            'code_sha256': f['code_section']['code_sha256'],
+                            'code_bundle_sha256': f['code_section']['bundle_sha256']} for f in sources]}
     (ROOT / 'dist/all_figures_manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n')
-    print(f'{OUTPUT}: {len(figures)} figures, {OUTPUT.stat().st_size / 1024 / 1024:.2f} MiB; all images and template ZIP embedded.')
+    print(f'{OUTPUT}: {len(figures)} figure families, {len(sources)} source code packages; {OUTPUT.stat().st_size / 1024 / 1024:.2f} MiB.')
 
 
 if __name__ == '__main__':

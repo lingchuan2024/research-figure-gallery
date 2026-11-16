@@ -4,10 +4,14 @@ import csv
 import hashlib
 import json
 import re
+import sys
 import unittest
 from PIL import Image
 
 ROOT=Path(__file__).resolve().parents[1]
+sys.path.insert(0,str(ROOT))
+from scripts.family_support import load_families
+from scripts.render_readme import index_entries
 HERE=ROOT/'rerank_expansion/2026-11-15'
 
 
@@ -66,14 +70,22 @@ class RerankExpansionTests(unittest.TestCase):
                 self.assertTrue(any(lo<hi for lo,hi in image.convert('RGB').getextrema()))
             self.assertIn('<svg',(HERE/figure['vector']).read_text())
 
-    def test_catalog_selection_and_gallery_show_each_new_figure_once(self):
-        catalog=json.loads((ROOT/'catalog.json').read_text())
-        selected={f['id'] for f in catalog['selected']}
-        content=(ROOT/'docs/GALLERY.md').read_text()
+    def test_rerank_variants_are_indexed_without_duplicate_family_previews(self):
+        entries=index_entries();by_script={entry['script']:entry for entry in entries}
+        representatives={family['representative']for family in load_families({e['code']for e in entries})}
+        content=(ROOT/'README.md').read_text()
+        index=(ROOT/'docs/FIGURE_INDEX.md').read_text()
         images=re.findall(r'!\[[^\]]*\]\(([^)]+)\)',content)
-        prefix='../'+str(HERE.relative_to(ROOT))+'/'
+        prefix=str(HERE.relative_to(ROOT))+'/'
         for figure in self.figures:
-            self.assertEqual(images.count(prefix+figure['image']),int(figure['id'] in selected))
+            entry=by_script[prefix+figure['script']]
+            self.assertEqual(images.count(prefix+figure['image']),int(entry['code']in representatives),figure['id'])
+            anchor=f'<a id="variant-{entry["code"].lower()}"></a>'
+            self.assertEqual(index.count(anchor),1,figure['id'])
+            body=index.split(anchor,1)[1].split('\n<a id=',1)[0]
+            for field in ('script','data'):
+                self.assertIn('](../'+prefix+figure[field]+')',body,figure['id'])
+        self.assertEqual(re.findall(r'!\[[^\]]*\]\(([^)]+)\)',index),[])
 
 
 if __name__=='__main__':

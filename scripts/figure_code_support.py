@@ -5,6 +5,7 @@ import hashlib
 import io
 import json
 import zipfile
+from scripts.family_support import load_families
 
 ROOT = Path(__file__).resolve().parents[1]
 GITHUB = ROOT / 'github_references/2026-11-15'
@@ -208,6 +209,8 @@ def attach_code_sections(figures):
     previous = {entry['id']: entry for entry in receipt.get('entries', [])}
     index = []
     all_files = {}
+    families = load_families({item['code'] for item in figures})
+    family_for_code = {code: family for family in families for code in family['members']}
     for item in figures:
         code = github_section(item, upstream[item['code']], refs[item['code']]) if item['category'] == 'github' else local_section(item)
         prefix = item['id']
@@ -225,14 +228,16 @@ def attach_code_sections(figures):
         item['code_section'] = code
         all_files[target.name] = archive
         index.append({'id': item['id'], 'code': item['code'], 'title': item['title'], 'kind': code['kind'],
+            'family_id': family_for_code[item['code']]['id'], 'family_title': family_for_code[item['code']]['title'],
             'main_path': code['main_path'], 'code_sha256': code['code_sha256'],
             'bundle_path': code['bundle_path'], 'bundle_sha256': code['bundle_sha256'],
             'execution_status': code['execution_status'], 'language': code['language']})
     all_files['index.json'] = json.dumps(index, ensure_ascii=False, indent=2) + '\n'
-    all_files['README.md'] = '# 34 张图表的代码与数据\n\n每张图各有一个 ZIP。T/M/S 开头的页面编号对应26个本地实现包，含运行入口、公共函数、CSV与依赖；G01–G08对应上游源码参考包，未在本项目执行。请先阅读每包README。\n\n按 index.json 的 title/id 查找对应压缩包。原图和论文数值来源见汇总HTML。\n'
+    all_files['figure_families.json'] = (ROOT / 'figure_families.json').read_bytes()
+    all_files['README.md'] = '# 按图型整理的代码与数据\n\n图库每种图型仅展示一张代表图；本包保存不同用途对应的代码变体。按 figure_families.json 的用途与 index.json 的 family_id/title 查找运行包，数据与统计口径以每包说明为准。\n\n本地实现包含运行入口、公共函数、输入数据与依赖；参考源码包保留原始快照与许可，执行状态逐项记录，不保证已在当前环境完整运行。\n'
     combined = archive_bytes(all_files, 'all-figure-code')
     (DIST / 'all-figure-code.zip').write_bytes(combined)
-    manifest = {'figures': len(index), 'local_bundles': sum(i['kind'] == 'local' for i in index),
+    manifest = {'figures': len(index), 'figure_types': len(families), 'local_bundles': sum(i['kind'] == 'local' for i in index),
                 'upstream_source_bundles': sum(i['kind'] == 'upstream' for i in index),
                 'all_bundle': 'dist/figure_code/all-figure-code.zip', 'all_bundle_sha256': digest(combined), 'entries': index}
     (ROOT / 'dist/figure_code_manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n')

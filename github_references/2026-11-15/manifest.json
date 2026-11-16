@@ -1,6 +1,6 @@
 {
   "date": "2026-11-15",
-  "scope": "Separate GitHub original-image references for rerank research",
+  "scope": "Source records used by the unified chart-type gallery",
   "count": 8,
   "repositories": 8,
   "source_status": "Original upstream files verified against Git blob hashes; no upstream plotting code executed.",
