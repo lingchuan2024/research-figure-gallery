@@ -37,11 +37,16 @@ class UnifiedCatalogTests(unittest.TestCase):
         readme=(ROOT/'README.md').read_text()
         self.assertIn('](docs/FIGURE_INDEX.md)',readme)
         self.assertIn('](docs/GALLERY.md)',readme)
-        self.assertNotRegex(readme,r'!\[[^\]]*\]\(')
+        images=re.findall(r'!\[[^\]]*\]\(([^)]+)\)',readme)
+        self.assertEqual(len(images),34)
+        self.assertEqual(len(set(images)),34)
         index=(ROOT/'docs/FIGURE_INDEX.md').read_text()
         codes=re.findall(r'^\| ([TMSG]\d{2}) \|',index,re.M)
         expected=[f'T{i:02d}'for i in range(1,4)]+[f'M{i:02d}'for i in range(1,16)]+[f'S{i:02d}'for i in range(1,9)]+[f'G{i:02d}'for i in range(1,9)]
         self.assertEqual(codes,expected)
+        self.assertEqual(re.findall(r'^### ([TMSG]\d{2}) ·',readme,re.M),expected)
+        for label in ['这张图怎么看','适合放在论文哪里','换成我们的实验需要','使用边界']:
+            self.assertEqual(readme.count('**'+label+'：**'),34,label)
         for name in ['README.md','docs/GALLERY.md','docs/FIGURE_INDEX.md','SUPPLEMENT.md']:
             document=ROOT/name
             for target in re.findall(r'\]\(([^)]+)\)',document.read_text()):

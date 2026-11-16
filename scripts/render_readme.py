@@ -1,10 +1,11 @@
-"""Generate a concise README, detailed gallery, and the complete code index."""
+"""Generate the illustrated README, curated gallery, and complete code index."""
 from pathlib import Path
 import json
 import re
 import sys
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from scripts.catalog_support import ROOT,load_catalog,source_inventory,selected_entries
+from scripts.readme_notes import FIGURE_NOTES
 
 def source_line(item):
     if item['origin']=='paper':
@@ -109,18 +110,20 @@ def index_entries():
     catalog,inventory=load_catalog(),source_inventory()
     template=Path('rerank_templates/2026-11-16')
     github=Path('github_references/2026-11-15')
+    template_refs={r['template']:r for r in json.loads((ROOT/template/'sources.json').read_text())}
     entries=[]
     for number,(name,title) in enumerate([('forest','子集收益森林图'),('raincloud','分面耗时雨云图'),('pareto','质量—开销 Pareto 图')],1):
         entries.append(dict(code=f'T{number:02d}',category='templates',title=title,origin='合成模板',
             image=str(template/f'figures/{name}.png'),script=str(template/f'plot_{name}.py'),helper=str(template/'common.py'),
-            inputs=[('逐题 CSV',str(template/'data/demo/observations.csv')),('配置',str(template/'config.json'))],status='本地可运行'))
+            inputs=[('逐题 CSV',str(template/'data/demo/observations.csv')),('配置',str(template/'config.json'))],status='本地可运行',
+            reference=f"图型参考：[{template_refs[name]['repo']}]({template_refs[name]['image_url']})；本库独立实现，默认数据为合成示例。"))
     for category,prefix in [('selected','M'),('supplement','S')]:
         for number,item in enumerate(catalog[category],1):
             raw={**inventory[item['id']],**item};script=Path(raw['script'])
             helper=script.parent.parent/'plotlib.py' if raw['origin']=='paper' else Path('gallerylib/__init__.py')
             entries.append(dict(code=f'{prefix}{number:02d}',category=category,title=raw['title'],image=raw['image'],
                 script=raw['script'],helper=str(helper),origin='论文数值重绘' if raw['origin']=='paper' else '合成模板',
-                inputs=[(Path(p).name,p) for p in raw['data']],status='本地可运行'))
+                inputs=[(Path(p).name,p) for p in raw['data']],status='本地可运行',reference=source_line(raw)))
     code_meta={}
     for name in ['effectiveness.json','efficiency.json']:
         for meta in json.loads((ROOT/github/'code_sections'/name).read_text()):
@@ -132,7 +135,8 @@ def index_entries():
         inputs.extend((Path(s['local_file']).name,str(github/s['local_file'])) for s in meta.get('support_files',[]))
         entries.append(dict(code=raw['id'],category='github',title=raw['title'],origin='上游原图',
             image=str(github/raw['preview_local']),script=str(github/meta['code_file']),
-            source=str(github/raw['source_local']),license=str(github/raw['license_local']),inputs=inputs,status='上游参考 · 未完整执行'))
+            source=str(github/raw['source_local']),license=str(github/raw['license_local']),inputs=inputs,status='上游参考 · 未完整执行',
+            reference=f"上游原图：[{raw['repo']}]({raw['image_url']})；许可：{raw['license']}。{raw['license_note']}"))
     if len(entries)!=34 or len({e['code'] for e in entries})!=34:raise ValueError('Expected 34 distinct figure index entries.')
     return entries
 
@@ -170,14 +174,64 @@ def write_index(entries):
     (ROOT/'docs/FIGURE_INDEX.md').write_text(text,encoding='utf-8')
 
 
-def write_entrypoint():
+def write_entrypoint(entries):
+    if set(FIGURE_NOTES)!={entry['code'] for entry in entries}:
+        raise ValueError('Every README figure requires its own explanation and placement advice.')
     text='''# Rerank Research Figure Gallery
 
-面向 search、rerank 与自主工具调用实验的科研绘图参考库：**34 张图，每张均有代码、输入说明与来源**。包含 3 张可运行 Rerank 模板、15 张精选图、8 张补充图，以及 8 张 GitHub 上游原图。
+面向 search、rerank 与自主工具调用实验的科研绘图参考库。本页逐张展示 **34 张图**，说明**怎么看、适合放在论文哪里、需要什么数据，以及对应代码**。
 
-**从这里开始：**[34 图与全部代码索引](docs/FIGURE_INDEX.md) · [15 图完整说明](docs/GALLERY.md) · [Rerank 模板使用指南](rerank_templates/2026-11-16/README.md)
+[全部代码索引](docs/FIGURE_INDEX.md) · [精选图与研究问题](docs/GALLERY.md) · [Rerank 模板使用指南](rerank_templates/2026-11-16/README.md) · [安装与构建](#quick-start)
 
-26 个本地实现可生成独立运行包；8 个上游参考包保留对应代码、原始快照与许可，**未在本项目完整执行**。文献数值、合成演示和上游示例均注明类型，不包含我们的实测实验结果。
+其中 26 个是本地可运行实现；8 个是 GitHub 上游原图与代码参考，**未在本项目完整执行**。每图标明论文数值、合成示例或上游示例；这些数值均不是我们的实测结果。论文位置是根据图所回答的问题给出的建议，最终取决于真实实验设计与结果。
+
+如果先准备 rerank 论文的三张核心实验图，可从 [T01 子集收益](#t01)、[T02 耗时分布](#t02)、[T03 质量与开销](#t03) 开始；是否采用应由可用数据和论文主张决定。
+
+<a id="figure-catalog"></a>
+
+## 图表目录
+
+'''
+    categories=[('templates','可运行的 Rerank 模板',3),('selected','精选图库',15),
+                ('supplement','补充图库',8),('github','GitHub 原图参考',8)]
+    for category,title,count in categories:
+        links=' · '.join(f"[{e['code']} {e['title']}](#{e['code'].lower()})" for e in entries if e['category']==category)
+        text+=f'**[{title} · {count} 张](#{category})**\n\n{links}\n\n'
+    for category,title,count in categories:
+        text+=f'<a id="{category}"></a>\n\n## {title} · {count} 张\n\n'
+        for entry in (e for e in entries if e['category']==category):
+            note=FIGURE_NOTES[entry['code']]
+            text+=f'''<a id="{entry['code'].lower()}"></a>
+
+### {entry['code']} · {entry['title']}
+
+**{entry['origin']} · {entry['status']}**
+
+![{entry['code']} {entry['title']}（{entry['origin']}）]({entry['image']})
+
+**这张图怎么看：** {note['reading']}
+
+**适合放在论文哪里：** {note['placement']}
+
+**换成我们的实验需要：** {note['data_requirement']}
+
+**使用边界：** {note['caution']}
+
+<details>
+<summary>代码、数据与复现</summary>
+
+[主代码]({entry['script']})'''
+            if entry.get('helper'):
+                text+=f" · [公共函数]({entry['helper']})"
+            if entry.get('source'):
+                text+=f" · [上游源码快照]({entry['source']}) · [许可全文]({entry['license']})"
+            text+='\n\n输入：'+' · '.join(f'[{label}]({path})' for label,path in entry['inputs'])+'。\n\n'
+            if entry['category']=='github':
+                text+='上游 Python / R 环境、支持数据与运行说明见上述“数据与环境”链接；本库仅核对与保存参考源码，原图不代表本地重跑结果。\n\n'
+            else:
+                text+=f"安装下方依赖后，在仓库根目录执行：\n\n```bash\npython {entry['script']} --output-dir dist/{entry['code'].lower()} --formats png svg\n```\n\n"
+            text+='</details>\n\n'+entry['reference']+'\n\n[返回图表目录](#figure-catalog)\n\n'
+    text+='''<a id="quick-start"></a>
 
 ## 快速开始 / Quick start
 
@@ -192,7 +246,7 @@ python scripts/build_gallery.py --keep-existing-images
 
 构建后打开 `dist/图表汇总_2026-11-16.html`：图片、逐图代码与下载包内嵌，可离线使用。完整发布包位于 `dist/research-figure-gallery.zip`。构建产物放在 `dist/`，不提交到 Git；这些文件需先构建生成。
 
-**从 GitHub 下载：**进入仓库的 **Actions** 页面，选择一次成功的构建，在 **Artifacts** 中下载产物并解压。流程定义见[构建工作流](.github/workflows/build.yml)。完整构建独立执行 26 个本地代码包，8 个上游包检查完整性；报告位于 `dist/`。
+**从 GitHub 下载：** 进入仓库的 **Actions** 页面，选择一次成功的构建，在 **Artifacts** 中下载产物并解压。流程定义见[构建工作流](.github/workflows/build.yml)。完整构建独立执行 26 个本地代码包，8 个上游包检查完整性；报告位于 `dist/`。
 
 ## 选择与运行单图
 
@@ -223,7 +277,7 @@ def write_documents():
     entries=index_entries()
     write_gallery_and_supplement()
     write_index(entries)
-    write_entrypoint()
+    write_entrypoint(entries)
 
 
 if __name__=='__main__':write_documents()
