@@ -233,7 +233,7 @@ def attach_code_sections(figures):
             'bundle_path': code['bundle_path'], 'bundle_sha256': code['bundle_sha256'],
             'execution_status': code['execution_status'], 'language': code['language']})
     all_files['index.json'] = json.dumps(index, ensure_ascii=False, indent=2) + '\n'
-    all_files['figure_families.json'] = (ROOT / 'figure_families.json').read_bytes()
+    all_files['figure_families.json'] = (ROOT / 'docs/catalog/figure_families.json').read_bytes()
     all_files['README.md'] = '# 按图型整理的代码与数据\n\n图库每种图型仅展示一张代表图；本包保存不同用途对应的代码变体。按 figure_families.json 的用途与 index.json 的 family_id/title 查找运行包，数据与统计口径以每包说明为准。\n\n本地实现包含运行入口、公共函数、输入数据与依赖；参考源码包保留原始快照与许可，执行状态逐项记录，不保证已在当前环境完整运行。\n'
     combined = archive_bytes(all_files, 'all-figure-code')
     (DIST / 'all-figure-code.zip').write_bytes(combined)

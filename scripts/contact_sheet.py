@@ -8,7 +8,7 @@ import matplotlib
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 
 def main():
-    items=json.loads((ROOT/'gallery.json').read_text());cols=2;width=1200;cell_h=365;rows=(len(items)+cols-1)//cols
+    items=json.loads((ROOT/'docs/catalog/gallery.json').read_text());cols=2;width=1200;cell_h=365;rows=(len(items)+cols-1)//cols
     sheet=Image.new('RGB',(width,rows*cell_h+100),'#F0F4F6');draw=ImageDraw.Draw(sheet)
     font=ImageFont.truetype(str(Path(matplotlib.get_data_path())/'fonts/ttf/DejaVuSans.ttf'),17)
     large=ImageFont.truetype(str(Path(matplotlib.get_data_path())/'fonts/ttf/DejaVuSans-Bold.ttf'),25)

@@ -29,7 +29,7 @@ def readme(items):
 
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--only',nargs='+');p.add_argument('--keep-existing-images',action='store_true',help='Validate existing images and update docs without rendering or changing them');args=p.parse_args()
-    items=json.loads((ROOT/'gallery.json').read_text());known={i['id']for i in items}
+    items=json.loads((ROOT/'docs/catalog/gallery.json').read_text());known={i['id']for i in items}
     if args.only and not set(args.only)<=known:p.error('Unknown example IDs: '+str(set(args.only)-known))
     if not args.keep_existing_images:
         for i in items:

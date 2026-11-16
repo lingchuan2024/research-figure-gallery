@@ -91,7 +91,7 @@ def write_entrypoint(entries, families):
 
 图中的数值来自合成示例或公开材料，均不是我们的实测结果。使用时选择对应用途的代码与数据格式；同一画法不意味着不同指标或分母可以混用。
 
-[安装与构建](#quick-start) · [全部代码、输入与来源](docs/FIGURE_INDEX.md) · [逐题数据格式](rerank_templates/2026-11-16/DATA_FORMAT.md)
+[下载离线图册与完整代码包](https://github.com/lingchuan2024/research-figure-gallery/releases/latest) · [安装与构建](#quick-start) · [全部代码、输入与来源](docs/FIGURE_INDEX.md) · [逐题数据格式](rerank_templates/2026-11-16/DATA_FORMAT.md) · [目录说明](docs/STRUCTURE.md)
 
 <a id="figure-catalog"></a>
 
@@ -119,7 +119,9 @@ def write_entrypoint(entries, families):
 '''
         for use in family['uses']:
             code_links=' · '.join(f"[{by_code[c]['title']}](docs/FIGURE_INDEX.md#variant-{c.lower()})" for c in use['source_codes'])
-            text+=f"- **{use['purpose']}** 建议位置：{use['placement']}；需要：{use['data']}。实现参考：{code_links}。\n\n"
+            placement=use['placement'].rstrip(' \t\r\n。.;；')
+            data=use['data'].rstrip(' \t\r\n。.;；')
+            text+=f"- **{use['purpose']}** 建议位置：{placement}；需要：{data}。实现参考：{code_links}。\n\n"
         text+=f'''**使用边界：** {family['caution']}
 
 <details>
@@ -152,9 +154,9 @@ python scripts/build_gallery.py --keep-existing-images
 
 逐题输入见[数据格式](rerank_templates/2026-11-16/DATA_FORMAT.md)；旧示例字段见[数据说明](data/README.md)。代码入口、执行状态与引用信息均在[统一索引](docs/FIGURE_INDEX.md)中。
 
-图型与用途由 [figure_families.json](figure_families.json) 统一维护，README、离线汇总和总览图由它生成。历史图片与来源证据用于代码溯源，不再作为多个独立图型重复展示。
+图型与用途由 [figure_families.json](docs/catalog/figure_families.json) 统一维护，README、离线汇总和总览图由它生成。历史图片与来源证据用于代码溯源，不再作为多个独立图型重复展示。
 
-自编代码采用 [MIT 许可](LICENSE)。来源图片、论文材料和原始源码保留各自许可，详见[来源说明](REFERENCES.md)。
+自编代码采用 [MIT 许可](LICENSE)。来源图片、论文材料和原始源码保留各自许可，详见[来源说明](docs/REFERENCES.md)。
 '''
     (ROOT/'README.md').write_text(text,encoding='utf-8')
 

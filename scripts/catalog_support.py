@@ -5,7 +5,7 @@ import json
 ROOT=Path(__file__).resolve().parents[1]
 
 def load_catalog():
-    return json.loads((ROOT/'catalog.json').read_text())
+    return json.loads((ROOT/'docs/catalog/catalog.json').read_text())
 
 def expansion_manifests():
     """Find published-data bundles in both generations of the gallery."""
@@ -18,7 +18,7 @@ def source_inventory():
         if raw['id'] in result:
             raise ValueError('Duplicate figure ID across source inventories: '+raw['id'])
         result[raw['id']]=raw
-    for raw in json.loads((ROOT/'gallery.json').read_text()):
+    for raw in json.loads((ROOT/'docs/catalog/gallery.json').read_text()):
         add({**raw,'origin':'synthetic','source_label':'图型参考','source_url':raw['reference']})
     for manifest in expansion_manifests():
         folder=manifest.parent;prefix=folder.relative_to(ROOT)

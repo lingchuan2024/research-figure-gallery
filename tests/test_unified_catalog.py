@@ -28,7 +28,7 @@ class UnifiedCatalogTests(unittest.TestCase):
         assert_preserved_images(baseline)
 
     def test_families_partition_all_34_variants_and_cover_their_uses(self):
-        registry=json.loads((ROOT/'figure_families.json').read_text())
+        registry=json.loads((ROOT/'docs/catalog/figure_families.json').read_text())
         self.assertEqual(registry['version'],1)
         self.assertEqual(len(self.entries),34)
         self.assertEqual(len(self.by_code),34)
@@ -65,7 +65,7 @@ class UnifiedCatalogTests(unittest.TestCase):
                              [self.by_code[family['representative']]['image']])
             for use in family['uses']:
                 for field in ('purpose','placement','data'):
-                    self.assertIn(use[field],body)
+                    self.assertIn(use[field].rstrip('。'),body)
                 for code in use['source_codes']:
                     self.assertIn(f'](docs/FIGURE_INDEX.md#variant-{code.lower()})',body)
             self.assertIn(family['caution'],body)

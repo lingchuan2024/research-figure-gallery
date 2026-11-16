@@ -6,7 +6,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def load_families(available_codes=None):
-    families = json.loads((ROOT / 'figure_families.json').read_text())['families']
+    families = json.loads((ROOT / 'docs/catalog/figure_families.json').read_text())['families']
     ids = [f['id'] for f in families]
     members = [code for f in families for code in f['members']]
     if len(ids) != len(set(ids)) or len(members) != len(set(members)):

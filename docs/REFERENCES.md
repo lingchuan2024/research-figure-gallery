@@ -1,6 +1,6 @@
 # 图型参考与代码来源说明
 
-本仓库保留的 9 个 `examples/*/plot.py`、公共函数、演示数据生成器和排版均为本库编写的实现，使用 Matplotlib/NumPy/Pillow；**没有把其他项目的截图当作本地代码的运行结果，也没有将未找到的论文出图脚本写成已复现**。这 9 个模板的图底明确标出合成演示数据。历史视觉筛选见 [CURATION.md](CURATION.md)，2026-11-15 去重见 [删除记录](curation/2026-11-15-dedup/README.md)。
+本仓库保留的 9 个 `examples/*/plot.py`、公共函数、演示数据生成器和排版均为本库编写的实现，使用 Matplotlib/NumPy/Pillow；**没有把其他项目的截图当作本地代码的运行结果，也没有将未找到的论文出图脚本写成已复现**。这 9 个模板的图底明确标出合成演示数据。历史视觉筛选见 [CURATION.md](CURATION.md)，2026-11-15 去重见 [删除记录](../curation/2026-11-15-dedup/README.md)。
 
 下面列出此前检索中用到的图型、布局及研究问题参考。外部链接用于继续阅读，不是本库运行依赖。本库 MIT 许可仅覆盖本库自主编写的内容，不改变外部资源的许可。仓库本身使用某种许可证，也不保证它的每个第三方素材都适用同一许可。
 
@@ -26,16 +26,16 @@
 | [SIEVE](https://arxiv.org/abs/2608.02751) / [SkimSearchAgent](https://github.com/ielab/skim-search-agent) | 将逐题 token 差异与结果变化对齐 | 此前定位的 [appendix_token_columns.py](https://github.com/ielab/skim-search-agent/blob/main/analysis/appendix_token_columns.py) 是统计入口，不能当作配对图的已确认出图脚本；09 为本库自行实现 |
 | [DeepHone](https://github.com/sahel-sh/DeepHone) | 搜索过程与工具行为分析的拓展阅读 | 此前定位了 [plot_etc_deepsearch.py](https://github.com/sahel-sh/DeepHone/blob/main/scripts_rerank/plot_etc_deepsearch.py)；本库未复制或运行该脚本，不将其中原图收入可复现示例 |
 
-以上参考清单沿用 2026-11-01 的检索记录；上游分支与路径可能变化。各用途对应的代码、执行状态与输入见 [统一代码索引](docs/FIGURE_INDEX.md)，底层文件映射保存在 `gallery.json` 或文献 `manifest.json` 中，外部链接用于说明参考关系，不参与出图。
+以上参考清单沿用 2026-11-01 的检索记录；上游分支与路径可能变化。各用途对应的代码、执行状态与输入见 [统一代码索引](FIGURE_INDEX.md)，底层文件映射保存在 [gallery.json](catalog/gallery.json) 或文献 `manifest.json` 中，外部链接用于说明参考关系，不参与出图。
 
 ## Rerank 文献图更新
 
-2026-11-15 的重排专题见 [论文与实验契合分析](rerank_expansion/2026-11-15/RESEARCH_NOTES.md)及 [数值来源审计](rerank_expansion/2026-11-15/data_provenance.json)。各图的本地脚本、CSV、PNG 和 SVG 由该目录的 `manifest.json` 对应。图中数值属于来源论文的实验；本库自行重绘，不将其标作我们的实验结果或作者原始出图代码。
+2026-11-15 的重排专题见 [论文与实验契合分析](../rerank_expansion/2026-11-15/RESEARCH_NOTES.md)及 [数值来源审计](../rerank_expansion/2026-11-15/data_provenance.json)。各图的本地脚本、CSV、PNG 和 SVG 由该目录的 `manifest.json` 对应。图中数值属于来源论文的实验；本库自行重绘，不将其标作我们的实验结果或作者原始出图代码。
 
 ## 图型与来源的统一对应
 
-所有来源按同一套[图型目录](figure_families.json)归类，在 [README](README.md) 中每类仅展示一个代表，在[代码来源索引](docs/FIGURE_INDEX.md)中列出各用途的实现。网页仓库、论文与自编模板不再各设图库。
+所有来源按同一套[图型目录](catalog/figure_families.json)归类，在 [README](../README.md) 中每类仅展示一个代表，在[代码来源索引](FIGURE_INDEX.md)中列出各用途的实现。网页仓库、论文与自编模板不再各设图库。
 
-固定版本图片、源码、支持数据与许可证记录在 [来源清单](github_references/2026-11-15/manifest.json)；论文转录数值的定位见各日期的 `data_provenance.json`。这些记录用于溯源，不作为额外图型重复展示。原始素材不自动适用本库 MIT 许可；未完整运行的参考源码逐项注明状态。
+固定版本图片、源码、支持数据与许可证记录在 [来源清单](../github_references/2026-11-15/manifest.json)；论文转录数值的定位见各日期的 `data_provenance.json`。这些记录用于溯源，不作为额外图型重复展示。原始素材不自动适用本库 MIT 许可；未完整运行的参考源码逐项注明状态。
 
-森林图、雨云图和 Pareto 图的本地实现见[使用说明](rerank_templates/2026-11-16/README.md)，其共享逐题 CSV 与 JSON 配置，默认数据为合成示例。[来源映射](rerank_templates/2026-11-16/sources.json)说明图型借鉴关系，不代表复制上游代码。
+森林图、雨云图和 Pareto 图的本地实现见[使用说明](../rerank_templates/2026-11-16/README.md)，其共享逐题 CSV 与 JSON 配置，默认数据为合成示例。[来源映射](../rerank_templates/2026-11-16/sources.json)说明图型借鉴关系，不代表复制上游代码。

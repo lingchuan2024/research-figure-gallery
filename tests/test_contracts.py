@@ -90,7 +90,7 @@ class DataContractTests(unittest.TestCase):
         for group in groups.values():self.assertEqual(set(group),ids);self.assertEqual(len(group),len(ids))
 
     def test_manifest_code_and_data_exist(self):
-        items=json.loads((ROOT/'gallery.json').read_text());ids=[i['id']for i in items]
+        items=json.loads((ROOT/'docs/catalog/gallery.json').read_text());ids=[i['id']for i in items]
         self.assertEqual(len(ids),len(set(ids)));self.assertGreater(len(ids),0)
         self.assertEqual({i['script']for i in items},{str(p.relative_to(ROOT))for p in (ROOT/'examples').glob('*/plot.py')})
         for fmt,key in [('png','image'),('svg','vector')]:
@@ -110,7 +110,7 @@ class DataContractTests(unittest.TestCase):
         path=ROOT/'docs/FIGURE_INDEX.md'
         if not path.exists():self.skipTest('First build generates the unified source index after rendering')
         content=path.read_text()
-        items=json.loads((ROOT/'gallery.json').read_text())
+        items=json.loads((ROOT/'docs/catalog/gallery.json').read_text())
         for item in items:
             self.assertEqual(content.count('](../'+item['script']+')'),1,item['id']+' source missing or duplicated')
             for data in item['data']:
