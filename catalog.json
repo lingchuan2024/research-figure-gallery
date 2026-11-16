@@ -1,91 +1,112 @@
 {
-  "version": 1,
-  "date": "2026-11-02",
-  "selection_policy": "Prioritize experiment fit, readable visual encoding and complementary information; preserve all existing image bytes.",
+  "version": 2,
+  "date": "2026-11-15",
+  "selection_policy": "Prioritize rerank-specific questions with exact paper data and readable encoding; remove documented duplicate examples and preserve every retained scientific figure.",
   "selected": [
+    {
+      "id": "R01_rerank_qa",
+      "title": "推理时重排对最终回答的影响",
+      "purpose": "同一训练模型的推理重排开关与最终 EM；包含全部五个 OpenQA 任务，原表未证明同 token 预算。",
+      "preview_label": "Reranking and final answers",
+      "section": "一、重排效果与最终回答"
+    },
+    {
+      "id": "R02_answer_recall",
+      "title": "前 5 条中的含答案材料召回",
+      "purpose": "固定前5条的评价位置，比较含答案材料的召回；全部六组R@5，R@10/20保留CSV。k不是重排候选数。",
+      "preview_label": "Answer recall in the top five",
+      "section": "一、重排效果与最终回答"
+    },
     {
       "id": "19_results_table",
       "title": "主结果表",
-      "section": "一、主结果与消融",
+      "section": "一、重排效果与最终回答",
       "purpose": "在相同问题集、模型与返回字符预算下汇总准确率、主模型用量和耗时。",
       "preview_label": "Main results table"
     },
     {
-      "id": "17_ablation_forest",
-      "title": "组件消融森林图",
-      "section": "一、主结果与消融",
-      "purpose": "展示 query、snippet、候选范围与调用时机的贡献；每项对照只改变一个变量。",
-      "preview_label": "Component ablations"
+      "id": "R03_order_robustness",
+      "title": "输入顺序鲁棒性",
+      "purpose": "固定候选集合后打乱初始顺序，检查重排收益是否依赖原始位置；误差线仅为原文六次打乱的99%置信区间。",
+      "preview_label": "Input-order robustness",
+      "section": "二、排序鲁棒性与 Query 诊断"
     },
     {
       "id": "08_query_paired_comparison",
       "title": "Query 配对比较",
-      "section": "二、重排与 Query 诊断",
+      "section": "二、排序鲁棒性与 Query 诊断",
       "purpose": "同题两种 query 在相同候选池、reranker 与片段设置下配对比较，直接观察逐题差值。",
       "preview_label": "Paired query comparison"
     },
     {
       "id": "07_rank_transition",
       "title": "证据排名迁移",
-      "section": "二、重排与 Query 诊断",
+      "section": "二、排序鲁棒性与 Query 诊断",
       "purpose": "保留完整候选集中的前后排名；候选集外证据另计，避免只展示被提升的证据。",
       "preview_label": "Evidence rank transitions"
     },
     {
-      "id": "N03_oracle_evidence",
-      "title": "证据充分对照",
-      "section": "二、重排与 Query 诊断",
-      "purpose": "诊断证据获取与后续推理的差距；Oracle 改变证据访问条件，不作为相同返回预算下的基线。",
-      "preview_label": "Oracle evidence diagnostic"
+      "id": "R05_window_budget",
+      "title": "重排窗口重叠的成本与收益",
+      "purpose": "固定窗口20，比较步长10/5/2的调用量、时延和nDCG；图示DL19/20，完整五数据集保留CSV。原文caption的模型名与正文存在不一致，按同表实验呈现。",
+      "preview_label": "Window overlap trade-off",
+      "section": "三、重排配置与模型选择"
     },
     {
-      "id": "04_call_vs_output_share",
-      "title": "工具调用与返回文本占比",
-      "section": "三、工具行为与证据效率",
-      "purpose": "调用次数与返回字符采用各自分母；自动重排的后台计算需单独统计。",
-      "preview_label": "Tool calls and returned text"
+      "id": "R06_model_scaling",
+      "title": "模型规模与任务差异",
+      "purpose": "比较相同候选集合上的0.6B/4B/8B重排器，保留下降项与不同任务差异。 六列均采用各自原生分数与独立纵轴；不平均混合指标；参数量不是延迟。",
+      "preview_label": "Model scale across tasks",
+      "section": "三、重排配置与模型选择"
     },
     {
-      "id": "N01_retrieved_context",
-      "title": "检索暴露文本量",
-      "section": "三、工具行为与证据效率",
-      "purpose": "将检索工具暴露的语料 token 与主模型累计输入分开；参考论文并非统一返回 100 字符的设置。",
-      "preview_label": "Retrieved context volume"
+      "id": "17_ablation_forest",
+      "title": "组件消融森林图",
+      "section": "三、重排配置与模型选择",
+      "purpose": "展示 query、snippet、候选范围与调用时机的贡献；每项对照只改变一个变量。",
+      "preview_label": "Component ablations"
     },
     {
-      "id": "N07_source_growth",
-      "title": "调用投入与独立来源增长",
-      "section": "三、工具行为与证据效率",
-      "purpose": "检查更多调用是否增加独立来源；右图是均值差之比，不能解释为逐题新颖度。",
-      "preview_label": "Calls and distinct sources"
+      "id": "R04_decoding_latency",
+      "title": "解码方式与重排时延",
+      "purpose": "比较完整排序输出和首标识符logits读取的重排时延；单卡RTX4090、top100、窗口20/步长10，不能当作agent端到端耗时。",
+      "preview_label": "Decoding latency",
+      "section": "四、推理开销与调用行为"
     },
     {
       "id": "02_token_raincloud",
       "title": "逐题 Token 用量分布",
-      "section": "四、资源开销",
+      "section": "四、推理开销与调用行为",
       "purpose": "观察典型问题用量、离散程度和长尾；这里仅统计主模型输入，输出与 reranker 开销另计。",
       "preview_label": "Per-question token distribution"
     },
     {
+      "id": "04_call_vs_output_share",
+      "title": "工具调用与返回文本占比",
+      "section": "四、推理开销与调用行为",
+      "purpose": "调用次数与返回字符采用各自分母；自动重排的后台计算需单独统计。",
+      "preview_label": "Tool calls and returned text"
+    },
+    {
       "id": "N06_latency_components",
       "title": "模块耗时分解",
-      "section": "四、资源开销",
+      "section": "四、推理开销与调用行为",
       "purpose": "按模块定位瓶颈；参考数据中的 I/O 单列毫秒轴，我们的 reranker 需单独计时。",
       "preview_label": "Latency components"
     },
     {
-      "id": "N02_failure_hierarchy",
-      "title": "分层失败归因",
-      "section": "五、失败归因与适用范围",
-      "purpose": "区分推理链、查询策略、语料缺失和 judge 问题；主类与子类使用不同分母，不能相加。",
-      "preview_label": "Hierarchical failure analysis"
+      "id": "N03_oracle_evidence",
+      "title": "证据充分对照",
+      "section": "五、失败与证据使用",
+      "purpose": "诊断证据获取与后续推理的差距；Oracle 改变证据访问条件，不作为相同返回预算下的基线。",
+      "preview_label": "Oracle evidence diagnostic"
     },
     {
-      "id": "N05_task_complexity",
-      "title": "任务难度分层",
-      "section": "五、失败归因与适用范围",
-      "purpose": "为问题预先标注跳数和证据需求后分层比较；参考图为报告遵循率，不能当作 QA 准确率。",
-      "preview_label": "Task complexity strata"
+      "id": "N02_failure_hierarchy",
+      "title": "分层失败归因",
+      "section": "五、失败与证据使用",
+      "purpose": "区分推理链、查询策略、语料缺失和 judge 问题；主类与子类使用不同分母，不能相加。",
+      "preview_label": "Hierarchical failure analysis"
     }
   ],
   "supplement": [
@@ -93,11 +114,6 @@
       "id": "09_token_outcome_pairs",
       "title": "逐题结果与 Token 联动",
       "reason": "上下两层对齐后的阅读负担较大，缩小后细柱难辨；逐题资源联动适合作为附录分析。"
-    },
-    {
-      "id": "12_accuracy_cost_frontier",
-      "title": "准确率—成本 Pareto 图",
-      "reason": "与主结果和资源图部分重复；示例成本单位人为构造，接入统一实际成本前不列为主图。"
     },
     {
       "id": "14_budget_accuracy",
@@ -118,6 +134,21 @@
       "id": "N08_evaluator_budget",
       "title": "评估费用与人类一致性",
       "reason": "关注评估器配置及费用，离 reranker 效果主线较远，适合评估方法附录。"
+    },
+    {
+      "id": "N01_retrieved_context",
+      "title": "检索暴露文本量",
+      "reason": "侧重检索接口暴露文本，和重排模型本身的效果关系较间接；转入检索工作空间专项。"
+    },
+    {
+      "id": "N07_source_growth",
+      "title": "调用投入与独立来源增长",
+      "reason": "侧重长报告的独立来源增长；本轮优先固定候选集合的重排与计算预算。"
+    },
+    {
+      "id": "N05_task_complexity",
+      "title": "任务难度分层",
+      "reason": "原指标为长报告rubric遵循率，距离当前rerank实验较远；保留为后续任务分层参考。"
     }
   ]
 }

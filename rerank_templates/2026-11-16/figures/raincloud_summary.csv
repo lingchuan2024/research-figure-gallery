@@ -1,0 +1,10 @@
+facet,benchmark,method,method_label,metric,n,mean,p50,p90,p95,zero_count,plot_scale,facet_kde_bandwidth
+DemoQA / Bridge,DemoQA,baseline,Baseline,wall_seconds,40,53.3461224,41.439903,112.0443659,114.88524199999999,0,linear,11.651926197981476
+DemoQA / Bridge,DemoQA,auto_rerank,Auto rerank,wall_seconds,40,70.070006625,56.7262575,140.79990160000003,150.2230539,0,linear,11.651926197981476
+DemoQA / Bridge,DemoQA,v14,Agent rerank,wall_seconds,40,50.765236125,42.1867405,101.19250650000001,110.4219393,0,linear,11.651926197981476
+DemoQA / Comparison,DemoQA,baseline,Baseline,wall_seconds,40,60.172732575,44.4464355,112.7906202,123.62668589999969,0,linear,10.262841958792551
+DemoQA / Comparison,DemoQA,auto_rerank,Auto rerank,wall_seconds,40,78.33047925000001,57.853982,149.23638979999998,157.60419429999976,0,linear,10.262841958792551
+DemoQA / Comparison,DemoQA,v14,Agent rerank,wall_seconds,40,56.459768625,42.512567000000004,103.7090735,129.52032459999984,0,linear,10.262841958792551
+DemoQA / Direct,DemoQA,baseline,Baseline,wall_seconds,40,55.77208829999999,53.649739,88.14581670000001,93.69810899999993,0,linear,10.135660959578516
+DemoQA / Direct,DemoQA,auto_rerank,Auto rerank,wall_seconds,40,75.1644161,70.2500695,114.7619238,124.30029784999991,0,linear,10.135660959578516
+DemoQA / Direct,DemoQA,v14,Agent rerank,wall_seconds,40,52.56867724999999,51.0382325,80.69996040000001,92.80044294999993,0,linear,10.135660959578516

@@ -1,0 +1,32 @@
+[
+  {
+    "template": "forest",
+    "reference_figure": "G02",
+    "repo": "LSYS/forestplot",
+    "commit": "b7591e3be7004f9962fd7cd7f91aa4cac91c45fc",
+    "image_url": "https://github.com/LSYS/forestplot/blob/b7591e3be7004f9962fd7cd7f91aa4cac91c45fc/docs/images/multimodel.png",
+    "source_url": "https://github.com/LSYS/forestplot/blob/b7591e3be7004f9962fd7cd7f91aa4cac91c45fc/README.md",
+    "license_url": "https://github.com/LSYS/forestplot/blob/b7591e3be7004f9962fd7cd7f91aa4cac91c45fc/LICENSE",
+    "relationship": "Visual design reference only; independent Matplotlib/NumPy implementation. Upstream package is not imported and upstream code was not copied."
+  },
+  {
+    "template": "raincloud",
+    "reference_figure": "G04",
+    "repo": "RainCloudPlots/RainCloudPlots",
+    "commit": "4ceeb06dc5bd5b9911e7147d1b0b452c4c2f9b1d",
+    "image_url": "https://github.com/RainCloudPlots/RainCloudPlots/blob/4ceeb06dc5bd5b9911e7147d1b0b452c4c2f9b1d/figs/tutorial_python/figureP13.png",
+    "source_url": "https://github.com/RainCloudPlots/RainCloudPlots/blob/4ceeb06dc5bd5b9911e7147d1b0b452c4c2f9b1d/tutorial_python/raincloud_tutorial_python.ipynb",
+    "license_url": "https://github.com/RainCloudPlots/RainCloudPlots/blob/4ceeb06dc5bd5b9911e7147d1b0b452c4c2f9b1d/LICENSE",
+    "relationship": "Visual design reference only; independent Matplotlib/NumPy implementation. Upstream package is not imported and upstream code was not copied."
+  },
+  {
+    "template": "pareto",
+    "reference_figure": "G06",
+    "repo": "tommyod/paretoset",
+    "commit": "6f2803057085a696cbe10118ca3164d993cee175",
+    "image_url": "https://github.com/tommyod/paretoset/blob/6f2803057085a696cbe10118ca3164d993cee175/scripts/example_optimization.png",
+    "source_url": "https://github.com/tommyod/paretoset/blob/6f2803057085a696cbe10118ca3164d993cee175/scripts/examples.py",
+    "license_url": "https://github.com/tommyod/paretoset/blob/6f2803057085a696cbe10118ca3164d993cee175/LICENSE",
+    "relationship": "Visual design reference only; independent Matplotlib/NumPy implementation. Upstream package is not imported and upstream code was not copied."
+  }
+]

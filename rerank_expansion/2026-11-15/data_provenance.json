@@ -1,0 +1,177 @@
+[
+  {
+    "figure_id": "R01_rerank_qa",
+    "csv": "data/rankrag_qa_ablation.csv",
+    "csv_sha256": "10798885a0a45082e3547764f90ba1d19f66f3a66e31fef5cd8e839ba6d045c8",
+    "paper": "RankRAG: Unifying Context Ranking with Retrieval-Augmented Generation in LLMs",
+    "version": "2407.02485v1",
+    "pdf_url": "https://arxiv.org/pdf/2407.02485v1",
+    "local_pdf": "sources/rankrag_2407.02485v1.pdf",
+    "inspected_pdf_sha256": "4409f1314e13be7c1f65df33936078b54831c9ae4a5ddc61ffff4ab0a8ea17d3",
+    "pdf_pages": [
+      8
+    ],
+    "locator": "Table 3",
+    "transcription": "Exact table values; no curve digitization. Cross-checked against source PDF and full-page rendering.",
+    "review": "Independently rechecked all six CSVs against PDF tables; no transcription error found.",
+    "not_our_experiment": true,
+    "author_plot_code": "Original author plotting code not used; this local implementation redraws reported table values.",
+    "metric": "Exact Match (EM), percent; delta = with minus without, percentage points",
+    "scope": "All 5 OpenQA datasets in Table 3, avoiding mixed EM/accuracy/F1 averages. NQ, TriviaQA, HotpotQA use KILT splits; Llama3-RankRAG-8B backbone; ablation removes reranking at inference.",
+    "settings": "Default retriever Dragon; top-100 candidates for 8B. Page 6 reports k in {5,10,20} and best baseline results. Table 3 does not provide per-row k; do not claim a verified equal token/context budget.",
+    "caveats": [
+      "No confidence intervals or individual question results in the table.",
+      "This is a static retrieve-rerank-generate setting, not multi-round agent tool selection.",
+      "Reported gains do not establish equal-cost superiority or prove the performance of our model."
+    ],
+    "derivations": "with/before difference, percentage points; R02 chart filters cutoff_k=5 only",
+    "source_snapshot": "source_pages/rankrag_table3_page08.png",
+    "source_snapshot_sha256": "ae3912f23395d22dd1164495ae327eaadf020a61cb279cbef9ac2908ca7e9c4c"
+  },
+  {
+    "figure_id": "R02_answer_recall",
+    "csv": "data/rankrag_answer_recall.csv",
+    "csv_sha256": "8cfa1fae92496f406dd16a6bb66666e22e14418a47de8a07428aafbd1d6eaf82",
+    "paper": "RankRAG: Unifying Context Ranking with Retrieval-Augmented Generation in LLMs",
+    "version": "2407.02485v1",
+    "pdf_url": "https://arxiv.org/pdf/2407.02485v1",
+    "local_pdf": "sources/rankrag_2407.02485v1.pdf",
+    "inspected_pdf_sha256": "4409f1314e13be7c1f65df33936078b54831c9ae4a5ddc61ffff4ab0a8ea17d3",
+    "pdf_pages": [
+      21
+    ],
+    "locator": "Table 8",
+    "transcription": "Exact table values; no curve digitization. Cross-checked against source PDF and full-page rendering.",
+    "review": "Independently rechecked all six CSVs against PDF tables; no transcription error found.",
+    "not_our_experiment": true,
+    "author_plot_code": "Original author plotting code not used; this local implementation redraws reported table values.",
+    "metric": "Answer Recall@k, percent; not recall of every gold document and not nDCG.",
+    "scope": "Complete Table 8: all three datasets (NQ, TriviaQA, PopQA), both retrievers, k=5,10,20, RankRAG-8B.",
+    "settings": "Section E.1 identifies DPR and Contriever; Section 5.3 specifies Contriever-MS MARCO. General default is 100 candidates for 8B.",
+    "caveats": [
+      "k is the evaluation/retained-rank cutoff, NOT number of candidates fed to reranker.",
+      "Do not present these as candidate-pool-depth ablations.",
+      "Answer recall improvement is not identical to final QA improvement.",
+      "No uncertainty intervals available."
+    ],
+    "derivations": "with/before difference, percentage points; R02 chart filters cutoff_k=5 only",
+    "source_snapshot": "source_pages/rankrag_table8_page21.png",
+    "source_snapshot_sha256": "448138735c494f867d122051669b10d7f3ca692457817fbe9f450029f144e773"
+  },
+  {
+    "figure_id": "R03_order_robustness",
+    "csv": "data/rankzephyr_order_robustness.csv",
+    "csv_sha256": "8e1334b0c42373f5c615f28d9da4803d1300a78739b47691008e22e785e7251f",
+    "paper": "RankZephyr: Effective and Robust Zero-Shot Listwise Reranking is a Breeze!",
+    "version": "2312.02724v1",
+    "pdf_url": "https://arxiv.org/pdf/2312.02724v1",
+    "local_pdf": "sources/rankzephyr.pdf",
+    "inspected_pdf_sha256": "aa198a0df997f39ecd064670ed17f62b22fc567502890832ba1206de99be464b",
+    "pdf_pages": [
+      11
+    ],
+    "locator": "Table 7",
+    "transcription": "Exact table values; no curve digitization. Cross-checked against source PDF and full-page rendering.",
+    "review": "Independently rechecked all six CSVs against PDF tables; no transcription error found.",
+    "not_our_experiment": true,
+    "author_plot_code": "Not used; local implementation redraws exact published table data.",
+    "metric": "nDCG@10, range 0..1",
+    "conditions": [
+      "Same top-100 candidate set within each retriever/dataset; only order changes.",
+      "Shuffled means and 99% confidence-interval halfwidths reported over six shuffled input orderings.",
+      "Original-order point has no reported interval. Do not plot a zero-error interval implying certainty."
+    ],
+    "scope": "All eight nDCG rows of Table 7",
+    "derivations": "100*(shuffled-original); CI halfwidth stays on original 0..1 scale",
+    "source_snapshot": "source_pages/rankzephyr_table7.png",
+    "source_snapshot_sha256": "a4e4308f64de73dcfdd56fe4b8673f3eb6acc2d45665b109f8044bba3757a90f"
+  },
+  {
+    "figure_id": "R04_decoding_latency",
+    "csv": "data/first_decoding_latency.csv",
+    "csv_sha256": "7ad46f581c26d8c301f32eb253a7173f0ce0f5da0de19e155a0df93346ecfd29",
+    "paper": "Accelerating Listwise Reranking: Reproducing and Enhancing FIRST",
+    "version": "SIGIR 2025 author PDF; SHA256 snapshot 2026-11-15",
+    "pdf_url": "https://zijianchen.ca/papers/Accelerating%20Listwise%20Reranking%20Reproducing%20and%20Enhancing%20FIRST.pdf",
+    "local_pdf": "sources/first_reproduction_sigir2025.pdf",
+    "inspected_pdf_sha256": "7002bf1c28dda19c141341ef624d45915f3e1ec1de9a5cb0ee19be90d0b17796",
+    "pdf_pages": [
+      6
+    ],
+    "locator": "Table 5",
+    "transcription": "Exact table values; no curve digitization. Cross-checked against source PDF and full-page rendering.",
+    "review": "Independently rechecked all six CSVs against PDF tables; no transcription error found.",
+    "not_our_experiment": true,
+    "author_plot_code": "Not used; local implementation redraws exact published table data.",
+    "metric": "Average reranking latency per query (s), token counts, paper-reported percentage latency decrease.",
+    "conditions": [
+      "Single NVIDIA RTX 4090; measured with NVIDIA Nsight Systems.",
+      "Rerank top 100; window=20, stride=10; nine rerank LLM calls per query.",
+      "Reported 18 output tokens in first-identifier mode: two tokens per window including closing identifier, not one token for the whole query.",
+      "These are reranker inference timings, not agent end-to-end search latency.",
+      "Table uses RankZephyr and RankMistral labels for g/l decoding modes. Preserve these labels. Do not join to different trained-checkpoint accuracy rows to claim an exact latency-quality point.",
+      "Percentage labels in CSV are directly reported, not recalculated from two-decimal latency."
+    ],
+    "scope": "Both models, all five datasets of Table 5",
+    "derivations": "Percent latency changes use paper-reported values (not rounded latency recalculation)",
+    "source_snapshot": "source_pages/first_table5.png",
+    "source_snapshot_sha256": "b2da92761fcea257f77e67337a830475bec15485e33287b9a812ee12e7ea01c2"
+  },
+  {
+    "figure_id": "R05_window_budget",
+    "csv": "data/first_window_budget.csv",
+    "csv_sha256": "17395efd69bd25ac461bf9b617121641cdc78145238c6c9ecde0ca46f2576b8a",
+    "paper": "Accelerating Listwise Reranking: Reproducing and Enhancing FIRST",
+    "version": "SIGIR 2025 author PDF; SHA256 snapshot 2026-11-15",
+    "pdf_url": "https://zijianchen.ca/papers/Accelerating%20Listwise%20Reranking%20Reproducing%20and%20Enhancing%20FIRST.pdf",
+    "local_pdf": "sources/first_reproduction_sigir2025.pdf",
+    "inspected_pdf_sha256": "7002bf1c28dda19c141341ef624d45915f3e1ec1de9a5cb0ee19be90d0b17796",
+    "pdf_pages": [
+      7
+    ],
+    "locator": "Table 6",
+    "transcription": "Exact table values; no curve digitization. Cross-checked against source PDF and full-page rendering.",
+    "review": "Independently rechecked all six CSVs against PDF tables; no transcription error found.",
+    "not_our_experiment": true,
+    "author_plot_code": "Not used; local implementation redraws exact published table data.",
+    "metric": "Per-query rerank latency (s), nDCG@10, calls, tokens.",
+    "conditions": [
+      "Top 100 retrieved documents, single-token strategy; compare window/stride configurations within dataset.",
+      "Latency measured on one RTX 4090 per Section 5.5.",
+      "Caption says RankMistral, while Section 5.6 describes FIRST and nDCG values at 20/10 coincide with FirstMistral. Retain neutral title: FIRST window/stride ablation; note source naming inconsistency.",
+      "Do not describe 2/1 as a full independent pairwise-ranking algorithm; it is the listwise sliding-window system with two-item windows.",
+      "No uncertainty intervals are reported for latency."
+    ],
+    "scope": "Chart: DL19/DL20, w=20, stride=10/5/2; CSV: all five datasets and all five settings",
+    "derivations": "nDCG@10 multiplied by 100; latency unchanged",
+    "source_snapshot": "source_pages/first_table6.png",
+    "source_snapshot_sha256": "e6315f0281b760a0ddbc4ea678d94c51d038e40cfd44f2d4cd5d66c74e856876"
+  },
+  {
+    "figure_id": "R06_model_scaling",
+    "csv": "data/qwen3_scaling.csv",
+    "csv_sha256": "c62369f23df09389c28cadb2331787b86f2008d57d91799624bb00d58f5ebb78",
+    "paper": "Qwen3 Embedding: Advancing Text Embedding and Reranking Through Foundation Models",
+    "version": "2506.05176v3",
+    "pdf_url": "https://arxiv.org/pdf/2506.05176v3",
+    "local_pdf": "sources/qwen3_embedding_2506.05176v3.pdf",
+    "inspected_pdf_sha256": "fd45f8821766118a2cc49e27d301a0a34f0f31f5aafb8f4318e7848c7ddbfa33",
+    "pdf_pages": [
+      8
+    ],
+    "locator": "Table 4",
+    "transcription": "Exact table values; no curve digitization. Cross-checked against source PDF and full-page rendering.",
+    "review": "Independently rechecked all six CSVs against PDF tables; no transcription error found.",
+    "not_our_experiment": true,
+    "author_plot_code": "Not used; local implementation redraws exact published table data.",
+    "metric": "Benchmark-native scores from Table 4; do not average across six task columns",
+    "scope": "All six benchmark columns and three Qwen3 reranker sizes plus shared retriever baseline. Other model families not used for this within-family scale comparison.",
+    "conditions": [
+      "Qwen3-Embedding-0.6B top-100 shared candidates",
+      "Separate panel y-ranges; parameter count does not measure inference time"
+    ],
+    "derivations": "None; raw table scores retained",
+    "source_snapshot": "source_pages/qwen3_p08.png",
+    "source_snapshot_sha256": "83bf765611fadd86436d207690693d360cebb783d9b6cd944d1420ad9fdfe582"
+  }
+]

@@ -1,0 +1,136 @@
+{
+  "date": "2026-11-15",
+  "authorization": "User requested deletion of repeated figures; root authorized this exact cleanup.",
+  "audit_before": {
+    "figure_count": 24,
+    "exact_file_duplicate_groups": [],
+    "decoded_png_pixel_duplicate_groups": [],
+    "method": "SHA256 for PNG/SVG bytes and size plus SHA256 of decoded RGB pixels for every manifest PNG.",
+    "semantic_duplicate_pair": [
+      "12_accuracy_cost_frontier",
+      "14_budget_accuracy"
+    ],
+    "decision": "Delete only 12_accuracy_cost_frontier; shared chart types do not imply duplicate scientific questions."
+  },
+  "deleted_files": [
+    {
+      "path": "assets/12_accuracy_cost_frontier.png",
+      "sha256_before": "294b21ec1e97b924adcff6ffb6fc0a1197c8872e577e2ac7f8a019cf5a472705",
+      "reason": "Semantic duplicate of 14_budget_accuracy: identical method/budget outcomes and Wilson intervals; synthetic cost is only a fixed rescaling of the turn budget.",
+      "replacement": "assets/14_budget_accuracy.png"
+    },
+    {
+      "path": "assets/12_accuracy_cost_frontier.svg",
+      "sha256_before": "cf5b4de2cf5f35abb34090c0a70c0b96e64b913c03d840cc763375852bf2bd86",
+      "reason": "Semantic duplicate of 14_budget_accuracy: identical method/budget outcomes and Wilson intervals; synthetic cost is only a fixed rescaling of the turn budget.",
+      "replacement": "assets/14_budget_accuracy.png"
+    },
+    {
+      "path": "examples/12_accuracy_cost_frontier/plot.py",
+      "sha256_before": "1217d7207984bf45d63ee4def51f622003d9346f13fcbc4f8b94eb6f1e4c9532",
+      "reason": "Semantic duplicate of 14_budget_accuracy: identical method/budget outcomes and Wilson intervals; synthetic cost is only a fixed rescaling of the turn budget.",
+      "replacement": "assets/14_budget_accuracy.png"
+    },
+    {
+      "path": "rerank_expansion/2026-11-15/research_effectiveness/rankrag_answer_recall.csv",
+      "sha256_before": "8cfa1fae92496f406dd16a6bb66666e22e14418a47de8a07428aafbd1d6eaf82",
+      "reason": "Byte-identical staging copy; keep one canonical data file.",
+      "replacement": "rerank_expansion/2026-11-15/data/rankrag_answer_recall.csv"
+    },
+    {
+      "path": "rerank_expansion/2026-11-15/research_effectiveness/rankrag_qa_ablation.csv",
+      "sha256_before": "10798885a0a45082e3547764f90ba1d19f66f3a66e31fef5cd8e839ba6d045c8",
+      "reason": "Byte-identical staging copy; keep one canonical data file.",
+      "replacement": "rerank_expansion/2026-11-15/data/rankrag_qa_ablation.csv"
+    },
+    {
+      "path": "rerank_expansion/2026-11-15/research_efficiency/rankzephyr_order_robustness.csv",
+      "sha256_before": "8e1334b0c42373f5c615f28d9da4803d1300a78739b47691008e22e785e7251f",
+      "reason": "Byte-identical staging copy; keep one canonical data file.",
+      "replacement": "rerank_expansion/2026-11-15/data/rankzephyr_order_robustness.csv"
+    },
+    {
+      "path": "rerank_expansion/2026-11-15/research_efficiency/first_decoding_latency.csv",
+      "sha256_before": "7ad46f581c26d8c301f32eb253a7173f0ce0f5da0de19e155a0df93346ecfd29",
+      "reason": "Byte-identical staging copy; keep one canonical data file.",
+      "replacement": "rerank_expansion/2026-11-15/data/first_decoding_latency.csv"
+    },
+    {
+      "path": "rerank_expansion/2026-11-15/research_efficiency/first_window_budget.csv",
+      "sha256_before": "17395efd69bd25ac461bf9b617121641cdc78145238c6c9ecde0ca46f2576b8a",
+      "reason": "Byte-identical staging copy; keep one canonical data file.",
+      "replacement": "rerank_expansion/2026-11-15/data/first_window_budget.csv"
+    }
+  ],
+  "rebuilt_contact_sheets": [
+    {
+      "path": "assets/overview.png",
+      "sha256_before": "c5c142ebfea65a1905eb33ec1c06514e8f869ff0e3d8e017bfac7be55987f5cd",
+      "reason": "Regenerate from the active catalog after authorized deletion.",
+      "sha256_after": "af11d7a151412faeb2a6d82ff297400b575c611103bf83e0864ed1da001f08c5"
+    },
+    {
+      "path": "docs/gallery_overview.png",
+      "sha256_before": "411e84783ffdb595eb1a3197dbfc025915afff439882fcd3fbbe2a401be456eb",
+      "reason": "Regenerate from the active catalog after authorized deletion.",
+      "sha256_after": "411e84783ffdb595eb1a3197dbfc025915afff439882fcd3fbbe2a401be456eb"
+    }
+  ],
+  "retained_image_sha256": {
+    "assets/02_token_raincloud.png": "2a6e9ca7e19a204d76ba95870b4bcbe3afeac19c89ca237d3fb58042a92680dd",
+    "assets/02_token_raincloud.svg": "e249ef21131ab324339f3bf419cecb28f5dab4c1c0d8e0a8e35ddb9439afc60d",
+    "assets/04_call_vs_output_share.png": "15e237f9636008c60f52e81c02223638e6057318d1d806577f35cab58dee41b1",
+    "assets/04_call_vs_output_share.svg": "cd50dbd4031443aa70454042993698228549d46894c3dd800e56771147c5ca77",
+    "assets/07_rank_transition.png": "6460a249c395d8655c614be830f4202da09a1c4644c5a0c55e80fba5fdb16764",
+    "assets/07_rank_transition.svg": "a2e1aef3fcc8cf3298159a98521316bbcdf27975b5b41439cbf64d70e023b55b",
+    "assets/08_query_paired_comparison.png": "33265b4a7af3c6528f061880afa92a944573a75bec5669cb50dcbb533c916395",
+    "assets/08_query_paired_comparison.svg": "5088477a712ce5f2ead531a4aae23dacc65889954c08ff5827d9b815bdad9918",
+    "assets/09_token_outcome_pairs.png": "c056babad69cc866d8afe43e6ad30765ba86068e575854036c86003105aeae45",
+    "assets/09_token_outcome_pairs.svg": "a2ddaa385cd34b382f9fd2a033374187b233ce6ff159d985f9488d7e93cde9c4",
+    "assets/14_budget_accuracy.png": "8a2ec110fa305bfc600bcd2ebd1b23710624267d0970f5e96e4387b3dc869f45",
+    "assets/14_budget_accuracy.svg": "c60ca0ee1e8266d5404d32abee5519a022890f11bec3ec67b0c3e284a1181215",
+    "assets/16_trajectory_timeline.png": "dff2489ea7ae618a8d8a369de6155ba92f9ab4479ca845bf6f03bc52ebc9adc1",
+    "assets/16_trajectory_timeline.svg": "0119270550d388392befe59a545ea33d9460d35fdf4b6f02e2ba9d058d0e382e",
+    "assets/17_ablation_forest.png": "3e9b6438a07a8dc04438705cd68da70fd647e4e2edd23390bd13e9f80ed12381",
+    "assets/17_ablation_forest.svg": "9e20364390173ea39f70660b2a79ba4c11ad76a64c9fe163942db369445b412e",
+    "assets/19_results_table.png": "2133f247f73c34516e05371f3a74b40a11029ce26a01cb0a346283f46e48677f",
+    "assets/19_results_table.svg": "1f7cdfbf4188187842b853cb5fdbc61f54003aab89eb9df944ceeaeeabb9338b",
+    "paper_expansion/2026-11-01/figures/N01_retrieved_context.png": "3acb829615c838146f06baaa2de152be9157233c87c23f96a4b999f802c986a1",
+    "paper_expansion/2026-11-01/figures/N01_retrieved_context.svg": "f434339d1507b6e07e493df69642a7fe754db5327f5af2ec086b4a4521b70259",
+    "paper_expansion/2026-11-01/figures/N02_failure_hierarchy.png": "0c3d8a1ad75a7474186ad973b1d4a9c71d17a422da93aaead9ab089b063dd82b",
+    "paper_expansion/2026-11-01/figures/N02_failure_hierarchy.svg": "0fc49ffd99e42b2ad979f17a6f8c4f637e84ddc160915486ca03aaf54eb10785",
+    "paper_expansion/2026-11-01/figures/N03_oracle_evidence.png": "d054eac54033561ec50ef8387419d7329b7172517bb84369970566a3b20f9db7",
+    "paper_expansion/2026-11-01/figures/N03_oracle_evidence.svg": "1ae5e31dc93d19b34043f758d7dd7387df578885eb02cb0578c58419546787c8",
+    "paper_expansion/2026-11-01/figures/N04_citation_support.png": "06f9f472503b7b9d646cb92c118903f6fb0d73b42061114a35c9e3b833cf71a7",
+    "paper_expansion/2026-11-01/figures/N04_citation_support.svg": "ef00db342640444e73aa9725897beeca0768826ed0b3f18e00f723356646dcb3",
+    "paper_expansion/2026-11-01/figures/N05_task_complexity.png": "69f41e8d3bdd267d52e6cc04ed7c4caf597c60e8546b0b840bd2cee1244cdbcb",
+    "paper_expansion/2026-11-01/figures/N05_task_complexity.svg": "77c9a2fa5b9a37b17b6a0ab8d0ea4045f653655099d4b390331b57b68d268dad",
+    "paper_expansion/2026-11-01/figures/N06_latency_components.png": "6acca47dbb18dbd702f7b700ddce5b8545c6bceee41323ab54bf0ebcd925512e",
+    "paper_expansion/2026-11-01/figures/N06_latency_components.svg": "79427a66794e05b88ea337fe3c0ec8b0527f8c38187216b05ca50a27a7632cbd",
+    "paper_expansion/2026-11-01/figures/N07_source_growth.png": "08d1f72582fa4ccc79b6624558cd90f4ed8d7c2685c615b6028d1762b23d39e1",
+    "paper_expansion/2026-11-01/figures/N07_source_growth.svg": "0e5e5f60b701640a93cca3ba0982ae980fbfe3e22eaa9622a9770bc39ec7a430",
+    "paper_expansion/2026-11-01/figures/N08_evaluator_budget.png": "fd39308a14d8f2c0b79c5647d5d9a02f0e57db4b4a9005d95c710ab6ccf1068e",
+    "paper_expansion/2026-11-01/figures/N08_evaluator_budget.svg": "e7cf4464329f6599dc7d10b0de2462f66f6c5a303976392aad9a97b4ee958de3",
+    "rerank_expansion/2026-11-15/figures/R01_rerank_qa.png": "bdc1e3babd69fcc4dd4bf37a0f0058c280ea0adbd38622e46bcc1a73da1b7974",
+    "rerank_expansion/2026-11-15/figures/R01_rerank_qa.svg": "8f55c673a3fc2a6b60d989ceefb73bba55c4a194ceecbcbd45fedf1f8c269b16",
+    "rerank_expansion/2026-11-15/figures/R02_answer_recall.png": "aced56fd620b6582748263347f40df45fe7780f9a07b891ab90f4846dbd3faef",
+    "rerank_expansion/2026-11-15/figures/R02_answer_recall.svg": "00d5e8db2422d12b045b7c3947e6efca6a2977f6e2aa140f5987f6db09a26afe",
+    "rerank_expansion/2026-11-15/figures/R03_order_robustness.png": "a61e8d72eaad8ffd146c283a8238839d9a405bbc00361654906a50fab9ddee41",
+    "rerank_expansion/2026-11-15/figures/R03_order_robustness.svg": "dbe28b2152a1d4c2079a656c7d94d7607c38c7d7946139222c0f0790e84e5ef3",
+    "rerank_expansion/2026-11-15/figures/R04_decoding_latency.png": "7d0bc86d683698257c512edf4a45cad564d30fdebeaa5db499226cdd8d9494c1",
+    "rerank_expansion/2026-11-15/figures/R04_decoding_latency.svg": "9f7079db5aff3fec8534879500a4092b9de49db2b94f5844ddaa4443c2b64d39",
+    "rerank_expansion/2026-11-15/figures/R05_window_budget.png": "9ae5c70a3aa9091c45f4f25807b08143531cd2e74fe6a96979df507f99e6e0d1",
+    "rerank_expansion/2026-11-15/figures/R05_window_budget.svg": "4401cd90e4d650cad795c9485337d8e408fa47664661547722a9e997e9d7241b",
+    "rerank_expansion/2026-11-15/figures/R06_model_scaling.png": "be9148cf7cb386454c1b073a138bc2a3ca7697e225c43b645c6213b651b05a29",
+    "rerank_expansion/2026-11-15/figures/R06_model_scaling.svg": "59042e1e7b70478bb2bc70bb5a37885577586681c922217c25611282179e94f8"
+  },
+  "audit_after": {
+    "figure_count": 23,
+    "selected_figures": 15,
+    "supplement_figures": 8,
+    "retained_image_count": 46,
+    "exact_file_duplicate_groups": [],
+    "decoded_png_pixel_duplicate_groups": [],
+    "remaining_image_bytes_unchanged": true
+  }
+}

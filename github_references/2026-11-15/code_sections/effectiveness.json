@@ -1,0 +1,171 @@
+[
+  {
+    "id": "G01",
+    "dependencies": [
+      "dabest (DABEST-python, pinned commit preferred)",
+      "numpy",
+      "pandas",
+      "scipy",
+      "matplotlib"
+    ],
+    "extraction": "G01_source.py lines 2-5, 9, 11, 13 (necessary imports); 16-64 (complete data generator and df initialization); 68-70 (ID-based pairing); 153-155 (matching plot function). Removed the pytest decorator at line 152; added an explicitly labeled __main__ PNG export.",
+    "input_format": "无需外部数据；原函数生成20行模拟宽表，ID标识配对，Control 1/Test 1为数值列。",
+    "run_instructions": "需先在上游 DABEST-python 对应 commit 的兼容环境安装 dabest、NumPy、pandas、SciPy、Matplotlib，然后运行 python G01.py；在当前工作目录写 G01_extracted_example.png。此处仅做语法检查，未安装或执行上游包。",
+    "notes": "原图是模拟数据的 pytest 基线，不能当作 rerank 结果。保留原代码固定 np.random.seed(9999) 的行为（形参 seed 未被使用）。LICENSE 写 Apache-2.0，但 README 徽章写 BSD-3-Clause-Clear，许可声明存在冲突；许可证文件仍保存在候选目录。运行结果不保证像素级一致。",
+    "code_file": "code_sections/G01.py",
+    "language": "python",
+    "execution_status": "upstream_not_executed",
+    "original_source": "sources/effectiveness/source_code/G01_source.py",
+    "provenance": {
+      "repository": "ACCLAB/DABEST-python",
+      "commit": "ec6172724e0397bf0546863c76949d40da9c5457",
+      "source_url": "https://github.com/ACCLAB/DABEST-python/blob/ec6172724e0397bf0546863c76949d40da9c5457/nbs/tests/mpl_image_tests/test_03_plotting.py",
+      "source_sha256": "3d915df76a9977beff979265abaafdfb09d710bbbd9d8ccea1e71eee482b6d17"
+    },
+    "validation": {
+      "syntax": "passed: Python ast.parse only",
+      "imports_executed": false,
+      "plot_executed": false
+    },
+    "code_sha256": "96202c4aa8d87e146dc8b4433d7389d554541d7459a3f4a5d346b2c22e2488c6",
+    "code_archive_path": "G01.py",
+    "working_directory": ".",
+    "support_files": []
+  },
+  {
+    "id": "G02",
+    "dependencies": [
+      "forestplot (supports mforestplot; pinned commit preferred)",
+      "pandas",
+      "matplotlib"
+    ],
+    "extraction": "G02_source_README.md lines 267-272 (forestplot import, CSV initialization, model selection) and 282-307 (mforestplot settings). Added pandas import omitted by this README section, Matplotlib import, and an explicitly labeled PNG export.",
+    "input_format": "已随代码包缓存完整上游 sleep-mmodel.csv（56行）；coef、ll、hl、label、model、group、var 等列，筛选 all/young kids 后28行。",
+    "run_instructions": "需要兼容的 forestplot（建议对应固定 commit）、pandas、Matplotlib 环境，无需再次获取数据。代码包内从 examples/ 目录执行 python G02.py；原 CSV 路径 ../examples/data/sleep-mmodel.csv 会解析到已打包文件，输出 examples/G02_extracted_example.png。上游绘图代码未执行，仅语法检查。",
+    "notes": "固定数据来源：https://github.com/LSYS/forestplot/blob/b7591e3be7004f9962fd7cd7f91aa4cac91c45fc/examples/data/sleep-mmodel.csv 。README 的图链接指向 mplot-dev，已保存图像来自所列固定 main commit；此处保留对应 README 调用，不宣称本地重现。原例是回归系数及区间，不是我们的逐题 bootstrap。 CSV现已通过GitHub connector固定commit取回，并验证git blob与SHA-256；此下载不代表绘图已复现。",
+    "code_file": "code_sections/G02.py",
+    "language": "python",
+    "execution_status": "upstream_not_executed",
+    "original_source": "sources/effectiveness/source_code/G02_source_README.md",
+    "provenance": {
+      "repository": "LSYS/forestplot",
+      "commit": "b7591e3be7004f9962fd7cd7f91aa4cac91c45fc",
+      "source_url": "https://github.com/LSYS/forestplot/blob/b7591e3be7004f9962fd7cd7f91aa4cac91c45fc/README.md",
+      "source_sha256": "a3d136cae88d40d4c3acdfbef1412ccc4393da0fa40b526e42b0d363d78415ac"
+    },
+    "validation": {
+      "syntax": "passed: Python ast.parse only",
+      "imports_executed": false,
+      "plot_executed": false
+    },
+    "code_sha256": "d5bc64cae9e94196a2d1404b975ee09bb7c7c2b595f77402ec3c2d5fd51030bd",
+    "code_archive_path": "examples/G02.py",
+    "working_directory": "examples",
+    "support_files": [
+      {
+        "local_file": "code_sections/assets/sleep-mmodel.csv",
+        "archive_path": "examples/data/sleep-mmodel.csv",
+        "source_url": "https://github.com/LSYS/forestplot/blob/b7591e3be7004f9962fd7cd7f91aa4cac91c45fc/examples/data/sleep-mmodel.csv",
+        "sha256": "2d1e30e3a16b77d8ac08681ca88ef231859850819fea4e12776ee94323b195a2",
+        "git_blob_sha": "7d8e2db40447859426e7152ff92942f315ac98fa",
+        "git_blob_verified": true,
+        "rows": 56,
+        "columns": [
+          "var",
+          "coef",
+          "se",
+          "T",
+          "pval",
+          "r2",
+          "adj_r2",
+          "ll",
+          "hl",
+          "model",
+          "group",
+          "label"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "G03",
+    "dependencies": [
+      "scikit-posthocs (pinned commit preferred)",
+      "numpy",
+      "pandas",
+      "scipy",
+      "matplotlib"
+    ],
+    "extraction": "G03_source_tutorial.rst lines 317-337 (simulation and long-form dataframe), 358 (average percentile ranks), 378-379 (Friedman omnibus test), 386-392 (Conover post-hoc matrix), and 402-404 (cd_diagram1 plot). Removed RST indentation and >>> prompts, excluded printed outputs and the unrelated sign_plot; added explicit alias imports and PNG export.",
+    "input_format": "无需外部数据；8个模拟模型各30个正态抽样，整理成 cv_fold、estimator、score 长表。",
+    "run_instructions": "需兼容的 scikit-posthocs、NumPy、pandas、SciPy、Matplotlib 环境；运行 python G03.py，在当前工作目录导出 G03_extracted_example.png。原代码未执行，仅进行语法解析。",
+    "notes": "横轴是每块 rank(pct=True) 后的平均百分位秩（升序普通秩/8），不是合法 benchmark 的1..8平均名次，也不是性能得分；越大对应模拟分数越高。原调用没有显式设置 p_adjust，保留上游默认；用于新实验必须重新确定分块独立性、排序方向和多重比较方法。连接线不证明等效。",
+    "code_file": "code_sections/G03.py",
+    "language": "python",
+    "execution_status": "upstream_not_executed",
+    "original_source": "sources/effectiveness/source_code/G03_source_tutorial.rst",
+    "provenance": {
+      "repository": "maximtrp/scikit-posthocs",
+      "commit": "07e4c182b83314785eb879c3046de8ac5cf4febc",
+      "source_url": "https://github.com/maximtrp/scikit-posthocs/blob/07e4c182b83314785eb879c3046de8ac5cf4febc/docs/source/tutorial.rst",
+      "source_sha256": "1bb474233debd8acf8b6b9499c80bfc4e9b17e6f872a09ea57f4e5c69187ada3"
+    },
+    "validation": {
+      "syntax": "passed: Python ast.parse only",
+      "imports_executed": false,
+      "plot_executed": false
+    },
+    "code_sha256": "109fb811df685ceb98d72132e9b69a507ea0cff74100fcf1267a685d276c999c",
+    "code_archive_path": "G03.py",
+    "working_directory": ".",
+    "support_files": []
+  },
+  {
+    "id": "G04",
+    "dependencies": [
+      "ptitprince (upstream-compatible version)",
+      "seaborn (upstream-compatible version)",
+      "pandas",
+      "matplotlib"
+    ],
+    "extraction": "G04_source.ipynb cell indexes 0, 3, 6, 30 (zero-based; human cell numbers 1, 4, 7, 31). These are the complete imports/style, savefigs/output setup, simdat.csv loading, and Figure P13 FacetGrid/RainCloud/export cells; source cell bodies unchanged.",
+    "input_format": "已随代码包缓存上游 simdat.csv（500行）；group为类别，score为数值，gr2为分面类别，另有原始行号列。",
+    "run_instructions": "需要兼容的 ptitprince、seaborn、pandas、Matplotlib 环境，无需再次获取数据。代码包内从 tutorial_python/ 执行 python G04.py；读取同目录 simdat.csv，保留原输出 ../figs/tutorial_python/figureP13.png（会创建目录并覆盖同名输出）。上游绘图代码未执行，仅语法检查。",
+    "notes": "数据来源为对应 commit 的 tutorial_python/simdat.csv；保存原 cell 的 seaborn 全局样式与分面调用。该示例包含散点抖动且所提取 cell 未固定随机种子，库版本/随机状态可能影响像素级输出。上游教程数据不是 rerank 实验。 CSV现已通过GitHub connector固定commit取回，并验证git blob与SHA-256；此下载不代表绘图已复现。",
+    "code_file": "code_sections/G04.py",
+    "language": "python",
+    "execution_status": "upstream_not_executed",
+    "original_source": "sources/effectiveness/source_code/G04_source.ipynb",
+    "provenance": {
+      "repository": "RainCloudPlots/RainCloudPlots",
+      "commit": "4ceeb06dc5bd5b9911e7147d1b0b452c4c2f9b1d",
+      "source_url": "https://github.com/RainCloudPlots/RainCloudPlots/blob/4ceeb06dc5bd5b9911e7147d1b0b452c4c2f9b1d/tutorial_python/raincloud_tutorial_python.ipynb",
+      "source_sha256": "a9a1abd7a60e962ec938526d1477624cbd8f68535cc23ff9f78b5769546256f1"
+    },
+    "validation": {
+      "syntax": "passed: Python ast.parse only",
+      "imports_executed": false,
+      "plot_executed": false
+    },
+    "code_sha256": "9ec7970ae6f639d0b4b621411c463f52f0b68bd4b023ca617372c7b1691b7a67",
+    "code_archive_path": "tutorial_python/G04.py",
+    "working_directory": "tutorial_python",
+    "support_files": [
+      {
+        "local_file": "code_sections/assets/simdat.csv",
+        "archive_path": "tutorial_python/simdat.csv",
+        "source_url": "https://github.com/RainCloudPlots/RainCloudPlots/blob/4ceeb06dc5bd5b9911e7147d1b0b452c4c2f9b1d/tutorial_python/simdat.csv",
+        "sha256": "1be5b13c0dead4abb50766ebc1922bea527eaa7c9ac6a598cd8166f5a2e3d5cf",
+        "git_blob_sha": "eff0c288088059a7ada807e3245e0d37173965ea",
+        "git_blob_verified": true,
+        "rows": 500,
+        "columns": [
+          "",
+          "group",
+          "score",
+          "gr2"
+        ]
+      }
+    ]
+  }
+]

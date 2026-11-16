@@ -99,22 +99,22 @@ class DataContractTests(unittest.TestCase):
             self.assertTrue((ROOT/item['script']).is_file());self.assertIn(item['id'],(ROOT/item['script']).read_text())
             for path in item['data']:self.assertTrue((ROOT/path).is_file())
 
-    def test_readme_local_links_resolve_when_present(self):
-        for name in ['README.md','SUPPLEMENT.md']:
+    def test_documentation_local_links_resolve_when_present(self):
+        for name in ['README.md','SUPPLEMENT.md','docs/GALLERY.md','docs/FIGURE_INDEX.md']:
             path=ROOT/name
             if not path.exists():self.skipTest('First build generates documentation after rendering')
             for link in re.findall(r'\]\(([^)]+)\)',path.read_text()):
-                if not link.startswith(('http:','https:','#')):self.assertTrue((ROOT/link).exists(),link)
+                if not link.startswith(('http:','https:','#')):self.assertTrue((path.parent/link.split('#')[0]).exists(),f'{name}: {link}')
 
-    def test_readme_gallery_coverage_when_present(self):
-        path=ROOT/'README.md'
-        if not path.exists():self.skipTest('First build generates README after rendering')
+    def test_detailed_gallery_coverage_when_present(self):
+        path=ROOT/'docs/GALLERY.md'
+        if not path.exists():self.skipTest('First build generates gallery documentation after rendering')
         content=path.read_text()
         items=json.loads((ROOT/'gallery.json').read_text())
         selected={i['id']for i in json.loads((ROOT/'catalog.json').read_text())['selected']}
         for item in items:
             expected=int(item['id']in selected)
-            self.assertEqual(content.count(']('+item['image']+')'),expected,item['id']+' image selection mismatch')
-            self.assertEqual(content.count(']('+item['script']+')'),expected,item['id']+' source link selection mismatch')
+            self.assertEqual(content.count('](../'+item['image']+')'),expected,item['id']+' image selection mismatch')
+            self.assertEqual(content.count('](../'+item['script']+')'),expected,item['id']+' source link selection mismatch')
 
 if __name__=='__main__':unittest.main()

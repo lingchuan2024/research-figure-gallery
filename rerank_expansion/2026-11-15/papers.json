@@ -1,0 +1,48 @@
+[
+  {
+    "id": "rankrag",
+    "title": "RankRAG: Unifying Context Ranking with Retrieval-Augmented Generation in LLMs",
+    "version": "2407.02485v1",
+    "url": "https://arxiv.org/abs/2407.02485v1",
+    "pdf": "https://arxiv.org/pdf/2407.02485v1",
+    "local_pdf": "sources/rankrag_2407.02485v1.pdf",
+    "sha256": "4409f1314e13be7c1f65df33936078b54831c9ae4a5ddc61ffff4ab0a8ea17d3",
+    "author_plot_code": "Not used; exact published table data redrawn with our local implementation.",
+    "authors": "Yue Yu et al.",
+    "source_checked_on": "2026-11-15"
+  },
+  {
+    "id": "rankzephyr",
+    "title": "RankZephyr: Effective and Robust Zero-Shot Listwise Reranking is a Breeze!",
+    "version": "2312.02724v1",
+    "url": "https://arxiv.org/abs/2312.02724v1",
+    "pdf": "https://arxiv.org/pdf/2312.02724v1",
+    "local_pdf": "sources/rankzephyr.pdf",
+    "sha256": "aa198a0df997f39ecd064670ed17f62b22fc567502890832ba1206de99be464b",
+    "author_plot_code": "Not used; exact published table data redrawn with our local implementation.",
+    "authors": "Ronak Pradeep; Sahel Sharifymoghaddam; Jimmy Lin",
+    "source_checked_on": "2026-11-15"
+  },
+  {
+    "id": "first_reproduction",
+    "title": "Accelerating Listwise Reranking: Reproducing and Enhancing FIRST",
+    "version": "SIGIR 2025 author PDF; SHA256 snapshot 2026-11-15",
+    "url": "https://doi.org/10.1145/3726302.3730287",
+    "pdf": "https://zijianchen.ca/papers/Accelerating%20Listwise%20Reranking%20Reproducing%20and%20Enhancing%20FIRST.pdf",
+    "local_pdf": "sources/first_reproduction_sigir2025.pdf",
+    "sha256": "7002bf1c28dda19c141341ef624d45915f3e1ec1de9a5cb0ee19be90d0b17796",
+    "author_plot_code": "Not used; exact published table data redrawn with our local implementation.",
+    "authors": "Zijian Chen; Ronak Pradeep; Jimmy Lin",
+    "source_checked_on": "2026-11-15"
+  },
+  {
+    "id": "qwen3",
+    "title": "Qwen3 Embedding: Advancing Text Embedding and Reranking Through Foundation Models",
+    "version": "2506.05176v3",
+    "url": "https://arxiv.org/abs/2506.05176v3",
+    "pdf": "https://arxiv.org/pdf/2506.05176v3",
+    "local_pdf": "sources/qwen3_embedding_2506.05176v3.pdf",
+    "sha256": "fd45f8821766118a2cc49e27d301a0a34f0f31f5aafb8f4318e7848c7ddbfa33",
+    "author_plot_code": "Not used; exact published table data redrawn with our local implementation."
+  }
+]

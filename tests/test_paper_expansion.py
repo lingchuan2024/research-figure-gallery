@@ -7,8 +7,11 @@ import math
 import re
 import unittest
 from PIL import Image
+import sys
 
 ROOT=Path(__file__).resolve().parents[1]
+sys.path.insert(0,str(ROOT))
+from scripts.curation_audit import assert_preserved_images,deleted_paths
 HERE=ROOT/'paper_expansion/2026-11-01'
 
 def read(name):
@@ -21,8 +24,8 @@ class PaperExpansionTests(unittest.TestCase):
 
     def test_existing_images_are_byte_identical(self):
         baseline=json.loads((HERE/'preservation-baseline.json').read_text())
-        self.assertEqual(set(baseline),{str(p.relative_to(ROOT))for p in (ROOT/'assets').iterdir()if p.is_file()})
-        for path,digest in baseline.items():self.assertEqual(hashlib.sha256((ROOT/path).read_bytes()).hexdigest(),digest,path)
+        self.assertEqual(set(baseline)-deleted_paths(),{str(p.relative_to(ROOT))for p in (ROOT/'assets').iterdir()if p.is_file()})
+        assert_preserved_images(baseline)
 
     def test_new_sources_do_not_reuse_indexed_papers(self):
         excluded=set(json.loads((HERE/'excluded_papers.json').read_text())['excluded_arxiv_ids'])
@@ -62,8 +65,8 @@ class PaperExpansionTests(unittest.TestCase):
         timing=read('fs_latency.csv');self.assertTrue(all(float(r['seconds'])>=0 for r in timing));self.assertEqual(len(timing),6)
         self.assertLess(sum(float(r['seconds'])for r in timing if r['component']=='File I/O'),1)
 
-    def test_new_readme_images_and_code_links_appear_once(self):
-        content=(ROOT/'README.md').read_text();prefix=str(HERE.relative_to(ROOT))+'/'
+    def test_detailed_gallery_images_and_code_links_appear_once(self):
+        content=(ROOT/'docs/GALLERY.md').read_text();prefix='../'+str(HERE.relative_to(ROOT))+'/'
         selected={i['id']for i in json.loads((ROOT/'catalog.json').read_text())['selected']}
         for f in self.figures:
             expected=int(f['id']in selected)

@@ -1,0 +1,134 @@
+[
+  {
+    "id": "R01_rerank_qa",
+    "category": "R · Rerank 效果与证据诊断",
+    "title": "推理时重排对最终回答的影响",
+    "paper": "rankrag",
+    "data": "data/rankrag_qa_ablation.csv",
+    "script": "code/R01_rerank_qa.py",
+    "image": "figures/R01_rerank_qa.png",
+    "vector": "figures/R01_rerank_qa.svg",
+    "source_locator": "Table 3",
+    "source_pdf_page": 8,
+    "source_pdf_pages": [
+      8
+    ],
+    "source_url": "https://arxiv.org/abs/2407.02485v1",
+    "source_snapshot": "source_pages/rankrag_table3_page08.png",
+    "fit": "在同一已训练模型中关闭推理重排，对照最终 EM，而非只报告排序指标。",
+    "condition": "保留全部 5 个 OpenQA 任务；不混合 EM、F1、Accuracy。原表未逐行列出 k，不能据此声称同 token 预算。",
+    "origin": "published_numeric_redraw",
+    "author_plot_code": "Original author plotting code not used; this local implementation redraws reported table values.",
+    "aesthetic_status": "passed",
+    "visual_qa": "PNG viewed at full rendered size on 2026-11-15; no label collision or clipping observed.",
+    "preview_label": "Reranking and final answers"
+  },
+  {
+    "id": "R02_answer_recall",
+    "category": "R · Rerank 效果与证据诊断",
+    "title": "前 5 条中的含答案材料召回",
+    "paper": "rankrag",
+    "data": "data/rankrag_answer_recall.csv",
+    "script": "code/R02_answer_recall.py",
+    "image": "figures/R02_answer_recall.png",
+    "vector": "figures/R02_answer_recall.svg",
+    "source_locator": "Table 8",
+    "source_pdf_page": 21,
+    "source_pdf_pages": [
+      21
+    ],
+    "source_url": "https://arxiv.org/abs/2407.02485v1",
+    "source_snapshot": "source_pages/rankrag_table8_page21.png",
+    "fit": "固定最终读取位置，比较重排前后是否让含答案材料进入前列。",
+    "condition": "包含原表全部 3 数据集和 2 检索器，显示 R@5；R@10/20 保留于数据。Answer Recall 不是全部 gold 文档召回，k 也不是候选池规模。",
+    "origin": "published_numeric_redraw",
+    "author_plot_code": "Original author plotting code not used; this local implementation redraws reported table values.",
+    "aesthetic_status": "passed",
+    "visual_qa": "PNG viewed at full rendered size on 2026-11-15; no label collision or clipping observed.",
+    "preview_label": "Answer recall in the top five"
+  },
+  {
+    "id": "R03_order_robustness",
+    "title": "输入顺序鲁棒性",
+    "preview_label": "Input-order robustness",
+    "paper": "rankzephyr",
+    "data": "data/rankzephyr_order_robustness.csv",
+    "script": "code/R03_order_robustness.py",
+    "image": "figures/R03_order_robustness.png",
+    "vector": "figures/R03_order_robustness.svg",
+    "source_locator": "Table 7",
+    "source_pdf_page": 11,
+    "source_pdf_pages": [
+      11
+    ],
+    "source_snapshot": "source_pages/rankzephyr_table7.png",
+    "fit": "固定候选集合后打乱初始顺序，检查重排收益是否依赖原始位置；误差线仅为原文六次打乱的99%置信区间。",
+    "condition": "固定候选集合后打乱初始顺序，检查重排收益是否依赖原始位置；误差线仅为原文六次打乱的99%置信区间。",
+    "origin": "published_numeric_redraw",
+    "aesthetic_status": "passed",
+    "author_plot_code": "Not used; local implementation redraws exact published table data."
+  },
+  {
+    "id": "R04_decoding_latency",
+    "title": "解码方式与重排时延",
+    "preview_label": "Decoding latency",
+    "paper": "first_reproduction",
+    "data": "data/first_decoding_latency.csv",
+    "script": "code/R04_decoding_latency.py",
+    "image": "figures/R04_decoding_latency.png",
+    "vector": "figures/R04_decoding_latency.svg",
+    "source_locator": "Table 5",
+    "source_pdf_page": 6,
+    "source_pdf_pages": [
+      6
+    ],
+    "source_snapshot": "source_pages/first_table5.png",
+    "fit": "比较完整排序输出和首标识符logits读取的重排时延；单卡RTX4090、top100、窗口20/步长10，不能当作agent端到端耗时。",
+    "condition": "比较完整排序输出和首标识符logits读取的重排时延；单卡RTX4090、top100、窗口20/步长10，不能当作agent端到端耗时。",
+    "origin": "published_numeric_redraw",
+    "aesthetic_status": "passed",
+    "author_plot_code": "Not used; local implementation redraws exact published table data."
+  },
+  {
+    "id": "R05_window_budget",
+    "title": "重排窗口重叠的成本与收益",
+    "preview_label": "Window overlap trade-off",
+    "paper": "first_reproduction",
+    "data": "data/first_window_budget.csv",
+    "script": "code/R05_window_budget.py",
+    "image": "figures/R05_window_budget.png",
+    "vector": "figures/R05_window_budget.svg",
+    "source_locator": "Table 6",
+    "source_pdf_page": 7,
+    "source_pdf_pages": [
+      7
+    ],
+    "source_snapshot": "source_pages/first_table6.png",
+    "fit": "固定窗口20，比较步长10/5/2的调用量、时延和nDCG；图示DL19/20，完整五数据集保留CSV。原文caption的模型名与正文存在不一致，按同表实验呈现。",
+    "condition": "固定窗口20，比较步长10/5/2的调用量、时延和nDCG；图示DL19/20，完整五数据集保留CSV。原文caption的模型名与正文存在不一致，按同表实验呈现。",
+    "origin": "published_numeric_redraw",
+    "aesthetic_status": "passed",
+    "author_plot_code": "Not used; local implementation redraws exact published table data."
+  },
+  {
+    "id": "R06_model_scaling",
+    "title": "模型规模与任务差异",
+    "preview_label": "Model scale across tasks",
+    "paper": "qwen3",
+    "data": "data/qwen3_scaling.csv",
+    "script": "code/R06_model_scaling.py",
+    "image": "figures/R06_model_scaling.png",
+    "vector": "figures/R06_model_scaling.svg",
+    "source_locator": "Table 4",
+    "source_pdf_page": 8,
+    "source_pdf_pages": [
+      8
+    ],
+    "source_snapshot": "source_pages/qwen3_p08.png",
+    "fit": "比较相同候选集合上的0.6B/4B/8B重排器，保留下降项与不同任务差异。",
+    "condition": "六列均采用各自原生分数与独立纵轴；不平均混合指标；参数量不是延迟。",
+    "origin": "published_numeric_redraw",
+    "aesthetic_status": "passed",
+    "author_plot_code": "Not used; local implementation redraws exact published table data."
+  }
+]

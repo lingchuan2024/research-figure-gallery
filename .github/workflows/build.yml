@@ -1,5 +1,7 @@
 name: Rebuild scientific figure gallery
 on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
 jobs:
   gallery:
     runs-on: ubuntu-latest
@@ -14,9 +16,5 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: figure-gallery
-          path: |
-            assets/
-            docs/gallery_overview.png
-            paper_expansion/2026-11-01/figures/
-            paper_expansion/2026-11-01/new_figures_overview.png
-            verification.json
+          path: dist/
+          if-no-files-found: error

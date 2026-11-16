@@ -75,21 +75,6 @@
     "implementation": "original implementation; synthetic demo or conceptual illustration"
   },
   {
-    "id": "12_accuracy_cost_frontier",
-    "category": "D · 效果、预算与稳定性",
-    "title": "准确率—成本 Pareto 图",
-    "usage": "比较多方法、多预算设置下的效果和资源权衡。",
-    "script": "examples/12_accuracy_cost_frontier/plot.py",
-    "image": "assets/12_accuracy_cost_frontier.png",
-    "vector": "assets/12_accuracy_cost_frontier.svg",
-    "data": [
-      "data/demo/budget_runs.csv"
-    ],
-    "note": "成本是合成单位；前沿仅覆盖已观测配置，误差棒为 Wilson 区间。",
-    "reference": "https://github.com/garrettj403/SciencePlots",
-    "implementation": "original implementation; synthetic demo or conceptual illustration"
-  },
-  {
     "id": "14_budget_accuracy",
     "category": "D · 效果、预算与稳定性",
     "title": "预算—效果曲线",

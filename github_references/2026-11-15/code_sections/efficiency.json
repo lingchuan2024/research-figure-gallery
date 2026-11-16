@@ -1,0 +1,94 @@
+[
+  {
+    "id": "G05",
+    "code_file": "code_sections/G05.py",
+    "language": "python",
+    "provenance": "DingWB/PyComplexHeatmap 固定提交 2db32554c62c99b7e1823f5b2059a8b341ad0a9b；取自本地上游 notebook 快照，cell 7 的嵌入 PNG 与原始图文件已核验一致。",
+    "extraction": "零基 cell 0 全部 1–16 行（导入与绘图设置）；cell 2 第 1–15 行（随机数据）；cell 7 全部 1–27 行（目标附注释热图）。",
+    "dependencies": [
+      "Python 3",
+      "numpy",
+      "pandas",
+      "matplotlib",
+      "PyComplexHeatmap（及其依赖，如 scipy）",
+      "Arial 字体（原始设置；缺失会发生字体替换）"
+    ],
+    "input_format": "无需外部文件；代码生成 30×10 的随机数值矩阵 df_heatmap（含一个 NaN）、10 个样本的分类/连续注释 df，以及 10×4 的 df_box。保留 cell 2 中 df_bar 和 df_scatter 的生成，以保留原随机调用顺序。",
+    "run_instructions": "在具有上述依赖、兼容该固定提交 API 的 Python 环境运行 python code_sections/G05.py，或将各 cell 区段放入 Jupyter 顺序执行。目标 cell 7 仅调用 plt.show()，未包含 savefig；静态文件保存需由使用者另行添加。未记录完整上游依赖锁定，不能承诺像素一致。",
+    "execution_status": "upstream_not_executed",
+    "original_source": "sources/efficiency/clustermap.ipynb",
+    "notes": "为普通 .py 语法将 %matplotlib inline 注释，并显式补充 import pandas as pd：保存的 cell 0 没有此导入但 cell 2 使用 pd。除此之外，所选绘图及数据语句保持原样。随机生成未设种子，且 notebook 可能依赖交互执行状态；不会把重新运行产生的数值冒称为原图或 rerank 实验数据。保留上游 MIT 许可。",
+    "original_source_sha256": "fc9a363fc2fe006ac4ec7e6c6f48cf58312f043e3f485f3fd7a88d6f12603bf6",
+    "code_sha256": "f687baf66c2294ec822ee18db003fa17f6009f0f03b61c15513da14a3e4142e5",
+    "syntax_check": "Python ast.parse passed; no imports or plotting code executed"
+  },
+  {
+    "id": "G06",
+    "code_file": "code_sections/G06.py",
+    "language": "python",
+    "provenance": "tommyod/paretoset 固定提交 6f2803057085a696cbe10118ca3164d993cee175；取自本地 scripts/examples.py 快照，EXAMPLE 3 显式保存 example_optimization.png。",
+    "extraction": "源文件第 1–2 行 __main__/PLOT 上下文，和第 103–153 行 EXAMPLE 3: OPTIMIZATION；省略 hotels 与 salespeople 两个无关示例。",
+    "dependencies": [
+      "Python 3",
+      "numpy",
+      "paretoset",
+      "matplotlib（PLOT=True 时）"
+    ],
+    "input_format": "无需外部文件；固定 np.random.seed(2)，生成 999 个二维正态随机目标向量，第一目标最小化、第二目标最大化。",
+    "run_instructions": "在预先安装依赖、兼容上游 API 的 Python 环境中，从预期输出目录运行 python /绝对路径/code_sections/G06.py；将写入 example_optimization.png 并调用 plt.show()。提取版仅将上游 PLOT=False 改成 True，避免默认不出图；本次未执行。",
+    "execution_status": "upstream_not_executed",
+    "original_source": "sources/efficiency/paretoset_examples.py",
+    "notes": "只将上游 PLOT=False 开关设为 True，以便单独运行时绘制目标图；随机种子、数据生成、Pareto 判断和绘图语句均保持原样。省略无关 Example 1/2，增加出处/许可说明。当前原图仍是仓库已提交图片，未通过这份提取代码重新生成。保留上游 MIT 许可。",
+    "original_source_sha256": "58d9ec51fbb0524de5feaf99ed2f8c12063b20672eff2d460416f64c36ca6c97",
+    "code_sha256": "cb0b81c501750cc1f98014c3fb9c8046c9c7752e0f4a9b0b476c1b648a315c1a",
+    "syntax_check": "Python ast.parse passed; no imports or plotting code executed"
+  },
+  {
+    "id": "G07",
+    "code_file": "code_sections/G07.R",
+    "language": "r",
+    "provenance": "krassowski/complex-upset 固定提交 79fa000ca4087d55ee2d8cf1a0fb7a01bb5aba7e；本地 README 的 Showcase 代码块位于 movies.png 示例下方。",
+    "extraction": "complex_upset_README.md 第 21–57 行 R fenced block，完整保留该代码块。",
+    "dependencies": [
+      "R",
+      "ggplot2",
+      "ComplexUpset",
+      "ggplot2movies（提供 movies 数据）",
+      "ggbeeswarm"
+    ],
+    "input_format": "使用 ggplot2movies::movies 数据框；Action、Animation、Comedy、Drama、Documentary、Romance 为集合成员列，length、rating、votes 提供分布注释。movies 数据来自 R 包，不是本目录自带的 CSV。",
+    "run_instructions": "在已安装全部依赖的 R 会话中执行 source(\"code_sections/G07.R\", echo=TRUE)，或将代码块粘贴到 R/RStudio 逐句执行。原始代码没有 ggsave；显示/保存由 R 图形设备处理。离线运行需要预先具备 ggplot2movies 数据包和其他依赖。",
+    "execution_status": "upstream_not_executed",
+    "original_source": "sources/efficiency/complex_upset_README.md",
+    "notes": "原样保留上游 if(!require(ggplot2movies)) install.packages(\"ggplot2movies\") 语句；本次没有执行安装或 R 绘图。附加内容仅为出处、许可及离线依赖注释。保留上游 MIT 许可；这是电影集合示例，不能作为检索集合的实测结果。",
+    "original_source_sha256": "1a74c20e4df92f5b395774ced0908622858a02d273e86b9270f60c18805a227a",
+    "code_sha256": "48826b1ec10b3d470d8b199f23f3ea6950625537a700f04a5bdac8a2625c7782",
+    "syntax_check": "R source excerpt checked against original fenced block; R parser not invoked"
+  },
+  {
+    "id": "G08",
+    "code_file": "code_sections/G08.py",
+    "language": "python",
+    "provenance": "rougier/scientific-visualization-book 固定提交 62fa569f30333c817c13e4dc757877c1192fd15a；对应 code/layout/complex-layout.py 和已保存原始 PDF。",
+    "extraction": "本地 complex_layout.py 第 1–185 行完整保留，包括末尾相对 savefig 路径。",
+    "dependencies": [
+      "Python 3",
+      "numpy",
+      "matplotlib",
+      "Roboto 与 Roboto Condensed 字体（原始设置；缺失会发生字体替换）"
+    ],
+    "input_format": "无需外部数据文件；代码在 5×5 小面板中生成 2×2 的均匀随机矩阵，并使用固定文字/颜色图例。",
+    "run_instructions": "解压包将脚本放在 code/layout/G08.py，并提供 figures/layout 目录。在包根目录运行 mkdir -p figures/layout，随后将工作目录切换至 code/layout 并运行 python G08.py。原 savefig(\"../../figures/layout/complex-layout.pdf\") 保持不变；它相对于进程工作目录解析，输出到包内 figures/layout/complex-layout.pdf。若使用本仓库的独立代码文件，也需采用同样工作目录结构。",
+    "execution_status": "upstream_not_executed",
+    "original_source": "sources/efficiency/complex_layout.py",
+    "notes": "只添加出处及许可注释；185 行原脚本未改。随机生成未设种子，字体和 Matplotlib 版本会影响重跑结果。代码采用 BSD-2-Clause；保存的书籍原图另受 CC BY-NC-SA 4.0 约束，不能把代码许可套用于原图。现有 PNG 只是原 PDF 的栅格预览，不是运行该脚本的输出。",
+    "original_source_sha256": "7be7484372566f39e36fcf3429b46e4b3f6ffa52ab5b2da211c5a5527dfaa134",
+    "code_sha256": "71aadae0886ba46ccd787a4bd864cd947df21d162be2302453956b29f6fdac4c",
+    "syntax_check": "Python ast.parse passed; no imports or plotting code executed",
+    "code_archive_path": "code/layout/G08.py",
+    "working_directory": "code/layout",
+    "create_directories": [
+      "figures/layout"
+    ]
+  }
+]

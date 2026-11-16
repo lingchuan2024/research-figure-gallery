@@ -13,7 +13,8 @@
     "locator": "Table 3",
     "transcription": "published table/section numbers",
     "review": "numeric cells checked against the pinned paper; aggregate data only",
-    "derivations": "100 * (1 - full / naive); Naive RAG comparator is not part of that ratio"
+    "derivations": "100 * (1 - full / naive); Naive RAG comparator is not part of that ratio",
+    "local_pdf": "sources/2602.03442v1.pdf"
   },
   {
     "figure_id": "N02_failure_hierarchy",
@@ -30,7 +31,8 @@
     "locator": "Tables 7–8; Figure 5",
     "transcription": "published table/section numbers",
     "review": "numeric cells checked against the pinned paper; aggregate data only",
-    "derivations": "none"
+    "derivations": "none",
+    "local_pdf": "sources/2602.03442v1.pdf"
   },
   {
     "figure_id": "N03_oracle_evidence",
@@ -47,7 +49,8 @@
     "locator": "Table 1 and §4.8.1",
     "transcription": "published table/section numbers",
     "review": "numeric cells checked against the pinned paper; aggregate data only",
-    "derivations": "none"
+    "derivations": "none",
+    "local_pdf": "sources/2508.06600v1.pdf"
   },
   {
     "figure_id": "N04_citation_support",
@@ -63,7 +66,8 @@
     "locator": "Table 1; Figure 1 (right)",
     "transcription": "published table/section numbers",
     "review": "numeric cells checked against the pinned paper; aggregate data only",
-    "derivations": "none"
+    "derivations": "none",
+    "local_pdf": "sources/2506.11763v1.pdf"
   },
   {
     "figure_id": "N05_task_complexity",
@@ -79,7 +83,8 @@
     "locator": "Figure 6 printed numeric labels",
     "transcription": "printed Figure 6 labels",
     "review": "numeric cells checked against the pinned paper; aggregate data only",
-    "derivations": "none"
+    "derivations": "none",
+    "local_pdf": "sources/2511.07685v1.pdf"
   },
   {
     "figure_id": "N06_latency_components",
@@ -95,7 +100,8 @@
     "locator": "Table 15",
     "transcription": "published table/section numbers",
     "review": "numeric cells checked against the pinned paper; aggregate data only",
-    "derivations": "I/O seconds multiplied by 1000 only"
+    "derivations": "I/O seconds multiplied by 1000 only",
+    "local_pdf": "sources/2602.01566v2.pdf"
   },
   {
     "figure_id": "N07_source_growth",
@@ -111,7 +117,8 @@
     "locator": "Tables 8 and 10",
     "transcription": "published table/section numbers",
     "review": "numeric cells checked against the pinned paper; aggregate data only",
-    "derivations": "differences of unique-URL means divided by differences of search-call means"
+    "derivations": "differences of unique-URL means divided by differences of search-call means",
+    "local_pdf": "sources/2602.01566v2.pdf"
   },
   {
     "figure_id": "N08_evaluator_budget",
@@ -127,6 +134,7 @@
     "locator": "Table 4",
     "transcription": "published table/section numbers",
     "review": "numeric cells checked against the pinned paper; aggregate data only",
-    "derivations": "none"
+    "derivations": "none",
+    "local_pdf": "sources/2601.08536v3.pdf"
   }
 ]

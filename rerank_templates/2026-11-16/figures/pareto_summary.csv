@@ -1,0 +1,4 @@
+benchmark,method,method_label,metric,n,mean_cost,cost_ci_low,cost_ci_high,mean_score,score_ci_low,score_ci_high,score_unit,nondominated,dominated_by,bootstrap_draws,bootstrap_seed,plot_scale
+DemoQA,baseline,Baseline,wall_seconds,120,56.430314425000006,49.9437880425,63.137504468125,55.0,45.833333333333336,63.333333333333336,%,False,v14,3000,20261116,linear
+DemoQA,auto_rerank,Auto rerank,wall_seconds,120,74.52163399166666,67.15884133208333,81.97276369604168,53.333333333333336,44.166666666666664,62.5,%,False,baseline | v14,3000,20261116,linear
+DemoQA,v14,Agent rerank,wall_seconds,120,53.26456066666666,47.44834202354167,59.28001729583334,60.833333333333336,51.666666666666664,69.16666666666667,%,True,,3000,20261116,linear

@@ -35,3 +35,12 @@
 - 不同论文的模型、预算、语料和judge不同，图间的分数不能合并排名。新增结果属于各论文，不能写成我们的实验结果。
 - FS-Researcher的来源统计仅有10题均值；`ΔURL/Δsearch`为均值差的比值，不能替代逐题或逐轮的新颖度。I/O约0.029%是两阶段合计占比；单个Report Writing阶段约0.049%，不应误写成每阶段均小于0.03%。
 - [旧图片保护清单](preservation-baseline.json) 固定了新增前21个图片文件（10组PNG/SVG及原速览）的摘要；新增构建不调用原有图片的绘制步骤。
+
+## 本地来源证据
+
+六篇入选论文的固定版本 PDF 已从临时缓存迁入 [sources/](sources/)，原始字节与 `papers.json`、`data_provenance.json` 中的 SHA256 一致。八张已有页面截图保存在 [source_pages/](source_pages/)，路径和 SHA256 记录于 `papers.json` 的 `local_page_snapshots`。截图保留原文件名；文件名中的页号不作为正式来源定位依据，使用每图 `data_provenance.json` 的 `pdf_pages` 与 `locator` 核对原 PDF。两篇未收图候选保留论文链接、固定版本、摘要及未入选理由。
+
+```bash
+# 校验已保存的六篇入选 PDF；缺失时才下载固定版本
+python paper_expansion/2026-11-01/fetch_sources.py
+```

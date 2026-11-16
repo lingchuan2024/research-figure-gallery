@@ -1,0 +1,9 @@
+benchmark,subset,group,method,method_label,baseline,n,mean_delta,ci_low,ci_high,delta_unit,bootstrap_draws,bootstrap_seed,interval_status
+DemoQA,All,DemoQA / All,auto_rerank,Auto rerank,baseline,120,-1.6666666666666667,-6.666666666666667,2.5,pp,3000,20261116,estimated
+DemoQA,All,DemoQA / All,v14,Agent rerank,baseline,120,5.833333333333333,0.0,11.666666666666666,pp,3000,20261153,estimated
+DemoQA,Bridge,DemoQA / Bridge,auto_rerank,Auto rerank,baseline,40,0.0,0.0,0.0,pp,3000,20262125,estimated
+DemoQA,Bridge,DemoQA / Bridge,v14,Agent rerank,baseline,40,15.0,5.0,27.5,pp,3000,20262162,estimated
+DemoQA,Comparison,DemoQA / Comparison,auto_rerank,Auto rerank,baseline,40,0.0,-10.0,10.0,pp,3000,20263134,estimated
+DemoQA,Comparison,DemoQA / Comparison,v14,Agent rerank,baseline,40,5.0,-5.0,15.0,pp,3000,20263171,estimated
+DemoQA,Direct,DemoQA / Direct,auto_rerank,Auto rerank,baseline,40,-5.0,-15.0,5.0,pp,3000,20264143,estimated
+DemoQA,Direct,DemoQA / Direct,v14,Agent rerank,baseline,40,-2.5,-10.062499999999979,5.0,pp,3000,20264180,estimated

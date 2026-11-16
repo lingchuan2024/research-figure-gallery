@@ -1,0 +1,11 @@
+model_table_label,dataset,queries,full_generation_input_tokens,first_identifier_input_tokens,full_generation_output_tokens,first_identifier_output_tokens,full_generation_latency_s,first_identifier_latency_s,reported_latency_reduction_pct
+RankZephyr,DL19,43,18247.5,18293.8,711,18,3.13,1.92,38.7
+RankMistral,DL19,43,18323.3,18419.2,711,18,3.13,1.89,39.6
+RankZephyr,DL20,54,18119.9,18182.6,711,18,3.1,1.83,41.0
+RankMistral,DL20,54,18109.0,18189.4,711,18,3.06,1.79,41.5
+RankZephyr,DL21,53,15681.9,15708.4,711,18,2.59,1.55,40.2
+RankMistral,DL21,53,15482.7,15552.4,711,18,2.48,1.51,39.1
+RankZephyr,DL22,76,15812.1,15834.9,711,18,2.76,1.67,39.5
+RankMistral,DL22,76,15674.3,15741.1,711,18,2.64,1.58,40.2
+RankZephyr,DL23,82,15753.1,15791.5,711,18,2.58,1.59,38.3
+RankMistral,DL23,82,15666.3,15736.7,711,18,2.52,1.57,37.7

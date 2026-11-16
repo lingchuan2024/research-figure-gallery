@@ -1,0 +1,6 @@
+dataset,task_group,without_reranking_em,with_reranking_em,delta_pp,source_table,source_page
+NQ,single-hop,48.0,50.6,2.6,3,8
+TriviaQA,single-hop,80.3,82.9,2.6,3,8
+PopQA,single-hop,49.3,57.6,8.3,3,8
+HotpotQA,multi-hop,31.3,35.3,4.0,3,8
+2WikimQA,multi-hop,26.4,31.4,5.0,3,8
