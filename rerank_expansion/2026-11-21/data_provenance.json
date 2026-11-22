@@ -1,0 +1,86 @@
+{
+  "created_on": "2026-11-21",
+  "scope": "Exact published table/cell values from 2026 agentic-search papers; no pixel-estimated curves; not our experimental results.",
+  "figures": [
+    {
+      "id": "A01_iter_query_ablation",
+      "paper": "ITER: Interaction-Aware Retrieval for Agentic Search",
+      "arxiv": "2608.27912v2",
+      "location": "Table 3, p. 15",
+      "local_pdf": "ITER_Interaction-Aware_Retrieval_2608.27912.pdf",
+      "local_pdf_sha256": "ed93dc496b81b1ea37cdb5754738bf15ac43a0855cdf034249ed6745ceae7374",
+      "csv_sha256": {
+        "iter_query_ablation.csv": "8116b776dea67da4f8abbc70377ebb19303ad909baedb82d196909731f0e95cd"
+      },
+      "figure_png_sha256": "9e922d51c1b54ebadd0dd01942e8baa38f85c85a327f69ef25705745ebf8b2e4",
+      "figure_svg_sha256": "f2309542d605ab8923db76e35f47c100a8a0f49078be422b553609d6c9fd80bb"
+    },
+    {
+      "id": "A02_iter_cross_agent",
+      "paper": "ITER: Interaction-Aware Retrieval for Agentic Search",
+      "arxiv": "2608.27912v2",
+      "location": "Table 2, p. 14",
+      "local_pdf": "ITER_Interaction-Aware_Retrieval_2608.27912.pdf",
+      "local_pdf_sha256": "ed93dc496b81b1ea37cdb5754738bf15ac43a0855cdf034249ed6745ceae7374",
+      "csv_sha256": {
+        "iter_cross_agent.csv": "2f5fe772e91e1e587563cbf90321d406f2d4b07e5819a231d1782c32ec900f3d"
+      },
+      "figure_png_sha256": "532b0df4cc6c6261f091a1c57131211136bd8261225ed087b98d4ed72172a67b",
+      "figure_svg_sha256": "4785e82d1aec34187aa101c84171e3ed14ad2b478be3e61fa2c3f8f71e2eacf0"
+    },
+    {
+      "id": "A03_rarg_coarse_to_fine",
+      "paper": "A New Role for Relevance: Guiding Corpus Interaction in Agentic Search (RARG)",
+      "arxiv": "2607.24223v2",
+      "location": "Table 1, p. 7",
+      "local_pdf": "RARG_A_New_Role_for_Relevance_2607.24223.pdf",
+      "local_pdf_sha256": "19db252517c87dd23f4a4629a76aa12aab94e12d9291cf1484718fa1ba08fec5",
+      "csv_sha256": {
+        "rarg_main_bcplus.csv": "3d023850d13a0a0cc22f497190c9a3ae2d3a717b28a7a84594926399ee12b65d"
+      },
+      "figure_png_sha256": "a3864a609ad4bc87bacc42e1228c961cda786bb9df9550c4c977c7c10fb16420",
+      "figure_svg_sha256": "a3f6ad3c255296343c88afe2baae4a855055e2a53d6b9da8b9718621eea0a822"
+    },
+    {
+      "id": "A04_rarg_scope_heatmap",
+      "paper": "A New Role for Relevance: Guiding Corpus Interaction in Agentic Search (RARG)",
+      "arxiv": "2607.24223v2",
+      "location": "Figure 3 (exact printed cell values), p. 9",
+      "local_pdf": "RARG_A_New_Role_for_Relevance_2607.24223.pdf",
+      "local_pdf_sha256": "19db252517c87dd23f4a4629a76aa12aab94e12d9291cf1484718fa1ba08fec5",
+      "csv_sha256": {
+        "rarg_scope_rank_heatmap.csv": "a052cb149b1ed3714eb0f4a6739f1b50063794087dbd2a028cca062382e7ae3f"
+      },
+      "figure_png_sha256": "d556105075e6a7e256e41a47225a90d3ae0d7d33198f9436e713eb5ea5aa70b6",
+      "figure_svg_sha256": "c8cbf4ab52f3dddc5e39fdda6597f03f9389764650b5fedbabc09c96eae0f0a1"
+    },
+    {
+      "id": "A05_indexact_context_tradeoff",
+      "paper": "From Delivery to Stateful Exploration: Rethinking the Index for Agentic Search (IndexAct)",
+      "arxiv": "2610.07960v1",
+      "location": "Table 1 (p. 7) & Table 2 (p. 8)",
+      "local_pdf": "IndexAct_From_Delivery_to_Stateful_Exploration_2610.07960.pdf",
+      "local_pdf_sha256": "53df8bdb1c6eb96e5622c6e53e4bc575241fd3893ed1b2cd543ec4ea7b824a1e",
+      "csv_sha256": {
+        "indexact_bcplus_main.csv": "d52e75354b4bfb04a597ade41a95cfaa38ab1c181e9f470482933fddff2e4a2c",
+        "indexact_observation_ablation.csv": "3dbe8dc67aeda633748f444bf892ebe8db0bf3c886213b474e418fd1c8bfcc94"
+      },
+      "figure_png_sha256": "fb6e97d95b1d7c1cc6df0ba94df46d0dbf79737f09f0562dcbdd0ec7339f3bc4",
+      "figure_svg_sha256": "71caa404ecb2a3ebde63bdb5594e92a0360cbad49a16089d076d4cba5d560c15"
+    },
+    {
+      "id": "A06_rise_scaling_and_topk",
+      "paper": "Towards Retrieving Interaction Spaces for Agentic Search (RISE)",
+      "arxiv": "2606.06880v1",
+      "location": "Table 2 (p. 7) & Table 3 (p. 8)",
+      "local_pdf": "RISE_Towards_Retrieving_Interaction_Spaces_2606.06880.pdf",
+      "local_pdf_sha256": "3b0a2881aa486bfcba62e1bfdcf94c822593ab4e61295f144d74c9c70cdae830",
+      "csv_sha256": {
+        "rise_scaling_100k_1m.csv": "88edf119d404c5a0f48a67df1f683e533a79456f840575ce64e47dd6ce7999c2",
+        "rise_topk_ablation.csv": "827ea4f1c22e7f1b7fbf15f26226b4b08bec0d14921ab5df452713a757c36612"
+      },
+      "figure_png_sha256": "eb05087a25229bfa767d32911f57ea4fa136fa352fedd3596059e24abce20a08",
+      "figure_svg_sha256": "4fcdaafedab92cddaeb189068e45c23974643dc87646e8e913d31fef3cf045cf"
+    }
+  ]
+}

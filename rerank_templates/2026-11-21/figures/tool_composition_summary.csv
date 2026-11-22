@@ -1,0 +1,13 @@
+benchmark,method_id,method_label,tool,pooled_calls,calls_share_pct,pooled_returned_chars,chars_share_pct
+DemoQA,baseline,Baseline,search,1007,24.88,1203720,16.34
+DemoQA,baseline,Baseline,bash,2215,54.72,4196080,56.98
+DemoQA,baseline,Baseline,read,826,20.41,1964704,26.68
+DemoQA,baseline,Baseline,rerank,0,0.0,0,0.0
+DemoQA,auto_rerank,Auto rerank,search,905,23.33,1106989,17.67
+DemoQA,auto_rerank,Auto rerank,bash,1507,38.85,2893294,46.17
+DemoQA,auto_rerank,Auto rerank,read,752,19.39,1816019,28.98
+DemoQA,auto_rerank,Auto rerank,rerank,715,18.43,449716,7.18
+DemoQA,agent_rerank,Agent rerank,search,751,27.16,889380,18.53
+DemoQA,agent_rerank,Agent rerank,bash,1115,40.33,2163272,45.07
+DemoQA,agent_rerank,Agent rerank,read,667,24.12,1607897,33.5
+DemoQA,agent_rerank,Agent rerank,rerank,232,8.39,139115,2.9

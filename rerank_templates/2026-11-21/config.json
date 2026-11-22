@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "data_kind": "synthetic",
+  "experiment": "Synthetic illustration for F01/F02/F06/F07/F08/F09 reranking templates",
+  "baseline": "baseline",
+  "methods": [
+    {"id": "baseline", "label": "Baseline", "color": "#7C8998"},
+    {"id": "auto_rerank", "label": "Auto rerank", "color": "#D58A2B"},
+    {"id": "agent_rerank", "label": "Agent rerank", "color": "#008C82"}
+  ],
+  "score": {
+    "label": "Answer accuracy",
+    "kind": "binary",
+    "scale": 100,
+    "unit": "%",
+    "delta_unit": "pp"
+  },
+  "budget": {
+    "label": "Maximum model turns",
+    "unit": "turns"
+  },
+  "conditions": {
+    "question_set": "DemoQA, 120 synthetic paired questions across 3 disjoint subsets",
+    "generator_model": "Synthetic generator; no model executed",
+    "retrieval_policy": "Synthetic shared candidate pool; no retrieval executed",
+    "hardware": "Synthetic durations; no hardware measurement",
+    "concurrency": "Synthetic per-question elapsed time; not throughput",
+    "stopping_rule": "Illustrative 240s time limit; incomplete final answers score zero",
+    "run_selection": "One synthetic run per question/method; RNG seed 20261121"
+  }
+}

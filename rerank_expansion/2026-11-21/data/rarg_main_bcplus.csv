@@ -1,0 +1,22 @@
+model,method,family,acc,turns,tools,search_calls,bash_calls,read_calls,cited_from_rise
+GPT-5.4-mini,RISE,rise,78,24.3,28.7,13.1,9.2,6.4,true
+GPT-5.4-mini,RISE-BM25,rise,77,23.0,29.6,14.8,9.6,5.2,true
+GPT-5.4-mini,RISE-Q3-Emb-4B,rise,69,28.9,35.9,22.1,9.1,4.7,false
+GPT-5.4-mini,Retrieval-Agent,retrieval,68,29.2,38.9,37.0,,1.9,true
+GPT-5.4-mini,Embedding Agent,retrieval,55,54.3,68.0,68.0,,,false
+GPT-5.4-mini,NeMo Agent,retrieval,64,25.3,30.3,28.2,,,false
+GPT-5.4-mini,DCI,dci,78,48.8,99.1,,90.3,8.8,true
+GPT-5.4-mini,RARG,rarg,80,18.2,29.8,1.2,27.2,1.4,false
+GPT-5.4-mini,RARG+,rarg,81,20.2,29.6,1.6,26.6,1.3,false
+GPT-5.4-mini,RARG++,rarg,84,17.6,23.9,1.5,21.1,1.3,false
+GPT-5.4-mini,RARG++ (gen.),rarg_gen,75,15.8,17.8,1.2,15.4,1.3,false
+GPT-5.4-nano,RISE,rise,68,23.4,28.7,10.4,8.4,4.6,true
+GPT-5.4-nano,RISE-BM25,rise,64,22.0,29.6,10.2,8.1,3.7,true
+GPT-5.4-nano,Embedding Agent,retrieval,49,43.1,66.6,66.6,,,false
+GPT-5.4-nano,NeMo Agent,retrieval,57,12.1,37.8,36.6,,,false
+GPT-5.4-nano,DCI,dci,71,45.7,126.5,,119.4,7.1,true
+GPT-5.4-nano,RARG,rarg,73,39.9,41.4,9.1,29.5,2.8,false
+GPT-5.4-nano,RARG+,rarg,74,40.2,39.8,14.5,22.4,2.9,false
+GPT-5.4-nano,RARG++,rarg,79,36.0,36.1,9.6,23.4,3.1,false
+GPT-5.4,RISE,rise,82,32.20,34.30,11.00,16.20,7.10,true
+GPT-5.4,RARG++,rarg,91,13.59,25.43,1.58,19.46,4.39,false

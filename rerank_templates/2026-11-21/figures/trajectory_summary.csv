@@ -1,0 +1,4 @@
+case_id,method_id,method_label,total_turns,first_evidence_turn,rerank_turns,outcome
+case_042,baseline,Baseline,12,10,0,wrong
+case_042,auto_rerank,Auto rerank,9,6,3,correct
+case_042,agent_rerank,Agent rerank,6,4,1,correct

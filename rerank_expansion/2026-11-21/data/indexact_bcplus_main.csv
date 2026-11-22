@@ -1,0 +1,9 @@
+method,category,bc_acc,bc_evi_cov,bc_avg_ctx,musique_acc,hotpot_acc,twowiki_acc,bamboogle_acc
+Retrieval Agent (BM25),standard,30.5,36.5,31243,37.8,68.4,63.4,68.8
+Retrieval Agent (Dense),standard,48.2,54.4,24543,44.4,69.2,69.0,70.4
+PI-SERINI,interface,62.7,55.4,10835,41.0,68.4,67.2,68.0
+SIEVE,interface,53.0,40.8,15931,40.2,68.6,59.2,68.0
+DCI-Agent-Lite,interface,63.0,43.6,30161,42.0,68.6,63.6,63.2
+DR-DCI,interface,67.2,46.6,22435,42.6,70.4,66.8,64.8
+RARG,interface,69.4,57.2,27896,43.4,68.2,67.0,64.0
+IndexAct,proposed,73.5,60.7,13960,46.2,71.8,69.2,71.2

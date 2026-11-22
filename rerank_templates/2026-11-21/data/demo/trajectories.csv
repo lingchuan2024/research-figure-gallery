@@ -1,0 +1,28 @@
+case_id,method,turn,tool,event_flag,note
+case_042,baseline,1,search,none,initial query
+case_042,baseline,2,bash,none,broad rg
+case_042,baseline,3,bash,none,filter noisy hits
+case_042,baseline,4,read,none,distractor doc
+case_042,baseline,5,search,none,reformulate
+case_042,baseline,6,bash,none,rg entity
+case_042,baseline,7,read,none,partial clue
+case_042,baseline,8,search,none,second hop
+case_042,baseline,9,bash,none,scan workspace
+case_042,baseline,10,read,first_evidence,answer clue found
+case_042,baseline,11,bash,none,verify dates
+case_042,baseline,12,answer,final_wrong,wrong entity
+case_042,auto_rerank,1,search,none,initial query
+case_042,auto_rerank,2,rerank,none,auto rerank #1
+case_042,auto_rerank,3,read,none,top snippet
+case_042,auto_rerank,4,search,none,second hop
+case_042,auto_rerank,5,rerank,rerank_hit,auto rerank #2
+case_042,auto_rerank,6,read,first_evidence,answer clue found
+case_042,auto_rerank,7,rerank,none,auto rerank #3
+case_042,auto_rerank,8,read,none,verify
+case_042,auto_rerank,9,answer,final_correct,verified
+case_042,agent_rerank,1,search,none,initial query
+case_042,agent_rerank,2,bash,none,narrow workspace
+case_042,agent_rerank,3,rerank,rerank_hit,targeted rerank
+case_042,agent_rerank,4,read,first_evidence,answer clue found
+case_042,agent_rerank,5,read,none,cross-check
+case_042,agent_rerank,6,answer,final_correct,verified

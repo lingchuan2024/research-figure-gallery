@@ -6,19 +6,21 @@ import json
 ROOT=Path(__file__).resolve().parents[1]
 RECEIPT=ROOT/'curation/2026-11-15-dedup/deletions.json'
 FAMILY_RECEIPT=ROOT/'curation/2026-11-16-families/changes.json'
+UPDATE_RECEIPTS=(ROOT/'curation/2026-11-22-remove-f11/changes.json',)
 FAMILY_OVERVIEW='docs/gallery_overview.png'
 
 
 def _authorized_changes():
     """Validate the chronological receipts before following their hash chains."""
     receipts=[json.loads(RECEIPT.read_text())]
-    if FAMILY_RECEIPT.is_file():
-        family=json.loads(FAMILY_RECEIPT.read_text())
-        changes=family.get('rebuilt_contact_sheets',[])
-        assert not family.get('deleted_files',[]),'Family curation does not authorize deletions'
-        assert len(changes)==1 and changes[0]['path']==FAMILY_OVERVIEW, \
-            'Family curation may rebuild only '+FAMILY_OVERVIEW
-        receipts.append(family)
+    for path in (FAMILY_RECEIPT, *UPDATE_RECEIPTS):
+        if path.is_file():
+            family=json.loads(path.read_text())
+            changes=family.get('rebuilt_contact_sheets',[])
+            assert not family.get('deleted_files',[]),'Family curation does not authorize deletions'
+            assert len(changes)==1 and changes[0]['path']==FAMILY_OVERVIEW, \
+                'Family curation may rebuild only '+FAMILY_OVERVIEW
+            receipts.append(family)
     deleted={}
     rebuilt={}
     for receipt in receipts:

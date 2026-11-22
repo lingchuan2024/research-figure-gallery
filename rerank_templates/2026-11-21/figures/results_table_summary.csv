@@ -1,0 +1,4 @@
+benchmark,method_id,method_label,n,n_complete,score_mean,score_ci_low,score_ci_high,ci_method,mean_main_input_tokens,mean_rerank_events,median_wall_seconds,iqr_wall_low,iqr_wall_high
+DemoQA,baseline,Baseline,120,120,55.0,46.0815,63.6083,Wilson 95% CI,14268.7,0.0,35.68,25.47,49.56
+DemoQA,auto_rerank,Auto rerank,120,120,47.5,38.7821,56.373,Wilson 95% CI,12876.8,5.96,42.95,32.35,55.02
+DemoQA,agent_rerank,Agent rerank,120,120,65.8333,56.9748,73.7096,Wilson 95% CI,10414.5,1.93,26.76,21.26,35.91

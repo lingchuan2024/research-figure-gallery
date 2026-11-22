@@ -44,6 +44,69 @@ def collect():
             source_url=refs[name]['image_url'], script=f'rerank_templates/2026-11-16/plot_{name}.py',
             source_code_url=refs[name]['source_url'], data=['rerank_templates/2026-11-16/data/demo/observations.csv'],
             extra='默认示例为 120 题 × 3 方法的合成数据。完整代码、数据格式说明和示例在本文件内嵌的模板包中。'))
+    templates_v2 = ROOT / 'rerank_templates/2026-11-21'
+    t2_meta = [
+        ('T04', 'results_table', '实测主结果表模板', 'observations.csv',
+         '从逐题 observations.csv 自动计算各方法分数与 95% 区间、主模型输入 token、重排事件数及中位耗时 [IQR]。',
+         '单方法 Wilson/bootstrap 区间不是方法间配对差值区间；缺失资源显示破折号而非 0。'),
+        ('T05', 'paired', '实测逐题配对比较模板', 'observations.csv',
+         '自动适配二值翻转统计 + 子集差值 CI 或连续分数逐题哑铃图 + 排序差值条。',
+         '子集区间未做多重比较校正；必须严格配对同一题集。'),
+        ('T06', 'budget_curve', '实测预算趋势曲线模板', 'budget_runs.csv',
+         '按最大轮次或预算档位绘制各方法质量曲线与逐点 95% 置信带。',
+         '每个预算点需对应真实独立运行，不能用长轨迹事后截断代替。'),
+        ('T07', 'rank_transition', '实测排名迁移热图模板', 'rank_transitions.csv',
+         '展示重排前后已知证据的名次迁移比例与计数，单独统计候选池外样本。',
+         '未观测原始行保留 n/a；候选池外不得伪造为末位排名。'),
+        ('T08', 'tool_composition', '实测工具与文本组成模板', 'tool_calls.csv',
+         '并列比较各方法工具调用占比与返回字符占比，并在右侧标注题均量。',
+         '返回字符不等于模型计费 input tokens；池化占比先求和再相除。'),
+        ('T09', 'trajectory', '实测工具轨迹时间线模板', 'trajectories.csv',
+         '在统一轮次轴上对比同一题目下多方法的工具轨迹、首次证据观察与重排命中。',
+         '单题轨迹仅用于机制诊断，不能替代全量统计结论。'),
+    ]
+    for code, name, title, csv_name, purpose, limits in t2_meta:
+        figures.append(dict(id=f'template-{name}', code=code, category='templates', title=title,
+            badge='合成数据 · 可运行模板', origin='synthetic', image=templates_v2 / f'figures/{name}.png',
+            purpose=purpose, limits=limits, source_label='本库实测模板（2026-11-21）',
+            source_url='https://github.com/lingchuan2024/research-figure-gallery',
+            script=f'rerank_templates/2026-11-21/plot_{name}.py',
+            data=[f'rerank_templates/2026-11-21/data/demo/{csv_name}'],
+            extra='支持 --data / --config 接入真实实测 CSV，并输出 *_summary.csv 与可移植 *_provenance.json。'))
+    agentic_exp = ROOT / 'rerank_expansion/2026-11-21'
+    a_meta = [
+        ('A01', 'A01_iter_query_ablation', 'ITER 查询输入消融', ['iter_query_ablation.csv'],
+         'ITER', 'https://arxiv.org/abs/2608.27912', '2608.27912v2 · Table 3 · PDF p. 15',
+         '展示主问题、历史子查询、已访问摘要/笔记与搜索前推理对检索召回及任务成功率的影响。',
+         'i3/i5 中的 docs 为 64-token 历史搜索摘要，不能等同于正文自主逐字选段。'),
+        ('A02', 'A02_iter_cross_agent', 'ITER 跨 Backbone 迁移与 V/S 转化', ['iter_cross_agent.csv'],
+         'ITER', 'https://arxiv.org/abs/2608.27912', '2608.27912v2 · Table 2 · PDF p. 14',
+         '在 6 个 4B-120B Backbone 上比较 ITER 与同尺度基线的 BCP 成功率与检索到访问转化率。',
+         '显著性星号分别相对同尺度基线（0.6B 对 LRAT，4B 对 AgentIR）。'),
+        ('A03', 'A03_rarg_coarse_to_fine', 'RARG 粗到细相关性引导前沿', ['rarg_main_bcplus.csv'],
+         'RARG', 'https://arxiv.org/abs/2607.24223', '2607.24223v2 · Table 1 · PDF p. 7',
+         '比较 RARG → RARG+ → RARG++ 与生成式 rerank query 在准确率与工具调用数上的权衡。',
+         '工具调用数反映接口动作而非等价费用或耗时；RISE/DCI 行为原表转引自 RISE。'),
+        ('A04', 'A04_rarg_scope_heatmap', 'RARG 检索域排名命中热图', ['rarg_scope_rank_heatmap.csv'],
+         'RARG', 'https://arxiv.org/abs/2607.24223', '2607.24223v2 · Figure 3 · PDF p. 9',
+         '按 10K 检索域排名分桶与独立 out-of-scope 列对比六种语料交互方法的证据命中分布。',
+         '非 scope 方法按 RARG scope_1.txt 排名分桶；对数色标中零值以浅灰标示。'),
+        ('A05', 'A05_indexact_context_tradeoff', 'IndexAct 上下文权衡与观察策略消融', ['indexact_bcplus_main.csv', 'indexact_observation_ablation.csv'],
+         'IndexAct', 'https://arxiv.org/abs/2610.07960', '2610.07960v1 · Tables 1-2 · PDF pp. 7-8',
+         '比较 8 种语料接口的准确率、证据覆盖与平均活跃上下文，并对比 Auto Preview / Binary Feedback 消融。',
+         '左图 n=830，右图 n=100；SrcTok 与 AvgCtx 统计口径不同。'),
+        ('A06', 'A06_rise_scaling_and_topk', 'RISE 10 倍扩容与 Top-K 消融', ['rise_scaling_100k_1m.csv', 'rise_topk_ablation.csv'],
+         'RISE', 'https://arxiv.org/abs/2606.06880', '2606.06880v1 · Tables 2-3 · PDF pp. 7-8',
+         '展示 100K → 1M 扩容时有界工作区与无界 DCI 的分化，以及 BM25 top-K 对工作区规模与准确率的影响。',
+         '1M 扩容实验为无 TOC 预处理的 RISE-BM25，DCI 仅在 nano 跑了 1M。'),
+    ]
+    for code, stem, title, csvs, src_lbl, src_url, loc, purpose, limits in a_meta:
+        figures.append(dict(id=f'gallery-{stem}', code=code, category='selected', title=title,
+            badge='论文公开数据重绘', origin='paper', image=agentic_exp / f'figures/{stem}.png',
+            purpose=purpose, limits=limits, source_label=src_lbl, source_url=src_url,
+            source_locator=loc, script=f'rerank_expansion/2026-11-21/code/{stem}.py',
+            data=[f'rerank_expansion/2026-11-21/data/{c}' for c in csvs],
+            extra='2026 Agentic Search & Rerank 扩充文献重绘（精确表格/格值转录）。'))
     for category, entries in [('selected', catalog['selected']), ('supplement', catalog['supplement'])]:
         for i, entry in enumerate(entries, 1):
             raw = {**inventory[entry['id']], **entry}
@@ -59,6 +122,8 @@ def collect():
                 source_url=raw['source_url'], source_locator=location, script=raw['script'], data=raw['data'],
                 extra=('补充收录原因：' + raw['reason']) if category == 'supplement' else raw.get('section', '')))
     for raw in json.loads((GITHUB / 'manifest.json').read_text())['figures']:
+        if raw['id'] == 'G07':
+            continue
         figures.append(dict(id=f'github-{raw["id"]}', code=raw['id'], category='github', title=raw['title'],
             badge='GitHub 上游原始示例', origin='github', image=GITHUB / raw['preview_local'],
             purpose=raw['use'], limits=raw['limits'], source_label=raw['repo'], source_url=raw['image_url'],
@@ -67,8 +132,8 @@ def collect():
             license_note=raw['license_note'], license_text=(GITHUB / raw['license_local']).read_text(),
             data_requirement=raw['data'], extra=raw['adapt'],
             transformation='原 PDF 栅格预览，内容未改动。' if raw['transformation'] != 'none' else '保留原图，未重绘。'))
-    if len(figures) != 34 or len({f['id'] for f in figures}) != 34:
-        raise ValueError('Expected all 34 figures exactly once.')
+    if len(figures) != 45 or len({f['id'] for f in figures}) != 45:
+        raise ValueError('Expected all 45 figures exactly once.')
     for item in figures:
         if not item['image'].is_file():
             raise FileNotFoundError(item['image'])

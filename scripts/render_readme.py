@@ -24,6 +24,34 @@ def index_entries():
             image=str(template/f'figures/{name}.png'),script=str(template/f'plot_{name}.py'),helper=str(template/'common.py'),
             inputs=[('逐题 CSV',str(template/'data/demo/observations.csv')),('配置',str(template/'config.json'))],status='本地可运行',
             reference=f"图型参考：[{template_refs[name]['repo']}]({template_refs[name]['image_url']})；本库独立实现，默认数据为合成示例。"))
+    template_v2=Path('rerank_templates/2026-11-21')
+    t2_specs=[
+        ('T04','results_table','实测主结果表模板','observations.csv'),
+        ('T05','paired','实测逐题配对比较模板','observations.csv'),
+        ('T06','budget_curve','实测预算趋势曲线模板','budget_runs.csv'),
+        ('T07','rank_transition','实测排名迁移热图模板','rank_transitions.csv'),
+        ('T08','tool_composition','实测工具与文本组成模板','tool_calls.csv'),
+        ('T09','trajectory','实测工具轨迹时间线模板','trajectories.csv'),
+    ]
+    for code,name,title,csv_name in t2_specs:
+        entries.append(dict(code=code,category='templates',title=title,origin='合成模板',
+            image=str(template_v2/f'figures/{name}.png'),script=str(template_v2/f'plot_{name}.py'),helper=str(template_v2/'common.py'),
+            inputs=[('示例 CSV',str(template_v2/'data/demo'/csv_name)),('配置',str(template_v2/'config.json'))],status='本地可运行',
+            reference='本库独立实现的实测数据契约模板（2026-11-21）；默认数据为合成示例，附带 `config.measured.example.json`。'))
+    agentic_exp=Path('rerank_expansion/2026-11-21')
+    a_specs=[
+        ('A01','A01_iter_query_ablation','ITER 查询输入消融',['iter_query_ablation.csv'],'ITER','https://arxiv.org/abs/2608.27912','2608.27912v2','Table 3, p. 15'),
+        ('A02','A02_iter_cross_agent','ITER 跨 Backbone 迁移与 V/S 转化',['iter_cross_agent.csv'],'ITER','https://arxiv.org/abs/2608.27912','2608.27912v2','Table 2, p. 14'),
+        ('A03','A03_rarg_coarse_to_fine','RARG 粗到细相关性引导前沿',['rarg_main_bcplus.csv'],'RARG','https://arxiv.org/abs/2607.24223','2607.24223v2','Table 1, p. 7'),
+        ('A04','A04_rarg_scope_heatmap','RARG 检索域排名命中热图',['rarg_scope_rank_heatmap.csv'],'RARG','https://arxiv.org/abs/2607.24223','2607.24223v2','Figure 3, p. 9'),
+        ('A05','A05_indexact_context_tradeoff','IndexAct 上下文权衡与观察策略消融',['indexact_bcplus_main.csv','indexact_observation_ablation.csv'],'IndexAct','https://arxiv.org/abs/2610.07960','2610.07960v1','Tables 1-2, pp. 7-8'),
+        ('A06','A06_rise_scaling_and_topk','RISE 10 倍扩容与 Top-K 消融',['rise_scaling_100k_1m.csv','rise_topk_ablation.csv'],'RISE','https://arxiv.org/abs/2606.06880','2606.06880v1','Tables 2-3, pp. 7-8'),
+    ]
+    for code,stem,title,csvs,src_lbl,src_url,ver,loc in a_specs:
+        entries.append(dict(code=code,category='agentic_expansion',title=title,origin='论文数值重绘',
+            image=str(agentic_exp/f'figures/{stem}.png'),script=str(agentic_exp/f'code/{stem}.py'),helper=str(agentic_exp/'plotlib.py'),
+            inputs=[(c,str(agentic_exp/'data'/c)) for c in csvs],status='本地可运行',
+            reference=f'来源：[{src_lbl}]({src_url})，{ver}，{loc}。'))
     for category,prefix in [('selected','M'),('supplement','S')]:
         for number,item in enumerate(catalog[category],1):
             raw={**inventory[item['id']],**item};script=Path(raw['script'])
@@ -37,6 +65,7 @@ def index_entries():
             if meta['id'] in code_meta:raise ValueError('Duplicate upstream code metadata: '+meta['id'])
             code_meta[meta['id']]={**meta,'metadata_file':str(github/'code_sections'/name)}
     for raw in json.loads((ROOT/github/'manifest.json').read_text())['figures']:
+        if raw['id']=='G07':continue
         meta=code_meta[raw['id']]
         inputs=[('数据与环境',meta['metadata_file'])]
         inputs.extend((Path(s['local_file']).name,str(github/s['local_file'])) for s in meta.get('support_files',[]))
@@ -44,7 +73,7 @@ def index_entries():
             image=str(github/raw['preview_local']),script=str(github/meta['code_file']),
             source=str(github/raw['source_local']),license=str(github/raw['license_local']),inputs=inputs,status='上游参考 · 未完整执行',
             reference=f"上游原图：[{raw['repo']}]({raw['image_url']})；许可：{raw['license']}。{raw['license_note']}"))
-    if len(entries)!=34 or len({e['code'] for e in entries})!=34:raise ValueError('Expected 34 distinct figure index entries.')
+    if len(entries)!=45 or len({e['code'] for e in entries})!=45:raise ValueError('Expected 45 distinct figure index entries.')
     return entries
 
 
@@ -152,11 +181,16 @@ python scripts/build_gallery.py --keep-existing-images
 
 打开 `dist/图表汇总_2026-11-16.html`，可离线查看同一套一图多用途图库，并下载每种用途对应的代码和数据。完整发布包为 `dist/research-figure-gallery.zip`。也可从仓库 Actions 的成功构建中下载 Artifacts。
 
-逐题输入见[数据格式](rerank_templates/2026-11-16/DATA_FORMAT.md)；旧示例字段见[数据说明](data/README.md)。代码入口、执行状态与引用信息均在[统一索引](docs/FIGURE_INDEX.md)中。
+逐题输入见[数据格式（F03–F05）](rerank_templates/2026-11-16/DATA_FORMAT.md)与[扩展模板数据格式（F01/F02/F06–F09）](rerank_templates/2026-11-21/DATA_FORMAT.md)；2026 Agentic Rerank 文献重绘说明见[研究笔记](rerank_expansion/2026-11-21/RESEARCH_NOTES.md)；旧示例字段见[数据说明](data/README.md)。代码入口、执行状态与引用信息均在[统一索引](docs/FIGURE_INDEX.md)中。
 
 图型与用途由 [figure_families.json](docs/catalog/figure_families.json) 统一维护，README、离线汇总和总览图由它生成。历史图片与来源证据用于代码溯源，不再作为多个独立图型重复展示。
 
 自编代码采用 [MIT 许可](LICENSE)。来源图片、论文材料和原始源码保留各自许可，详见[来源说明](docs/REFERENCES.md)。
+
+## 推荐外部科研图例仓库
+
+- [faridrashidi/cnsplots](https://github.com/faridrashidi/cnsplots)（[示例图库](https://cnsplots.farid.one)）：面向 *Cell / Nature / Science* 风格的 Python 统计与机器学习绘图库，提供丰富的成品图例与配套代码（带显著性检验的箱线/小提琴/散点/柱状图、热图、ROC、混淆矩阵、多面板组合等），支持物理尺寸控制与 Illustrator 可编辑 SVG/PDF 导出。
+- [ChenLiu-1996/figures4papers](https://github.com/ChenLiu-1996/figures4papers)：收录 *Nature Machine Intelligence*、ICML、NeurIPS、ECCV 等真实顶会/顶刊论文中的 Matplotlib 配图脚本与成品图（定量对比、组成拆解、趋势曲线、雷达图、后训练对比等），并附带科研绘图规范文档，适合 AI/ML 论文直接参考版式与配色。
 '''
     (ROOT/'README.md').write_text(text,encoding='utf-8')
 

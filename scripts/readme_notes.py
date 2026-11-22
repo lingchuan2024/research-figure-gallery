@@ -1,4 +1,4 @@
-"""Chinese reading and placement notes for the 34 canonical figure previews.
+"""Chinese reading and placement notes for the 46 canonical figure previews.
 
 These are chart-use suggestions, not claims about our measured rerank results.
 T/M/S semantics follow the local plotting scripts and input contracts; G notes
@@ -209,5 +209,77 @@ FIGURE_NOTES = {
         "placement": "适合附录多模型多任务汇总；当每行、每列及面板内四个指标具有稳定含义，单图仍能保持可读性时使用。",
         "data_requirement": "需要明确的模型×任务索引，以及每个面板四项指标的数值、共同方向和可比较色标；指标单位不同应拆开色标或面板。",
         "caution": "随机示例不是实测结果，原图采用 CC BY-NC-SA 4.0、代码采用 BSD-2-Clause，不能把代码许可套用于原图。",
+    },
+    "T04": {
+        "reading": "基于逐题 observations.csv 自动汇总每个方法的准确率／分数与 95% 区间、主模型平均输入 token、平均重排事件数、墙钟耗时中位数 [IQR] 与完成率，浅色底纹仅标出最高点估计行。",
+        "placement": "适合正文主结果表；直接复用 2026-11-16 逐题表契约，无需手抄汇总数字。",
+        "data_requirement": "需要严格配对的 observations.csv 与 config.json；缺失资源列显示为破折号而不自动填零。",
+        "caution": "单方法 Wilson／bootstrap 区间不是方法间配对差值区间；默认演示数据为合成示例。",
+    },
+    "T05": {
+        "reading": "自动适配二值与连续评分：binary 模式左侧显示四类配对翻转计数，右侧显示总体与子集配对差及 95% bootstrap 区间；bounded 模式显示逐题配对哑铃图与排序差值条。",
+        "placement": "适合正文重排开关对照或 query 消融；当需要展示净胜题目数与负向退化分布时使用。",
+        "data_requirement": "需要同题严格配对的 observations.csv 及指定的 --baseline 与 --method。",
+        "caution": "子集区间未做多重比较校正；连续分数题目过多时图面等距抽样展示，区间仍基于全部配对题目计算。",
+    },
+    "T06": {
+        "reading": "按最大轮次或预算档位绘制各方法质量曲线及逐点 95% 置信带，末端直接标注最终档位均值，便于观察收益是否随预算饱和。",
+        "placement": "适合正文预算消融或附录停止规则敏感性分析。",
+        "data_requirement": "需要 budget_runs.csv，每个预算档位下各方法严格配对且对应独立运行，而非单次长轨迹事后截断。",
+        "caution": "逐点置信带不构成同时置信带；默认演示数据为合成示例。",
+    },
+    "T07": {
+        "reading": "纵轴为重排前名次区间、横轴为重排后名次区间，按行归一化显示迁移比例与绝对计数，未观测原始行保留 n/a，候选池外样本在副标题与摘要表中单独计数。",
+        "placement": "适合正文机制分析或附录排名迁移诊断。",
+        "data_requirement": "需要逐题逐证据文档的 rank_transitions.csv，候选池外显式标记为 outside。",
+        "caution": "颜色代表行内占比而非全体证据占比；不能将候选池外文档伪造为末位排名。",
+    },
+    "T08": {
+        "reading": "双栏 100% 堆叠水平条形图，左侧比较各工具的池化调用次数占比与题均调用数，右侧比较工具返回字符占比与题均字符量。",
+        "placement": "适合正文工具行为分析；用于说明高频工具是否同时主导文本暴露。",
+        "data_requirement": "需要按题严格配对的 tool_calls.csv，包含 calls 与 returned_chars 非负整数。",
+        "caution": "返回字符数不等于模型计费 input tokens；池化占比先求和再相除。",
+    },
+    "T09": {
+        "reading": "多方法在同一轮次横轴上对齐展示单题工具调用轨迹，星标标出首次观察到含答案证据的轮次，菱形标出重排命中，末尾标注答对或答错。",
+        "placement": "适合正文案例研究或附录机制解释。",
+        "data_requirement": "需要真实逐步轨迹 trajectories.csv 及显式 event_flag 标注。",
+        "caution": "单题轨迹仅用于机制诊断，不能替代全量题集统计结论。",
+    },
+    "A01": {
+        "reading": "三面板水平棒棒糖图对比 ITER 在 InfoSeek-Eval 与 BrowseComp-Plus 上的查询输入消融，虚线为 LRAT 基线；加入历史子查询与搜索前推理提升效果，而加入已访问摘要／笔记（i3–i5）降低 BCP 召回与成功率。",
+        "placement": "适合相关工作定位或原文反馈机制讨论；精确引用 ITER 负结果边界时使用。",
+        "data_requirement": "转录自 ITER (arXiv:2608.27912v2) Table 3 (p. 15) 精确表格值。",
+        "caution": "文献数据重绘，不是我们的实测结果；i3/i5 中的 docs 为 64-token 历史搜索摘要，不同于正文自主逐字选段。",
+    },
+    "A02": {
+        "reading": "双面板配对哑铃图在六个 4B–120B Agent Backbone 上比较 0.6B（ITER vs. LRAT）与 4B（ITER vs. AgentIR）的 BCP 成功率及检索到访问转化率（V/S）。",
+        "placement": "适合跨模型迁移与检索—阅读衔接分析参考。",
+        "data_requirement": "转录自 ITER (arXiv:2608.27912v2) Table 2 (p. 14) 精确表格值。",
+        "caution": "文献数据重绘；显著性星号分别相对同尺度基线（0.6B 对 LRAT，4B 对 AgentIR）。",
+    },
+    "A03": {
+        "reading": "双面板散点图在 GPT-5.4-mini 与 nano 上展示准确率与平均工具调用数的权衡，箭头标出 RARG → RARG+ → RARG++ 的粗到细演进，并单列生成式 rerank query 变体的掉点现象。",
+        "placement": "适合正文效率—质量前沿对比或重排 query 构造方式讨论参考。",
+        "data_requirement": "转录自 RARG (arXiv:2607.24223v2) Table 1 (p. 7) 精确表格值。",
+        "caution": "文献数据重绘；工具调用数反映接口动作而非等价墙钟耗时或计费，RISE/DCI 行为原表转引自 RISE。",
+    },
+    "A04": {
+        "reading": "对数色标热图展示六种语料交互方法在 10K 检索域 20 个排名桶及独立 out-of-scope 列上的每题相关文档命中数，突出 DCI 平坦扫描与 RARG++ 局部重排捞回低排证据的差异。",
+        "placement": "适合工作区排名命中分布与局部重排机制分析参考。",
+        "data_requirement": "转录自 RARG (arXiv:2607.24223v2) Figure 3 (p. 9) 打印格值。",
+        "caution": "文献数据重绘；非 scope 方法按 RARG scope_1.txt 排名分桶，零值以浅灰标示。",
+    },
+    "A05": {
+        "reading": "左图在 830 题 BCP 上以气泡面积编码证据覆盖率，展示 8 种语料接口的准确率与平均活跃上下文权衡；右图在 100 题消融子集上对比 Auto Preview、Binary Feedback 与 IndexAct。",
+        "placement": "适合上下文效率与选择性正文暴露机制讨论参考。",
+        "data_requirement": "转录自 IndexAct (arXiv:2610.07960v1) Table 1 (p. 7) 与 Table 2 (p. 8) 精确表格值。",
+        "caution": "文献数据重绘；左右面板题集分母不同（830 vs. 100），SrcTok 与 AvgCtx 统计口径不同。",
+    },
+    "A06": {
+        "reading": "左图以箭头图展示 100K → 1M 语料 10 倍扩容时 RISE-BM25、retrieval-agent 与 DCI 的准确率变化；右图以对数横轴展示单次 BM25 top-K（100/1000/10000）对工作区文件数与准确率的影响。",
+        "placement": "适合工作区扩展性与候选池 K 值消融实验参考。",
+        "data_requirement": "转录自 RISE (arXiv:2606.06880v1) Table 2 (p. 7) 与 Table 3 (p. 8) 精确表格值。",
+        "caution": "文献数据重绘；1M 下 RISE 行均为无 TOC 预处理的 RISE-BM25，DCI 仅在 nano 跑了 1M 且有 33/100 超时。",
     },
 }

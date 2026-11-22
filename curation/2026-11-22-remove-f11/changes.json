@@ -1,0 +1,12 @@
+{
+  "date": "2026-11-22",
+  "reason": "User requested removing F11 (G07 complex_upset_movies.png) from the curated chart families and updating the overview sheet for the 10-family / 45-variant catalog.",
+  "deleted_files": [],
+  "rebuilt_contact_sheets": [
+    {
+      "path": "docs/gallery_overview.png",
+      "sha256_before": "9cea028a941683f78849e33d77451f72c5eeb65afbbc8c37d1e7b112a5f7ce04",
+      "sha256_after": "799f18ff5d43cd42baf2de457c6b1c4ae0b12e43f7f223205e39cff82fd83efa"
+    }
+  ]
+}

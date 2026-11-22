@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "data_kind": "measured",
+  "experiment": "REPLACE_EXPERIMENT_TITLE_AND_BENCHMARK_SCOPE",
+  "baseline": "baseline",
+  "methods": [
+    {"id": "baseline", "label": "Baseline", "color": "#7C8998"},
+    {"id": "auto_rerank", "label": "Auto rerank", "color": "#D58A2B"},
+    {"id": "agent_rerank", "label": "Agent rerank", "color": "#008C82"}
+  ],
+  "score": {
+    "label": "Answer accuracy",
+    "kind": "binary",
+    "scale": 100,
+    "unit": "%",
+    "delta_unit": "pp"
+  },
+  "budget": {
+    "label": "Maximum model turns",
+    "unit": "turns"
+  },
+  "conditions": {
+    "question_set": "REPLACE_DATASET_VERSION_SPLIT_AND_COUNT",
+    "generator_model": "REPLACE_MAIN_MODEL_AND_DECODING_PARAMS",
+    "retrieval_policy": "REPLACE_INDEX_RETRIEVER_CANDIDATE_POOL_AND_RERANKER",
+    "hardware": "REPLACE_GPU_CPU_AND_SERVING_STACK",
+    "concurrency": "REPLACE_BATCH_SIZE_AND_WORKER_CONCURRENCY",
+    "stopping_rule": "REPLACE_MAX_TURNS_TIMEOUT_AND_FAILURE_SCORING",
+    "run_selection": "REPLACE_RUN_IDS_OR_SEEDS"
+  }
+}

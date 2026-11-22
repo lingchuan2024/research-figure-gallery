@@ -1,0 +1,4 @@
+method,acc,evi_cov,avg_ctx,calls,src_tok_k
+Auto Preview,70.0,52.5,14842,38.5,32.0
+Binary Feedback,62.0,55.9,14492,39.8,35.2
+IndexAct,74.0,63.9,15107,42.9,30.8

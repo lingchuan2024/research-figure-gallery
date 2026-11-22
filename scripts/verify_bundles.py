@@ -87,8 +87,8 @@ def verify(entry, originals, font_cache):
 def main():
     manifest = json.loads((ROOT / 'dist/figure_code_manifest.json').read_text())
     entries = manifest['entries']
-    if len(entries) != 34 or sum(e['kind'] == 'local' for e in entries) != 26:
-        raise ValueError('Expected 26 local bundles and 8 upstream references.')
+    if len(entries) != 45 or sum(e['kind'] == 'local' for e in entries) != 38:
+        raise ValueError('Expected 38 local bundles and 7 upstream references.')
     originals = {item['id']: item['image'] for item in collect()}
     before = {name: sha(path) for name, path in originals.items()}
     # Font discovery is independent of figure code/data. Share only this cache,
@@ -103,7 +103,7 @@ def main():
     if before != {name: sha(path) for name, path in originals.items()}:
         raise ValueError('Verification modified source images.')
     local = [r for r in results if r['kind'] == 'local']
-    report = {'status': 'passed', 'local_bundle_count': len(local), 'upstream_reference_count': 8,
+    report = {'status': 'passed', 'local_bundle_count': len(local), 'upstream_reference_count': 7,
               'python_version': platform.python_version(),
               'isolation': 'Each ZIP extracted into a fresh temporary directory; PYTHONPATH/PYTHONHOME removed.',
               'original_images_unchanged': True,

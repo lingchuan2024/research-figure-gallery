@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="731.808pt" height="243.435651pt" viewBox="0 0 731.808 243.435651" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 243.435651 
+L 731.808 243.435651 
+L 731.808 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 7.2 157.984511 
+L 724.608 157.984511 
+L 724.608 135.54956 
+L 7.2 135.54956 
+z
+" clip-path="url(#p5e9529bbba)" style="fill: #edf6f5"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 7.2 43.673091 
+L 724.608 43.673091 
+" style="fill: none; stroke: #243746; stroke-width: 1.4; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 7.2 73.052194 
+L 724.608 73.052194 
+" style="fill: none; stroke: #7e8e98; stroke-width: 0.9; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 7.2 161.456587 
+L 724.608 161.456587 
+" style="fill: none; stroke: #243746; stroke-width: 1.4; stroke-linecap: square"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 8.8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #243746" x="14.37408" y="62.660472" transform="rotate(-0 14.37408 62.660472)">Method</text>
+   </g>
+   <g id="text_2">
+    <text style="font-weight: 700; font-size: 8.8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #243746" x="150.6816" y="62.626097" transform="rotate(-0 150.6816 62.626097)">Answer accuracy [95% CI]</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 8.8px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #243746" x="408.94848" y="62.660472" transform="rotate(-0 408.94848 62.660472)">Main input tok/q</text>
+   </g>
+   <g id="text_4">
+    <text style="font-weight: 700; font-size: 8.8px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #243746" x="509.3856" y="62.660472" transform="rotate(-0 509.3856 62.660472)">Rerank events/q</text>
+   </g>
+   <g id="text_5">
+    <text style="font-weight: 700; font-size: 8.8px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #243746" x="631.34496" y="62.660472" transform="rotate(-0 631.34496 62.660472)">Wall time med [IQR]</text>
+   </g>
+   <g id="text_6">
+    <text style="font-weight: 700; font-size: 8.8px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #243746" x="717.43392" y="62.660472" transform="rotate(-0 717.43392 62.660472)">Complete</text>
+   </g>
+   <g id="text_7">
+    <text style="font-weight: 600; font-size: 8.6px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #7c8998" x="14.37408" y="99.99687" transform="rotate(-0 14.37408 99.99687)">Baseline</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 8.6px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #243746" x="150.6816" y="99.99687" transform="rotate(-0 150.6816 99.99687)">55.0% [46.1, 63.6]</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 8.6px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #243746" x="408.94848" y="99.99687" transform="rotate(-0 408.94848 99.99687)">14.3k</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 8.6px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #243746" x="509.3856" y="99.99687" transform="rotate(-0 509.3856 99.99687)">0.00</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 8.6px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #243746" x="631.34496" y="99.99687" transform="rotate(-0 631.34496 99.99687)">35.7s [25.5, 49.6]</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 8.6px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #5c707b" x="717.43392" y="99.99687" transform="rotate(-0 717.43392 99.99687)">120/120</text>
+   </g>
+   <g id="text_13">
+    <text style="font-weight: 600; font-size: 8.6px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #d58a2b" x="14.37408" y="124.568484" transform="rotate(-0 14.37408 124.568484)">Auto rerank</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 8.6px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #243746" x="150.6816" y="124.568484" transform="rotate(-0 150.6816 124.568484)">47.5% [38.8, 56.4]</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 8.6px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #243746" x="408.94848" y="124.568484" transform="rotate(-0 408.94848 124.568484)">12.9k</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 8.6px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #243746" x="509.3856" y="124.568484" transform="rotate(-0 509.3856 124.568484)">5.96</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 8.6px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #243746" x="631.34496" y="124.568484" transform="rotate(-0 631.34496 124.568484)">42.9s [32.4, 55.0]</text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 8.6px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #5c707b" x="717.43392" y="124.568484" transform="rotate(-0 717.43392 124.568484)">120/120</text>
+   </g>
+   <g id="text_19">
+    <text style="font-weight: 700; font-size: 8.6px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #008c82" x="14.37408" y="149.106504" transform="rotate(-0 14.37408 149.106504)">Agent rerank</text>
+   </g>
+   <g id="text_20">
+    <text style="font-weight: 700; font-size: 8.6px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #243746" x="150.6816" y="149.140098" transform="rotate(-0 150.6816 149.140098)">65.8% [57.0, 73.7]</text>
+   </g>
+   <g id="text_21">
+    <text style="font-weight: 700; font-size: 8.6px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #243746" x="408.94848" y="149.140098" transform="rotate(-0 408.94848 149.140098)">10.4k</text>
+   </g>
+   <g id="text_22">
+    <text style="font-weight: 700; font-size: 8.6px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #243746" x="509.3856" y="149.140098" transform="rotate(-0 509.3856 149.140098)">1.93</text>
+   </g>
+   <g id="text_23">
+    <text style="font-weight: 700; font-size: 8.6px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #243746" x="631.34496" y="149.140098" transform="rotate(-0 631.34496 149.140098)">26.8s [21.3, 35.9]</text>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 8.6px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #5c707b" x="717.43392" y="149.140098" transform="rotate(-0 717.43392 149.140098)">120/120</text>
+   </g>
+  </g>
+  <g id="text_25">
+   <text style="font-weight: 700; font-size: 13.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #243746" x="7.2" y="17.457891" transform="rotate(-0 7.2 17.457891)">Main comparison under a shared evaluation protocol</text>
+  </g>
+  <g id="text_26">
+   <text style="font-size: 8.6px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #5c707b" x="7.2" y="30.565491" transform="rotate(-0 7.2 30.565491)">Synthetic illustration for F01/F02/F06/F07/F08/F09 reranking templates | Shading marks highest point-estimate row only (not statistical superiority)</text>
+  </g>
+  <g id="text_27">
+   <text style="font-size: 7.2px; font-family: 'DejaVu Sans'; fill: #5c707b" transform="translate(285.927188 218.613426)">SYNTHETIC DEMO - not experimental results</text>
+   <text style="font-size: 7.2px; font-family: 'DejaVu Sans'; fill: #5c707b" transform="translate(132.383812 226.675851)">Score CIs are Wilson 95% per method (not paired difference CIs). Token/rerank columns report means when complete across all n</text>
+   <text style="font-size: 7.2px; font-family: 'DejaVu Sans'; fill: #5c707b" transform="translate(289.544062 234.738276)">questions; wall time reports median [IQR].</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p5e9529bbba">
+   <rect x="7.2" y="43.673091" width="717.408" height="154.908"/>
+  </clipPath>
+ </defs>
+</svg>

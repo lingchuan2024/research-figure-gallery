@@ -1,0 +1,8 @@
+model,architecture,acc_100k,acc_1m,turns_1m,cost_1m
+mimo-v2.5-pro,RISE-BM25,75,83,18.7,0.34
+mimo-v2.5-pro,retrieval-agent,73,70,35.1,0.60
+gpt-5.4-mini,RISE-BM25,77,81,22.6,0.23
+gpt-5.4-mini,retrieval-agent,68,70,28.5,0.43
+gpt-5.4-nano,RISE-BM25,64,65,25.1,0.08
+gpt-5.4-nano,retrieval-agent,65,61,16.7,0.05
+gpt-5.4-nano,DCI,71,60,24.2,0.09

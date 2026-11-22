@@ -1,0 +1,10 @@
+variant,group,input_components,infoseek_sr,infoseek_sig,bcp_sr,bcp_sr_sig,bcp_recall,bcp_recall_sig
+LRAT,baseline,SQ,72.0,,43.7,,0.596,
+i0,history,SQ,72.0,b,45.3,,0.624,b
+i1,history,MQ+SQ,78.0,,44.2,b,0.636,a
+i2,history,MQ+SQ+PSQ,79.3,a,45.7,,0.641,a
+i3,visited_content,MQ+SQ+PSQ+docs,75.0,,42.0,b,0.550,ab
+i4,visited_content,MQ+SQ+PSQ+DI,75.7,,43.5,b,0.594,b
+i5,visited_content,MQ+SQ+PSQ+docs+DI,75.0,,42.7,b,0.568,b
+i6,reasoning,SQ+PR,76.3,,48.1,,0.668,a
+i7,reasoning,MQ+SQ+PSQ+PR (default),78.7,a,49.2,a,0.661,a

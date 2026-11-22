@@ -2,7 +2,7 @@
 
 [返回一图多用途图库](../README.md)
 
-按 **11 种图型**统一整理。每类在首页只显示一张代表图，下面的实现用于不同实验目的；不再按网站、论文或模板来源分组。
+按 **10 种图型**统一整理。每类在首页只显示一张代表图，下面的实现用于不同实验目的；不再按网站、论文或模板来源分组。
 
 同类代码的指标、字段和统计方法可能不同。选择与实验目的相符的实现，不要仅改标题就套用原数值。执行状态与许可证逐项注明；所有示例均不属于我们的实测结果。
 
@@ -25,6 +25,20 @@
 执行状态：本地可运行。表中均值、中位数和准确率区间的统计对象不同，单方法 Wilson 区间不能直接当作方法间配对差值的置信区间。
 
 图型参考：[SciencePlots](https://github.com/garrettj403/SciencePlots)。
+
+<a id="variant-t04"></a>
+
+### F01.2 · 实测主结果表模板
+
+[主代码](../rerank_templates/2026-11-21/plot_results_table.py) · [公共函数](../rerank_templates/2026-11-21/common.py)
+
+输入：[示例 CSV](../rerank_templates/2026-11-21/data/demo/observations.csv) · [配置](../rerank_templates/2026-11-21/config.json)。
+
+适用用途：各方法在同一题集上的最终回答质量、主模型用量、工具调用与耗时分别是多少？。
+
+执行状态：本地可运行。单方法 Wilson／bootstrap 区间不是方法间配对差值区间；默认演示数据为合成示例。
+
+本库独立实现的实测数据契约模板（2026-11-21）；默认数据为合成示例，附带 `config.measured.example.json`。
 
 <a id="f02"></a>
 
@@ -143,6 +157,48 @@
 执行状态：上游参考 · 未完整执行。上游图使用模拟数据，不能把当前均值差当作实测收益，也不能把配对样本拆成独立两组来计算区间。
 
 上游原图：[ACCLAB/DABEST-python](https://github.com/ACCLAB/DABEST-python/blob/ec6172724e0397bf0546863c76949d40da9c5457/nbs/tests/mpl_image_tests/baseline_images/test_04_gardner_altman_paired_meandiff.png)；许可：Apache-2.0 in LICENSE; README badge says BSD-3-Clause-Clear (conflicting repository notices).。仅作带来源的研究参考；若对外再分发或改编应先澄清仓库许可冲突。
+
+<a id="variant-t05"></a>
+
+### F02.9 · 实测逐题配对比较模板
+
+[主代码](../rerank_templates/2026-11-21/plot_paired.py) · [公共函数](../rerank_templates/2026-11-21/common.py)
+
+输入：[示例 CSV](../rerank_templates/2026-11-21/data/demo/observations.csv) · [配置](../rerank_templates/2026-11-21/config.json)。
+
+适用用途：重排开关是否改变最终答案质量，提供金标准证据后还剩多少回答失误？；重排或 query 改写能否把相关、含答案材料提前，哪些题目获得收益或出现损失？。
+
+执行状态：本地可运行。子集区间未做多重比较校正；连续分数题目过多时图面等距抽样展示，区间仍基于全部配对题目计算。
+
+本库独立实现的实测数据契约模板（2026-11-21）；默认数据为合成示例，附带 `config.measured.example.json`。
+
+<a id="variant-a01"></a>
+
+### F02.10 · ITER 查询输入消融
+
+[主代码](../rerank_expansion/2026-11-21/code/A01_iter_query_ablation.py) · [公共函数](../rerank_expansion/2026-11-21/plotlib.py)
+
+输入：[iter_query_ablation.csv](../rerank_expansion/2026-11-21/data/iter_query_ablation.csv)。
+
+适用用途：重排或 query 改写能否把相关、含答案材料提前，哪些题目获得收益或出现损失？。
+
+执行状态：本地可运行。文献数据重绘，不是我们的实测结果；i3/i5 中的 docs 为 64-token 历史搜索摘要，不同于正文自主逐字选段。
+
+来源：[ITER](https://arxiv.org/abs/2608.27912)，2608.27912v2，Table 3, p. 15。
+
+<a id="variant-a02"></a>
+
+### F02.11 · ITER 跨 Backbone 迁移与 V/S 转化
+
+[主代码](../rerank_expansion/2026-11-21/code/A02_iter_cross_agent.py) · [公共函数](../rerank_expansion/2026-11-21/plotlib.py)
+
+输入：[iter_cross_agent.csv](../rerank_expansion/2026-11-21/data/iter_cross_agent.csv)。
+
+适用用途：重排开关是否改变最终答案质量，提供金标准证据后还剩多少回答失误？。
+
+执行状态：本地可运行。文献数据重绘；显著性星号分别相对同尺度基线（0.6B 对 LRAT，4B 对 AgentIR）。
+
+来源：[ITER](https://arxiv.org/abs/2608.27912)，2608.27912v2，Table 2, p. 14。
 
 <a id="f03"></a>
 
@@ -316,6 +372,34 @@
 
 上游原图：[tommyod/paretoset](https://github.com/tommyod/paretoset/blob/6f2803057085a696cbe10118ca3164d993cee175/scripts/example_optimization.png)；许可：MIT。原图与代码按上游许可保留；原始许可证随文件保存。
 
+<a id="variant-a03"></a>
+
+### F05.6 · RARG 粗到细相关性引导前沿
+
+[主代码](../rerank_expansion/2026-11-21/code/A03_rarg_coarse_to_fine.py) · [公共函数](../rerank_expansion/2026-11-21/plotlib.py)
+
+输入：[rarg_main_bcplus.csv](../rerank_expansion/2026-11-21/data/rarg_main_bcplus.csv)。
+
+适用用途：不同 reranker、触发策略或滑动窗口设置中，哪些配置在质量与实测资源之间更合适？。
+
+执行状态：本地可运行。文献数据重绘；工具调用数反映接口动作而非等价墙钟耗时或计费，RISE/DCI 行为原表转引自 RISE。
+
+来源：[RARG](https://arxiv.org/abs/2607.24223)，2607.24223v2，Table 1, p. 7。
+
+<a id="variant-a05"></a>
+
+### F05.7 · IndexAct 上下文权衡与观察策略消融
+
+[主代码](../rerank_expansion/2026-11-21/code/A05_indexact_context_tradeoff.py) · [公共函数](../rerank_expansion/2026-11-21/plotlib.py)
+
+输入：[indexact_bcplus_main.csv](../rerank_expansion/2026-11-21/data/indexact_bcplus_main.csv) · [indexact_observation_ablation.csv](../rerank_expansion/2026-11-21/data/indexact_observation_ablation.csv)。
+
+适用用途：不同 reranker、触发策略或滑动窗口设置中，哪些配置在质量与实测资源之间更合适？。
+
+执行状态：本地可运行。文献数据重绘；左右面板题集分母不同（830 vs. 100），SrcTok 与 AvgCtx 统计口径不同。
+
+来源：[IndexAct](https://arxiv.org/abs/2610.07960)，2610.07960v1，Tables 1-2, pp. 7-8。
+
 <a id="f06"></a>
 
 ## F06 · 趋势与敏感性曲线
@@ -378,6 +462,34 @@
 
 来源：[ResearchRubrics](https://arxiv.org/pdf/2511.07685v1#page=9)，2511.07685v1，Figure 6 printed numeric labels。
 
+<a id="variant-t06"></a>
+
+### F06.5 · 实测预算趋势曲线模板
+
+[主代码](../rerank_templates/2026-11-21/plot_budget_curve.py) · [公共函数](../rerank_templates/2026-11-21/common.py)
+
+输入：[示例 CSV](../rerank_templates/2026-11-21/data/demo/budget_runs.csv) · [配置](../rerank_templates/2026-11-21/config.json)。
+
+适用用途：增加最大轮次或运行预算时，各方法的回答质量如何变化，收益是否趋于饱和？。
+
+执行状态：本地可运行。逐点置信带不构成同时置信带；默认演示数据为合成示例。
+
+本库独立实现的实测数据契约模板（2026-11-21）；默认数据为合成示例，附带 `config.measured.example.json`。
+
+<a id="variant-a06"></a>
+
+### F06.6 · RISE 10 倍扩容与 Top-K 消融
+
+[主代码](../rerank_expansion/2026-11-21/code/A06_rise_scaling_and_topk.py) · [公共函数](../rerank_expansion/2026-11-21/plotlib.py)
+
+输入：[rise_scaling_100k_1m.csv](../rerank_expansion/2026-11-21/data/rise_scaling_100k_1m.csv) · [rise_topk_ablation.csv](../rerank_expansion/2026-11-21/data/rise_topk_ablation.csv)。
+
+适用用途：增大重排模型容量是否在不同任务上都带来收益？。
+
+执行状态：本地可运行。文献数据重绘；1M 下 RISE 行均为无 TOC 预处理的 RISE-BM25，DCI 仅在 nano 跑了 1M 且有 33/100 超时。
+
+来源：[RISE](https://arxiv.org/abs/2606.06880)，2606.06880v1，Tables 2-3, pp. 7-8。
+
 <a id="f07"></a>
 
 ## F07 · 矩阵热图
@@ -425,6 +537,34 @@
 执行状态：上游参考 · 未完整执行。随机示例不是实测结果，原图采用 CC BY-NC-SA 4.0、代码采用 BSD-2-Clause，不能把代码许可套用于原图。
 
 上游原图：[rougier/scientific-visualization-book](https://github.com/rougier/scientific-visualization-book/blob/62fa569f30333c817c13e4dc757877c1192fd15a/figures/layout/complex-layout.pdf)；许可：Book/figure: CC BY-NC-SA 4.0; code: BSD-2-Clause。原图与代码按上游许可保留；原始许可证随文件保存。
+
+<a id="variant-t07"></a>
+
+### F07.4 · 实测排名迁移热图模板
+
+[主代码](../rerank_templates/2026-11-21/plot_rank_transition.py) · [公共函数](../rerank_templates/2026-11-21/common.py)
+
+输入：[示例 CSV](../rerank_templates/2026-11-21/data/demo/rank_transitions.csv) · [配置](../rerank_templates/2026-11-21/config.json)。
+
+适用用途：证据从哪些原始名次区间被提前或压后，进入 top-k 的材料来自哪里？。
+
+执行状态：本地可运行。颜色代表行内占比而非全体证据占比；不能将候选池外文档伪造为末位排名。
+
+本库独立实现的实测数据契约模板（2026-11-21）；默认数据为合成示例，附带 `config.measured.example.json`。
+
+<a id="variant-a04"></a>
+
+### F07.5 · RARG 检索域排名命中热图
+
+[主代码](../rerank_expansion/2026-11-21/code/A04_rarg_scope_heatmap.py) · [公共函数](../rerank_expansion/2026-11-21/plotlib.py)
+
+输入：[rarg_scope_rank_heatmap.csv](../rerank_expansion/2026-11-21/data/rarg_scope_rank_heatmap.csv)。
+
+适用用途：证据从哪些原始名次区间被提前或压后，进入 top-k 的材料来自哪里？。
+
+执行状态：本地可运行。文献数据重绘；非 scope 方法按 RARG scope_1.txt 排名分桶，零值以浅灰标示。
+
+来源：[RARG](https://arxiv.org/abs/2607.24223)，2607.24223v2，Figure 3, p. 9。
 
 <a id="f08"></a>
 
@@ -488,6 +628,20 @@
 
 图型参考：[2608.02751](https://arxiv.org/abs/2608.02751)。
 
+<a id="variant-t08"></a>
+
+### F08.5 · 实测工具与文本组成模板
+
+[主代码](../rerank_templates/2026-11-21/plot_tool_composition.py) · [公共函数](../rerank_templates/2026-11-21/common.py)
+
+输入：[示例 CSV](../rerank_templates/2026-11-21/data/demo/tool_calls.csv) · [配置](../rerank_templates/2026-11-21/config.json)。
+
+适用用途：重排策略是否改变工具调用结构，调用频繁的工具是否也返回了最多文本？。
+
+执行状态：本地可运行。返回字符数不等于模型计费 input tokens；池化占比先求和再相除。
+
+本库独立实现的实测数据契约模板（2026-11-21）；默认数据为合成示例，附带 `config.measured.example.json`。
+
 <a id="f09"></a>
 
 ## F09 · 工具轨迹图
@@ -508,6 +662,20 @@
 
 图型参考：[The-Python-Graph-Gallery](https://github.com/holtzy/The-Python-Graph-Gallery)。
 
+<a id="variant-t09"></a>
+
+### F09.2 · 实测工具轨迹时间线模板
+
+[主代码](../rerank_templates/2026-11-21/plot_trajectory.py) · [公共函数](../rerank_templates/2026-11-21/common.py)
+
+输入：[示例 CSV](../rerank_templates/2026-11-21/data/demo/trajectories.csv) · [配置](../rerank_templates/2026-11-21/config.json)。
+
+适用用途：某次重排触发后，后续搜索、读取、首次看到答案证据与最终作答的路径如何改变？。
+
+执行状态：本地可运行。单题轨迹仅用于机制诊断，不能替代全量题集统计结论。
+
+本库独立实现的实测数据契约模板（2026-11-21）；默认数据为合成示例，附带 `config.measured.example.json`。
+
 <a id="f10"></a>
 
 ## F10 · 多方法秩比较
@@ -527,26 +695,6 @@
 执行状态：上游参考 · 未完整执行。不能将本图误读为名次 1 最好的平均排名，未检出差异不证明等效，也不能默认连接线具有 95% 区间或已做多重校正的含义。
 
 上游原图：[maximtrp/scikit-posthocs](https://github.com/maximtrp/scikit-posthocs/blob/07e4c182b83314785eb879c3046de8ac5cf4febc/docs/source/_static/cd_diagram1.png)；许可：MIT。仓库 LICENSE 为 MIT，保留版权与许可证；未发现该原图的独立许可声明。
-
-<a id="f11"></a>
-
-## F11 · 集合交集图
-
-[代表图与多用途说明](../README.md#f11)
-
-<a id="variant-g07"></a>
-
-### F11.1 · 证据集合交集与分布联合图 · 当前代表图
-
-[主代码](../github_references/2026-11-15/code_sections/G07.R) · [原始快照](../github_references/2026-11-15/sources/efficiency/complex_upset_README.md) · [许可全文](../github_references/2026-11-15/sources/efficiency/ComplexUpset_LICENSE.txt)
-
-输入：[数据与环境](../github_references/2026-11-15/code_sections/efficiency.json)。
-
-适用用途：BM25、Dense、重排后 top-k 与最终读取集合中，哪些证据重合、哪些互补或被丢弃？；共同保留和各自独有的证据，其相关性、排名或文本开销是否不同？。
-
-执行状态：上游参考 · 未完整执行。原图是电影数据，高亮不是显著性标记，迁移时也不能把不同问题中的同名文档或包含式交集与互斥交集混算。
-
-上游原图：[krassowski/complex-upset](https://github.com/krassowski/complex-upset/blob/79fa000ca4087d55ee2d8cf1a0fb7a01bb5aba7e/movies.png)；许可：MIT。原图与代码按上游许可保留；原始许可证随文件保存。
 
 ## 复现与许可
 

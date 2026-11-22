@@ -1,0 +1,63 @@
+{
+  "template": "rank_transition",
+  "data_kind": "synthetic",
+  "config": {
+    "schema_version": 1,
+    "data_kind": "synthetic",
+    "experiment": "Synthetic illustration for F01/F02/F06/F07/F08/F09 reranking templates",
+    "baseline": "baseline",
+    "methods": [
+      {
+        "id": "baseline",
+        "label": "Baseline",
+        "color": "#7C8998"
+      },
+      {
+        "id": "auto_rerank",
+        "label": "Auto rerank",
+        "color": "#D58A2B"
+      },
+      {
+        "id": "agent_rerank",
+        "label": "Agent rerank",
+        "color": "#008C82"
+      }
+    ],
+    "score": {
+      "label": "Answer accuracy",
+      "kind": "binary",
+      "scale": 100,
+      "unit": "%",
+      "delta_unit": "pp"
+    },
+    "budget": {
+      "label": "Maximum model turns",
+      "unit": "turns"
+    },
+    "conditions": {
+      "question_set": "DemoQA, 120 synthetic paired questions across 3 disjoint subsets",
+      "generator_model": "Synthetic generator; no model executed",
+      "retrieval_policy": "Synthetic shared candidate pool; no retrieval executed",
+      "hardware": "Synthetic durations; no hardware measurement",
+      "concurrency": "Synthetic per-question elapsed time; not throughput",
+      "stopping_rule": "Illustrative 240s time limit; incomplete final answers score zero",
+      "run_selection": "One synthetic run per question/method; RNG seed 20261121"
+    }
+  },
+  "input_csv": "data/demo/rank_transitions.csv",
+  "input_csv_base": "config_directory",
+  "input_sha256": "0ddfe8a8b440da52d0c17e8b236b6af08d65359ffdbbce1360e5d4d30a8f128b",
+  "config_file": "config.json",
+  "config_sha256": "2f550b473186b8d47bf7e445989435ddc9b7a4f94c1e95ab802f93a3eb3d4074",
+  "bootstrap_resamples": 3000,
+  "seed": 20261121,
+  "note": "Each row sums to 100% over observed in-pool transitions; unobserved source rows stay n/a (not 0%). Cells left of diagonal indicate rank promotion.",
+  "environment": {
+    "matplotlib": "3.10.8",
+    "numpy": "2.1.2"
+  },
+  "method": "agent_rerank",
+  "in_pool": 338,
+  "outside_before": 0,
+  "outside_after": 22
+}

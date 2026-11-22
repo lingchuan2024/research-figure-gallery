@@ -1,10 +1,10 @@
 # Rerank 科研绘图：一图多用途
 
-将相似画法合并为 **11 种图型**，每类只保留一张代表图，在下方列出多个实验用途、论文位置和对应代码。出处统一放在每图的说明与[代码来源索引](docs/FIGURE_INDEX.md)中。
+将相似画法合并为 **10 种图型**，每类只保留一张代表图，在下方列出多个实验用途、论文位置和对应代码。出处统一放在每图的说明与[代码来源索引](docs/FIGURE_INDEX.md)中。
 
 图中的数值来自合成示例或公开材料，均不是我们的实测结果。使用时选择对应用途的代码与数据格式；同一画法不意味着不同指标或分母可以混用。
 
-[安装与构建](#quick-start) · [全部代码、输入与来源](docs/FIGURE_INDEX.md) · [逐题数据格式](rerank_templates/2026-11-16/DATA_FORMAT.md) · [目录说明](docs/STRUCTURE.md)
+[下载离线图册与完整代码包](https://github.com/lingchuan2024/research-figure-gallery/releases/latest) · [安装与构建](#quick-start) · [全部代码、输入与来源](docs/FIGURE_INDEX.md) · [逐题数据格式](rerank_templates/2026-11-16/DATA_FORMAT.md) · [目录说明](docs/STRUCTURE.md)
 
 <a id="figure-catalog"></a>
 
@@ -22,7 +22,6 @@
 | [F08 · 条形与组成分析](#f08) | 重排策略是否改变工具调用结构，调用频繁的工具是否也返回了最多文本？；总耗时主要来自检索、重排、生成还是 I/O，哪个阶段值得优化？；失败主要来自证据获取、证据利用、放弃作答还是评价问题，某类失败内部又如何构成？；哪些题目节省或增加了主模型 token，这些题目同时出现了哪些正确性翻转？ |
 | [F09 · 工具轨迹图](#f09) | 某次重排触发后，后续搜索、读取、首次看到答案证据与最终作答的路径如何改变？ |
 | [F10 · 多方法秩比较](#f10) | 在多个独立评价分块上，哪些方法通常排在前面，哪些方法间未检出差异？ |
-| [F11 · 集合交集图](#f11) | BM25、Dense、重排后 top-k 与最终读取集合中，哪些证据重合、哪些互补或被丢弃？；共同保留和各自独有的证据，其相关性、排名或文本开销是否不同？ |
 
 <a id="f01"></a>
 
@@ -34,7 +33,7 @@
 
 **可以用于：**
 
-- **各方法在同一题集上的最终回答质量、主模型用量、工具调用与耗时分别是多少？** 建议位置：正文主结果表；在说明评测协议后并列报告质量与主要资源指标；需要：逐题 question_id、method、正确性或明确的质量分数、主模型输入 token、端到端耗时及逐工具调用账本；另记失败计分、后台重排开销和各列有效样本数。实现参考：[主结果表](docs/FIGURE_INDEX.md#variant-m03)。
+- **各方法在同一题集上的最终回答质量、主模型用量、工具调用与耗时分别是多少？** 建议位置：正文主结果表；在说明评测协议后并列报告质量与主要资源指标；需要：逐题 question_id、method、正确性或明确的质量分数、主模型输入 token、端到端耗时及逐工具调用账本；另记失败计分、后台重排开销和各列有效样本数。实现参考：[主结果表](docs/FIGURE_INDEX.md#variant-m03) · [实测主结果表模板](docs/FIGURE_INDEX.md#variant-t04)。
 
 **使用边界：** 不同指标保留各自单位与汇总方式，不能把均值、中位数和准确率当成同一种统计量，也不能合并不同 benchmark 或不同分母。单方法 Wilson 区间不是方法间配对差值区间。代表代码当前实现准确率及固定成本列；替换其他指标需同步修改统计与表头，合成示例的最高分行不代表真实实验结论。
 
@@ -71,9 +70,9 @@ python examples/19_results_table/plot.py --output-dir dist/f01 --formats png svg
 
 **可以用于：**
 
-- **重排开关是否改变最终答案质量，提供金标准证据后还剩多少回答失误？** 建议位置：正文主结果或证据获取诊断；将重排开关消融与 oracle 条件作为不同对照说明；需要：同题各条件的最终答案、统一 EM／准确率判定、生成模型与上下文预算；oracle 条件还需金标准证据及上下文溢出记录。每个任务内比较相同指标。实现参考：[推理时重排对最终回答的影响](docs/FIGURE_INDEX.md#variant-m01) · [证据充分对照](docs/FIGURE_INDEX.md#variant-m14)。
+- **重排开关是否改变最终答案质量，提供金标准证据后还剩多少回答失误？** 建议位置：正文主结果或证据获取诊断；将重排开关消融与 oracle 条件作为不同对照说明；需要：同题各条件的最终答案、统一 EM／准确率判定、生成模型与上下文预算；oracle 条件还需金标准证据及上下文溢出记录。每个任务内比较相同指标。实现参考：[推理时重排对最终回答的影响](docs/FIGURE_INDEX.md#variant-m01) · [证据充分对照](docs/FIGURE_INDEX.md#variant-m14) · [实测逐题配对比较模板](docs/FIGURE_INDEX.md#variant-t05) · [ITER 跨 Backbone 迁移与 V/S 转化](docs/FIGURE_INDEX.md#variant-a02)。
 
-- **重排或 query 改写能否把相关、含答案材料提前，哪些题目获得收益或出现损失？** 建议位置：正文排序质量与 query 消融；逐题配对线和差值分布可放附录定位得失案例；需要：稳定 question_id、冻结候选池、两种 query 或重排前后顺序、qrels／答案标注；分别计算固定 k 的 nDCG 或 Answer Recall，记录逐题值以估计配对差和区间。实现参考：[前 5 条中的含答案材料召回](docs/FIGURE_INDEX.md#variant-m02) · [Query 配对比较](docs/FIGURE_INDEX.md#variant-m05) · [配对样本与均值差分布](docs/FIGURE_INDEX.md#variant-g01)。
+- **重排或 query 改写能否把相关、含答案材料提前，哪些题目获得收益或出现损失？** 建议位置：正文排序质量与 query 消融；逐题配对线和差值分布可放附录定位得失案例；需要：稳定 question_id、冻结候选池、两种 query 或重排前后顺序、qrels／答案标注；分别计算固定 k 的 nDCG 或 Answer Recall，记录逐题值以估计配对差和区间。实现参考：[前 5 条中的含答案材料召回](docs/FIGURE_INDEX.md#variant-m02) · [Query 配对比较](docs/FIGURE_INDEX.md#variant-m05) · [配对样本与均值差分布](docs/FIGURE_INDEX.md#variant-g01) · [实测逐题配对比较模板](docs/FIGURE_INDEX.md#variant-t05) · [ITER 查询输入消融](docs/FIGURE_INDEX.md#variant-a01)。
 
 - **保持候选内容不变时，随机打乱输入顺序会使重排质量变化多少？** 建议位置：正文鲁棒性实验或附录输入顺序敏感性分析；需要：相同题目、候选文档、相关性标注、模型与提示词；原顺序及多次打乱的种子、逐题输出排名和评价结果，明确区间跨题目还是跨打乱运行计算。实现参考：[输入顺序鲁棒性](docs/FIGURE_INDEX.md#variant-m04)。
 
@@ -194,7 +193,7 @@ python rerank_templates/2026-11-16/plot_raincloud.py --output-dir dist/f04 --for
 
 **可以用于：**
 
-- **不同 reranker、触发策略或滑动窗口设置中，哪些配置在质量与实测资源之间更合适？** 建议位置：正文效率—质量比较或窗口／预算消融；需要：同一 benchmark、同题集上每个配置的逐题质量与一种实测成本，记录模型、硬件、并发、候选池、窗口／步长和调用次数；缺成本时同步筛选质量题集。实现参考：[质量—开销 Pareto 图](docs/FIGURE_INDEX.md#variant-t03) · [重排窗口重叠的成本与收益](docs/FIGURE_INDEX.md#variant-m07) · [非支配方案的 Pareto 散点图](docs/FIGURE_INDEX.md#variant-g06)。
+- **不同 reranker、触发策略或滑动窗口设置中，哪些配置在质量与实测资源之间更合适？** 建议位置：正文效率—质量比较或窗口／预算消融；需要：同一 benchmark、同题集上每个配置的逐题质量与一种实测成本，记录模型、硬件、并发、候选池、窗口／步长和调用次数；缺成本时同步筛选质量题集。实现参考：[质量—开销 Pareto 图](docs/FIGURE_INDEX.md#variant-t03) · [重排窗口重叠的成本与收益](docs/FIGURE_INDEX.md#variant-m07) · [非支配方案的 Pareto 散点图](docs/FIGURE_INDEX.md#variant-g06) · [RARG 粗到细相关性引导前沿](docs/FIGURE_INDEX.md#variant-a03) · [IndexAct 上下文权衡与观察策略消融](docs/FIGURE_INDEX.md#variant-a05)。
 
 - **增加有效证据覆盖时，引用是否仍能准确支撑回答中的声明？** 建议位置：有显式引用任务的正文证据质量分析或附录；需要：声明与文档／URL 的对应关系、支持性标注、去重规则、每任务有效引用数与支持准确率；固定任务分母和引用抽取协议。实现参考：[引用支持率与有效证据量](docs/FIGURE_INDEX.md#variant-s04)。
 
@@ -235,9 +234,9 @@ python rerank_templates/2026-11-16/plot_pareto.py --output-dir dist/f05 --format
 
 **可以用于：**
 
-- **增加最大轮次或运行预算时，各方法的回答质量如何变化，收益是否趋于饱和？** 建议位置：正文预算消融或附录停止规则分析；需要：每个预算配置实际独立运行的逐题结果、统一题集与停止规则，另记实际轮次和资源消耗；每个点报告质量分母与区间。实现参考：[预算—效果曲线](docs/FIGURE_INDEX.md#variant-s02)。
+- **增加最大轮次或运行预算时，各方法的回答质量如何变化，收益是否趋于饱和？** 建议位置：正文预算消融或附录停止规则分析；需要：每个预算配置实际独立运行的逐题结果、统一题集与停止规则，另记实际轮次和资源消耗；每个点报告质量分母与区间。实现参考：[预算—效果曲线](docs/FIGURE_INDEX.md#variant-s02) · [实测预算趋势曲线模板](docs/FIGURE_INDEX.md#variant-t06)。
 
-- **增大重排模型容量是否在不同任务上都带来收益？** 建议位置：正文模型规模消融或附录跨任务评测；需要：每个模型在各任务相同候选集合上的评价结果、各任务原生指标定义与 retriever-only 参照；讨论效率时另测时延、显存与 token。实现参考：[模型规模与任务差异](docs/FIGURE_INDEX.md#variant-m08)。
+- **增大重排模型容量是否在不同任务上都带来收益？** 建议位置：正文模型规模消融或附录跨任务评测；需要：每个模型在各任务相同候选集合上的评价结果、各任务原生指标定义与 retriever-only 参照；讨论效率时另测时延、显存与 token。实现参考：[模型规模与任务差异](docs/FIGURE_INDEX.md#variant-m08) · [RISE 10 倍扩容与 Top-K 消融](docs/FIGURE_INDEX.md#variant-a06)。
 
 - **增加搜索轮数还能带来多少独立来源，还是主要增加重复调用？** 建议位置：附录搜索预算和来源覆盖分析；需要：各轮数配置实际运行的逐题 search／read 账本、规范化来源或文档 ID、去重规则与样本数；明确采用均值增量之比还是逐题边际统计。实现参考：[调用投入与独立来源增长](docs/FIGURE_INDEX.md#variant-s07)。
 
@@ -278,7 +277,7 @@ python examples/14_budget_accuracy/plot.py --output-dir dist/f06 --formats png s
 
 **可以用于：**
 
-- **证据从哪些原始名次区间被提前或压后，进入 top-k 的材料来自哪里？** 建议位置：正文重排机制分析或附录排名迁移诊断；需要：逐题证据文档 ID、是否在候选池中、完整前后排名与互斥分箱；同时保留格内计数、原排名组的分母和候选池外数量。实现参考：[证据排名迁移](docs/FIGURE_INDEX.md#variant-m06)。
+- **证据从哪些原始名次区间被提前或压后，进入 top-k 的材料来自哪里？** 建议位置：正文重排机制分析或附录排名迁移诊断；需要：逐题证据文档 ID、是否在候选池中、完整前后排名与互斥分箱；同时保留格内计数、原排名组的分母和候选池外数量。实现参考：[证据排名迁移](docs/FIGURE_INDEX.md#variant-m06) · [实测排名迁移热图模板](docs/FIGURE_INDEX.md#variant-t07) · [RARG 检索域排名命中热图](docs/FIGURE_INDEX.md#variant-a04)。
 
 - **候选评分或错误模式是否随题型、方法和文档属性形成可解释的局部结构？** 建议位置：正文局部机制分析或附录注释矩阵；需要：定义清楚的题目／文档／方法行列、同量纲分数或错误率矩阵、缺失标记，以及按实体 ID 对齐的题型和属性注释；聚类时说明距离与标准化。实现参考：[附注释的分组热图](docs/FIGURE_INDEX.md#variant-g05)。
 
@@ -319,7 +318,7 @@ python examples/07_rank_transition/plot.py --output-dir dist/f07 --formats png s
 
 **可以用于：**
 
-- **重排策略是否改变工具调用结构，调用频繁的工具是否也返回了最多文本？** 建议位置：正文工具行为分析；并列显示调用占比与文本返回占比；需要：逐题逐工具 calls 与实际 returned_chars、统一工具类别、各方法的绝对总量；自动后台重排另记事件与资源账本。实现参考：[工具调用与返回文本占比](docs/FIGURE_INDEX.md#variant-m12)。
+- **重排策略是否改变工具调用结构，调用频繁的工具是否也返回了最多文本？** 建议位置：正文工具行为分析；并列显示调用占比与文本返回占比；需要：逐题逐工具 calls 与实际 returned_chars、统一工具类别、各方法的绝对总量；自动后台重排另记事件与资源账本。实现参考：[工具调用与返回文本占比](docs/FIGURE_INDEX.md#variant-m12) · [实测工具与文本组成模板](docs/FIGURE_INDEX.md#variant-t08)。
 
 - **总耗时主要来自检索、重排、生成还是 I/O，哪个阶段值得优化？** 建议位置：正文性能剖析或附录模块计时；需要：同口径的阶段起止时间、工具调用及并发关系，reranker 独立埋点；区分可相加的串行耗时与重叠阶段，统一或明确分开秒／毫秒。实现参考：[模块耗时分解](docs/FIGURE_INDEX.md#variant-m13)。
 
@@ -362,7 +361,7 @@ python examples/04_call_vs_output_share/plot.py --output-dir dist/f08 --formats 
 
 **可以用于：**
 
-- **某次重排触发后，后续搜索、读取、首次看到答案证据与最终作答的路径如何改变？** 建议位置：正文案例研究或附录轨迹解释，并说明案例选择依据；需要：同题各方法真实逐步日志、工具类别、稳定轮次或事件编号、证据出现标注与最终结果；若分析并发或墙钟时间，另需起止时间。实现参考：[工具轨迹时间线](docs/FIGURE_INDEX.md#variant-s03)。
+- **某次重排触发后，后续搜索、读取、首次看到答案证据与最终作答的路径如何改变？** 建议位置：正文案例研究或附录轨迹解释，并说明案例选择依据；需要：同题各方法真实逐步日志、工具类别、稳定轮次或事件编号、证据出现标注与最终结果；若分析并发或墙钟时间，另需起止时间。实现参考：[工具轨迹时间线](docs/FIGURE_INDEX.md#variant-s03) · [实测工具轨迹时间线模板](docs/FIGURE_INDEX.md#variant-t09)。
 
 **使用边界：** 轮次先后不是连续耗时，工具类别间距没有数值意义；看到含答案证据也不证明正确利用。不能把单案例推广为总体收益，或混合不同实验的事件编号。代表图当前是虚构的顺序轨迹，真实并发与时间轴需要调整代码及输入，不能只替换标题。
 
@@ -422,41 +421,6 @@ python examples/16_trajectory_timeline/plot.py --output-dir dist/f09 --formats p
 
 [返回图型目录](#figure-catalog)
 
-<a id="f11"></a>
-
-## F11 · 集合交集图
-
-![F11 集合交集图：代表图](github_references/2026-11-15/sources/efficiency/complex_upset_movies.png)
-
-**这张图怎么看：** 底部点阵给出电影类别组合，其上柱形为交集大小，左侧横条为各集合大小；上部箱线显示片长，中部小提琴与散点显示评分，点色表示 log10 投票数。红、蓝、黄是人工指定的集合或交集高亮。
-
-**可以用于：**
-
-- **BM25、Dense、重排后 top-k 与最终读取集合中，哪些证据重合、哪些互补或被丢弃？** 建议位置：正文证据覆盖分析或附录检索—重排—读取衔接分析；需要：每题各阶段的文档／chunk ID 集合、固定的截断 k、统一去重粒度与候选池定义；聚合时保留 question_id 与文档 ID 的联合身份。实现参考：[证据集合交集与分布联合图](docs/FIGURE_INDEX.md#variant-g07)。
-
-- **共同保留和各自独有的证据，其相关性、排名或文本开销是否不同？** 建议位置：附录交集属性诊断；为覆盖差异补充质量或资源解释；需要：上述集合身份及逐材料相关性标签、前后排名或 tokenizer 计数；每项属性与实体严格对齐，记录各交集的样本数。实现参考：[证据集合交集与分布联合图](docs/FIGURE_INDEX.md#variant-g07)。
-
-**使用边界：** 重排完整候选池通常只改顺序，应比较明确定义的 top-k 或实际读取子集。包含式与互斥交集、文档与 chunk 粒度不能混算，不跨题目或实验合并同名 ID；属性单位和交集分母分别说明。所示参考图是电影数据的上游示例，高亮不是显著性标记；迁移需重建集合与属性数据，未在本项目完整运行上游环境。
-
-<details>
-<summary>代表图代码、数据与运行方法</summary>
-
-[主代码](github_references/2026-11-15/code_sections/G07.R) · [原始快照](github_references/2026-11-15/sources/efficiency/complex_upset_README.md) · [许可全文](github_references/2026-11-15/sources/efficiency/ComplexUpset_LICENSE.txt)
-
-输入：[数据与环境](github_references/2026-11-15/code_sections/efficiency.json)。
-
-执行状态：上游参考 · 未完整执行。
-
-运行环境与数据要求见上述“数据与环境”链接。参考源码尚未在本项目完整执行。
-
-[本图型的全部用途实现、数据与来源](docs/FIGURE_INDEX.md#f11)
-
-</details>
-
-示例类型：上游原图。上游原图：[krassowski/complex-upset](https://github.com/krassowski/complex-upset/blob/79fa000ca4087d55ee2d8cf1a0fb7a01bb5aba7e/movies.png)；许可：MIT。原图与代码按上游许可保留；原始许可证随文件保存。
-
-[返回图型目录](#figure-catalog)
-
 <a id="quick-start"></a>
 
 ## 安装与构建
@@ -472,8 +436,13 @@ python scripts/build_gallery.py --keep-existing-images
 
 打开 `dist/图表汇总_2026-11-16.html`，可离线查看同一套一图多用途图库，并下载每种用途对应的代码和数据。完整发布包为 `dist/research-figure-gallery.zip`。也可从仓库 Actions 的成功构建中下载 Artifacts。
 
-逐题输入见[数据格式](rerank_templates/2026-11-16/DATA_FORMAT.md)；旧示例字段见[数据说明](data/README.md)。代码入口、执行状态与引用信息均在[统一索引](docs/FIGURE_INDEX.md)中。
+逐题输入见[数据格式（F03–F05）](rerank_templates/2026-11-16/DATA_FORMAT.md)与[扩展模板数据格式（F01/F02/F06–F09）](rerank_templates/2026-11-21/DATA_FORMAT.md)；2026 Agentic Rerank 文献重绘说明见[研究笔记](rerank_expansion/2026-11-21/RESEARCH_NOTES.md)；旧示例字段见[数据说明](data/README.md)。代码入口、执行状态与引用信息均在[统一索引](docs/FIGURE_INDEX.md)中。
 
 图型与用途由 [figure_families.json](docs/catalog/figure_families.json) 统一维护，README、离线汇总和总览图由它生成。历史图片与来源证据用于代码溯源，不再作为多个独立图型重复展示。
 
 自编代码采用 [MIT 许可](LICENSE)。来源图片、论文材料和原始源码保留各自许可，详见[来源说明](docs/REFERENCES.md)。
+
+## 推荐外部科研图例仓库
+
+- [faridrashidi/cnsplots](https://github.com/faridrashidi/cnsplots)（[示例图库](https://cnsplots.farid.one)）：面向 *Cell / Nature / Science* 风格的 Python 统计与机器学习绘图库，提供丰富的成品图例与配套代码（带显著性检验的箱线/小提琴/散点/柱状图、热图、ROC、混淆矩阵、多面板组合等），支持物理尺寸控制与 Illustrator 可编辑 SVG/PDF 导出。
+- [ChenLiu-1996/figures4papers](https://github.com/ChenLiu-1996/figures4papers)：收录 *Nature Machine Intelligence*、ICML、NeurIPS、ECCV 等真实顶会/顶刊论文中的 Matplotlib 配图脚本与成品图（定量对比、组成拆解、趋势曲线、雷达图、后训练对比等），并附带科研绘图规范文档，适合 AI/ML 论文直接参考版式与配色。

@@ -27,16 +27,16 @@ class UnifiedCatalogTests(unittest.TestCase):
         baseline=json.loads((ROOT/'curation/2026-11-02/image_baseline.json').read_text())
         assert_preserved_images(baseline)
 
-    def test_families_partition_all_34_variants_and_cover_their_uses(self):
+    def test_families_partition_all_45_variants_and_cover_their_uses(self):
         registry=json.loads((ROOT/'docs/catalog/figure_families.json').read_text())
         self.assertEqual(registry['version'],1)
-        self.assertEqual(len(self.entries),34)
-        self.assertEqual(len(self.by_code),34)
-        self.assertEqual([f['id']for f in self.families],[f'F{i:02d}'for i in range(1,12)])
+        self.assertEqual(len(self.entries),45)
+        self.assertEqual(len(self.by_code),45)
+        self.assertEqual([f['id']for f in self.families],[f'F{i:02d}'for i in range(1,11)])
         members=[code for family in self.families for code in family['members']]
         self.assertEqual(len(members),len(set(members)))
         self.assertEqual(set(members),set(self.by_code))
-        self.assertEqual(sum(len(f['uses'])for f in self.families),28)
+        self.assertEqual(sum(len(f['uses'])for f in self.families),26)
         for family in self.families:
             self.assertIn(family['representative'],family['members'])
             self.assertTrue(family['title'].strip())
@@ -55,10 +55,10 @@ class UnifiedCatalogTests(unittest.TestCase):
         actual=re.findall(r'!\[[^\]]*\]\(([^)]+)\)',content)
         expected=[self.by_code[f['representative']]['image']for f in self.families]
         self.assertEqual(actual,expected)
-        self.assertEqual(len(actual),11)
-        self.assertEqual(len(set(actual)),11)
+        self.assertEqual(len(actual),10)
+        self.assertEqual(len(set(actual)),10)
         self.assertEqual(re.findall(r'^## (F\d{2}) ·',content,re.M),[f['id']for f in self.families])
-        self.assertEqual(content.count('建议位置：'),28)
+        self.assertEqual(content.count('建议位置：'),26)
         for family in self.families:
             body=content.split(f"## {family['id']} · {family['title']}\n",1)[1].split('\n## ',1)[0]
             self.assertEqual(re.findall(r'!\[[^\]]*\]\(([^)]+)\)',body),
@@ -78,7 +78,7 @@ class UnifiedCatalogTests(unittest.TestCase):
         index=(ROOT/'docs/FIGURE_INDEX.md').read_text()
         self.assertEqual(re.findall(r'!\[[^\]]*\]\(([^)]+)\)',index),[])
         expected=[code.lower()for family in self.families for code in family['members']]
-        self.assertEqual(re.findall(r'<a id="variant-([tmsg]\d{2})"></a>',index),expected)
+        self.assertEqual(re.findall(r'<a id="variant-([tmsga]\d{2})"></a>',index),expected)
         self.assertEqual(re.findall(r'^## (F\d{2}) ·',index,re.M),[f['id']for f in self.families])
         headings=[f"{family['id']}.{number}"for family in self.families
                   for number in range(1,len(family['members'])+1)]
@@ -100,7 +100,7 @@ class UnifiedCatalogTests(unittest.TestCase):
                 path,_,fragment=target.partition('#')
                 resolved=document.parent/path if path else document
                 self.assertTrue(resolved.is_file(),f'{name}: {target}')
-                if fragment and re.fullmatch(r'(?:variant-[tmsg]\d{2}|f\d{2})',fragment):
+                if fragment and re.fullmatch(r'(?:variant-[tmsga]\d{2}|f\d{2})',fragment):
                     self.assertIn(f'<a id="{fragment}"></a>',resolved.read_text(),f'{name}: {target}')
 
 if __name__=='__main__':unittest.main()
